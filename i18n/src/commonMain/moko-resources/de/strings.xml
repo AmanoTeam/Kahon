@@ -755,7 +755,6 @@
     <string name="theme_nord">Nord</string>
     <string name="action_open_repo">Open-Source-Repository</string>
     <string name="manga_interval_expected_update_soon">Bald</string>
-    <string name="ext_revoke_trust">Zertifikatsbestätigungen zurücknehmen</string>
     <string name="pref_webtoon_disable_zoom_out">Rauszoomen deaktivieren</string>
     <string name="pref_display_profile">Benutzerdefiniertes Anzeigeprofil</string>
     <string name="action_add_anyway">Trotzdem hinzufügen</string>

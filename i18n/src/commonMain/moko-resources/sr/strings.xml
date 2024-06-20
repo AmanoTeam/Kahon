@@ -706,7 +706,6 @@
     <string name="pref_flash_page_summ">Смањује артефакте на е-инк екранима</string>
     <string name="pref_storage_location">Место складиштења</string>
     <string name="pref_storage_location_info">Користи се за аутоматске резервне копије, преузимаље поглавља и локални извор.</string>
-    <string name="ext_revoke_trust">Опозови поверење непознатим екстензијама</string>
     <string name="action_sort_tracker_score">Оцена на пратиоцу</string>
     <string name="scanlator">Аматерски преводилац</string>
     <string name="no_scanlators_found">Ниједан аматерски преводилац није пронађен</string>

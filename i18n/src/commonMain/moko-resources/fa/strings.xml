@@ -609,7 +609,6 @@
     <string name="onboarding_guides_returning_user">نصب مجدد %s؟</string>
     <string name="pref_relative_format">زمان بندی های نسبی</string>
     <string name="pref_library_update_smart_update">به روز رسانی هوشمند</string>
-    <string name="ext_revoke_trust">لغو اعتماد افزونه های ناشناخته</string>
     <string name="pref_page_rotate_invert">جهت چرخش صفحات گسترده را برعکس کن</string>
     <string name="no_location_set">مکان ذخیره سازی تنظیم نشده است</string>
     <string name="split_tall_images">عکس های بلند را تقسیم کن</string>

@@ -751,7 +751,6 @@
     <string name="pref_library_update_smart_update">อัปเดตอัจฉริยะ</string>
     <string name="manga_interval_custom_amount">ความถี่ในการอัปเดตกำหนดเอง:</string>
     <string name="onboarding_storage_help_action">คู่มือการจัดเก็บข้อมูล</string>
-    <string name="ext_revoke_trust">เพิกถอนส่วนขยายที่ไม่รู้จักที่เชื่อถือไว้</string>
     <string name="manga_interval_expected_update_soon">เร็ว ๆ นี้</string>
     <string name="onboarding_storage_help_info">กำลังอัปเดตจากเวอร์ชันเก่าและไม่แน่ใจว่าจะเลือกอะไรใช่ไหม? โปรดดูคู่มือการจัดเก็บข้อมูลสำหรับข้อมูลเพิ่มเติม</string>
     <string name="theme_nord">นอร์ด</string>

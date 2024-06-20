@@ -744,7 +744,6 @@
     <string name="onboarding_guides_new_user">Nouveau sur %s ? Nous vous recommandons de jeter un œil au guide de démarrage.</string>
     <string name="manga_interval_custom_amount">Fréquence de mise à jour personnalisé :</string>
     <string name="invalid_backup_file_error">Erreur complète :</string>
-    <string name="ext_revoke_trust">Révoquer les extensions provenant d\'un répertoire additionnel</string>
     <string name="manga_interval_expected_update_soon">Bientôt</string>
     <string name="action_open_repo">Répertoire open source</string>
     <string name="theme_nord">Nord</string>

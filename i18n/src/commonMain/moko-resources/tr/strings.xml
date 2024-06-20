@@ -753,7 +753,6 @@
     <string name="onboarding_storage_help_info">Eski bir sürümden güncelleme yapıyorsunuz ve neyi seçeceğinizden emin değil misiniz? Daha fazla bilgi için depolama kılavuzuna bakın.</string>
     <string name="pref_library_update_smart_update">Akıllı güncelleme</string>
     <string name="theme_nord">Nord</string>
-    <string name="ext_revoke_trust">Güvenilmiş bilinmeyen uzantıları geri al</string>
     <string name="manga_interval_expected_update_soon">Yakında</string>
     <string name="action_open_repo">Açık kaynaklı depo</string>
     <string name="action_copy_link">Bağlantıyı kopyala</string>

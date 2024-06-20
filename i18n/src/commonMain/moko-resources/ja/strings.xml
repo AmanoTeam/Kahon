@@ -751,7 +751,6 @@
     <string name="onboarding_storage_help_action">ストレージ ガイド</string>
     <string name="private_settings">トラッカーログイン情報などの機密性の高い情報を含む</string>
     <string name="manga_interval_expected_update_soon">間もなく</string>
-    <string name="ext_revoke_trust">不明な拡張機能の信頼を取り消す</string>
     <string name="action_open_repo">ソースリポジトリを開く</string>
     <string name="onboarding_storage_help_info">古いバージョンからアップデートする場合で、どのオプションを選択すればよいか分からない場合は、ストレージガイドを参照してください。</string>
     <string name="theme_nord">Nord</string>

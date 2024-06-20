@@ -574,7 +574,6 @@
     <string name="ext_installer_shizuku_unavailable_dialog">Instali kaj lanĉi Shizuku-n por uzi Shizuku-n kiel etendaĵa instalilo.</string>
     <string name="action_open_repo">Malfermitkoda deponejo</string>
     <string name="pref_page_rotate_invert">Inversigi orientiĝon de turnitaj larĝaj paĝoj</string>
-    <string name="ext_revoke_trust">Eksvalidigi fidindajn nekonatajn etendaĵojn</string>
     <string name="pref_show_reading_mode_summary">Koncize montri aktualan reĝimon kiam legilo estas malfermita</string>
     <string name="pref_dual_page_invert">Inversigi lokadon de dividitaj paĝoj</string>
     <string name="pref_dual_page_invert_summary">Se la lokado de la dividitaj larĝaj paĝoj ne kongruas kun lega direkto</string>

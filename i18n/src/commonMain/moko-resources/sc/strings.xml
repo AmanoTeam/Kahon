@@ -768,7 +768,6 @@
     <string name="upcoming_calendar_next">Su mese chi intrat</string>
     <string name="upcoming_calendar_prev">Su mese coladu</string>
     <string name="onboarding_guides_returning_user">Ses torrende a installare %s?</string>
-    <string name="ext_revoke_trust">Rèvoca sas estensiones disconnotas afidàbiles</string>
     <string name="available_disk_space_info">A disponimentu: %1$s / Totale: %2$s</string>
     <string name="pref_display_profile">Profilu de visualizatzione predefinidu</string>
     <string name="action_view_upcoming">Abbista·ti sos agiornamentos imbenientes</string>
