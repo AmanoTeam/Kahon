@@ -779,17 +779,11 @@
     <string name="invalid_backup_file_json">Backup JSON não suportado</string>
     <string name="invalid_backup_file_unknown">O arquivo de backup está corrompido</string>
     <string name="label_auto">Automático</string>
-    <string name="onboarding_permission_crashlytics_description">Envie lgos de falhas anônimas para os desenvolvedores.</string>
-    <string name="onboarding_permission_analytics_description">Enviar dados de uso anônimos para melhorar os recursos do aplicativo.</string>
-    <string name="pref_firebase">Análises e registros de falhas</string>
     <string name="action_sort_random">Aleatório</string>
-    <string name="onboarding_permission_crashlytics">Enviar logs de falhas</string>
     <string name="pref_security">Segurança</string>
-    <string name="onboarding_permission_analytics">Permitir análise</string>
     <string name="ext_remove">Remover</string>
     <string name="pref_mark_duplicate_read_chapter_read_existing">Depois de ler um capítulo</string>
     <string name="ext_confirm_remove">Remover extensão?</string>
-    <string name="firebase_summary">O envio de logs de falhas e análises nos permitirá identificar e corrigir problemas, melhorar o desempenho e tornar as atualizações futuras mais relevantes para suas necessidades</string>
     <string name="pref_behavior">Comportamento</string>
     <string name="pref_mark_duplicate_read_chapter_read">Marcar capítulo lido duplicado como lido</string>
     <string name="pref_auto_update_manga_on_mark_read">Atualizar progresso quando marcado como lido</string>

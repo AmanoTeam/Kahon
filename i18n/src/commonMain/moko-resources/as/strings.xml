@@ -780,13 +780,7 @@
     <string name="tapping_inverted_vertical">উলম্ব</string>
     <string name="non_library_settings">সকলো পঢ়া প্ৰৱিষ্টি</string>
     <string name="action_sort_random">এলোমেলো</string>
-    <string name="onboarding_permission_analytics_description">এপ বৈশিষ্ট্য উন্নত কৰিবলৈ নাম-বিহীন ব্যৱহাৰ তথ্য পঠিয়াওক।</string>
     <string name="pref_security">নিৰাপত্তা</string>
-    <string name="pref_firebase">এনালাইটিক্স আৰু ক্ৰেশ লগ</string>
-    <string name="onboarding_permission_analytics">এনালিটিক্স অনুমতি দিয়ক</string>
-    <string name="firebase_summary">ক্ৰেশ লগ আৰু এনালাইটিক্স পঠিয়ালে আমাক সমস্যা চিনাক্ত আৰু সমাধান কৰাত, কাৰ্য্যক্ষমতা উন্নত কৰাত, আৰু ভৱিষ্যতৰ আপডেট আপোনাৰ প্ৰয়োজনৰ সৈতে অধিক প্ৰাসংগিক কৰাত সহায় কৰে</string>
-    <string name="onboarding_permission_crashlytics_description">বিকাশকৰ্তালৈ নাম-বিহীন ক্ৰেশ লগ পঠিয়াওক।</string>
-    <string name="onboarding_permission_crashlytics">ক্ৰেশ লগ পঠিয়াওক</string>
     <string name="ext_remove">আঁতৰাওক</string>
     <string name="ext_confirm_remove">এক্সটেনশ্বন আঁতৰাওক?</string>
     <string name="remove_private_extension_message">আপুনি সঁচাকৈয়ে \"%s\" এক্সটেনশ্বন আঁতৰাব বিচাৰে নেকি?</string>

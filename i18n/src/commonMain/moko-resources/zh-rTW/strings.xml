@@ -778,13 +778,7 @@
     <string name="action_copy_link">複製連結</string>
     <string name="pref_download_new_unread_chapters_only">略過下載重複閱讀的章節</string>
     <string name="confirm_tracker_update">將進度更新到第 %d 章？</string>
-    <string name="onboarding_permission_analytics">允許資料分析</string>
-    <string name="onboarding_permission_analytics_description">傳送匿名使用資料來改進應用程式功能</string>
     <string name="pref_security">安全</string>
-    <string name="pref_firebase">資料分析和崩潰日誌</string>
-    <string name="onboarding_permission_crashlytics">傳送崩潰日誌</string>
-    <string name="onboarding_permission_crashlytics_description">向開發人員傳送匿名崩潰日誌</string>
-    <string name="firebase_summary">傳送崩潰日誌及資料分析有助於我們識別並解決問題和提升效能，並使未來的更新更貼近您的需求</string>
     <string name="action_sort_random">隨機</string>
     <string name="ext_remove">解除安裝</string>
     <string name="ext_confirm_remove">解除安裝擴充套件？</string>

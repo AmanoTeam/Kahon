@@ -766,15 +766,9 @@
     <string name="pref_auto_update_manga_on_mark_read">Оновити прогрес коли главу помічено прочитаною</string>
     <string name="manga_interval_expected_update_null">Ця манґа завершена, або не має приблизної дати релізу.</string>
     <string name="action_sort_random">Випадково</string>
-    <string name="onboarding_permission_crashlytics_description">Надіслати анонімний звіт про помилку.</string>
-    <string name="onboarding_permission_crashlytics">Надіслати звіт про помилку</string>
-    <string name="onboarding_permission_analytics">Дозволити аналітику</string>
     <string name="pref_flash_duration_summary">%1$s мс</string>
-    <string name="pref_firebase">Аналітика та Звіти про помилки</string>
     <string name="action_copy_link">Копіювати посилання</string>
-    <string name="onboarding_permission_analytics_description">Надсилати анонімну інформацію про використання для покращення застосунку.</string>
     <string name="pref_security">Безпека</string>
-    <string name="firebase_summary">Надсилання звітів про помилки та аналітику дозволить нам ідентифікувати та виправити недоліки, покращити працездатність та зробити майбутні оновлення більш актуальними для ваших потреб</string>
     <string name="ext_confirm_remove">Видалити Розширення?</string>
     <string name="ext_remove">Видалити</string>
     <string name="remove_private_extension_message">Дійсно видалити \"%s\"?</string>

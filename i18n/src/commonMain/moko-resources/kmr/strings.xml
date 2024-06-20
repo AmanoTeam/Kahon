@@ -158,10 +158,6 @@
     <string name="onboarding_permission_ignore_battery_opts">Bikaranîna pîlê ya li paşplanê</string>
     <string name="onboarding_permission_ignore_battery_opts_description">Ji bo ku karên dirêj ên wekî daxistina, nûkirinên pirtûkxaneyê û vegerandina yedekan neyên qutkirin.</string>
     <string name="pref_backup_summary">Yedekên bi destan û xwekar, cihê depokirinê</string>
-    <string name="onboarding_permission_crashlytics">Rojaneyên têkçûnê bişîne</string>
-    <string name="onboarding_permission_crashlytics_description">Rojaneyên têkçûnê yên anonîm ji pêşdebiran re bişîne.</string>
-    <string name="onboarding_permission_analytics">Destûrê bide amaran</string>
-    <string name="onboarding_permission_analytics_description">Ji bo pêşxistina taybetmendiyên sepanê, daneyên xebatên anonîm bişîne.</string>
     <string name="onboarding_permission_action_grant">Destûrê bide</string>
     <string name="onboarding_guides_new_user">Di %s de nû yî? Em pêşniyar dikin ku tu li rêbera destpêkê binerî.</string>
     <string name="onboarding_guides_returning_user">Tu dîsa %s\'ê dadixînî?</string>
@@ -220,7 +216,6 @@
     <string name="pref_app_language">Zimanê sepanê</string>
     <string name="pref_category_security">Ewlehî û nepenî</string>
     <string name="pref_security">Ewlehî</string>
-    <string name="pref_firebase">Amar û rojaneyên têketinê</string>
     <string name="lock_with_biometrics">Kilîtvekirinê bixwaze</string>
     <string name="lock_when_idle">Dema bêkar e kilît bikê</string>
     <string name="lock_always">Herdem</string>

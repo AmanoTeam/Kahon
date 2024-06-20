@@ -769,12 +769,9 @@
     <string name="pref_flash_style_white">Branco</string>
     <string name="pref_flash_style_white_black">Branco e negro</string>
     <string name="action_sort_random">Aleatorio</string>
-    <string name="onboarding_permission_analytics">Permitir analíticas</string>
     <string name="pref_flash_style_black">Negro</string>
     <string name="pref_incognito_mode_extension_summary">Pausar o historial de lectura para esta extensión</string>
     <string name="manga_interval_expected_update_null">Este manga está rematado ou non ten unha data de publicación prevista.</string>
-    <string name="onboarding_permission_crashlytics_description">Envía rexistros de erros anónimos aos desenvolvedores.</string>
-    <string name="onboarding_permission_crashlytics">Enviar rexistro de erros</string>
     <string name="non_library_settings">Todas as obras lidas</string>
     <string name="pref_download_new_unread_chapters_only">Omitir a descarga de capítulos duplicados xa lidos</string>
     <string name="ext_confirm_remove">Queres eliminar a extensión?</string>
@@ -784,10 +781,7 @@
     <string name="invalid_backup_file_unknown">O arquivo da copia de seguridade está corrupto</string>
     <string name="confirm_tracker_update">Marcar o capítulo %d como lido nos servizos de seguimento?</string>
     <string name="trackers_updated_summary">Servizos de seguimento actualizados ao capítulo %d</string>
-    <string name="onboarding_permission_analytics_description">Enviar estatísticas de uso anónimas para mellorar as funcións da aplicación.</string>
     <string name="pref_security">Seguridade</string>
-    <string name="pref_firebase">Analíticas e rexistros de erros</string>
-    <string name="firebase_summary">O envío de rexistros de erros e estatísticas de uso permitirannos identificar e arranxar problemas, mellorar o rendemento e que futuras actualizacións poidan adaptarse mellor as túas necesidades</string>
     <string name="pref_flash_page_interval">Escintilar cada</string>
     <string name="pref_flash_with">Escintilar con</string>
     <string name="file_picker_uri_permission_unsupported">Non se puido obter un acceso continuo ao cartafol. É posible que a aplicación se comporte de xeito imprevisto.</string>

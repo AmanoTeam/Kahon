@@ -664,10 +664,6 @@
     <string name="onboarding_permission_notifications_description">Notifikácie o aktualizáciach v knižnici a podobne.</string>
     <string name="onboarding_permission_ignore_battery_opts">Využitie batérie v pozadí</string>
     <string name="onboarding_permission_ignore_battery_opts_description">Vyhnite sa prerušeniam aktualizácie knižnice, sťahovania a obnovy záloh.</string>
-    <string name="onboarding_permission_crashlytics">Poslať záznamy v prípade zlyhania aplikácie</string>
-    <string name="onboarding_permission_crashlytics_description">Poslať anonymizované záznamy v prípade zlyhania aplikácie vývojárom.</string>
-    <string name="onboarding_permission_analytics">Povoliť analytické dáta</string>
-    <string name="onboarding_permission_analytics_description">Posielať anonymizované dáta o používaní aplikácie vývojárom pre zlepšenie zážitku.</string>
     <string name="onboarding_permission_action_grant">Povoliť</string>
     <string name="onboarding_guides_new_user">Prvý krát používate %s? Odporúčame prečítať si príručku pre začiatočníkov.</string>
     <string name="onboarding_guides_returning_user">Inštalujete %s znovu?</string>
@@ -690,8 +686,6 @@
     <string name="pref_relative_format">Relatívne časové značky</string>
     <string name="pref_relative_format_summary">\"%1$s\" namiesto \"%2$s\"</string>
     <string name="pref_display_images_description">Zobraziť obrázky v popisoch mangy</string>
-    <string name="pref_firebase">Analytické dáta a záznamy v prípade zlyhania</string>
-    <string name="firebase_summary">Posielaním záznamov v prípade zlyhania aplikácie a analytických údajov nám umožníte identifikovať a opraviť chyby, zlepšiť rýchlost aplikácie a urobiť aplikáciu viac relevantnejšiu pre vaše potreby</string>
     <string name="pref_library_update_smart_update">Inteligentné aktualizácie</string>
     <string name="pref_library_update_show_tab_badge">Zobraziť počet neprečítaných na ikone Aktualizácii</string>
     <string name="pref_behavior">Správanie</string>

@@ -778,12 +778,6 @@
     <string name="action_copy_link">Копировать ссылку</string>
     <string name="pref_download_new_unread_chapters_only">Пропустить скачивание повторяющихся прочитанных глав</string>
     <string name="confirm_tracker_update">Обновить сервисы отслеживания для главы %d?</string>
-    <string name="onboarding_permission_analytics">Разрешить аналитику</string>
-    <string name="pref_firebase">Аналитика и Журнал сбоев</string>
-    <string name="onboarding_permission_crashlytics">Отправить журнал сбоев</string>
-    <string name="onboarding_permission_crashlytics_description">Отправить анонимно журнал сбоев разработчикам.</string>
-    <string name="firebase_summary">Отправляя журнал сбоев и аналитику, вы позволите нам обнаружить и исправить ошибки, улучшить производительность и сделать будущие обновления более актуальными для ваших потребностей</string>
-    <string name="onboarding_permission_analytics_description">Отправить анонимно данные об использовании для улучшения функций приложения.</string>
     <string name="pref_security">Безопасность</string>
     <string name="action_sort_random">Случайно</string>
     <string name="ext_remove">Удалить</string>

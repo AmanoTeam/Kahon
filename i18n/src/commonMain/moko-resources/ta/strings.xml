@@ -211,10 +211,6 @@
     <string name="onboarding_permission_notifications_description">நூலக புதுப்பிப்புகள் மற்றும் பலவற்றிற்கு அறிவிக்கப்படுங்கள்.</string>
     <string name="onboarding_permission_ignore_battery_opts">பின்னணி பேட்டரி பயன்பாடு</string>
     <string name="onboarding_permission_ignore_battery_opts_description">நீண்டகால நூலக புதுப்பிப்புகள், பதிவிறக்கம் மற்றும் காப்புப்பிரதி மீட்டமைப்புக்கு குறுக்கீடுகளைத் தவிர்க்கவும்.</string>
-    <string name="onboarding_permission_crashlytics">செயலிழப்பு பதிவுகளை அனுப்பவும்</string>
-    <string name="onboarding_permission_crashlytics_description">டெவலப்பர்களுக்கு அநாமதேய செயலிழப்பு பதிவுகளை அனுப்பவும்.</string>
-    <string name="onboarding_permission_analytics">பகுப்பாய்வுகளை அனுமதிக்கவும்</string>
-    <string name="onboarding_permission_analytics_description">பயன்பாட்டு அம்சங்களை மேம்படுத்த அநாமதேய பயன்பாட்டு தரவை அனுப்பவும்.</string>
     <string name="onboarding_storage_help_action">சேமிப்பக வழிகாட்டி</string>
     <string name="onboarding_permission_install_apps">பயன்பாடுகளின் அனுமதியை நிறுவவும்</string>
     <string name="onboarding_permission_install_apps_description">மூல நீட்டிப்புகளை நிறுவ.</string>
@@ -262,7 +258,6 @@
     <string name="pref_category_security">பாதுகாப்பு மற்றும் தனியுரிமை</string>
     <string name="secure_screen">பாதுகாப்பான திரை</string>
     <string name="secure_screen_summary">பயன்பாடுகளை மாற்றும்போது பயன்பாட்டு உள்ளடக்கத்தை பாதுகாப்பான திரை மறைக்கவும், திரை சாட்களைத் தடுக்கவும்</string>
-    <string name="firebase_summary">செயலிழப்பு பதிவுகள் மற்றும் பகுப்பாய்வுகளை அனுப்புவது சிக்கல்களைக் கண்டறிந்து சரிசெய்யவும், செயல்திறனை மேம்படுத்தவும், எதிர்கால புதுப்பிப்புகளை உங்கள் தேவைகளுக்கு மிகவும் பொருத்தமானதாக மாற்றவும் அனுமதிக்கும்</string>
     <string name="relative_time_today">இன்று</string>
     <string name="pref_category_display">காட்சி</string>
     <string name="pref_library_columns">ஒரு வரிசையில் உருப்படிகள்</string>
@@ -278,7 +273,6 @@
     <string name="update_72hour">ஒவ்வொரு 3 நாட்களுக்கும்</string>
     <string name="update_weekly">வாராந்திர</string>
     <string name="pref_security">பாதுகாப்பு</string>
-    <string name="pref_firebase">பகுப்பாய்வு மற்றும் செயலிழப்பு பதிவுகள்</string>
     <string name="lock_with_biometrics">திறத்தல் தேவை</string>
     <string name="lock_when_idle">சும்மா இருக்கும்போது பூட்டு</string>
     <string name="lock_always">எப்போதும்</string>
