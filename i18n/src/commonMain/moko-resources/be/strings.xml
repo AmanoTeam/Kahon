@@ -379,10 +379,6 @@
     <string name="onboarding_permission_notifications_description">Атрымліваць апавяшчэнні пра абнаўленні бібліятэкі ды іншае.</string>
     <string name="onboarding_permission_ignore_battery_opts">Выкарыстанне батарэі ў фоне</string>
     <string name="onboarding_permission_ignore_battery_opts_description">Дазволіць пазбегнуць абрываў доўгатэрміновых абнаўленняў бібліятэкі, памповак ды аднаўленняў рэзервоўкі.</string>
-    <string name="onboarding_permission_crashlytics">Даслаць журнал збояў</string>
-    <string name="onboarding_permission_crashlytics_description">Ананімна даслаць журнал збояў распрацоўнікам.</string>
-    <string name="onboarding_permission_analytics">Дазволіць аналітыку</string>
-    <string name="onboarding_permission_analytics_description">Ананімна дасылаць даныя выкарыстання праграмы для паляпшэння яе функцый.</string>
     <string name="onboarding_permission_action_grant">Надаць</string>
     <string name="onboarding_guides_new_user">Упершыню ў %s? Рэкамендуем азнаёміцца з дапаможнікам пачаткоўца.</string>
     <string name="onboarding_guides_returning_user">Пераўсталёўваеце %s?</string>
@@ -403,8 +399,6 @@
     <string name="pref_relative_format_summary">«%1$s» замест « %2$s»</string>
     <string name="pref_display_images_description">Адлюстроўваць выявы ў апісаннях твораў</string>
     <string name="pref_security">Бяспека</string>
-    <string name="pref_firebase">Аналітыка і журналы збояў</string>
-    <string name="firebase_summary">Адпраўка журналаў збояў і аналітыкі дазволіць нам выяўляць і выпраўляць памылкі, паляпшаць прадукцыйнасць і развіваць праграму з улікам вашых патрэб</string>
     <string name="pref_library_update_smart_update">Разумнае абнаўленне</string>
     <string name="pref_update_only_in_release_period">Прадказваць выхад новых раздзелаў</string>
     <string name="pref_library_update_show_tab_badge">Паказваць колькасць непрачытаных на значку «Абнаўленні»</string>

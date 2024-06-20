@@ -758,13 +758,7 @@
     <string name="action_open_repo">เปิดที่มาของรีโพ</string>
     <string name="action_copy_link">คัดลอกลิงก์</string>
     <string name="action_sort_random">สุ่ม</string>
-    <string name="onboarding_permission_analytics">อนุญาตให้เก็บข้อมูลไปวิเคราะห์</string>
     <string name="pref_security">ความปลอดภัย</string>
-    <string name="pref_firebase">การวิเคราะห์และบันทึกข้อผิดพลาด</string>
-    <string name="onboarding_permission_crashlytics_description">ส่งบันทึกข้อผิดพลาดแบบไม่เปิดเผยตัวตนให้กับนักพัฒนา</string>
-    <string name="onboarding_permission_crashlytics">ส่งบันทึกข้อผิดพลาด</string>
-    <string name="onboarding_permission_analytics_description">ส่งข้อมูลการใช้งานที่ไม่ระบุตัวตนเพื่อปรับปรุงคุณสมบัติของแอป</string>
-    <string name="firebase_summary">การส่งบันทึกข้อผิดพลาดและการวิเคราะห์จะช่วยให้เราระบุและแก้ไขปัญหา ปรับปรุงประสิทธิภาพ และทำให้การอัปเดตในอนาคตมีความเกี่ยวข้องกับความต้องการของคุณมากขึ้น</string>
     <string name="ext_remove">นำออก</string>
     <string name="ext_confirm_remove">ต้องการนำส่วนขยายออกหรือไม่?</string>
     <string name="remove_private_extension_message">ต้องการนำส่วนขยาย \"%s\" ออกหรือไม่?</string>

@@ -769,15 +769,9 @@
     <string name="action_copy_link">Αντιγραφή συνδέσμου</string>
     <string name="manga_interval_expected_update_null">Αυτό το manga είτε έχει ολοκληρωθεί, είτε δεν υπάρχει προβλεπόμενη ημερομηνία κυκλοφορίας.</string>
     <string name="action_sort_random">Τυχαίο</string>
-    <string name="onboarding_permission_analytics">Να επιτρέπονται τα αναλυτικά στοιχεία</string>
-    <string name="pref_firebase">Αναλύσεις και αρχεία καταγραφής ατυχημάτων</string>
-    <string name="onboarding_permission_crashlytics">Αποστολή αρχείων καταγραφής σφαλμάτων</string>
     <string name="pref_download_new_unread_chapters_only">Παράλειψη λήψης διπλότυπων αναγνωσμένων κεφαλαίων</string>
-    <string name="firebase_summary">Η αποστολή αρχείων καταγραφής σφαλμάτων και αναλυτικών στοιχείων θα μας επιτρέψει να εντοπίσουμε και να διορθώσουμε προβλήματα, να βελτιώσουμε την απόδοση και να κάνουμε τις μελλοντικές ενημερώσεις πιο σχετικές με τις ανάγκες σας</string>
     <string name="remove_private_extension_message">Θέλετε πραγματικά να αφαιρέσετε την επέκταση \"%s?</string>
     <string name="pref_flash_page_interval">Φλας κάθε</string>
-    <string name="onboarding_permission_crashlytics_description">Αποστολή ανώνυμων αρχείων καταγραφής σφαλμάτων στους προγραμματιστές.</string>
-    <string name="onboarding_permission_analytics_description">Αποστολή ανώνυμων δεδομένων χρήσης για τη βελτίωση των λειτουργιών της εφαρμογής.</string>
     <string name="pref_security">Ασφάλεια</string>
     <string name="pref_flash_style_black">Μαύρο</string>
     <string name="pref_flash_style_white">Λευκό</string>

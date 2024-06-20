@@ -778,13 +778,7 @@
     <string name="upcoming_calendar_prev">Önceki Ay</string>
     <string name="pref_download_new_unread_chapters_only">Yinelenen okunmuş bölümlerin indirilmesini atla</string>
     <string name="confirm_tracker_update">İzleyicileri %d. bölüme güncelle?</string>
-    <string name="onboarding_permission_crashlytics">Çökme kayıtlarını gönder</string>
     <string name="pref_security">Güvenlik</string>
-    <string name="onboarding_permission_crashlytics_description">Geliştiricilere anonimleştirilmiş çökme kayıtlarını gönder.</string>
-    <string name="firebase_summary">Çökme kayıtlarını ve kullanım istatistiklerini göndermek sorunları tanımlamamıza ve düzeltmemize imkân verir, performansı iyileştirmemizi sağlar ve gelecek güncellemeleri ihtiyaçlarınızla uyumlu yapmamıza olanak tanır</string>
-    <string name="onboarding_permission_analytics">Kullanım istatistiklerine izin ver</string>
-    <string name="onboarding_permission_analytics_description">Uygulama özelliklerini geliştirmek için anonimleştirilmiş kullanım verileri gönder.</string>
-    <string name="pref_firebase">Kullanım İstatistikleri ve Çökme Kayıtları</string>
     <string name="action_sort_random">Rastgele</string>
     <string name="ext_remove">Kaldır</string>
     <string name="remove_private_extension_message">\"%s\" uzantısını kaldırmak istediğinize emin misiniz?</string>

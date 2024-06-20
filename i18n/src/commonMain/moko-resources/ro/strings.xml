@@ -780,15 +780,9 @@
     <string name="confirm_tracker_update">Actualizați serviciile de urmărire la capitolul %d?</string>
     <string name="non_library_settings">Toate înregistrările citite</string>
     <string name="action_sort_random">Aleatoriu</string>
-    <string name="onboarding_permission_analytics_description">Trimiteți date de utilizare anonimizate pentru a îmbunătăți funcțiile aplicației.</string>
     <string name="pref_security">Securitate</string>
-    <string name="pref_firebase">Jurnale de analiză și de erori</string>
     <string name="pref_auto_update_manga_on_mark_read">Actualizare progres atunci când este marcat ca citit</string>
     <string name="trackers_updated_summary">Servicii de urmărire actualizate la capitolul %d</string>
-    <string name="onboarding_permission_crashlytics_description">Trimiteți anonim jurnalele de blocare către dezvoltatorilor.</string>
-    <string name="onboarding_permission_analytics">Permiteți analizele</string>
-    <string name="onboarding_permission_crashlytics">Trimiteți jurnalele de eroare</string>
-    <string name="firebase_summary">Trimiterea jurnalelor de erori și a analizelor ne va permite să identificăm și să rezolvăm problemele, să îmbunătățim performanța și să facem actualizările viitoare mai relevante pentru nevoile dumneavoastră</string>
     <string name="ext_remove">Eliminați</string>
     <string name="ext_confirm_remove">Eliminați extensia?</string>
     <string name="remove_private_extension_message">Chiar doriți să eliminați extensia „%s”?</string>

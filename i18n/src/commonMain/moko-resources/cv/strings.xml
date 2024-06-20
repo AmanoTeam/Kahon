@@ -583,11 +583,7 @@
     <string name="action_menu_overflow_description">Ытти ӗнерӳсем</string>
     <string name="action_copy_link">Каҫҫа ӑт</string>
     <string name="action_sort_random">Ӑнсӑрт</string>
-    <string name="onboarding_permission_crashlytics">Йӑнӑшсен кӗнекине йар</string>
-    <string name="onboarding_permission_crashlytics_description">Вӑрттӑнлатнӑ йӑнӑшсен кӗнекине хатӗрлевҫӗсене йарса парӗ.</string>
-    <string name="onboarding_permission_analytics_description">Апӑн ӗҫ-тивӗҫсене лайӑхлатма вӑрттӑнлатнӑ усӑ курав пӗлӗмӗсене йарса парӗ.</string>
     <string name="onboarding_storage_info">%1$s тийенӗ сыпӑксене, йантӑлав ӑтӑвӗсене тата ыттине упрамалли папкӑ суйла.\n\nУйтӑм папкӑ усӑ курма сӗнетпӗр.\n\nСуйланӑ папкӑ: %2$s</string>
-    <string name="onboarding_permission_analytics">Тӗпчевлеме ирӗк</string>
     <string name="action_add_anyway">Пур пӗрех хуш</string>
     <string name="label_auto">Хӑй халлӗн</string>
     <string name="action_display_unread_badge">Вуламан сыпӑк</string>
@@ -597,8 +593,6 @@
     <string name="theme_monochrome">Пӗр тӗс</string>
     <string name="pref_relative_format">Вӑхӑт иртни палли</string>
     <string name="pref_security">Сыхлав</string>
-    <string name="pref_firebase">Тишкерӳ тата йӑнӑшсен кӗнеки</string>
-    <string name="firebase_summary">Йӑнӑшсен кӗнекине тата тишкерӗве йарса йӑнӑшсене тупма, тухӑҫлӑхне аталантарма тата пулас ҫӗнетӳсене санӑн кирлӗлӗх тивӗҫтерме пулӑшӗ</string>
     <string name="pref_library_update_smart_update">Тӑнлӑ ҫӗнетӳ</string>
     <string name="pref_behavior">Тыткалу</string>
     <string name="pref_mark_duplicate_read_chapter_read">Иккӗллӗ сыпӑкне вуланӑ тесе палӑртмалла</string>

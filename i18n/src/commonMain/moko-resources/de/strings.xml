@@ -778,14 +778,8 @@
     <string name="invalid_backup_file_json">JSON-Sicherung wird nicht unterstützt</string>
     <string name="pref_download_new_unread_chapters_only">Herunterladen von doppelten gelesenen Kapiteln überspringen</string>
     <string name="confirm_tracker_update">Tracker auf Kapitel %d aktualisieren?</string>
-    <string name="pref_firebase">Datenerhebung und Absturzprotokolle</string>
-    <string name="onboarding_permission_analytics_description">Sende anonymisierte Nutzungsdaten, um App-Funktionen zu verbessern.</string>
-    <string name="onboarding_permission_analytics">Datenerhebung zulassen</string>
     <string name="action_sort_random">Zufällig</string>
-    <string name="onboarding_permission_crashlytics">Absturzprotokolle senden</string>
-    <string name="onboarding_permission_crashlytics_description">Anonymisierte Absturzprotokolle an das Entwicklerteam senden.</string>
     <string name="pref_security">Sicherheit</string>
-    <string name="firebase_summary">Das Übermitteln von Absturzprotokollen und erhobenen Daten ermöglicht es uns, Probleme zu erkennen und zu beheben, die Leistung zu verbessern und künftige Updates besser auf deine Bedürfnisse abzustimmen</string>
     <string name="ext_remove">Entfernen</string>
     <string name="ext_confirm_remove">Erweiterung entfernen?</string>
     <string name="remove_private_extension_message">Möchtest du die Erweiterung „%s“ wirklich entfernen?</string>

@@ -1,6 +1,5 @@
 import com.android.build.api.variant.ApplicationVariant
 import com.android.build.api.variant.BuildConfigField
-import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
 import mihon.gradle.Config
 import mihon.gradle.getCurrentTime
 import mihon.gradle.getLatestCommitCount
@@ -21,12 +20,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
-if (Config.includeTelemetry) {
-    pluginManager.apply {
-        apply(libs.plugins.google.services.get().pluginId)
-        apply(libs.plugins.firebase.crashlytics.get().pluginId)
-    }
-}
+val supportedAbis = setOf("armeabi-v7a", "arm64-v8a")
 
 val keystorePropertiesFile = layout.settingsDirectory.file("keystore.properties").asFile
 
@@ -39,7 +33,6 @@ android {
         versionCode = 30
         versionName = "0.20.4"
 
-        buildConfigField("boolean", "TELEMETRY_INCLUDED", "${Config.includeTelemetry}")
         buildConfigField("boolean", "UPDATER_ENABLED", "${Config.enableUpdater}")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -106,14 +99,6 @@ android {
             applicationIdSuffix = ".benchmark"
 
             matchingFallbacks.addAll(commonMatchingFallbacks)
-        }
-
-        if (Config.includeTelemetry) {
-            configureEach {
-                configure<CrashlyticsExtension> {
-                    mappingFileUploadEnabled = Config.uploadCrashlyticsMapping
-                }
-            }
         }
     }
 
@@ -216,7 +201,6 @@ dependencies {
     implementation(projects.domain)
     implementation(projects.presentationCore)
     implementation(projects.presentationWidget)
-    implementation(projects.telemetry)
 
     // Compose
     implementation(libs.androidx.activity.compose)

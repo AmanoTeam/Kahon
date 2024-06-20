@@ -764,16 +764,10 @@
     <string name="action_notes">노트</string>
     <string name="action_edit_notes">노트 편집</string>
     <string name="action_add_anyway">추가</string>
-    <string name="onboarding_permission_crashlytics">크래시 로그 전송</string>
-    <string name="onboarding_permission_crashlytics_description">개발자에게 익명화된 로그를 전송합니다.</string>
-    <string name="onboarding_permission_analytics">분석 허가</string>
-    <string name="onboarding_permission_analytics_description">익명화된 사용 데이터를 전송하여 앱 기능 개선에 기여합니다.</string>
     <string name="theme_catppuccin">캣푸친(Catppuccin)</string>
     <string name="theme_monochrome">모노크롬</string>
     <string name="pref_display_images_description">만화 설명에 이미지를 렌더링합니다</string>
     <string name="pref_security">보안</string>
-    <string name="pref_firebase">분석 및 크래시 로그</string>
-    <string name="firebase_summary">크래시 로그와 분석 데이터를 전송하면, 문제를 식별 및 해결하며, 성능을 개선하고, 향후 업데이트를 사용자 요구사항에 더 적합하게 만들 수 있습니다</string>
     <string name="pref_behavior">행동</string>
     <string name="pref_mark_duplicate_read_chapter_read">중복된 읽은 챕터를 읽은 것으로 표시</string>
     <string name="pref_mark_duplicate_read_chapter_read_existing">챕터를 읽은 후</string>

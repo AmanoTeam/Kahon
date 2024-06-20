@@ -770,16 +770,10 @@
     <string name="invalid_backup_file_json">Cópia de segurança JSON não suportada</string>
     <string name="invalid_backup_file_unknown">Ficheiro de Cópia de Segurança corrompido</string>
     <string name="action_sort_random">Aleatório</string>
-    <string name="onboarding_permission_analytics_description">Enviar dados de utilização anónimos para melhorar funções da aplicação.</string>
-    <string name="firebase_summary">Se enviar os registos de crache e as analíticas irá permitir-nos identificar e resolver problemas, melhorar o desempenho, e realizar futuras atualizações que sejam mais relevantes para as suas necessidades</string>
-    <string name="pref_firebase">Estatíscas e Logs de Crash</string>
     <string name="pref_auto_update_manga_on_mark_read">Atualizar progresso quando for marcado como lido</string>
     <string name="manga_interval_expected_update_null">Este mangá ou está completo ou ainda não tem uma data de lançamento prevista.</string>
     <string name="trackers_updated_summary">Rastreadores atualizados para o capítulo %d</string>
     <string name="file_picker_uri_permission_unsupported">Erro ao adquirir o acesso persistente à pasta. A aplicação pode comportar-se inesperadamente.</string>
-    <string name="onboarding_permission_crashlytics">Enviar logs de crash</string>
-    <string name="onboarding_permission_crashlytics_description">Enviar logs de crash anónimos para os desenvolvedores.</string>
-    <string name="onboarding_permission_analytics">Permitir estatísticas</string>
     <string name="pref_security">Segurança</string>
     <string name="pref_flash_duration_summary">%1$s ms</string>
     <string name="pref_flash_style_white_black">Branco e Preto</string>

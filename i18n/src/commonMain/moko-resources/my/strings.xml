@@ -181,10 +181,6 @@
     <string name="onboarding_permission_notifications_description">စာအုပ်စင် အပ်ဒေ့များနှင့် အခြားသော အကြောင်းအရာများအတွက် အကြောင်းကြားမှုများ ရယူပါ။</string>
     <string name="onboarding_permission_ignore_battery_opts">ဘက်ထရီအနေအထားများကိုသွင်းခြင်း</string>
     <string name="onboarding_permission_ignore_battery_opts_description">ဘက်ထရီစွမ်းအင်ကြီးလွန်ခြင်းများအားလုံးဖော်ပြပါ</string>
-    <string name="onboarding_permission_crashlytics">အမှားဖြစ်သောအချက်အလက်များမှတ်တမ်းတင်ခြင်း</string>
-    <string name="onboarding_permission_crashlytics_description">အမှားအချက်များအတွက်ပါဝင်ရန်</string>
-    <string name="onboarding_permission_analytics">စွမ်းဆောင်မှုများစာရင်း</string>
-    <string name="onboarding_permission_analytics_description">မှတ်တမ်းများနှင့်ယခုနှင့်အတူ စွမ်းဆောင်မှုစစ်ဆေးမှု</string>
     <string name="pref_reader_summary">စာဖတ်သူအနှစ်ချုပ်</string>
     <string name="pref_downloads_summary">ဒေါင်းလုဒ်များအနှစ်ချုပ်</string>
     <string name="pref_browse_summary">လမ်းညွှန်ရှာဖွေရေးအနှစ်ချုပ်</string>
@@ -200,10 +196,8 @@
     <string name="pref_app_language">အက်ပ် ဘာသာစကား</string>
     <string name="pref_category_security">လုံခြုံရေးနှင့် ကိုယ်ရေးကိုယ်တာ</string>
     <string name="pref_security">လုံခြုံရေး</string>
-    <string name="pref_firebase">ခွဲခြမ်းစိတ်ဖြာမှုနှင့် ခရပ်စ်လော့ဂ်များ</string>
     <string name="secure_screen">ကာကွယ်ထားသော စခရင်</string>
     <string name="secure_screen_summary">လုံခြုံသော စခရင်သည် အက်ပ်များကို ပြောင်းလဲသည့်အခါ အက်ပ်အကြောင်းအရာများကို ဖုံးကွယ်ပေးပြီး စခရင်ရှော့များကို ပိတ်ဆို့ပါမည်။</string>
-    <string name="firebase_summary">ခရပ်စ်လော့ဂ်များနှင့် ခွဲခြမ်းစိတ်ဖြာမှုဒေတာများကို ပေးပို့ခြင်းဖြင့် ပြဿနာများကို ဖော်ထုတ်ပြီး ပြင်ဆင်နိုင်မည်ဖြစ်ပြီး စွမ်းဆောင်ရည်ကို တိုးတက်စေကာ သုံးစွဲသူများ၏ လိုအပ်ချက်များနှင့် ပိုမိုသက်ဆိုင်သော အနာဂတ် အပ်ဒိတ်များကို ပြုလုပ်နိုင်မည်ဖြစ်သည်။\"</string>
     <string name="ext_confirm_remove">ဖယ်ရှားမည်လား</string>
     <string name="pref_chapter_swipe_start">ဘယ်ဘက်သို့ ပွတ်ဆွဲရန်</string>
     <string name="ext_update_all">အကုန် အပ်ဒိတ်လုပ်မည်။</string>
