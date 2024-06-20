@@ -753,7 +753,6 @@
     <string name="onboarding_storage_help_info">Sti aggiornando da una vecchia versione e non sai cosa selezionare? Consulta la guida all\'archiviazione per info.</string>
     <string name="theme_nord">Nord</string>
     <string name="pref_library_update_smart_update">Aggiornamento intelligente</string>
-    <string name="ext_revoke_trust">Revoca le estensioni sconosciute affidabili</string>
     <string name="invalid_backup_file_error">Errore completo:</string>
     <string name="manga_interval_expected_update">Si prevede che i nuovi capitoli saranno rilasciati tra circa %1$s, con controlli ogni %2$s.</string>
     <string name="action_add_anyway">Aggiungere comunque</string>

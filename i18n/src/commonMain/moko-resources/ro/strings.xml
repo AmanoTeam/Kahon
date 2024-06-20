@@ -752,7 +752,6 @@
     <string name="onboarding_permission_notifications_description">Primiți notificări pentru actualizările bibliotecii și altele.</string>
     <string name="onboarding_guides_new_user">Nou pe %s? Vă recomandăm să consultați ghidul introductiv.</string>
     <string name="ext_permission_install_apps_warning">Sunt necesare permisiuni pentru instalarea de extensii. Atingeți aici pentru a permite.</string>
-    <string name="ext_revoke_trust">Revocați încrederea extensiilor necunoscute</string>
     <string name="label_upcoming">Viitoare</string>
     <string name="theme_nord">Nord</string>
     <string name="pref_display_profile">Profil de afișare personalizat</string>

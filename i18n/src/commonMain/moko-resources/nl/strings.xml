@@ -721,7 +721,6 @@
     <string name="pref_onboarding_guide">Onboardinggids</string>
     <string name="onboarding_heading">Welkom!</string>
     <string name="action_copy_link">Link kopiëren</string>
-    <string name="ext_revoke_trust">Vertrouwde onbekende extensies intrekken</string>
     <string name="pref_flash_style_black">Zwart</string>
     <string name="action_sort_random">Willekeurig</string>
     <string name="onboarding_description">Laten we eerst enkele dingen instellen. Je kunt deze later altijd wijzigen in de instellingen.</string>

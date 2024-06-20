@@ -740,7 +740,6 @@
     <string name="onboarding_permission_ignore_battery_opts">ब्याकग्राउण्ड ब्याट्री प्रयोग</string>
     <string name="onboarding_guides_returning_user">%s पुन: स्थापना गर्दै हुनुहुन्छ?</string>
     <string name="ext_permission_install_apps_warning">एक्सटेन्शनहरू स्थापना गर्न अनुमति आवश्यक छ। प्रदान गर्न यहाँ ट्याप गर्नुहोस्।</string>
-    <string name="ext_revoke_trust">विश्वसनीय अज्ञात एक्सटेन्शनहरू रद्द गर्नुहोस्</string>
     <string name="action_apply">अप्लाई</string>
     <string name="action_open_repo">खुला स्रोत रिपो</string>
     <string name="pref_storage_location">भण्डारण स्थान</string>

@@ -752,7 +752,6 @@
     <string name="action_move_to_bottom_all_for_series">Mover série para o fim</string>
     <string name="pref_onboarding_guide">Guia de introdução</string>
     <string name="pref_library_update_smart_update">Atualização inteligente</string>
-    <string name="ext_revoke_trust">Revogar a confiabilidade de extensões desconhecidas</string>
     <string name="no_location_set">Local de armazenamento não definido</string>
     <string name="track_activity_name">Login do monitorador</string>
     <string name="pref_storage_location_info">Usado para backups automáticos, descargas de capítulos e na fonte local.</string>

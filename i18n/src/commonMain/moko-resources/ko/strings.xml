@@ -723,7 +723,6 @@
     <string name="ext_permission_install_apps_warning">확장 앱을 설치하려면 권한이 필요합니다. 부가하려면 여기를 탭하세요.</string>
     <string name="pref_storage_location">저장공간 위치</string>
     <string name="onboarding_permission_install_apps">앱 다운로드 권한</string>
-    <string name="ext_revoke_trust">신뢰한 알수없는 확장 앱 신뢰 취소</string>
     <string name="pref_storage_location_info">자동 백업, 챕터 다운로드 및 로컬 소스에 사용됩니다.</string>
     <string name="manga_interval_custom_amount">사용자 지정 업데이트 빈도:</string>
     <string name="action_open_repo">소스 저장소 열기</string>

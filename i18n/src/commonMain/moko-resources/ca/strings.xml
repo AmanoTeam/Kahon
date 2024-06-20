@@ -752,7 +752,6 @@
     <string name="onboarding_storage_help_info">Heu actualitzat d’una versió més antiga i no sabeu què heu de seleccionar? Consulteu la guia d’emmagatzematge per a més informació.</string>
     <string name="theme_nord">Nòrdic</string>
     <string name="pref_library_update_smart_update">Actualitzacions intel·ligents</string>
-    <string name="ext_revoke_trust">Revoca les extensions de confiança desconegudes</string>
     <string name="manga_interval_expected_update_soon">Aviat</string>
     <string name="manga_interval_custom_amount">Freqüència d’actualització personalitzada:</string>
     <string name="action_open_repo">Obre el repositori d’origen</string>
