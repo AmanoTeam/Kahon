@@ -36,11 +36,7 @@ class AppUpdateChecker(
 }
 
 val GITHUB_REPO: String by lazy {
-    if (isNightlyBuildType) {
-        "mihonapp/mihon-preview"
-    } else {
-        "mihonapp/mihon"
-    }
+    "AmanoTeam/Kahon"
 }
 
 val RELEASE_TAG: String by lazy {
@@ -51,4 +47,4 @@ val RELEASE_TAG: String by lazy {
     }
 }
 
-val RELEASE_URL = "https://github.com/$GITHUB_REPO/releases/tag/$RELEASE_TAG"
+val RELEASE_URL = "https://github.com/$GITHUB_REPO/releases/tag/${RELEASE_TAG}"
