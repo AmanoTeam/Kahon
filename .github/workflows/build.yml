@@ -22,7 +22,7 @@ jobs:
         java-version: 22
         distribution: temurin
     - name: Assemble APK
-      run: ./gradlew --no-daemon 'assembleStandardRelease'
+      run: ./gradlew --no-daemon 'assembleRelease'
     - name: Set MIHON_VERSION
       run: echo "MIHON_VERSION=v$(grep --only-matching --perl-regexp 'versionName\s=\s\"\K([0-9\.]+)' './app/build.gradle.kts')+$(git rev-parse --short 'HEAD')" >> "${GITHUB_ENV}"
     - name: Upload APK
