@@ -25,28 +25,8 @@ jobs:
       run: ./gradlew --no-daemon 'assembleStandardRelease'
     - name: Set MIHON_VERSION
       run: echo "MIHON_VERSION=v$(grep --only-matching --perl-regexp 'versionName\s=\s\"\K([0-9\.]+)' './app/build.gradle.kts')+$(git rev-parse --short 'HEAD')" >> "${GITHUB_ENV}"
-    - name: Upload armeabi-v7a APK
+    - name: Upload APK
       uses: actions/upload-artifact@main
       with:
-        name: "mihon_${{ env.MIHON_VERSION }}-github-release_armeabi-v7a"
-        path: app/build/outputs/apk/standard/release/app-standard-armeabi-v7a-release-unsigned.apk
-    - name: Upload arm64-v8a APK
-      uses: actions/upload-artifact@main
-      with:
-        name: "mihon_${{ env.MIHON_VERSION }}-github-release_arm64-v8a"
-        path: app/build/outputs/apk/standard/release/app-standard-arm64-v8a-release-unsigned.apk
-    - name: Upload x86 APK
-      uses: actions/upload-artifact@main
-      with:
-        name: "mihon_${{ env.MIHON_VERSION }}-github-release_x86"
-        path: app/build/outputs/apk/standard/release/app-standard-x86-release-unsigned.apk
-    - name: Upload x86_64 APK
-      uses: actions/upload-artifact@main
-      with:
-        name: "mihon_${{ env.MIHON_VERSION }}-github-release_x86_64"
-        path: app/build/outputs/apk/standard/release/app-standard-x86_64-release-unsigned.apk
-    - name: Upload universal APK
-      uses: actions/upload-artifact@main
-      with:
-        name: "mihon_${{ env.MIHON_VERSION }}-github-release_universal"
-        path: app/build/outputs/apk/standard/release/app-standard-universal-release-unsigned.apk
+        name: "mihon_${{ env.MIHON_VERSION }}-github-release"
+        path: ./app/build/outputs/apk/release/app-release-unsigned.apk
