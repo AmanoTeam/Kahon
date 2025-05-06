@@ -17,7 +17,7 @@ android {
     namespace = "eu.kanade.tachiyomi"
 
     defaultConfig {
-        applicationId = "app.mihon"
+        applicationId = "com.amanoteam.kahon"
 
         versionCode = 16
         versionName = "0.19.3"
