@@ -74,41 +74,10 @@ android {
             isShrinkResources = true
 
             signingConfig = debug.signingConfig
-
             isProfileable = true
 
             proguardFiles("proguard-android-optimize.txt", "proguard-rules.pro")
         }
-
-        val commonMatchingFallbacks = listOf(release.name)
-
-        create("foss") {
-            initWith(release)
-
-            applicationIdSuffix = ".foss"
-
-            matchingFallbacks.addAll(commonMatchingFallbacks)
-        }
-        create("nightly") {
-            initWith(release)
-
-            applicationIdSuffix = ".debug"
-
-            matchingFallbacks.addAll(commonMatchingFallbacks)
-        }
-        create("benchmark") {
-            initWith(release)
-
-            versionNameSuffix = "-benchmark"
-            applicationIdSuffix = ".benchmark"
-
-            matchingFallbacks.addAll(commonMatchingFallbacks)
-        }
-    }
-
-    sourceSets {
-        getByName("nightly").res.directories.add("src/debug/res")
-        getByName("benchmark").res.directories.add("src/debug/res")
     }
 
     packaging {
