@@ -13,52 +13,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-<<<<<<< HEAD
-      - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-
-      - name: Dependency Review
-        if: github.event_name == 'pull_request'
-        uses: actions/dependency-review-action@40c09b7dc99638e5ddb0bfd91c1673effc064d8a # v4.8.1
-
-      - name: Set up JDK
-        uses: actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165 # v5.0.0
-        with:
-          java-version: 17
-          distribution: temurin
-
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@4d9f0ba0025fe599b4ebab900eb7f3a1d93ef4c2 # v5.0.0
-
-      - name: Check code format
-        run: ./gradlew spotlessCheck
-
-      - name: Build app
-        run: ./gradlew assembleRelease -Pinclude-telemetry -Penable-updater
-
-      - name: Run unit tests
-        id: unit_tests
-        run: ./gradlew testReleaseUnitTest
-
-      - name: Upload test report
-        if: steps.unit_tests.outcome == 'failure'
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
-        with:
-          name: test-report-${{ github.sha }}
-          path: app/build/reports/tests/testReleaseUnitTest
-
-      - name: Upload APK
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
-        with:
-          name: arm64-v8a-${{ github.sha }}
-          path: app/build/outputs/apk/release/app-arm64-v8a-release-unsigned.apk
-
-      - name: Upload mapping
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
-        with:
-          name: mapping-${{ github.sha }}
-          path: app/build/outputs/mapping/release
-=======
     - uses: actions/checkout@main
       with:
         submodules: true
@@ -71,29 +25,8 @@ jobs:
       run: ./gradlew --no-daemon 'assembleStandardRelease'
     - name: Set MIHON_VERSION
       run: echo "MIHON_VERSION=v$(grep --only-matching --perl-regexp 'versionName\s=\s\"\K([0-9\.]+)' './app/build.gradle.kts')+$(git rev-parse --short 'HEAD')" >> "${GITHUB_ENV}"
-    - name: Upload armeabi-v7a APK
+    - name: Upload APK
       uses: actions/upload-artifact@main
       with:
-        name: "mihon_${{ env.MIHON_VERSION }}-github-release_armeabi-v7a"
-        path: app/build/outputs/apk/standard/release/app-standard-armeabi-v7a-release-unsigned.apk
-    - name: Upload arm64-v8a APK
-      uses: actions/upload-artifact@main
-      with:
-        name: "mihon_${{ env.MIHON_VERSION }}-github-release_arm64-v8a"
-        path: app/build/outputs/apk/standard/release/app-standard-arm64-v8a-release-unsigned.apk
-    - name: Upload x86 APK
-      uses: actions/upload-artifact@main
-      with:
-        name: "mihon_${{ env.MIHON_VERSION }}-github-release_x86"
-        path: app/build/outputs/apk/standard/release/app-standard-x86-release-unsigned.apk
-    - name: Upload x86_64 APK
-      uses: actions/upload-artifact@main
-      with:
-        name: "mihon_${{ env.MIHON_VERSION }}-github-release_x86_64"
-        path: app/build/outputs/apk/standard/release/app-standard-x86_64-release-unsigned.apk
-    - name: Upload universal APK
-      uses: actions/upload-artifact@main
-      with:
-        name: "mihon_${{ env.MIHON_VERSION }}-github-release_universal"
-        path: app/build/outputs/apk/standard/release/app-standard-universal-release-unsigned.apk
->>>>>>> d9b4b36d0 (Add my own build workflow because theirs is too bloated)
+        name: "mihon_${{ env.MIHON_VERSION }}-github-release"
+        path: ./app/build/outputs/apk/release/app-release-unsigned.apk
