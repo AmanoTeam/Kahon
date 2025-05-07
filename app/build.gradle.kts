@@ -27,8 +27,8 @@ android {
     defaultConfig {
         applicationId = "com.amanoteam.kahon"
 
-        versionCode = 24
-        versionName = "0.20.0"
+        versionCode = 19
+        versionName = "0.19.8"
 
         buildConfigField("String", "COMMIT_COUNT", "\"${getLatestCommitCount()}\"")
         buildConfigField("String", "COMMIT_SHA", "\"${getLatestCommitSha()}\"")
