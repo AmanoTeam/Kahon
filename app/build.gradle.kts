@@ -22,7 +22,7 @@ android {
         applicationId = "com.amanoteam.kahon"
 
         versionCode = 16
-        versionName = "0.19.3"
+        versionName = "0.19.5"
 
         buildConfigField("String", "COMMIT_COUNT", "\"${getCommitCount()}\"")
         buildConfigField("String", "COMMIT_SHA", "\"${getGitSha()}\"")
