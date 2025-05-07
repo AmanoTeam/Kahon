@@ -31,7 +31,7 @@ android {
     defaultConfig {
         applicationId = "com.amanoteam.kahon"
 
-        versionCode = 34
+        versionCode = 25
         versionName = "0.20.4"
 
         buildConfigField("boolean", "UPDATER_ENABLED", "${Config.enableUpdater}")
@@ -182,9 +182,16 @@ dependencies {
     implementation(libs.androidx.paging.runtime)
     implementation(libs.androidx.paging.compose)
 
+    implementation(libs.androidx.sqlite.bundled)
+
     implementation(libs.kotlin.reflect)
 
     implementation(libs.bundles.kotlinx.coroutines)
+
+    implementation(libs.sqldelight.async)
+
+    implementation(libs.apollo)
+    implementation(libs.apollo.adapters)
 
     implementation(libs.kotlinx.datetime)
 
@@ -266,10 +273,6 @@ dependencies {
 
     // String similarity
     implementation(libs.stringSimilarity)
-
-    // GraphQL generation
-    implementation(libs.apollo)
-    implementation(libs.apollo.adapters)
 
     // Tests
     testImplementation(libs.bundles.test)
