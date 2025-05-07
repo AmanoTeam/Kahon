@@ -30,8 +30,8 @@ android {
     defaultConfig {
         applicationId = "com.amanoteam.kahon"
 
-        versionCode = 30
-        versionName = "0.20.4"
+        versionCode = 24
+        versionName = "0.20.3"
 
         buildConfigField("boolean", "UPDATER_ENABLED", "${Config.enableUpdater}")
 
