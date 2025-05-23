@@ -16,10 +16,10 @@ jobs:
     - uses: actions/checkout@main
       with:
         submodules: true
-    - name: Set up JDK 22
+    - name: Set up JDK 24
       uses: actions/setup-java@main
       with:
-        java-version: 22
+        java-version: 24
         distribution: temurin
     - name: Assemble APK
       run: ./gradlew --no-daemon 'assembleRelease'
@@ -28,5 +28,5 @@ jobs:
     - name: Upload APK
       uses: actions/upload-artifact@main
       with:
-        name: "mihon_${{ env.MIHON_VERSION }}-github-release"
+        name: "kahon_${{ env.MIHON_VERSION }}-github-release"
         path: ./app/build/outputs/apk/release/app-release-unsigned.apk
