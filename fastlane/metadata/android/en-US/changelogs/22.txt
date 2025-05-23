@@ -1,0 +1,2 @@
+* Update to Mihon v0.20.2
+* Restore support for Android 6/7
