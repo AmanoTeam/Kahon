@@ -1,0 +1,2 @@
+* Update to Mihon v0.18.0
+* Add back the rate-limit interceptor for AniList tracker
