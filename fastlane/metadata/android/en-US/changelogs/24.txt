@@ -1,0 +1,3 @@
+* Update to Mihon Beta r8071
+* Make the "Skip duplicate chapters" option also hide duplicates in the chapter listing/download queue
+* Add an experimental "Fingerprint spoofer" option to spoof TLS fingerprints
