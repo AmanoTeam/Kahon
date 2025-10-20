@@ -4,4 +4,5 @@
 
     <color name="accent_blue">#0058A0</color>
     <color name="icon_background">#FAFAFA</color>
+	<color name="ic_launcher_background">#0D0D0D</color>
 </resources>
