@@ -114,6 +114,7 @@ android {
                 "META-INF/LICENSE",
                 "META-INF/NOTICE",
                 "META-INF/README.md",
+                "META-INF/versions/*/OSGI-INF/MANIFEST.MF"
             )
         }
     }
