@@ -95,7 +95,6 @@ class MetadataUpdateJob(private val context: Context, workerParams: WorkerParame
      */
     private suspend fun addMangaToQueue() {
         mangaToUpdate = getLibraryManga.await()
-        notifier.showQueueSizeWarningNotificationIfNeeded(mangaToUpdate)
     }
 
     private suspend fun updateMetadata() {
