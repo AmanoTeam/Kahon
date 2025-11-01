@@ -467,7 +467,6 @@
     <string name="delete_category_confirmation">«%s» пухмӑша катертесшӗн-и?</string>
     <string name="delete_category">Пухмӑша катерт</string>
     <string name="action_display_local_badge">Вырӑнти ҫӑл куҫран</string>
-    <string name="label_warning">Асӑрхаттару</string>
     <string name="action_display_cover_only_grid">Йатсӑр сетке</string>
     <string name="action_move_to_top_all_for_series">Хайлава пуҫа куҫар</string>
     <string name="confirm_lock_change">Улшӑнӑва ҫирӗплетме есӗлӗхе ҫирӗплет</string>

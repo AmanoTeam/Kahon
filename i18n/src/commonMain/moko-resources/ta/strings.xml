@@ -9,7 +9,6 @@
     <string name="label_library">நூலகம்</string>
     <string name="label_recent_updates">புதுப்பிப்புகள்</string>
     <string name="label_default">இயல்புநிலை</string>
-    <string name="label_warning">எச்சரிக்கை</string>
     <string name="label_started">தொடங்கியது</string>
     <string name="label_downloaded">பதிவிறக்கம்</string>
     <string name="unlock_app_title">%s திறக்கவும்</string>
@@ -721,7 +720,6 @@
     <string name="label_mean_score">சராசரி மதிப்பெண்</string>
     <string name="label_used">பயன்படுத்தப்பட்டது</string>
     <string name="download_insufficient_space">குறைந்த சேமிப்பு இடம் காரணமாக அத்தியாயங்களை பதிவிறக்கம் செய்ய முடியவில்லை</string>
-    <string name="download_queue_size_warning">எச்சரிக்கை: பெரிய மொத்தப் பதிவிறக்கங்கள் மூலங்கள் மெதுவாக மாறுவதற்கும்/அல்லது %sஐத் தடுப்பதற்கும் வழிவகுக்கும். மேலும் அறிய தட்டவும்.</string>
     <string name="not_applicable">இதற்கில்லை</string>
     <string name="day_short">%d.டி.</string>
     <string name="notification_updating_progress">நூலகத்தைப் புதுப்பித்தல்… (%s)</string>
@@ -729,7 +727,6 @@
     <string name="minute_short">%d.எம்</string>
     <string name="seconds_short">%d.எச்</string>
     <string name="download_queue_error">அத்தியாயங்களை பதிவிறக்கம் செய்ய முடியவில்லை. பதிவிறக்கங்கள் பிரிவில் நீங்கள் மீண்டும் முயற்சி செய்யலாம்</string>
-    <string name="notification_size_warning">பெரிய புதுப்பிப்புகள் ஆதாரங்களுக்கு தீங்கு விளைவிக்கும் மற்றும் மெதுவான புதுப்பிப்புகளுக்கு வழிவகுக்கும் மற்றும் பேட்டரி பயன்பாட்டையும் அதிகரிக்கும். மேலும் அறிய தட்டவும்.</string>
     <string name="notification_new_chapters">புதிய அத்தியாயங்கள் காணப்பட்டன</string>
     <string name="notification_chapters_single">அத்தியாயம் %1$s</string>
     <string name="notification_chapters_single_and_more">அத்தியாயம் %1$s மற்றும் %2$d மேலும்</string>

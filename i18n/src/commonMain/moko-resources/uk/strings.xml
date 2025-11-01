@@ -524,11 +524,8 @@
     <string name="ext_installer_shizuku_unavailable_dialog">Встановіть і запустіть Shizuku, щоб використовувати Shizuku як інсталятор розширення.</string>
     <string name="pref_verbose_logging">Докладне журналювання</string>
     <string name="pref_verbose_logging_summary">Записувати докладні журнали до системного журналу (знижує продуктивність застосунку)</string>
-    <string name="notification_size_warning">Попередження: великі оновлення можуть призвести до сповільнення джерел або збільшити використання батареї. Тицьніть задля подробиць.</string>
-    <string name="download_queue_size_warning">Попередження: великий об\'єм завантажень може призвести до сповільнення роботи джерел та/або блокуванню %s.</string>
     <string name="ext_update_all">Оновити все</string>
     <string name="backup_info">Ви повинні зберігати декілька резервних копій в інших місцях. Резервні копії можуть містити конфіденційні дані, включно зі збереженими паролями; будьте обережні, якщо ділитеся ними.</string>
-    <string name="label_warning">Попередження</string>
     <string name="action_display_language_badge">Мова</string>
     <string name="update_72hour">Що 3 дні</string>
     <string name="connected_to_wifi">Тільки через Wi-Fi</string>

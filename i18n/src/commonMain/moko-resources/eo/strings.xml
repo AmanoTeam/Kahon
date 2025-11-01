@@ -444,7 +444,6 @@
     <string name="pref_library_update_refresh_metadata">Aŭtomate aktualigi metadatumojn</string>
     <string name="secure_screen_summary">Sekura ekrano kaŝas apan enhavon dum ŝanĝado de apo kaj malpermesas ekrankopiojn</string>
     <string name="label_stats">Statistikoj</string>
-    <string name="label_warning">Averto</string>
     <string name="label_started">Komencitaj</string>
     <string name="label_local">Loka</string>
     <string name="label_downloaded">Elŝutitaj</string>
@@ -776,9 +775,7 @@
     <string name="hour_short">%dh</string>
     <string name="minute_short">%dm</string>
     <string name="seconds_short">%ds</string>
-    <string name="download_queue_size_warning">Averto: grandaj amasaj elŝutoj povas igi fontojn fariĝi pli malrapidaj kaj/aŭ bloki %s. Tuŝetu por ekscii pli.</string>
     <string name="notification_updating_progress">Ĝisdatigado de biblioteko… (%s)</string>
-    <string name="notification_size_warning">Grandaj ĝisdatigoj povas damaĝi fontojn kaj konduki al pli malrapidaj ĝisdatigoj kaj pliigan baterian uzadon. Tuŝetu por ekscii pli.</string>
     <string name="learn_more">Tuŝetu por ekscii pli</string>
     <string name="notification_first_add_to_library">Bonvolu aldoni la elementon al via biblioteko antaŭ ol fari tion</string>
     <string name="library_errors_help">Por helpo pri kiel ripari erarojn de bibliotekaj ĝisdatigoj, vidu %1$s</string>

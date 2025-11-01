@@ -323,7 +323,6 @@
     <string name="action_order_by_chapter_number">לפי מספר הפרק</string>
     <string name="action_asc">עולה</string>
     <string name="action_desc">יורד</string>
-    <string name="label_warning">אזהרה</string>
     <string name="confirm_lock_change">נדרש אימות לאישור השינוי</string>
     <string name="pref_category_reader">מצב קריאה</string>
     <string name="pref_category_tracking">מעקב</string>
@@ -495,7 +494,6 @@
     <string name="pref_reset_viewer_flags_success">כל הגדרות מצב הקריאה אופסו</string>
     <string name="exclude">החרגה: %s</string>
     <string name="source_filter_empty_screen">לא נמצאו מקורות מותקנים</string>
-    <string name="notification_size_warning">הורדות גדולות פוגעות במקורות ויכולות לגרום לעדכונים איטיים יותר וגם לשימוש מוגבר בסוללה. לחץ כדי ללמוד עוד.</string>
     <string name="information_empty_category_dialog">עדיין אין קטגוריות.</string>
     <string name="learn_more">לחץ כדי ללמוד עוד</string>
     <string name="pref_clear_history">נקה היסטוריה</string>
@@ -522,7 +520,6 @@
     <string name="clear_history_confirmation">אתה בטוח? כל ההיסטוריה תמחק.</string>
     <string name="migration_help_guide">מדריך נדידת מקורות</string>
     <string name="download_insufficient_space">לא ניתן להוריד פרקים כי אין מספיק מקום אחסון</string>
-    <string name="download_queue_size_warning">אזהרה: הורדות גדולות עלולות לגרום להאטה במקורות ו/או לחסימת %s. לחץ כדי ללמוד עוד.</string>
     <string name="local_invalid_format">פורמט פרק לא תקין</string>
     <string name="on_hiatus">בהפסקה</string>
     <string name="delete_category_confirmation">האם למחוק את הקטגוריה \"%s\"?</string>

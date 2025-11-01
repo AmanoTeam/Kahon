@@ -522,14 +522,11 @@
     <string name="ext_installer_pref">Yükleyici</string>
     <string name="ext_install_service_notif">Uzantı yükleniyor…</string>
     <string name="action_sort_count">Toplam girdi</string>
-    <string name="label_warning">Uyarı</string>
     <string name="action_display_language_badge">Dil</string>
     <string name="backup_info">Yedeklerin kopyalarını başka yerlerde de tutmalısınız. Yedekler, şifreler dahil olmak üzere hassas verileri içerebilirler; paylaşıyorsanız dikkat edin.</string>
-    <string name="notification_size_warning">Büyük güncellemeler kaynaklara zarar verir ve daha yavaş güncellemelere ve ayrıca pil kullanımının artmasına neden olabilir. Daha fazla bilgi için dokunun.</string>
     <string name="pref_verbose_logging">Ayrıntılı günlük kaydı</string>
     <string name="pref_verbose_logging_summary">Ayrıntılı günlükleri sistem günlüğüne yaz (uygulama performansını düşürür)</string>
     <string name="connected_to_wifi">Yalnızca kablosuz ağda</string>
-    <string name="download_queue_size_warning">Uyarı: Büyük toplu indirmeler kaynakların yavaşlamasına ve/veya %s\'u engellemesine neden olabilir. Daha fazla bilgi için dokunun.</string>
     <string name="update_72hour">3 günde bir</string>
     <string name="ext_update_all">Tümünü güncelle</string>
     <string name="pref_auto_clear_chapter_cache">Uygulama başlatıldığında bölüm önbelleğini temizle</string>

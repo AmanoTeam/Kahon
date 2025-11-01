@@ -298,7 +298,6 @@
     <string name="rotation_force_portrait">Заблакаваная кніжная</string>
     <string name="rotation_type">Арыентацыя</string>
     <string name="pref_rotation_type">Прадвызначаная арыентацыя</string>
-    <string name="label_warning">Папярэджанне</string>
     <string name="delete_category">Выдаліць катэгорыю</string>
     <string name="delete_category_confirmation">Вы хочаце выдаліць катэгорыю «%s»?</string>
     <string name="internal_error">InternalError: Праверце журнал збояў для дадатковых зведак</string>
@@ -769,9 +768,7 @@
     <string name="seconds_short">%dс</string>
     <string name="download_queue_error">Не ўдалося спампаваць раздзелы. Паспрабуйце яшчэ раз у раздзеле спамповак</string>
     <string name="download_insufficient_space">Не ўдалося спампаваць праз недахоп месца ў сховішчы</string>
-    <string name="download_queue_size_warning">Папярэджанне: вялікая колькасць спамповак можа прывесці да запавольвання працы крыніц і/або блакіроўкі %s. Націсніце, каб даведацца больш.</string>
     <string name="notification_updating_progress">Абнаўленне бібліятэкі… (%s)</string>
-    <string name="notification_size_warning">Вялікія абнаўленні шкодзяць крыніцам і могуць прывесці да іх запавольвання і павялічанага расходу батарэі. Націсніце, каб даведацца больш.</string>
     <string name="notification_new_chapters">Знойдзены новыя раздзелы</string>
     <string name="notification_chapters_single">Раздзел %1$s</string>
     <string name="notification_chapters_single_and_more">Раздзел %1$s ды яшчэ %2$d</string>

@@ -390,7 +390,6 @@
     <string name="action_sort_unread_count">Número de non lidos</string>
     <string name="action_show_manga">Mostrar o elemento</string>
     <string name="action_sort_chapter_fetch_date">Data de obtención dos capítulos</string>
-    <string name="label_warning">Advertencia</string>
     <string name="confirm_lock_change">Identifícate para confirmar o cambio</string>
     <string name="action_display_local_badge">Fonte local</string>
     <string name="action_remove_everything">Quitar todo</string>
@@ -534,7 +533,6 @@
     <string name="pref_category_for_this_series">Para esta serie</string>
     <string name="label_completed_titles">Elementos rematados</string>
     <string name="not_applicable">Non dispoñible</string>
-    <string name="notification_size_warning">As actualizacións grandes perxudican ás fontes e poden supoñer actualizacións máis lentas e un maior uso da batería. Preme para saber máis.</string>
     <string name="notification_new_chapters">Encontráronse capítulos novos</string>
     <string name="notification_first_add_to_library">Engade o elemento a túa biblioteca antes de facer isto</string>
     <string name="download_notifier_unknown_error">Non se puido descargar o capítulo por un erro inesperado</string>
@@ -565,7 +563,6 @@
     <string name="crash_screen_description">%s pechouse por un problema inesperado. Aconsellámoste que compartas os rexistros de erros na canle de soporte no Discord (en inglés).</string>
     <string name="crash_screen_restart_application">Reinicia a aplicación</string>
     <string name="source_filter_empty_screen">Non se atopou ninguna fonte instalada</string>
-    <string name="download_queue_size_warning">Advertencia: As descargas pesadas poden facer que as fontes se volvan máis lentas e/ou bloqueen %s. Preme para saber máis.</string>
     <string name="update_check_open">Abrir no GitHub</string>
     <string name="download_notifier_downloader_title">Xestor de descargas</string>
     <string name="download_notifier_title_error">Erro</string>

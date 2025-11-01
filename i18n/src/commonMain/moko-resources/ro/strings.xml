@@ -474,7 +474,6 @@
     <string name="cancel_all_for_series">Anulează totul pentru această serie</string>
     <string name="action_display_language_badge">Limbă</string>
     <string name="confirm_lock_change">Autentifică-te pentru a confirma schimbările</string>
-    <string name="label_warning">Avertizare</string>
     <string name="theme_strawberrydaiquiri">Daiquiri de căpșuni</string>
     <string name="theme_tako">Tako</string>
     <string name="theme_yinyang">Yin și Yang</string>
@@ -485,7 +484,6 @@
     <string name="skipped_reason_completed">Ignorata deoarece seria este completa</string>
     <string name="skipped_reason_not_started">Ignorat din cauza lipsei de capitolel citite</string>
     <string name="local_invalid_format">Format de capitol invalid</string>
-    <string name="download_queue_size_warning">Atenție : actualizarile mari în masă vor face sursele mai incete și/sau vor bloca %s. Apăsați pentru mai multe informatii.</string>
     <string name="getting_started_guide">Ghidul de inceput</string>
     <string name="skipped_reason_not_caught_up">Ignorata deoarece sunt capitole necitite</string>
     <string name="empty_backup_error">Nu există intrări în bibliotecă pentru a face backupuri</string>
@@ -579,7 +577,6 @@
     <string name="pref_reset_viewer_flags_summary">Resetați modul de citire si orientare pentru toate seriile</string>
     <string name="download_ahead">Descarcă înainte</string>
     <string name="multi_lang">Multiple</string>
-    <string name="notification_size_warning">Actualizări mari dăunează surselor și pot duce la actualizări mai lente și creșterea nivelului de utilizare a bateriei. Apasă pentru a afla mai multe.</string>
     <string name="label_background_activity">Activități în fundal</string>
     <string name="update_check_open">Deschide pe GitHub</string>
     <string name="not_installed">Nu este instalat</string>

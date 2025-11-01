@@ -11,7 +11,6 @@
     <string name="track">Sporing</string>
     <string name="history">Historikk</string>
     <string name="label_default">Standard</string>
-    <string name="label_warning">Åtvaring</string>
     <string name="confirm_lock_change">Autentiser for å stadfesta endring</string>
     <string name="action_filter">Filter</string>
     <string name="action_filter_bookmarked">Bokmerket</string>

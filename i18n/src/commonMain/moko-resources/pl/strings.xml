@@ -514,7 +514,6 @@
     <string name="relative_time_today">Dzisiaj</string>
     <string name="theme_tealturquoise">Błękitny &amp; Turkusowy</string>
     <string name="theme_midnightdusk">Zmierzch północy</string>
-    <string name="notification_size_warning">Ostrzeżenie: duże aktualizacje biblioteki mogą prowadzić do zwiększonego zużycia baterii oraz spowolnienia działania źródeł. Kliknij, by dowiedzieć się więcej.</string>
     <string name="ext_installer_shizuku_unavailable_dialog">Zainstaluj i uruchom Shizuku, aby używać go jako instalatora rozszerzeń.</string>
     <string name="ext_installer_pref">Instalator</string>
     <string name="pref_verbose_logging">Szczegółowe logi</string>
@@ -524,8 +523,6 @@
     <string name="backup_info">Radzimy przechowywać kopie również w innych miejscach.</string>
     <string name="action_sort_count">Ilość wejść</string>
     <string name="action_display_language_badge">Język</string>
-    <string name="label_warning">Ostrzeżenie</string>
-    <string name="download_queue_size_warning">Ostrzeżenie: Duże aktualizacje biblioteki mogą prowadzić do zwiększonego zużycia baterii oraz spowolnienia działania źródeł.</string>
     <string name="update_72hour">Co 3 dni</string>
     <string name="connected_to_wifi">Tylko przez Wi-Fi</string>
     <string name="enhanced_tracking_info">Usługi dostarczania ulepszonych funkcji dla niektórych źródeł. Mangi po dodaniu do biblioteki są automatycznie śledzone.</string>

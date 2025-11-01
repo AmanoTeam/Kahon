@@ -66,7 +66,6 @@
     <string name="action_filter_tracked">కంట కనిపెట్టబడ్డవి</string>
     <string name="label_default">ప్రమాణము</string>
     <string name="action_sort_count">మొత్తం ఎంట్రీలు</string>
-    <string name="label_warning">హెచ్చరిక</string>
     <string name="confirm_lock_change">మార్పును నిర్ధారించడానికి ప్రమాణీకరించండి</string>
     <string name="action_open_in_browser">జాలసంచారకములో తెరువుము</string>
     <string name="action_newest">నూతనమైనది</string>

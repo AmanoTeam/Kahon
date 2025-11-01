@@ -332,7 +332,6 @@
     <string name="action_move_to_bottom">Presunúť na spodok</string>
     <string name="action_disable">Zakázať</string>
     <string name="action_unpin">Odopnúť</string>
-    <string name="label_warning">Upozornenie</string>
     <string name="action_filter_tracked">Sledované</string>
     <string name="pref_category_theme">Téma</string>
     <string name="theme_light">Vyp.</string>
@@ -583,8 +582,6 @@
     <string name="pref_clear_webview_data">Vymazanie údajov WebView</string>
     <string name="webview_data_deleted">Údaje WebView boli vymazané</string>
     <string name="manga_info_expand">Viac</string>
-    <string name="download_queue_size_warning">Upozornenie: Veľké hromadné sťahovanie môže viesť k spomaleniu zdrojov a/alebo blokovaniu %s. Klepnutím sa dozviete viac.</string>
-    <string name="notification_size_warning">Veľké aktualizácie poškodzujú zdroje a môžu viesť k pomalším aktualizáciám a tiež k zvýšeniu spotreby batérie. Klepnutím sa dozviete viac.</string>
     <string name="creating_backup_error">Zálohovanie zlyhalo</string>
     <string name="action_track">Sledovať</string>
     <string name="website">Webová stránka</string>

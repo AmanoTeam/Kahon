@@ -89,7 +89,6 @@
     <string name="label_extensions">এক্সটেনশ্বনসমূহ</string>
     <string name="label_extension_info">এক্সটেনশ্বন তথ্য</string>
     <string name="label_help">সহায়</string>
-    <string name="label_warning">সতৰ্কবাণী</string>
     <string name="confirm_lock_change">পৰিবৰ্তন নিশ্চিত কৰিবলৈ প্ৰমাণীকৰণ কৰক</string>
     <string name="label_default">ডিফল্ট</string>
     <string name="action_settings">ছেটিংছ</string>
@@ -717,9 +716,7 @@
     <string name="seconds_short">%dছে</string>
     <string name="download_queue_error">অধ্যায় ডাউনলোড কৰিব পৰা নগ\'ল। আপুনি ডাউনলোড অংশত পুনৰ চেষ্টা কৰিব পাৰে</string>
     <string name="download_insufficient_space">সংৰক্ষণ স্থান কম হোৱাৰ বাবে অধ্যায় ডাউনলোড কৰিব পৰা নগ\'ল</string>
-    <string name="download_queue_size_warning">সতৰ্কবাণী: বৃহৎ বাল্ক ডাউনলোডে উৎসসমূহ লেহুৱা আৰু/অথবা %s ব্লক কৰিব পাৰে। অধিক জানিবলৈ টাপ কৰক।</string>
     <string name="notification_updating_progress">পুথিভঁৰাল আপডেট কৰি আছে… (%s)</string>
-    <string name="notification_size_warning">বৃহৎ আপডেটে উৎসৰ ক্ষতি কৰে আৰু লেহুৱা আপডেট আৰু অধিক বেটাৰী ব্যৱহাৰৰ কাৰণ হ\'ব পাৰে। অধিক জানিবলৈ টাপ কৰক।</string>
     <string name="notification_new_chapters">নতুন অধ্যায় পোৱা গৈছে</string>
     <string name="notification_chapters_single">অধ্যায় %1$s</string>
     <string name="notification_chapters_single_and_more">অধ্যায় %1$s আৰু %2$d অধিক</string>

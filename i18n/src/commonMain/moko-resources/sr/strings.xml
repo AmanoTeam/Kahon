@@ -355,7 +355,6 @@
     <string name="pref_library_update_refresh_metadata_summary">Провери да ли постоје нови омоти при ажурирању колекције</string>
     <string name="pref_library_update_refresh_metadata">Аутоматски освежи метаподатке</string>
     <string name="action_filter_tracked">Запраћено</string>
-    <string name="label_warning">Упозорење</string>
     <string name="confirm_lock_change">Оверите да бисте потврдили промене</string>
     <string name="action_sort_count">Укупно наслова</string>
     <string name="action_sort_chapter_fetch_date">Датум преузимања</string>
@@ -530,8 +529,6 @@
     <string name="clear_history_completed">Историја је избрисана</string>
     <string name="clear_history_confirmation">Да ли сте сигурни? Цела историја ће бити изгубљена.</string>
     <string name="migration_help_guide">Водич за миграцију извора</string>
-    <string name="download_queue_size_warning">Упозорење: велики број преузимања може довести до успоравања извора и/или блокирања %s-а. Додирни да сазнаш више.</string>
-    <string name="notification_size_warning">Велика ажурирања штете изворима и могу довести до споријег ажурирања и повећања потрошње батерије. Кликни да сазнаш више.</string>
     <string name="ext_update_all">Ажурирај све</string>
     <string name="clear_database_source_item_count">Број наслова у бази података које нису у колекцији: %1$d</string>
     <string name="extension_api_error">Преузимање листе додатака није успело</string>

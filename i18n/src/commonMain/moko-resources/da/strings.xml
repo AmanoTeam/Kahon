@@ -6,7 +6,6 @@
     <string name="label_help">Hjælp</string>
     <string name="label_migration">Migerering</string>
     <string name="label_default">Standard</string>
-    <string name="label_warning">Advarsel</string>
     <string name="action_filter_bookmarked">Bogmærket</string>
     <string name="action_filter_empty">Fjern filter</string>
     <string name="action_select_inverse">Inverter valg</string>

@@ -326,7 +326,6 @@
     <string name="pref_rotation_type">Noklusējuma rotācijas tips</string>
     <string name="pref_high">Augsts</string>
     <string name="pref_highest">Augstākais</string>
-    <string name="label_warning">Brīdinājums</string>
     <string name="pref_skip_read_chapters">Izlaist izlasītās nodaļas</string>
     <string name="pref_inverted_colors">Invertēts</string>
     <string name="filter_mode_multiply">Reizināt</string>
@@ -495,7 +494,6 @@
     <string name="confirm_set_image_as_cover">Vai izmantot šo attēlu kā vāku?</string>
     <string name="pref_category_for_this_series">Priekš šīs sērijas</string>
     <string name="dropped">Pamests</string>
-    <string name="download_queue_size_warning">Brīdinājums: liela apjoma lejupielāde var izraisīt to, ka avoti kļūst lēnāki un/vai bloķē %s. Pieskarieties, lai uzzinātu vairāk.</string>
     <string name="skipped_reason_not_started">Izlaists, jo neviena nodaļa nav izlasīta</string>
     <string name="file_select_cover">Atlasiet vāka attēlu</string>
     <string name="file_select_backup">Atlasiet dublējuma failu</string>
@@ -526,7 +524,6 @@
     <string name="error_saving_picture">Kļūda, saglabājot attēlu</string>
     <string name="cover_updated">Vāks atjaunināts</string>
     <string name="not_installed">Nav instalēts</string>
-    <string name="notification_size_warning">Daudz atjauninājumi kaitē avotiem un var izraisīt lēnākus atjauninājumus un arī lielāku akumulatora lietojumu. Pieskarieties, lai uzzinātu vairāk.</string>
     <string name="source_not_installed">Avots nav instalēts: %1$s</string>
     <string name="complete_list">Pabeigto saraksts</string>
     <string name="on_hold_list">Aizturēto saraksts</string>

@@ -523,14 +523,11 @@
     <string name="ext_install_service_notif">正在安裝擴充套件…</string>
     <string name="action_sort_count">作品總數</string>
     <string name="action_display_language_badge">語言</string>
-    <string name="label_warning">警告</string>
-    <string name="notification_size_warning">大量更新會損害來源，並可能導致更新速度緩慢、電池用量增加，輕觸以瞭解詳情</string>
     <string name="pref_verbose_logging">錄製詳細記錄</string>
     <string name="backup_info">你應該在多處儲存備份副本，備份檔可能含有敏感資料 (包括任何已儲存的密碼)，分享時請留意</string>
     <string name="pref_verbose_logging_summary">傾印詳細記錄至系統日誌 (將降低應用程式效能)</string>
     <string name="connected_to_wifi">僅透過 Wi-Fi</string>
     <string name="update_72hour">每 3 天</string>
-    <string name="download_queue_size_warning">警告：大量批次下載可能壅塞來源，甚至使其封鎖 %s，輕觸以瞭解詳情</string>
     <string name="ext_update_all">全部更新</string>
     <string name="pref_auto_clear_chapter_cache">啟動應用程式時清除章節快取</string>
     <string name="clear_database_source_item_count">資料庫中有 %1$d 部作品未加入書櫃</string>

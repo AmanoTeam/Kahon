@@ -229,7 +229,6 @@
     <string name="pref_keep_screen_on">स्क्रिन अन राख्नुहोस्</string>
     <string name="pref_create_folder_per_manga_summary">इन्ट्रीहरूको शीर्षक अनुसार फोल्डरहरू सिर्जना गर्दछ</string>
     <string name="action_sort_count">कुल इन्ट्रीहरू</string>
-    <string name="label_warning">सावधान</string>
     <string name="action_display_language_badge">भाषा</string>
     <string name="default_category">पूर्वनिर्धारित वर्ग</string>
     <string name="categorized_display_settings">क्रमबद्धका लागि प्रति-वर्ग सेटिंग्स</string>
@@ -523,7 +522,6 @@
     <string name="manga_download">डाउनलोड</string>
     <string name="transition_no_previous">अघिल्लो अध्याय छैन</string>
     <string name="download_insufficient_space">थोरै जम्मा गर्ने ठाउँ भएको कारणले अध्याय डाउनलोड हुन सकिँदएन</string>
-    <string name="download_queue_size_warning">सावधान: ठूलो हिस्सामा डाउनलोड गर्नाले स्रोत ढिलो चल्न अनि/वा %s लाई अवरुद्घ गर्न सक्नेछ। थप जान्नको लागि यहाँ थिच्नुहोस्।।</string>
     <string name="manga_tracking_tab">ट्र्याकिङ</string>
     <string name="add_tracking">ट्र्याक गर्नुहोस्</string>
     <string name="reading">पढ्दै</string>
@@ -540,7 +538,6 @@
     <string name="channel_complete">पूरा</string>
     <string name="channel_errors">त्रुटिहरू</string>
     <string name="skipped_reason_not_started">कुनै अध्याय नपढेकाले छोडियो</string>
-    <string name="notification_size_warning">ठूला अपडेटले स्रोतहरूलाई हानि पुर्‍याउँछ र यसले ढिलो अपडेट्स निम्त्याउन सक्छ र ब्याट्रीको प्रयोग पनि बढाउँछ। थप जान्न ट्याप गर्नुहोस्।</string>
     <string name="information_webview_required">एप काम गर्नका लागि WebView आवश्यक छ</string>
     <string name="action_move_to_top_all_for_series">श्रृङ्खलालाई शीर्षमा सर्नुहोस्</string>
     <string name="rotation_reverse_portrait">पोर्ट्रेट उल्ट्याउनु</string>
