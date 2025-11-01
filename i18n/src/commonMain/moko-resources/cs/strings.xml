@@ -520,7 +520,6 @@
     <string name="ext_install_service_notif">Instaluji rozšíření…</string>
     <string name="ext_app_info">Info o Aplikaci</string>
     <string name="pref_inverted_colors">Invertované</string>
-    <string name="label_warning">Varování</string>
     <string name="backup_info">Kopie záloh byste také měli uchovat na více místech. Zálohy mohou obsahovat citlivé informace, včetně jakýchkoliv uložených hesel; při sdílení buďte opatrní.</string>
     <string name="action_sort_count">Celkem položek</string>
     <string name="action_select_inverse">Vybrat obráceně</string>
@@ -528,10 +527,8 @@
     <string name="update_72hour">Každé 3 dny</string>
     <string name="connected_to_wifi">Jen na Wi-Fi</string>
     <string name="pref_verbose_logging">Podrobné protokolování</string>
-    <string name="download_queue_size_warning">Varování: hromadné stahování může vést k tomu, že zdroje zpomalí a/nebo zablokují %s. Klepnutím se dozvíte více.</string>
     <string name="ext_update_all">Aktualizovat vše</string>
     <string name="pref_verbose_logging_summary">Vypisovat podrobné informace do systémového protokolu (sníží výkon aplikace)</string>
-    <string name="notification_size_warning">Varování: velké aktualizace poškozují zdroje a můžou vést k pomalejším aktualizacím a zvýšenému využití baterie. Klepnutím se dozvíte více.</string>
     <string name="pref_auto_clear_chapter_cache">Vymazat mezipaměť kapitol při spuštění aplikace</string>
     <string name="extension_api_error">Chyba v získání seznamu rozšíření</string>
     <string name="privacy_policy">Zásady ochrany osobních údajů</string>

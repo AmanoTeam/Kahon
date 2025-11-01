@@ -204,7 +204,6 @@
     <string name="label_downloaded">डाऊनलोड झाले</string>
     <string name="on">चालु</string>
     <string name="confirm_lock_change">बदलांची पुष्टी करण्यासाठी प्रमाणीकरण करा</string>
-    <string name="label_warning">चेतावणी</string>
     <string name="off">बंद</string>
     <string name="action_set_interval">मध्यांतर</string>
     <string name="action_filter_tracked">ट्रॅक केले</string>

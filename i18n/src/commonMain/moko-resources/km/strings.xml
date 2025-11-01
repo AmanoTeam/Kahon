@@ -3,7 +3,6 @@
     <string name="label_download_queue">កំពុងទាញយក</string>
     <string name="action_search_settings">ស្វែងរកក្នុងការកំណត់</string>
     <string name="chapters">ភាគ</string>
-    <string name="label_warning">បំរាម</string>
     <string name="action_filter_unread">មិនទាន់អាន</string>
     <string name="action_sort_last_read">អានចុងក្រោយគេ</string>
     <string name="action_previous_chapter">ភាគមុន</string>

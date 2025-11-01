@@ -97,7 +97,6 @@
     <string name="action_filter_empty">Hiq filtrin</string>
     <string name="action_sort_alpha">Sipas alfabetit</string>
     <string name="action_sort_total">Totali i kapitujve</string>
-    <string name="label_warning">Paralajmërim</string>
     <string name="action_sort_count">Totali i elementeve</string>
     <string name="action_sort_last_read">Leximi i fundit</string>
     <string name="confirm_lock_change">Vërtetohuni për të konfirmuar ndryshimin</string>
@@ -422,7 +421,6 @@
     <string name="add_tracking">Shto gjurmimin</string>
     <string name="migration_dialog_what_to_include">Zgjidhni të dhënat për të përfshirë</string>
     <string name="download_queue_error">Kapitujt nuk mund të shkarkoheshin. Mund të provoni përsëri në seksionin e shkarkimeve</string>
-    <string name="notification_size_warning">Përditësimet e mëdha dëmtojnë burimet dhe mund të çojnë në përditësime më të ngadalta dhe gjithashtu rritje të përdorimit të baterisë. Trokit për të mësuar më shumë.</string>
     <string name="clear_database_completed">Elementet u fshinë</string>
     <string name="pref_disable_battery_optimization">Çaktivizo optimizimin e baterisë</string>
     <string name="email">Adresa e emailit</string>
@@ -595,7 +593,6 @@
     <string name="crash_screen_description">%s hasi në një gabim të papritur. Ne ju sugjerojmë që të fotografoni këtë mesazh, të hidhni regjistrat e aksidenteve dhe më pas ta shpërndani në kanalin tonë të mbështetjes në Discord.</string>
     <string name="crash_screen_restart_application">Rinisni aplikacionin</string>
     <string name="download_insufficient_space">Kapitujt nuk mund të shkarkoheshin për shkak të hapësirës së ulët të ruajtjes</string>
-    <string name="download_queue_size_warning">Paralajmërim: shkarkimet e mëdha me shumicë mund të çojnë në ngadalësimin e burimeve dhe/ose bllokimin e %s. Trokit për të mësuar më shumë.</string>
     <string name="notification_new_chapters">U gjetën kapituj të rinj</string>
     <string name="learn_more">Trokit për të mësuar më shumë</string>
     <string name="notification_cover_update_failed">Përditësimi i kopertinës dështoi</string>

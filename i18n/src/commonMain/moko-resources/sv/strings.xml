@@ -525,11 +525,8 @@
     <string name="pref_verbose_logging_summary">Skriv ut utförliga loggar till systemloggen (minskar appprestanda)</string>
     <string name="backup_info">Du bör även spara kopior av säkerhetskopior på andra platser. Säkerhetskopior kan innehålla känsliga uppgifter, t.ex. lagrade lösenord; var försiktig om du delar dem.</string>
     <string name="pref_verbose_logging">Omfattande loggning</string>
-    <string name="label_warning">Varning</string>
     <string name="action_display_language_badge">Språk</string>
     <string name="connected_to_wifi">Bara över Wi-Fi</string>
-    <string name="notification_size_warning">Stora uppdateringar skadar källor och kan leda till långsammare uppdateringar samt en ökad batterianvändning. Tryck för att få veta mer.</string>
-    <string name="download_queue_size_warning">Varning: stora massnerladdningar kan leda till att källor blir långsamma och/eller blockerar %s. Tryck för att få veta mer.</string>
     <string name="update_72hour">Var 3:e dag</string>
     <string name="ext_update_all">Uppdatera alla</string>
     <string name="pref_auto_clear_chapter_cache">Rensa kapitelcache när appen startas</string>

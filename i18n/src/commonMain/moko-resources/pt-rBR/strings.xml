@@ -525,12 +525,9 @@
     <string name="pref_verbose_logging_summary">Imprime registros detalhados no registro de eventos do sistema (reduz o desempenho do aplicativo)</string>
     <string name="pref_verbose_logging">Registro de eventos detalhado</string>
     <string name="action_display_language_badge">Idioma</string>
-    <string name="notification_size_warning">Atualizações com muitos itens prejudicam as fontes e podem deixar as atualizações lentas e aumentar o uso da bateria. Toque para saber mais.</string>
-    <string name="label_warning">Aviso</string>
     <string name="backup_info">Você deve manter cópias em outros locais também. Backups podem ter informações sensíveis incluindo senhas salvas; tenha cuidado se compartilhar.</string>
     <string name="connected_to_wifi">Somente no Wi-Fi</string>
     <string name="update_72hour">A cada 3 dias</string>
-    <string name="download_queue_size_warning">Aviso: grandes downloads em massa podem levar as fontes a ficarem lentas e/ou começarem a bloquear o %s. Toque para saber mais.</string>
     <string name="ext_update_all">Atualizar tudo</string>
     <string name="pref_auto_clear_chapter_cache">Limpar o cache de capítulos ao abrir o aplicativo</string>
     <string name="clear_database_source_item_count">%1$d itens que não estão na biblioteca no banco de dados</string>

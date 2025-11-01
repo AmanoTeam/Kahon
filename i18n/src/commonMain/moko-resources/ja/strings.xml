@@ -524,11 +524,8 @@
     <string name="enhanced_tracking_info">特定ソース専用の高度な機能を提供します。項目はライブラリに追加される時、自動で追跡され始めます。</string>
     <string name="backup_info">バックアップのコピーは、他の場所にも保管しておくことをお勧めします。バックアップには、保存されたパスワードなど、機密情報が含まれている場合がありますので、共有する際は十分注意してください。</string>
     <string name="pref_verbose_logging_summary">詳細なログをシステムログに出力します（アプリのパフォーマンスが低下します）</string>
-    <string name="notification_size_warning">大規模なアップデートはリソースに負荷をかけ、アップデート速度の低下やバッテリー消費量の増加につながる可能性があります。詳細についてはタップしてご確認ください。</string>
     <string name="action_display_language_badge">言語</string>
-    <string name="label_warning">警告</string>
     <string name="pref_verbose_logging">詳細ログ</string>
-    <string name="download_queue_size_warning">警告：大量のダウンロードは、ソースの速度低下や %s のブロックにつながる可能性があります。詳細を確認するにはタップしてください。</string>
     <string name="update_72hour">3 日ごと</string>
     <string name="connected_to_wifi">Wi-Fi 接続時のみ</string>
     <string name="ext_update_all">すべて更新</string>
