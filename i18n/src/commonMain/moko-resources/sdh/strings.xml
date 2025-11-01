@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="label_default">بنەڕەتی</string>
-    <string name="label_warning">ئاگاداری</string>
     <string name="name">ناو</string>
     <string name="label_more">زیاتر</string>
     <string name="label_settings">سازکارییەکان</string>

@@ -66,7 +66,6 @@
     <string name="action_sort_count">Jami qismlar</string>
     <string name="on">Yoniq</string>
     <string name="action_sort_last_manga_update">Oxirgi yangilanish tekshiruvi</string>
-    <string name="label_warning">Ogohlantirish</string>
     <string name="confirm_lock_change">O\'zgartirishni tasdiqlash uchun autentifikatsiya qiling</string>
     <string name="action_filter_tracked">Kuzatilayotgan</string>
     <string name="action_display_show_number_of_items">Qismlar sonini ko\'rsatish</string>

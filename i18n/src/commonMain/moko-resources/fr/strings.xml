@@ -525,12 +525,9 @@
     <string name="pref_verbose_logging">Rapports détaillés</string>
     <string name="pref_verbose_logging_summary">Inclut des rapports détaillés dans les traces systèmes (réduit les performances de l\'application)</string>
     <string name="action_display_language_badge">Langue</string>
-    <string name="label_warning">Avertissement</string>
-    <string name="notification_size_warning">Les mises à jour importantes nuisent aux sources et peuvent entraîner un ralentissement des mises à jour ainsi qu\'une augmentation de l\'utilisation de la batterie. Appuyez pour en savoir plus.</string>
     <string name="backup_info">Vous devez également conserver des copies des sauvegardes à d\'autres endroits.</string>
     <string name="connected_to_wifi">Uniquement en Wi-Fi</string>
     <string name="update_72hour">Tous les 3 jours</string>
-    <string name="download_queue_size_warning">Attention : les téléchargements massifs peuvent entraîner un ralentissement des sources ou le blocage de %s. Appuyez pour en savoir plus.</string>
     <string name="ext_update_all">Tout mettre à jour</string>
     <string name="pref_auto_clear_chapter_cache">Vider le cache de chapitre au lancement de l\'application</string>
     <string name="clear_database_source_item_count">%1$d séries hors de la bibliothèque dans la base de données</string>

@@ -525,8 +525,6 @@
     <string name="action_display_language_badge">Språk</string>
     <string name="pref_verbose_logging">Sirlig loggføring</string>
     <string name="pref_verbose_logging_summary">Skriv utfyllende logg til systemloggen (reduserer programytelse)</string>
-    <string name="label_warning">Advarsel</string>
-    <string name="notification_size_warning">Store oppdateringer skader kilder og kan føre til tregere oppdateringer samt økt batteribruk. Trykk for å lære mer.</string>
     <string name="backup_info">Du bør oppbevare ekstra kopier av sikkershetskopier andre steder også. Sikkerhetskopier kan inneholde sensitiv data, inkludert eventuelle lagrede passord. Vær forsiktig ved deling.</string>
     <string name="update_72hour">Hver 3. dag</string>
     <string name="connected_to_wifi">Bare på Wi-Fi</string>
@@ -541,7 +539,6 @@
     <string name="database_clean">Ingenting å fjerne</string>
     <string name="skipped_reason_not_caught_up">Hoppet over fordi det er uleste kapitler</string>
     <string name="skipped_reason_completed">Hoppet over fordi serien er fullført</string>
-    <string name="download_queue_size_warning">Advarsel: store bulknedlastinger kan føre til at kilder blir tregere og/eller blokkerer %s. Trykk for å lære mer.</string>
     <string name="library_errors_help">For hjelp til å fikse bibliotekoppdateringsfeil, se %1$s</string>
     <string name="action_display_cover_only_grid">Kun omslags-rutenett</string>
     <string name="pref_update_only_started">Hopp over oppføringer som ikke er påbegynt</string>
