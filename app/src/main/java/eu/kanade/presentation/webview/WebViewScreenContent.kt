@@ -2,7 +2,6 @@ package eu.kanade.presentation.webview
 
 import android.content.pm.ApplicationInfo
 import android.graphics.Bitmap
-import android.os.Message
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import androidx.compose.foundation.clickable
@@ -20,7 +19,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -30,14 +28,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
-import cafe.adriel.voyager.core.stack.mutableStateStackOf
-import com.kevinnzou.web.AccompanistWebChromeClient
 import com.kevinnzou.web.AccompanistWebViewClient
 import com.kevinnzou.web.LoadingState
-import com.kevinnzou.web.WebContent
 import com.kevinnzou.web.WebView
-import com.kevinnzou.web.WebViewState
 import com.kevinnzou.web.rememberWebViewNavigator
+import com.kevinnzou.web.rememberWebViewState
 import eu.kanade.presentation.components.AppBar
 import eu.kanade.presentation.components.AppBarActions
 import eu.kanade.presentation.components.WarningBanner
@@ -49,18 +44,6 @@ import kotlinx.coroutines.launch
 import tachiyomi.i18n.MR
 import tachiyomi.presentation.core.components.material.Scaffold
 import tachiyomi.presentation.core.i18n.stringResource
-
-class WebViewWindow(webContent: WebContent) {
-    var state by mutableStateOf(WebViewState(webContent))
-    var popupMessage: Message? = null
-        private set
-    var webView: WebView? = null
-
-    constructor(popupMessage: Message) : this(WebContent.NavigatorOnly) {
-        this.popupMessage = popupMessage
-    }
-}
-
 @Composable
 fun WebViewScreenContent(
     onNavigateUp: () -> Unit,
@@ -72,26 +55,7 @@ fun WebViewScreenContent(
     headers: Map<String, String> = emptyMap(),
     onUrlChange: (String) -> Unit = {},
 ) {
-    val windowStack = remember {
-        mutableStateStackOf(
-            WebViewWindow(
-                WebContent.Url(url = url, additionalHttpHeaders = headers),
-            ),
-        )
-    }
-
-    val currentWindow = windowStack.lastItemOrNull!!
-
-    val popState: (() -> Unit) = remember {
-        {
-            if (windowStack.size == 1) {
-                onNavigateUp()
-            } else {
-                windowStack.pop()
-            }
-        }
-    }
-
+    val state = rememberWebViewState(url = url, additionalHttpHeaders = headers)
     val navigator = rememberWebViewNavigator()
     val uriHandler = LocalUriHandler.current
     val scope = rememberCoroutineScope()
@@ -152,39 +116,14 @@ fun WebViewScreenContent(
         }
     }
 
-    val webChromeClient = remember {
-        object : AccompanistWebChromeClient() {
-            override fun onCreateWindow(
-                view: WebView,
-                isDialog: Boolean,
-                isUserGesture: Boolean,
-                resultMsg: Message,
-            ): Boolean {
-                // if it wasn't initiated by a user gesture, we should ignore it like a normal browser would
-                if (isUserGesture) {
-                    windowStack.push(WebViewWindow(resultMsg))
-                    return true
-                }
-                return false
-            }
-        }
-    }
-
-    fun initializePopup(webView: WebView, message: Message): WebView {
-        val transport = message.obj as WebView.WebViewTransport
-        transport.webView = webView
-        message.sendToTarget()
-        return webView
-    }
-
     Scaffold(
         topBar = {
             Box {
                 Column {
                     AppBar(
-                        title = currentWindow.state.pageTitle ?: initialTitle,
+                        title = state.pageTitle ?: initialTitle,
                         subtitle = currentUrl,
-                        navigateUp = popState,
+                        navigateUp = onNavigateUp,
                         navigationIcon = Icons.Outlined.Close,
                         actions = {
                             AppBarActions(
@@ -247,7 +186,7 @@ fun WebViewScreenContent(
                         }
                     }
                 }
-                when (val loadingState = currentWindow.state.loadingState) {
+                when (val loadingState = state.loadingState) {
                     is LoadingState.Initializing -> LinearProgressIndicator(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -264,55 +203,27 @@ fun WebViewScreenContent(
             }
         },
     ) { contentPadding ->
-        // We need to key the WebView composable to the window object since simply updating the WebView composable will
-        // not cause it to re-invoke the WebView factory and render the new current window's WebView. This lets us
-        // completely reset the WebView composable when the current window switches.
-        key(currentWindow) {
-            WebView(
-                state = currentWindow.state,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(contentPadding),
-                navigator = navigator,
-                onCreated = { webView ->
-                    webView.setDefaultSettings()
+        WebView(
+            state = state,
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(contentPadding),
+            navigator = navigator,
+            onCreated = { webView ->
+                webView.setDefaultSettings()
 
-                    // Debug mode (chrome://inspect/#devices)
-                    if (BuildConfig.DEBUG &&
-                        0 != webView.context.applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE
-                    ) {
-                        WebView.setWebContentsDebuggingEnabled(true)
-                    }
+                // Debug mode (chrome://inspect/#devices)
+                if (BuildConfig.DEBUG &&
+                    0 != webView.context.applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE
+                ) {
+                    WebView.setWebContentsDebuggingEnabled(true)
+                }
 
-                    headers["user-agent"]?.let {
-                        webView.settings.userAgentString = it
-                    }
-                },
-                onDispose = { webView ->
-                    val window = windowStack.items.find { it.webView == webView }
-                    if (window == null) {
-                        // If we couldn't find any window on the stack that owns this WebView, it means that we can
-                        // safely dispose of it because the window containing it has been closed.
-                        webView.destroy()
-                    } else {
-                        // The composable is being disposed but the WebView object is not.
-                        // When the WebView element is recomposed, we will want the WebView to resume from its state
-                        // before it was unmounted, we won't want it to reset back to its original target.
-                        window.state = WebViewState(WebContent.NavigatorOnly)
-                    }
-                },
-                client = webClient,
-                chromeClient = webChromeClient,
-                factory = { context ->
-                    currentWindow.webView
-                        ?: WebView(context).also { webView ->
-                            currentWindow.webView = webView
-                            currentWindow.popupMessage?.let {
-                                initializePopup(webView, it)
-                            }
-                        }
-                },
-            )
-        }
+                headers["user-agent"]?.let {
+                    webView.settings.userAgentString = it
+                }
+            },
+            client = webClient,
+        )
     }
 }
