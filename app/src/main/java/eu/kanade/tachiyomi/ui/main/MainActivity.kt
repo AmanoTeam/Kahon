@@ -261,7 +261,6 @@ class MainActivity : BaseActivity() {
                 if (!isBenchmarkBuildType) {
                     CheckForUpdates()
                     ShowOnboarding()
-                    ShowDonationCampaign()
                 }
             }
         }
