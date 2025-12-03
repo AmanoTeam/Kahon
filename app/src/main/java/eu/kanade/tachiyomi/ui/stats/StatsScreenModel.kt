@@ -87,18 +87,13 @@ class StatsScreenModel(
     private fun getGlobalUpdateItemCount(libraryManga: List<LibraryManga>): Int {
         val includedCategories = preferences.updateCategories().get().map { it.toLong() }
         val excludedCategories = preferences.updateCategoriesExclude().get().map { it.toLong() }
-        val updateRestrictions = preferences.autoUpdateMangaRestrictions().get()
 
         return libraryManga.filter {
             val included = includedCategories.isEmpty() || it.categories.intersect(includedCategories).isNotEmpty()
             val excluded = it.categories.intersect(excludedCategories).isNotEmpty()
             included && !excluded
         }
-            .fastCountNot {
-                (MANGA_NON_COMPLETED in updateRestrictions && it.manga.status.toInt() == SManga.COMPLETED) ||
-                    (MANGA_HAS_UNREAD in updateRestrictions && it.unreadCount != 0L) ||
-                    (MANGA_NON_READ in updateRestrictions && it.totalChapters > 0 && !it.hasStarted)
-            }
+            .size
     }
 
     private suspend fun getMangaTrackMap(libraryManga: List<LibraryManga>): Map<Long, List<Track>> {
@@ -135,3 +130,4 @@ class StatsScreenModel(
         return service.get10PointScore(track)
     }
 }
+
