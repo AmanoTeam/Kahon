@@ -241,24 +241,6 @@ class MainActivity : BaseActivity() {
                 CheckForUpdates()
                 ShowOnboarding()
             }
-
-            var showChangelog by remember { mutableStateOf(didMigration && !BuildConfig.DEBUG) }
-            if (showChangelog) {
-                AlertDialog(
-                    onDismissRequest = { showChangelog = false },
-                    title = { Text(text = stringResource(MR.strings.updated_version, BuildConfig.VERSION_NAME)) },
-                    dismissButton = {
-                        TextButton(onClick = { openInBrowser(RELEASE_URL) }) {
-                            Text(text = stringResource(MR.strings.whats_new))
-                        }
-                    },
-                    confirmButton = {
-                        TextButton(onClick = { showChangelog = false }) {
-                            Text(text = stringResource(MR.strings.action_ok))
-                        }
-                    },
-                )
-            }
         }
 
         val startTime = System.currentTimeMillis()
