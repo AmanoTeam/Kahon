@@ -282,6 +282,8 @@
     <string name="action_webview_forward">Framåt</string>
     <string name="action_webview_refresh">Uppdatera</string>
     <string name="pref_category_library">Bibliotek</string>
+    <string name="ext_uninstall_obsolete">Avinstallera obsoleta</string>
+    <string name="ext_uninstall_obsolete_dialog">Är du säker på att du vill avinstallera %1$d obsoleta tillägg?</string>
     <string name="ext_obsolete">Obsolet</string>
     <string name="obsolete_extension_message">Detta tillägg är inte förknippat med någon depå. Det kommer inte uppdateras, kanske inte fungerar korrekt och kan orsaka problem med appen. Vi rekommenderar att du avinstallerar det.</string>
     <string name="pref_date_format">Datumformat</string>

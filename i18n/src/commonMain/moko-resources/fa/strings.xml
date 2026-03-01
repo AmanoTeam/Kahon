@@ -217,6 +217,8 @@
     <string name="ext_installing">در حال نصب</string>
     <string name="ext_downloading">در حال بارگیری</string>
     <string name="ext_pending">در انتظار</string>
+    <string name="ext_uninstall_obsolete">حذف نصب منسوخ شده‌ها</string>
+    <string name="ext_uninstall_obsolete_dialog">آیا مطمئنید که می‌خواهید %1$d افزونه منسوخ شده را حذف نصب کنید؟</string>
     <string name="ext_obsolete">منسوخ شده</string>
     <string name="ext_update">آپدیت</string>
     <string name="ext_updates_pending">آپدیت‌های در انتظار</string>

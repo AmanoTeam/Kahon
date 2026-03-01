@@ -912,7 +912,10 @@
     <string name="pref_vertical_navigator_height">Altura do navegador vertical</string>
     <string name="considering">Considerando</string>
     <string name="theme_tokyonight">Noite em Tóquio</string>
+    <string name="ext_uninstall_obsolete">Desinstalar órfãos</string>
+    <string name="ext_uninstall_obsolete_dialog">Você tem certeza de que desejar desinstalar %1$d extensões órfãs?</string>
     <string name="downloading_with_progress">Fazendo download…(%d%%)</string>
     <string name="pref_filter_update_categories_details">Atualizações nas categorias excluídas não serão exibidas mesmo que eles também estejam nas categorias incluídas.</string>
     <string name="pref_filter_upcoming_categories_details">Títulos nas categorias excluídas não serão exibidas, mesmo que eles também estejam nas categorias incluídas.</string>
+
 </resources>

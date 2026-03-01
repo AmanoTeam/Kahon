@@ -189,6 +189,8 @@
     <string name="ext_downloading">Dina-download</string>
     <string name="ext_pending">Nakabinbin</string>
     <string name="ext_install">I-install</string>
+    <string name="ext_uninstall_obsolete">I-uninstall ang mga naulila</string>
+    <string name="ext_uninstall_obsolete_dialog">Sigurado ka bang gusto mong i-uninstall %1$d na naulilang extension?</string>
     <string name="ext_obsolete">Naulila</string>
     <string name="ext_update">I-update</string>
     <string name="ext_updates_pending">Nakabinbin ang mga update</string>

@@ -282,6 +282,8 @@
     <string name="action_webview_forward">Fram</string>
     <string name="action_webview_refresh">Gjenoppfrisk</string>
     <string name="pref_category_library">Bibliotek</string>
+    <string name="ext_uninstall_obsolete">Avinstaller foreldede</string>
+    <string name="ext_uninstall_obsolete_dialog">Er du sikker på at du vil avinstallere %1$d foreldede utvidelser?</string>
     <string name="ext_obsolete">Foreldet</string>
     <string name="obsolete_extension_message">Denne utvidelsen er ikke lengre tilgjengelig. Den fungerer kankje ikke som den skal og kan forårsake problemer med appen. Avinstallering anbefales.</string>
     <string name="pref_date_format">Datoformat</string>

@@ -282,6 +282,8 @@
     <string name="action_webview_forward">Vpřed</string>
     <string name="action_webview_refresh">Obnovit</string>
     <string name="pref_category_library">Knihovna</string>
+    <string name="ext_uninstall_obsolete">Odinstalovat opuštěné</string>
+    <string name="ext_uninstall_obsolete_dialog">Opravdu chcete odinstalovat %1$d opuštěných rozšíření?</string>
     <string name="ext_obsolete">Opuštěný</string>
     <string name="obsolete_extension_message">Toto rozšíření není spojeno s žádným obchodem. Nebude dostávat aktualizace, nemusí fungovat správně a může způsobit problémy s aplikací. Doporučujeme jej odinstalovat.</string>
     <string name="logout">Odhlásit se</string>

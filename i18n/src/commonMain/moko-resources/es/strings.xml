@@ -281,6 +281,8 @@
     <string name="action_webview_forward">Adelante</string>
     <string name="action_webview_refresh">Actualizar</string>
     <string name="pref_category_library">Biblioteca</string>
+    <string name="ext_uninstall_obsolete">Desinstalar obsoletos</string>
+    <string name="ext_uninstall_obsolete_dialog">¿Seguro que quieres desinstalar %1$d extensiones obsoletas?</string>
     <string name="ext_obsolete">Obsoleto</string>
     <string name="obsolete_extension_message">Esta extensión ya no está disponible para descargar y ya no se actualizará. Puede que no funcione bien y te cause problemas con el resto de la aplicación, te recomendamos desinstalarla.</string>
     <string name="pref_date_format">Formato de fecha</string>

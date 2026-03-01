@@ -90,6 +90,8 @@
     <string name="ext_downloading">Descargando</string>
     <string name="ext_pending">Pendentes</string>
     <string name="ext_install">Instalar</string>
+    <string name="ext_uninstall_obsolete">Desinstalar obsoletas</string>
+    <string name="ext_uninstall_obsolete_dialog">Estás seguro de querer desinstalar %1$d extensións obsoletas?</string>
     <string name="ext_obsolete">Obsoletas</string>
     <string name="ext_update">Actualizar</string>
     <string name="ext_updates_pending">Actualizacións pendentes</string>
