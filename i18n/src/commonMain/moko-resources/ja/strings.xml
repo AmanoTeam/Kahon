@@ -279,6 +279,8 @@
     <string name="action_webview_forward">次へ</string>
     <string name="action_webview_refresh">更新</string>
     <string name="pref_category_library">ライブラリ</string>
+    <string name="ext_uninstall_obsolete">廃止済みをアンインストール</string>
+    <string name="ext_uninstall_obsolete_dialog">廃止済みの拡張機能 %1$d 個をアンインストールしてもよろしいですか？</string>
     <string name="ext_obsolete">廃止済み</string>
     <string name="obsolete_extension_message">この拡張機能は利用不可になったため、正常に機能しなかったり、アプリでエラーを起こしたりする恐れがあります。アンインストールすることをお勧めします。</string>
     <string name="pref_date_format">日付形式</string>

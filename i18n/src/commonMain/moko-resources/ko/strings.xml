@@ -501,6 +501,8 @@
     <string name="action_newest">최신 순</string>
     <string name="pref_category_theme">테마</string>
     <string name="theme_midnightdusk">황혼</string>
+    <string name="ext_uninstall_obsolete">연결된 스토어 없음 삭제</string>
+    <string name="ext_uninstall_obsolete_dialog">연결된 스토어 없음 확장 프로그램 %1$d개를 삭제하시겠습니까?</string>
     <string name="ext_obsolete">연결된 스토어 없음</string>
     <string name="no_results_found">검색 결과가 없습니다</string>
     <string name="pref_dual_page_invert_summary">넓은 페이지 분할 시 배치가 읽는 방향과 다를 경우</string>

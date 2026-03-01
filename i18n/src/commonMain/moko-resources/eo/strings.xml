@@ -95,6 +95,8 @@
     <string name="ext_installing">Instalata</string>
     <string name="ext_downloading">Elŝutata</string>
     <string name="ext_install">Instali</string>
+    <string name="ext_uninstall_obsolete">Malinstali orfajn</string>
+    <string name="ext_uninstall_obsolete_dialog">Ĉu vi certas, ke vi volas malinstali %1$d orfajn kromaĵojn?</string>
     <string name="ext_obsolete">Orfa</string>
     <string name="ext_update">Ĝisdatigi</string>
     <string name="exclude">Ekskluzivi: %s</string>

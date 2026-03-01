@@ -314,6 +314,8 @@
     <string name="ext_nsfw_warning">แหล่งที่มาจากส่วนขยายนี้อาจมีเนื้อหา NSFW (18+)</string>
     <string name="ext_nsfw_short">18+</string>
     <string name="obsolete_extension_message">ส่วนขยายนี้ไม่สามารถใช้ได้อีกต่อไป แอปอาจทำงานไม่ถูกต้องและอาจทำให้เกิดปัญหากับแอปได้ ขอแนะนำให้ถอนการติดตั้งออก</string>
+    <string name="ext_uninstall_obsolete">ถอนการติดตั้งที่ล้าสมัย</string>
+    <string name="ext_uninstall_obsolete_dialog">แน่ใจหรือไม่ว่าต้องการถอนการติดตั้ง %1$d ส่วนขยายที่ล้าสมัย?</string>
     <string name="ext_obsolete">ล้าสมัย</string>
     <string name="ext_updates_pending">อัปเดตที่รอดำเนินการ</string>
     <string name="exclude">ที่ยกเว้นไว้: %s</string>

@@ -147,6 +147,15 @@ private fun ExtensionContent(
 ) {
     val context = LocalContext.current
     var trustState by remember { mutableStateOf<Extension.Untrusted?>(null) }
+    var uninstallObsoleteDialog by remember { mutableStateOf(false) }
+
+    val obsoleteExtensions = remember(state.items) {
+        state.items.flatMap { (_, items) -> items }
+            .map { it.extension }
+            .filterIsInstance<Extension.Installed>()
+            .filter { it.isObsolete }
+    }
+
     val installGranted = rememberRequestPackageInstallsPermissionState(initialValue = true)
 
     FastScrollLazyColumn(
@@ -182,9 +191,21 @@ private fun ExtensionContent(
                                         )
                                     }
                                 }
+                            } else if (header.textRes == MR.strings.ext_installed && obsoleteExtensions.size > 1) {
+                                {
+                                    Button(onClick = { uninstallObsoleteDialog = true }) {
+                                        Text(
+                                            text = stringResource(MR.strings.ext_uninstall_obsolete),
+                                            style = LocalTextStyle.current.copy(
+                                                color = MaterialTheme.colorScheme.onPrimary,
+                                            ),
+                                        )
+                                    }
+                                }
                             } else {
                                 {}
                             }
+
                         ExtensionHeader(
                             textRes = header.textRes,
                             modifier = Modifier.animateItemFastScroll(),
@@ -199,7 +220,6 @@ private fun ExtensionContent(
                     }
                 }
             }
-
             items(
                 items = items,
                 contentType = { "item" },
@@ -251,6 +271,7 @@ private fun ExtensionContent(
             }
         }
     }
+
     if (trustState != null) {
         ExtensionTrustDialog(
             onClickConfirm = {
@@ -266,6 +287,22 @@ private fun ExtensionContent(
             },
         )
     }
+
+    if (uninstallObsoleteDialog) {
+        ExtensionUninstallObsoleteDialog(
+            obsoleteCount = obsoleteExtensions.size,
+            onClickConfirm = {
+                obsoleteExtensions.forEach { onUninstallExtension(it) }
+                uninstallObsoleteDialog = false
+            },
+            onClickDismiss = {
+                uninstallObsoleteDialog = false
+            },
+            onDismissRequest = {
+                uninstallObsoleteDialog = false
+            }
+        )
+    }
 }
 
 @Composable
@@ -279,6 +316,7 @@ private fun ExtensionItem(
     modifier: Modifier = Modifier,
 ) {
     val (extension, installStep) = item
+
     BaseBrowseItem(
         modifier = modifier
             .combinedClickable(
@@ -353,6 +391,7 @@ private fun ExtensionItemContent(
         ) {
             ProvideTextStyle(value = MaterialTheme.typography.bodySmall) {
                 var hasAlreadyShownAnElement by remember { mutableStateOf(false) }
+
                 if (extension is Extension.Installed && extension.lang.isNotEmpty()) {
                     hasAlreadyShownAnElement = true
                     Text(
@@ -384,6 +423,7 @@ private fun ExtensionItemContent(
                         overflow = TextOverflow.Ellipsis,
                     )
                 }
+
                 if (extension is Extension.Installed && !extension.isShared) {
                     if (hasAlreadyShownAnElement) DotSeparatorNoSpaceText()
                     Text(
@@ -521,6 +561,7 @@ private fun ExtensionHeader(
                 .weight(1f),
             style = MaterialTheme.typography.header,
         )
+
         action()
     }
 }
@@ -551,3 +592,32 @@ private fun ExtensionTrustDialog(
         onDismissRequest = onDismissRequest,
     )
 }
+
+@Composable
+private fun ExtensionUninstallObsoleteDialog(
+    obsoleteCount: Int,
+    onClickConfirm: () -> Unit,
+    onClickDismiss: () -> Unit,
+    onDismissRequest: () -> Unit,
+) {
+    AlertDialog(
+        title = {
+            Text(text = stringResource(MR.strings.ext_uninstall))
+        },
+        text = {
+            Text(text = stringResource(MR.strings.ext_uninstall_obsolete_dialog, obsoleteCount))
+        },
+        confirmButton = {
+            TextButton(onClick = onClickConfirm) {
+                Text(text = stringResource(MR.strings.ext_uninstall))
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onClickDismiss) {
+                Text(text = stringResource(MR.strings.action_cancel))
+            }
+        },
+        onDismissRequest = onDismissRequest,
+    )
+}
+

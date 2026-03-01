@@ -285,6 +285,8 @@
     <string name="action_webview_forward">Eteenpäin</string>
     <string name="action_webview_refresh">Päivitä</string>
     <string name="pref_category_library">Kirjasto</string>
+    <string name="ext_uninstall_obsolete">Poista vanhentuneiden asennukset</string>
+    <string name="ext_uninstall_obsolete_dialog">Oletko varma, että haluat poistaa %1$d vanhentuneen laajennuksen asennuksen?</string>
     <string name="ext_obsolete">Vanhentunut</string>
     <string name="obsolete_extension_message">Tämä laajennos ei ole enää saatavilla. Se ei välttämättä toimi oikein ja voi aiheuttaa ongelmia Mihonin kanssa. Laajennoksen poistoa suositellaan.</string>
     <string name="pref_date_format">Päivämäärän muoto</string>

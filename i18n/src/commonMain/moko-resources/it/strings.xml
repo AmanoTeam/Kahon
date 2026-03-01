@@ -285,6 +285,8 @@
     <string name="action_webview_forward">Avanti</string>
     <string name="action_webview_refresh">Aggiorna</string>
     <string name="pref_category_library">Libreria</string>
+    <string name="ext_uninstall_obsolete">Disinstalla obsoleti</string>
+    <string name="ext_uninstall_obsolete_dialog">Sei sicuro di voler disinstallare %1$d estensioni obsolete?</string>
     <string name="ext_obsolete">Obsoleta</string>
     <string name="obsolete_extension_message">Questa estensione non è più disponibile. Potrebbe non funzionare correttamente e causare problemi con l\'app. Si consiglia di disinstallarla.</string>
     <string name="pref_date_format">Formato data</string>

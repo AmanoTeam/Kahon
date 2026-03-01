@@ -182,6 +182,8 @@
     <string name="ext_updates_pending">विचाराधीन अपडेट्स</string>
     <string name="ext_update">अपडेट</string>
     <string name="ext_update_all">सबै अपडेट गर्नुहोस्</string>
+    <string name="ext_uninstall_obsolete">अप्रचलित अनइन्स्टल गर्नुहोस्</string>
+    <string name="ext_uninstall_obsolete_dialog">के तपाईँ %1$d अप्रचलित एक्सटेन्सन अनइन्स्टल गर्न चाहनुहुन्छ?</string>
     <string name="ext_obsolete">अप्रचलित</string>
     <string name="ext_install">स्थापना गर्नुहोस्</string>
     <string name="ext_pending">विचाराधीन</string>
