@@ -285,6 +285,8 @@
     <string name="action_webview_forward">Dalej</string>
     <string name="action_webview_refresh">Odśwież</string>
     <string name="pref_category_library">Biblioteka</string>
+    <string name="ext_uninstall_obsolete">Odinstaluj przestarzałe</string>
+    <string name="ext_uninstall_obsolete_dialog">Czy na pewno chcesz odinstalować %1$d przestarzałych rozszerzeń?</string>
     <string name="ext_obsolete">Przestarzałe</string>
     <string name="obsolete_extension_message">To rozszerzenie nie jest już dostępne i może nie funkcjonować prawidłowo, powodując problemy z aplikacją. Zalecamy odinstalowanie go.</string>
     <string name="pref_date_format">Format daty</string>

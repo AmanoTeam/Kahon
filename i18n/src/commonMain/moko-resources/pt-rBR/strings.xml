@@ -919,4 +919,6 @@
     <string name="pref_vertical_navigator_height">Altura do navegador vertical</string>
     <string name="considering">Considerando</string>
     <string name="theme_tokyonight">Noite em Tóquio</string>
+    <string name="ext_uninstall_obsolete">Desinstalar órfãos</string>
+    <string name="ext_uninstall_obsolete_dialog">Você tem certeza de que desejar desinstalar %1$d extensões órfãs?</string>
 </resources>

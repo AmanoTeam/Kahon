@@ -309,6 +309,8 @@
     <string name="pref_skip_filtered_chapters">تخطي الفصول المُرشحة</string>
     <string name="pref_cutout_short">إظهار المحتوى في المناطق المقطوعة</string>
     <string name="obsolete_extension_message">هذه الإضافة لم تعد متوفرة. قد لا تعمل بشكل صحيح ويمكن أن تسبب بمشاكل في التطبيق. يوصى بإلغاء تثبيتها.</string>
+    <string name="ext_uninstall_obsolete">إلغاء تثبيت القديمة</string>
+    <string name="ext_uninstall_obsolete_dialog">هل أنت متأكد من أنك تريد إلغاء تثبيت %1$d إضافة قديمة؟</string>
     <string name="ext_obsolete">قديم جدًا</string>
     <string name="ext_updates_pending">التحديثات معلقة</string>
     <string name="pref_category_library_update">التحديث العام</string>

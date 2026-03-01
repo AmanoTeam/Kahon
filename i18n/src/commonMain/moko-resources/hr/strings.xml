@@ -16,6 +16,8 @@
     <string name="ext_downloading">Preuzimanje</string>
     <string name="ext_pending">Na čekanju</string>
     <string name="ext_install">Instaliraj</string>
+    <string name="ext_uninstall_obsolete">Deinstaliraj zastarjele</string>
+    <string name="ext_uninstall_obsolete_dialog">Stvarno želiš deinstalirati %1$d zastarjelih proširenja?</string>
     <string name="ext_obsolete">Zastarjelo</string>
     <string name="ext_update">Aktualiziraj</string>
     <string name="ext_updates_pending">Aktualiziranja na čekanju</string>

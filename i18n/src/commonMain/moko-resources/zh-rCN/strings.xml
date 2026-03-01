@@ -283,6 +283,8 @@
     <string name="action_webview_forward">前进</string>
     <string name="action_webview_refresh">刷新</string>
     <string name="pref_category_library">书架</string>
+    <string name="ext_uninstall_obsolete">卸载无归属</string>
+    <string name="ext_uninstall_obsolete_dialog">确定要卸载 %1$d 个无归属扩展吗？</string>
     <string name="ext_obsolete">无归属</string>
     <string name="obsolete_extension_message">此插件不属于任何商店，将不会收到更新，可能无法正常运行或导致应用发生故障，建议卸载。</string>
     <string name="pref_date_format">日期格式</string>

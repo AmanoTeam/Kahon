@@ -283,6 +283,8 @@
     <string name="action_webview_forward">Μπροστά</string>
     <string name="action_webview_refresh">Ανανέωση</string>
     <string name="pref_category_library">Βιβλιοθήκη</string>
+    <string name="ext_uninstall_obsolete">Απεγκατάσταση ορφανών</string>
+    <string name="ext_uninstall_obsolete_dialog">Είστε βέβαιοι ότι θέλετε να απεγκαταστήσετε %1$d ορφανές επεκτάσεις;</string>
     <string name="ext_obsolete">Ορφανό</string>
     <string name="obsolete_extension_message">Αυτή η επέκταση δεν σχετίζεται με κανένα κατάστημα. Δεν θα λαμβάνει ενημερώσεις, ενδέχεται να μην λειτουργεί σωστά και μπορεί να προκαλέσει προβλήματα με την εφαρμογή. Συνιστάται η απεγκατάστασή της.</string>
     <string name="label_more">Περισσότερα</string>

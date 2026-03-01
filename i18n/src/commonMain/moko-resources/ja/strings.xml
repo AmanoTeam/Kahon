@@ -277,6 +277,8 @@
     <string name="pref_category_library">ライブラリ</string>
     <string name="ext_obsolete">孤立した</string>
     <string name="obsolete_extension_message">この拡張機能はどのストアにも関連付けられていません。アップデートは提供されず、正常に動作しない可能性があり、アプリに問題を引き起こす可能性があります。アンインストールすることをお勧めします。</string>
+    <string name="ext_uninstall_obsolete">孤立した拡張機能をアンインストール</string>
+    <string name="ext_uninstall_obsolete_dialog">孤立した拡張機能 %1$d 個をアンインストールしてもよろしいですか？</string>
     <string name="pref_date_format">日付形式</string>
     <string name="pref_category_library_update">グローバルアップデート</string>
     <string name="logout_title">%1$s からログアウトしますか？</string>
