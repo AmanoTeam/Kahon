@@ -329,6 +329,8 @@
     <string name="ext_updates_pending">Updates pending</string>
     <string name="ext_update">Update</string>
     <string name="ext_update_all">Update all</string>
+    <string name="ext_uninstall_obsolete">Uninstall obsolete</string>
+    <string name="ext_uninstall_obsolete_dialog">Are you sure you want to uninstall %1$d obsolete extensions?</string>
     <string name="ext_obsolete">Obsolete</string>
     <string name="ext_install">Install</string>
     <string name="ext_pending">Pending</string>
