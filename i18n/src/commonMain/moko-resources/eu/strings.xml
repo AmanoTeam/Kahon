@@ -183,6 +183,8 @@
     <string name="transition_no_previous">Ez dago aurreko kapitulurik</string>
     <string name="copy">Kopiatu</string>
     <string name="update_check_eol">Android bertsio hau jada ez da onartzen</string>
+    <string name="ext_uninstall_obsolete">Desinstalatu zaharkituak</string>
+    <string name="ext_uninstall_obsolete_dialog">Ziur %1$d gehigarri zaharkitu desinstalatu nahi dituzula?</string>
     <string name="ext_obsolete">Zaharkitua</string>
     <string name="ext_uninstall">Desinstalatu</string>
     <string name="pref_show_page_number">Erakutsi orrialdearen zenbakia</string>

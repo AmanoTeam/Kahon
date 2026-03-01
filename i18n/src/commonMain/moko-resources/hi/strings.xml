@@ -287,6 +287,8 @@
     <string name="action_webview_forward">आगे की ओर</string>
     <string name="action_webview_refresh">रीफ़्रेश करें</string>
     <string name="pref_category_library">पुस्तकालय</string>
+    <string name="ext_uninstall_obsolete">अप्रचलित स्थापना रद्द करें</string>
+    <string name="ext_uninstall_obsolete_dialog">क्या आप वाकई %1$d अप्रचलित एक्सटेंशन की स्थापना रद्द करना चाहते हैं?</string>
     <string name="ext_obsolete">अप्रचलित</string>
     <string name="obsolete_extension_message">यह एक्सटेंशन अब उपलब्ध नहीं है। यह अब शायद ठीक से काम न करे और मसला खड़ा करे। इसे अनइंस्टॉल करने की सलाह दी गई है।</string>
     <string name="pref_date_format">दिनांक स्वरूप</string>

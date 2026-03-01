@@ -182,6 +182,8 @@
     <string name="action_search_settings">Keresési beállítások</string>
     <string name="action_sort_date_added">Hozzáadás dátuma</string>
     <string name="untrusted_extension">Nem megbízható bővítmény</string>
+    <string name="ext_uninstall_obsolete">Elavultak eltávolítása</string>
+    <string name="ext_uninstall_obsolete_dialog">Biztosan el akarja távolítani a %1$d elavult kiterjesztést?</string>
     <string name="ext_obsolete">Elavult</string>
     <string name="ext_updates_pending">Függőben lévő frissítések</string>
     <string name="pref_library_update_refresh_metadata_summary">Új borító és részletek keresése a könyvtár frissítésekor</string>

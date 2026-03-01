@@ -912,6 +912,8 @@
     <string name="extensionStoresScreen.addStore.processing">Đang xử lý…</string>
     <string name="extensionStoresScreen.addStoreInput.inputLabel">Lưu URL chỉ mục</string>
     <string name="extensionStoresScreen.addStoreDeeplink.bodyText">Bạn có muốn thêm cửa hàng tiên ích mở rộng bên dưới không ?</string>
+    <string name="ext_uninstall_obsolete">Gỡ cài đặt lỗi thời</string>
+    <string name="ext_uninstall_obsolete_dialog">Bạn có chắc muốn gỡ cài đặt %1$d tiện ích lỗi thời?</string>
     <string name="ext_obsolete">Lỗi thời</string>
     <string name="extensionStores">Cửa hàng Phần mở rộng</string>
     <string name="extensionStoresScreen.deleteStore.title">Xóa cửa hàng phần mở rộng</string>

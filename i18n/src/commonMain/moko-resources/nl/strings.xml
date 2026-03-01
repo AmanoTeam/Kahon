@@ -283,6 +283,8 @@
     <string name="action_webview_forward">Vooruit</string>
     <string name="action_webview_refresh">Vernieuwen</string>
     <string name="pref_category_library">Bibliotheek</string>
+    <string name="ext_uninstall_obsolete">Verweesde verwijderen</string>
+    <string name="ext_uninstall_obsolete_dialog">Weet je zeker dat je %1$d verweesde extensies wilt verwijderen?</string>
     <string name="ext_obsolete">Verweesd</string>
     <string name="obsolete_extension_message">Deze extensie is niet gekoppeld aan een winkel. Er zullen geen updates meer voor komen, zal mogelijk niet meer naar behoren functioneren, en kan problemen binnen de app veroorzaken. Het wordt aangeraden de extensie te verwijderen.</string>
     <string name="pref_date_format">Datumformaat</string>
