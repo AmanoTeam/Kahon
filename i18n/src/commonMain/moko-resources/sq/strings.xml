@@ -65,6 +65,8 @@
     <string name="exclude">Përjashtoni: %s</string>
     <string name="multi_lang">Shumë</string>
     <string name="ext_update">Përditëso</string>
+    <string name="ext_uninstall_obsolete">Çinstaloni të vjetëruarat</string>
+    <string name="ext_uninstall_obsolete_dialog">Jeni i sigurt që dëshironi të çinstaloni %1$d shtojca të vjetëruara?</string>
     <string name="ext_obsolete">I vjetëruar</string>
     <string name="channel_progress">Përparim</string>
     <string name="download_notifier_split_page_path_not_found">Nuk mund të gjendej shtegu i skedarit të faqes %d</string>

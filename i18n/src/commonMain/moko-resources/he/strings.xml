@@ -363,6 +363,8 @@
     <string name="action_show_manga">הראה פריט</string>
     <string name="pref_update_only_completely_read">עם פרק(ים) שלא נקרא(ו)</string>
     <string name="action_move_to_top_all_for_series">העבר סדרה לראש</string>
+    <string name="ext_uninstall_obsolete">הסר התקנת מיושנים</string>
+    <string name="ext_uninstall_obsolete_dialog">האם אתה בטוח שברצונך להסיר את ההתקנה של %1$d הרחבות מיושנות?</string>
     <string name="ext_obsolete">מיושן</string>
     <string name="pref_update_only_started">זה עוד לא התחיל</string>
     <string name="ext_update_all">עדכן הכל</string>

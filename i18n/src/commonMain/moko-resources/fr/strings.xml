@@ -286,6 +286,8 @@
     <string name="action_webview_back">Précédent</string>
     <string name="action_webview_forward">Suivant</string>
     <string name="action_webview_refresh">Actualiser</string>
+    <string name="ext_uninstall_obsolete">Désinstaller les obsolètes</string>
+    <string name="ext_uninstall_obsolete_dialog">Voulez-vous vraiment désinstaller %1$d extensions obsolètes ?</string>
     <string name="ext_obsolete">Obsolète</string>
     <string name="logout_title">Se déconnecter de %1$s ?</string>
     <string name="logout">Se déconnecter</string>

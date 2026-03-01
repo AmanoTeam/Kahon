@@ -285,6 +285,8 @@
     <string name="pref_category_library">Bibliothek</string>
     <string name="ext_obsolete">Verwaist</string>
     <string name="obsolete_extension_message">Diese Erweiterung ist mit keinem Store verknüpft. Sie erhält keine Updates, funktioniert möglicherweise nicht mehr ordnungsgemäß und kann Probleme mit der App verursachen. Es wird empfohlen, sie zu deinstallieren.</string>
+    <string name="ext_uninstall_obsolete">Verwaiste deinstallieren</string>
+    <string name="ext_uninstall_obsolete_dialog">Bist du sicher, dass du %1$d verwaiste Erweiterungen deinstallieren willst?</string>
     <string name="pref_date_format">Datumsformat</string>
     <string name="pref_category_library_update">Globale Aktualisierung</string>
     <string name="logout_title">Aus %1$s abmelden?</string>

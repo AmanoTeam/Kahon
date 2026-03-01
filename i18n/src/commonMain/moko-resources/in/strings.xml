@@ -281,6 +281,8 @@
     <string name="action_webview_forward">Teruskan</string>
     <string name="action_webview_refresh">Muat ulang</string>
     <string name="pref_category_library">Pustaka</string>
+    <string name="ext_uninstall_obsolete">Lepas yang usang</string>
+    <string name="ext_uninstall_obsolete_dialog">Yakin ingin melepas %1$d ekstensi usang?</string>
     <string name="ext_obsolete">Usang</string>
     <string name="obsolete_extension_message">Ekstensi ini tidak lagi tersedia. Ini mungkin tidak berfungsi dengan baik dan dapat menyebabkan masalah dengan aplikasi. Disarankan untuk menghapus instalasi.</string>
     <string name="pref_date_format">Format tanggal</string>

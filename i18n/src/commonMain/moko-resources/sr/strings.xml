@@ -253,6 +253,8 @@
     <string name="information_no_recent">Нема недавних ажурирања</string>
     <string name="information_no_downloads">Нема преузимања</string>
     <string name="label_sources">Извори</string>
+    <string name="ext_uninstall_obsolete">Обриши застареле</string>
+    <string name="ext_uninstall_obsolete_dialog">Да ли сте сигурни да желите да обришете %1$d застарелих проширења?</string>
     <string name="ext_obsolete">Застарело</string>
     <string name="secure_screen_summary">Сакриј приказ апликације приликом пребацивања између апликација и онемогући снимке екрана</string>
     <string name="lock_with_biometrics">Захтевај закључавање</string>

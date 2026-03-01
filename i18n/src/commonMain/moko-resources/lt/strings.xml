@@ -199,6 +199,8 @@
     <string name="ext_downloading">Siunčiasi</string>
     <string name="ext_pending">Laukiama</string>
     <string name="ext_install">Įdiegti</string>
+    <string name="ext_uninstall_obsolete">Šalinti pasenusius</string>
+    <string name="ext_uninstall_obsolete_dialog">Ar tikrai norite šalinti %1$d pasenusių plėtinių?</string>
     <string name="ext_obsolete">Pasenusi</string>
     <string name="ext_update">Atnaujinimas</string>
     <string name="exclude">Neįtraukti: %s</string>

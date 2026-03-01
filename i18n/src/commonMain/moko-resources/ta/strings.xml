@@ -314,6 +314,8 @@
     <string name="ext_updates_pending">புதுப்பிப்புகள் நிலுவையில் உள்ளன</string>
     <string name="ext_update">புதுப்பிப்பு</string>
     <string name="ext_update_all">அனைத்தையும் புதுப்பிக்கவும்</string>
+    <string name="ext_uninstall_obsolete">வழக்கற்றவற்றை நிறுவல் நீக்கு</string>
+    <string name="ext_uninstall_obsolete_dialog">வழக்கற்றுப்போன %1$d நீட்டிப்புகளை நிறுவல் நீக்க விரும்புகிறீர்களா?</string>
     <string name="ext_obsolete">வழக்கற்றுப்போன</string>
     <string name="ext_install">நிறுவவும்</string>
     <string name="ext_pending">நிலுவையில் உள்ளது</string>

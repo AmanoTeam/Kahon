@@ -910,6 +910,8 @@
     <string name="ext_obsolete">Bỏ hoang</string>
     <string name="extensionStores">Cửa hàng tiện ích mở rộng</string>
     <string name="extensionStoresScreen.deleteStore.title">Xóa cửa hàng tiện ích mở rộng</string>
+    <string name="ext_uninstall_obsolete">Gỡ cài đặt bỏ hoang</string>
+    <string name="ext_uninstall_obsolete_dialog">Bạn có chắc muốn gỡ cài đặt %1$d tiện ích bỏ hoang?</string>
     <string name="extensionStoresScreen.deleteStore.body">Bạn có muốn xóa cửa hàng phần mở rộng \"%1$s\" (%2$s) không?</string>
     <string name="pref_webtoon_vertical_navigator_on_left">Đặt thanh điều hướng dọc ở phía bên trái</string>
     <string name="pref_vertical_navigator">Sử dụng thanh điều hướng dọc trong</string>

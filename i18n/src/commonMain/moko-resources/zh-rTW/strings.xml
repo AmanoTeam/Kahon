@@ -280,6 +280,8 @@
     <string name="action_webview_forward">下一頁</string>
     <string name="action_webview_refresh">重新整理</string>
     <string name="pref_category_library">書櫃</string>
+    <string name="ext_uninstall_obsolete">解除安裝無來源</string>
+    <string name="ext_uninstall_obsolete_dialog">確定要解除安裝 %1$d 個無來源擴充功能嗎？</string>
     <string name="ext_obsolete">無來源</string>
     <string name="obsolete_extension_message">此擴充套件未與任何商店關聯，將無法取得更新。其可能無法正常運作，甚至導致應用程式發生問題，建議解除安裝。</string>
     <string name="theme_light">淺色</string>
