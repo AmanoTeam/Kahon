@@ -918,4 +918,6 @@
     <string name="pref_webtoon_vertical_navigator">Use o navegador vertical para leitura de tiras longas</string>
     <string name="pref_webtoon_vertical_navigator_on_left">Coloque o navegador vertical no lado esquerdo</string>
     <string name="extensionStoresScreen.deleteStore.body">Você deseja remover a loja de extensões \"%1$s\" (%2$s)?</string>
+    <string name="ext_uninstall_obsolete">Desinstalar obsoletos</string>
+    <string name="ext_uninstall_obsolete_dialog">Você tem certeza de que desejar desinstalar %1$d extensões obsoletas?</string>
 </resources>
