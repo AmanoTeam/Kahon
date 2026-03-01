@@ -95,6 +95,8 @@
     <string name="ext_downloading">Пампуецца</string>
     <string name="ext_pending">Чакаецца</string>
     <string name="ext_install">Усталяваць</string>
+    <string name="ext_uninstall_obsolete">Дэінсталяваць састарэлыя</string>
+    <string name="ext_uninstall_obsolete_dialog">Вы ўпэўненыя, што хочаце дэінсталяваць %1$d састарэлых пашырэнняў؟</string>
     <string name="ext_obsolete">Састарэлае</string>
     <string name="ext_update">Абнавіць</string>
     <string name="ext_updates_pending">Даступны абнаўлення</string>
