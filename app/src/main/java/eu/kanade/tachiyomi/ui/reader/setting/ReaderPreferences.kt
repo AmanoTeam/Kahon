@@ -30,7 +30,7 @@ class ReaderPreferences(
 
     val verticalNavigatorForLongStrip: Preference<Boolean> = preferenceStore.getBoolean(
         "pref_webtoon_vertical_navigator",
-        true,
+        false,
     )
 
     val verticalNavigatorOnLeft: Preference<Boolean> = preferenceStore.getBoolean(
