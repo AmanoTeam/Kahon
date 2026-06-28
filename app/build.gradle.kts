@@ -6,8 +6,6 @@ import mihon.gradle.getLatestCommitCount
 import mihon.gradle.getLatestCommitSha
 import mihon.gradle.getLatestCommitTime
 import mihon.gradle.tasks.ReplaceShortcutsPlaceholderTask
-import java.io.FileInputStream
-import java.util.Properties
 
 plugins {
     alias(mihonx.plugins.android.application)
@@ -22,8 +20,6 @@ plugins {
 }
 
 val supportedAbis = setOf("armeabi-v7a", "arm64-v8a")
-
-val keystorePropertiesFile = layout.settingsDirectory.file("keystore.properties").asFile
 
 android {
     namespace = "eu.kanade.tachiyomi"
@@ -43,28 +39,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    if (System.getenv("MIHON_GITHUB_RELEASE").toBoolean()) {
-        signingConfigs {
-            named("debug") {
-                storeFile = file(System.getenv("storeFile"))
-                storePassword = System.getenv("storePassword")
-                keyAlias = System.getenv("keyAlias")
-                keyPassword = System.getenv("keyPassword")
-            }
-        }
-    } else if (keystorePropertiesFile.exists()) {
-        val keystoreProperties = FileInputStream(keystorePropertiesFile).use { Properties().apply { load(it) } }
-
-        signingConfigs {
-            named("debug") {
-                storeFile = file(keystoreProperties.getProperty("storeFile"))
-                storePassword = keystoreProperties.getProperty("storePassword")
-                keyAlias = keystoreProperties.getProperty("keyAlias")
-                keyPassword = keystoreProperties.getProperty("keyPassword")
-            }
-        }
-    }
-
     buildTypes {
         val debug = getByName("debug") {
             applicationIdSuffix = ".dev"
@@ -74,7 +48,6 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
 
-            signingConfig = debug.signingConfig
             isProfileable = true
 
             proguardFiles("proguard-android-optimize.txt", "proguard-rules.pro")
