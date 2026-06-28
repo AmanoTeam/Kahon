@@ -154,7 +154,7 @@ class ShizukuInstaller(private val service: Service) : Installer(service) {
             service,
             receiver,
             IntentFilter(ACTION_INSTALL_RESULT),
-            ContextCompat.RECEIVER_NOT_EXPORTED,
+            ContextCompat.RECEIVER_EXPORTED,
         )
 
         initShizuku()
