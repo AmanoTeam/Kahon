@@ -42,33 +42,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    if (System.getenv("MIHON_GITHUB_RELEASE").toBoolean()) {
-        val tempStoreFile = file(System.getenv("RUNNER_TEMP")).resolve("antsy.keystore")
-
-        val storeFileBytes = System.getenv("storeFileBase64").let(Base64::decode)
-        tempStoreFile.outputStream().use { it.write(storeFileBytes) }
-
-        signingConfigs {
-            named("debug") {
-                storeFile = tempStoreFile
-                storePassword = System.getenv("storePassword")
-                keyAlias = System.getenv("keyAlias")
-                keyPassword = System.getenv("keyPassword")
-            }
-        }
-    } else if (keystorePropertiesFile.exists()) {
-        val keystoreProperties = FileInputStream(keystorePropertiesFile).use { Properties().apply { load(it) } }
-
-        signingConfigs {
-            named("debug") {
-                storeFile = file(keystoreProperties.getProperty("storeFile"))
-                storePassword = keystoreProperties.getProperty("storePassword")
-                keyAlias = keystoreProperties.getProperty("keyAlias")
-                keyPassword = keystoreProperties.getProperty("keyPassword")
-            }
-        }
-    }
-
     buildTypes {
         val debug = getByName("debug") {
             applicationIdSuffix = ".dev"
@@ -78,8 +51,6 @@ android {
         val release = getByName("release") {
             isMinifyEnabled = Config.enableCodeShrink
             isShrinkResources = Config.enableCodeShrink
-
-            signingConfig = debug.signingConfig
 
             isProfileable = true
 
