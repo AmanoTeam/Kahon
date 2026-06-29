@@ -36,6 +36,12 @@ class ExtensionInstallService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        intent?.getStringExtra(EXTRA_UNINSTALL_PACKAGE_NAME)?.let { pkgName ->
+            installer = installer ?: ShizukuInstaller(this)
+            (installer as? ShizukuInstaller)?.uninstallApk(pkgName)
+            return START_NOT_STICKY
+        }
+
         val uri = intent?.data
         val id = intent?.getLongExtra(EXTRA_DOWNLOAD_ID, -1)?.takeIf { it != -1L }
         val installerUsed = intent?.getSerializableExtraCompat<BasePreferences.ExtensionInstaller>(EXTRA_INSTALLER)
@@ -68,6 +74,7 @@ class ExtensionInstallService : Service() {
 
     companion object {
         private const val EXTRA_INSTALLER = "EXTRA_INSTALLER"
+        const val EXTRA_UNINSTALL_PACKAGE_NAME = "EXTRA_UNINSTALL_PACKAGE_NAME"
 
         fun getIntent(
             context: Context,
@@ -79,6 +86,14 @@ class ExtensionInstallService : Service() {
                 .setDataAndType(uri, ExtensionInstaller.APK_MIME)
                 .putExtra(EXTRA_DOWNLOAD_ID, downloadId)
                 .putExtra(EXTRA_INSTALLER, installer)
+        }
+
+        fun getUninstallIntent(
+            context: Context,
+            pkgName: String,
+        ): Intent {
+            return Intent(context, ExtensionInstallService::class.java)
+                .putExtra(EXTRA_UNINSTALL_PACKAGE_NAME, pkgName)
         }
     }
 }
