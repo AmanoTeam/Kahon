@@ -1,5 +1,6 @@
 package eu.kanade.tachiyomi.extension.installer
 
+import android.app.PendingIntent
 import android.app.Service
 import android.content.BroadcastReceiver
 import android.content.ComponentName
@@ -30,6 +31,8 @@ class ShizukuInstaller(private val service: Service) : Installer(service) {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
     private var shellInterface: IShellInterface? = null
+    private val pendingUninstalls = mutableListOf<String>()
+    private var pendingUninstallCount = 0
 
     private val shizukuArgs by lazy {
         Shizuku.UserServiceArgs(
@@ -46,6 +49,8 @@ class ShizukuInstaller(private val service: Service) : Installer(service) {
             shellInterface = IShellInterface.Stub.asInterface(service)
             ready = true
             checkQueue()
+            pendingUninstalls.forEach { doUninstall(it) }
+            pendingUninstalls.clear()
         }
 
         override fun onServiceDisconnected(name: ComponentName?) {
@@ -59,11 +64,25 @@ class ShizukuInstaller(private val service: Service) : Installer(service) {
             val message = intent.getStringExtra(PackageInstaller.EXTRA_STATUS_MESSAGE)
             val packageName = intent.getStringExtra(PackageInstaller.EXTRA_PACKAGE_NAME)
 
-            if (status == PackageInstaller.STATUS_SUCCESS) {
-                continueQueue(InstallStep.Installed)
-            } else {
-                logcat(LogPriority.ERROR) { "Failed to install extension $packageName: $message" }
-                continueQueue(InstallStep.Error)
+            when (intent.action) {
+                ACTION_INSTALL_RESULT -> {
+                    if (status == PackageInstaller.STATUS_SUCCESS) {
+                        continueQueue(InstallStep.Installed)
+                    } else {
+                        logcat(LogPriority.ERROR) { "Failed to install extension $packageName: $message" }
+                        continueQueue(InstallStep.Error)
+                    }
+                }
+                ACTION_UNINSTALL_RESULT -> {
+                    if (status == PackageInstaller.STATUS_SUCCESS) {
+                        logcat { "Successfully uninstalled $packageName" }
+                    } else {
+                        logcat(LogPriority.ERROR) { "Failed to uninstall $packageName: $message" }
+                    }
+                    if (--pendingUninstallCount == 0) {
+                        service.stopSelf()
+                    }
+                }
             }
         }
     }
@@ -119,6 +138,32 @@ class ShizukuInstaller(private val service: Service) : Installer(service) {
         }
     }
 
+    fun uninstallApk(pkgName: String) {
+        pendingUninstallCount++
+        if (shellInterface != null) {
+            doUninstall(pkgName)
+        } else {
+            pendingUninstalls.add(pkgName)
+        }
+    }
+
+    private fun doUninstall(pkgName: String) {
+        try {
+            val statusIntent = PendingIntent.getBroadcast(
+                service,
+                0,
+                Intent(ACTION_UNINSTALL_RESULT).setPackage(BuildConfig.APPLICATION_ID),
+                PendingIntent.FLAG_MUTABLE,
+            )
+            shellInterface?.uninstall(pkgName, statusIntent.intentSender)
+        } catch (e: Exception) {
+            logcat(LogPriority.ERROR, e) { "Failed to uninstall $pkgName" }
+            if (--pendingUninstallCount == 0) {
+                service.stopSelf()
+            }
+        }
+    }
+
     // Don't cancel if entry is already started installing
     override fun cancelEntry(entry: Entry): Boolean = getActiveEntry() != entry
 
@@ -144,7 +189,9 @@ class ShizukuInstaller(private val service: Service) : Installer(service) {
         ContextCompat.registerReceiver(
             service,
             receiver,
-            IntentFilter(ACTION_INSTALL_RESULT),
+            IntentFilter(ACTION_INSTALL_RESULT).apply {
+                addAction(ACTION_UNINSTALL_RESULT)
+            },
             ContextCompat.RECEIVER_EXPORTED,
         )
 
@@ -154,3 +201,4 @@ class ShizukuInstaller(private val service: Service) : Installer(service) {
 
 private const val SHIZUKU_PERMISSION_REQUEST_CODE = 14045
 const val ACTION_INSTALL_RESULT = "${BuildConfig.APPLICATION_ID}.ACTION_INSTALL_RESULT"
+const val ACTION_UNINSTALL_RESULT = "${BuildConfig.APPLICATION_ID}.ACTION_UNINSTALL_RESULT"

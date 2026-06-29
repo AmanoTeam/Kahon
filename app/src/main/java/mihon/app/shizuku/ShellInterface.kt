@@ -152,6 +152,39 @@ class ShellInterface : IShellInterface.Stub() {
         }
     }
 
+    @SuppressLint("PrivateApi")
+    override fun uninstall(packageName: String, statusSender: IntentSender) {
+        val pmInterface = Class.forName($$"android.content.pm.IPackageManager$Stub")
+            .getMethod("asInterface", IBinder::class.java)
+            .invoke(null, SystemServiceHelper.getSystemService("package"))
+
+        val ipi = Class.forName("android.content.pm.IPackageInstaller")
+        val iPackageInstaller = Class.forName("android.content.pm.IPackageManager")
+            .getMethod("getPackageInstaller")
+            .invoke(pmInterface)
+
+        val pi = try {
+            PackageInstaller::class.java.getConstructor(
+                ipi,
+                String::class.java,
+                String::class.java,
+                Int::class.java,
+            ).newInstance(iPackageInstaller, "com.android.shell", null, userId)
+        } catch (e: NoSuchMethodException) {
+            PackageInstaller::class.java.getConstructor(
+                ipi,
+                String::class.java,
+                Int::class.java,
+            ).newInstance(iPackageInstaller, "com.android.shell", userId)
+        }
+
+        PackageInstaller::class.java.getMethod(
+            "uninstall",
+            String::class.java,
+            IntentSender::class.java,
+        ).invoke(pi, packageName, statusSender)
+    }
+
     override fun destroy() {
         exitProcess(0)
     }

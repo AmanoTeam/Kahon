@@ -150,14 +150,20 @@ internal class ExtensionInstaller(
      * @param pkgName The package name of the extension to uninstall
      */
     fun uninstallApk(pkgName: String) {
-        if (context.isPackageInstalled(pkgName)) {
+        if (!context.isPackageInstalled(pkgName)) {
+            ExtensionLoader.uninstallPrivateExtension(context, pkgName)
+            ExtensionInstallReceiver.notifyRemoved(context, pkgName)
+            return
+        }
+
+        if (extensionInstaller.get() == BasePreferences.ExtensionInstaller.SHIZUKU) {
+            val intent = ExtensionInstallService.getUninstallIntent(context, pkgName)
+            ContextCompat.startForegroundService(context, intent)
+        } else {
             @Suppress("DEPRECATION")
             val intent = Intent(Intent.ACTION_UNINSTALL_PACKAGE, "package:$pkgName".toUri())
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
-        } else {
-            ExtensionLoader.uninstallPrivateExtension(context, pkgName)
-            ExtensionInstallReceiver.notifyRemoved(context, pkgName)
         }
     }
 
