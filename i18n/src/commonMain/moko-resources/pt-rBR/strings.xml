@@ -555,6 +555,8 @@
     <string name="publishing_finished">Publicação finalizada</string>
     <string name="cancelled">Cancelado</string>
     <string name="on_hiatus">Em hiato</string>
+    <string name="edit_status_dialog_title">Definir status</string>
+    <string name="edit_status_dialog_message">Substituir o status deste mangá</string>
     <string name="action_show_manga">Mostrar o item</string>
     <string name="pref_navigate_pan">Navegar imagens longas</string>
     <string name="pref_landscape_zoom">Dar zoom automaticamente em imagens largas</string>

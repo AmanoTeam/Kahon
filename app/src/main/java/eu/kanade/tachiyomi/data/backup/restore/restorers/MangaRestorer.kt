@@ -137,6 +137,7 @@ class MangaRestorer(
             isSyncing = 1,
             notes = manga.notes,
             memo = manga.memo.let(MemoColumnAdapter::encode),
+            overrideMetadata = manga.overrideMetadata,
         )
         return manga
     }

@@ -611,6 +611,8 @@
     <string name="manga_added_library">நூலகத்தில் சேர்க்கப்பட்டது</string>
     <string name="cancelled">ரத்து செய்யப்பட்டது</string>
     <string name="on_hiatus">இடைவெளியில்</string>
+    <string name="edit_status_dialog_title">நிலையை அமைக்கவும்</string>
+    <string name="edit_status_dialog_message">இந்த மங்காவின் நிலையை மேலெழுதவும்</string>
     <string name="add_to_library">நூலகத்தில் சேர்க்கவும்</string>
     <string name="in_library">நூலகத்தில்</string>
     <string name="remove_from_library">நூலகத்திலிருந்து அகற்று</string>
