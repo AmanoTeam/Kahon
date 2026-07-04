@@ -43,6 +43,11 @@ class SourcePreferences(
         -1,
     )
 
+    val lastUsedSources: Preference<List<Long>> = preferenceStore.getLongArray(
+        Preference.appStateKey("last_catalogue_sources"),
+        emptyList(),
+    )
+
     val enabledContentWarnings: Preference<Set<ContentWarning>> = preferenceStore.getEnumSet(
         "enabled_content_warnings",
         setOf(ContentWarning.SAFE, ContentWarning.MIXED, ContentWarning.NSFW),
