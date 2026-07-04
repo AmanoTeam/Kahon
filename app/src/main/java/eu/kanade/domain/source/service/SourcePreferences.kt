@@ -41,6 +41,11 @@ class SourcePreferences(
         -1,
     )
 
+    val lastUsedSources: Preference<List<Long>> = preferenceStore.getLongArray(
+        Preference.appStateKey("last_catalogue_sources"),
+        emptyList(),
+    )
+
     val showNsfwSource: Preference<Boolean> = preferenceStore.getBoolean("show_nsfw_source", true)
 
     val migrationSortingMode: Preference<SetMigrateSorting.Mode> = preferenceStore.getEnum(

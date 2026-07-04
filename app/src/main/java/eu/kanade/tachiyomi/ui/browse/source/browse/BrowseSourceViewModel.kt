@@ -22,6 +22,7 @@ import dev.zacsweers.metrox.viewmodel.ManualViewModelAssistedFactory
 import dev.zacsweers.metrox.viewmodel.ManualViewModelAssistedFactoryKey
 import eu.kanade.core.preference.asState
 import eu.kanade.domain.manga.interactor.UpdateManga
+import eu.kanade.domain.source.interactor.GetEnabledSources
 import eu.kanade.domain.source.interactor.GetIncognitoState
 import eu.kanade.domain.source.service.SourcePreferences
 import eu.kanade.domain.track.interactor.AddTracks
@@ -112,7 +113,15 @@ class BrowseSourceViewModel(
                 )
             }
 
-            if (!getIncognitoState.await(source.id)) {
+if (!getIncognitoState.await(source.id)) {
+                val current = sourcePreferences.lastUsedSources.get().toMutableList()
+                if (current.isEmpty()) {
+                    val legacy = sourcePreferences.lastUsedSource.get()
+                    if (legacy != -1L) current.add(legacy)
+                }
+                current.remove(source.id)
+                current.add(0, source.id)
+                sourcePreferences.lastUsedSources.set(current.take(GetEnabledSources.MAX_LAST_USED_SOURCES))
                 sourcePreferences.lastUsedSource.set(source.id)
             }
         }
