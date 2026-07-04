@@ -573,6 +573,8 @@
     <string name="skipped_reason_completed">Ohitettu, koska sarja on päättynyt</string>
     <string name="information_empty_category_dialog">Sinulla ei vielä ole kategorioita.</string>
     <string name="on_hiatus">Tauolla</string>
+    <string name="edit_status_dialog_title">Aseta tila</string>
+    <string name="edit_status_dialog_message">Korvaa tämän mangan tila</string>
     <string name="not_installed">Ei asennettu</string>
     <string name="skipped_reason_not_started">Ohitettu, koska yhtään lukua ei ole luettu sarjasta</string>
     <string name="update_check_open">Avaa GitHubissa</string>

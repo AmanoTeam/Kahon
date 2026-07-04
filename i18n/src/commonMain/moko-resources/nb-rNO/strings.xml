@@ -548,6 +548,8 @@
     <string name="pref_update_only_completely_read">Hopp over oppføringer med uleste kapitler</string>
     <string name="cancelled">Kansellert</string>
     <string name="on_hiatus">På pause</string>
+    <string name="edit_status_dialog_title">Sett status</string>
+    <string name="edit_status_dialog_message">Overstyr statusen for denne mangaen</string>
     <string name="save_chapter_as_cbz">Lagre som CBZ-arkiv</string>
     <string name="ext_update_all">Oppdater alle</string>
     <string name="database_clean">Ingenting å fjerne</string>

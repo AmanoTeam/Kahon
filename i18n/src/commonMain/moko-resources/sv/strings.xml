@@ -550,6 +550,8 @@
     <string name="library_errors_help">För hjälp med att åtgärda fel i biblioteksuppdateringar, se %1$s</string>
     <string name="cancelled">Avbruten</string>
     <string name="on_hiatus">På uppehåll</string>
+    <string name="edit_status_dialog_title">Ange status</string>
+    <string name="edit_status_dialog_message">Åsidosätt statusen för denna manga</string>
     <string name="publishing_finished">Publiceringen avslutad</string>
     <string name="save_chapter_as_cbz">Spara som CBZ-arkiv</string>
     <string name="privacy_policy">Integritetspolicy</string>

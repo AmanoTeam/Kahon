@@ -555,6 +555,8 @@
     <string name="cancelled">Dibatalkan</string>
     <string name="publishing_finished">Penerbitan selesai</string>
     <string name="on_hiatus">Dalam hiatus</string>
+    <string name="edit_status_dialog_title">Tetapkan status</string>
+    <string name="edit_status_dialog_message">Ganti status manga ini</string>
     <string name="action_show_manga">Tunjuk entri</string>
     <string name="action_display_cover_only_grid">Cuma grid muka hadapan</string>
     <string name="skipped_reason_completed">Dilangkau kerana siri sudah lengkap</string>

@@ -410,6 +410,8 @@
     <string name="nav_zone_right">Dereita</string>
     <string name="tracking_guide">Guía de seguimento</string>
     <string name="on_hiatus">En pausa</string>
+    <string name="edit_status_dialog_title">Establecer estado</string>
+    <string name="edit_status_dialog_message">Sobrescribir o estado deste manga</string>
     <string name="action_order_by_chapter_number">Por número de capítulo</string>
     <string name="theme_tako">Tako</string>
     <string name="theme_yotsuba">Yotsuba</string>

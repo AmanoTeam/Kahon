@@ -554,6 +554,8 @@
     <string name="save_chapter_as_cbz">Сохранить как архив CBZ</string>
     <string name="cancelled">Отменено</string>
     <string name="on_hiatus">Перерыв</string>
+    <string name="edit_status_dialog_title">Задать статус</string>
+    <string name="edit_status_dialog_message">Переопределить статус этой манги</string>
     <string name="publishing_finished">Публикация завершена</string>
     <string name="action_show_manga">Показать серию</string>
     <string name="action_display_cover_only_grid">Сетка без названия</string>

@@ -555,6 +555,8 @@
     <string name="publishing_finished">เผยแพร่จบแล้ว</string>
     <string name="cancelled">ถูกยกเลิก</string>
     <string name="on_hiatus">อยู่ระหว่างพัก</string>
+    <string name="edit_status_dialog_title">กำหนดสถานะ</string>
+    <string name="edit_status_dialog_message">แทนที่สถานะของมังงะเรื่องนี้</string>
     <string name="pref_navigate_pan">แพนหน้ากว้าง</string>
     <string name="action_display_cover_only_grid">ตารางแสดงแค่หน้าปก</string>
     <string name="pref_landscape_zoom">ซูมภาพกว้างโดยอัตโนมัติ</string>

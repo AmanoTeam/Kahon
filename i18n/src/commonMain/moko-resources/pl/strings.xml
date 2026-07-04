@@ -554,6 +554,8 @@
     <string name="database_clean">Nie ma nic do wyczyszczynia</string>
     <string name="cancelled">Anulowane</string>
     <string name="on_hiatus">Przerwa wydawnicza</string>
+    <string name="edit_status_dialog_title">Ustaw status</string>
+    <string name="edit_status_dialog_message">Nadpisz status tej mangi</string>
     <string name="library_errors_help">Aby uzyskać pomoc z błędami aktualizacji biblioteki, zobacz %1$s</string>
     <string name="save_chapter_as_cbz">Zapisz jako archiwum CBZ</string>
     <string name="privacy_policy">Polityka prywatności</string>

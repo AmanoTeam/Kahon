@@ -553,6 +553,8 @@
     <string name="publishing_finished">Objavljivanje završeno</string>
     <string name="cancelled">Prekinuto</string>
     <string name="on_hiatus">Zaustavljeno</string>
+    <string name="edit_status_dialog_title">Postavi stanje</string>
+    <string name="edit_status_dialog_message">Nadjačaj stanje ovog mange</string>
     <string name="library_errors_help">Za pomoć o tome kako popraviti greške aktualiziranja biblioteke, pogledaj %1$s</string>
     <string name="save_chapter_as_cbz">Spremi kao CBZ arhivu</string>
     <string name="action_show_manga">Prikaži unos</string>

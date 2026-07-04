@@ -554,6 +554,8 @@
     <string name="save_chapter_as_cbz">Als CBZ-Archiv speichern</string>
     <string name="cancelled">Abgebrochen</string>
     <string name="on_hiatus">Unterbrochen</string>
+    <string name="edit_status_dialog_title">Status einstellen</string>
+    <string name="edit_status_dialog_message">Status für diesen Manga überschreiben</string>
     <string name="publishing_finished">Veröffentlichung abgeschlossen</string>
     <string name="action_show_manga">Eintrag anzeigen</string>
     <string name="action_display_cover_only_grid">Nur-Cover-Kacheln</string>

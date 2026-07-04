@@ -494,6 +494,8 @@
     <string name="publishing_finished">Editare finalizată</string>
     <string name="cancelled">Anulat</string>
     <string name="on_hiatus">În hiatus</string>
+    <string name="edit_status_dialog_title">Setează starea</string>
+    <string name="edit_status_dialog_message">Suprascrie starea acestui manga</string>
     <string name="skipped_reason_completed">Ignorata deoarece seria este completa</string>
     <string name="skipped_reason_not_started">Ignorat din cauza lipsei de capitolel citite</string>
     <string name="local_invalid_format">Format de capitol invalid</string>
