@@ -437,6 +437,8 @@
     <string name="download_ahead_info">Funguje iba na položkách v knižnici a ak je aktuálna kapitola a nasledujúca kapitola už stiahnutá.</string>
     <string name="unknown_status">Neznámy stav</string>
     <string name="on_hiatus">Prestávka</string>
+    <string name="edit_status_dialog_title">Nastaviť stav</string>
+    <string name="edit_status_dialog_message">Prepísať stav tejto mangy</string>
     <string name="add_tracking">Pridať sledovanie</string>
     <string name="unfinished_list">Nedokončený zoznam</string>
     <string name="information_empty_category_dialog">Zatiaľ nemáte žiadne kategórie.</string>

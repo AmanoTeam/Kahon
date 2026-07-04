@@ -445,6 +445,8 @@
     <string name="publishing_finished">प्रकाशन सम्पन्न</string>
     <string name="cancelled">रद्द गरेको</string>
     <string name="on_hiatus">अन्तरालमा छ</string>
+    <string name="edit_status_dialog_title">स्थिति सेट गर्नुहोस्</string>
+    <string name="edit_status_dialog_message">यस मंगाको स्थिति अधिलेखन गर्नुहोस्</string>
     <string name="add_to_library">पुस्तकालयमा राख्नुहोस्</string>
     <string name="manga_added_library">पुस्तकालयमा राखियो</string>
     <string name="in_library">पुस्तकालयमा छ</string>

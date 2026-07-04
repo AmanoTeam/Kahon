@@ -210,6 +210,7 @@ class MangaRepositoryImpl(
                     isSyncing = 0,
                     notes = value.notes,
                     memo = value.memo?.let(MemoColumnAdapter::encode),
+                    overrideMetadata = value.overrideMetadata,
                 )
             }
         }

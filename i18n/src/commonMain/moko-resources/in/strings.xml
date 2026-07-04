@@ -553,6 +553,8 @@
     <string name="publishing_finished">Penerbitan selesai</string>
     <string name="cancelled">Dibatalkan</string>
     <string name="on_hiatus">Sedang Hiatus</string>
+    <string name="edit_status_dialog_title">Atur status</string>
+    <string name="edit_status_dialog_message">Timpa status manga ini</string>
     <string name="library_errors_help">Untuk bantuan cara memperbaiki kesalahan pembaruan pustaka, lihat %1$s</string>
     <string name="save_chapter_as_cbz">Simpan sebagai arsip CBZ</string>
     <string name="action_show_manga">Lihat entri</string>

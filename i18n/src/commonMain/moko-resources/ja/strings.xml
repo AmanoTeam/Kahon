@@ -553,6 +553,8 @@
     <string name="publishing_finished">完結済み</string>
     <string name="cancelled">キャンセル済み</string>
     <string name="on_hiatus">休載中</string>
+    <string name="edit_status_dialog_title">ステータスを設定</string>
+    <string name="edit_status_dialog_message">この漫画のステータスを上書き</string>
     <string name="action_show_manga">項目を表示</string>
     <string name="action_display_cover_only_grid">表紙グリッド</string>
     <string name="pref_update_only_started">読み始めていない作品をスキップ</string>

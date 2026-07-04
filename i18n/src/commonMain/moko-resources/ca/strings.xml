@@ -547,6 +547,8 @@
     <string name="pref_verbose_logging_summary">Imprimeix registres detallats al registre del sistema (redueix el rendiment de l’aplicació)</string>
     <string name="publishing_finished">Publicació finalitzada</string>
     <string name="on_hiatus">En pausa</string>
+    <string name="edit_status_dialog_title">Estableix l’estat</string>
+    <string name="edit_status_dialog_message">Sobreescriu l’estat d’aquest manga</string>
     <string name="channel_app_updates">Actualitzacions de l’aplicació</string>
     <string name="action_track">Segueix</string>
     <string name="ext_app_info">Informació de l’aplicació</string>

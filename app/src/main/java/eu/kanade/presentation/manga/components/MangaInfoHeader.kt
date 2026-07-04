@@ -47,9 +47,12 @@ import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.LocalMinimumInteractiveComponentSize
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.ProvideTextStyle
 import androidx.compose.material3.SuggestionChip
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
@@ -90,6 +93,7 @@ import eu.kanade.domain.ui.UiPreferences
 import eu.kanade.presentation.components.DropdownMenu
 import eu.kanade.tachiyomi.R
 import eu.kanade.tachiyomi.source.model.SManga
+import eu.kanade.tachiyomi.ui.manga.MangaMetadataDraft
 import eu.kanade.tachiyomi.util.system.copyToClipboard
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.daysUntil
@@ -120,6 +124,10 @@ fun MangaInfoBox(
     isStubSource: Boolean,
     onCoverClick: () -> Unit,
     doSearch: (query: String, global: Boolean) -> Unit,
+    onStatusClick: (() -> Unit)? = null,
+    isEditingMetadata: Boolean = false,
+    metadataDraft: MangaMetadataDraft = MangaMetadataDraft(),
+    onMetadataDraftChange: (MangaMetadataDraft) -> Unit = {},
     modifier: Modifier = Modifier,
 ) {
     Box(modifier = modifier) {
@@ -157,6 +165,10 @@ fun MangaInfoBox(
                     isStubSource = isStubSource,
                     onCoverClick = onCoverClick,
                     doSearch = doSearch,
+                    onStatusClick = onStatusClick,
+                    isEditingMetadata = isEditingMetadata,
+                    metadataDraft = metadataDraft,
+                    onMetadataDraftChange = onMetadataDraftChange,
                 )
             } else {
                 MangaAndSourceTitlesLarge(
@@ -166,6 +178,10 @@ fun MangaInfoBox(
                     isStubSource = isStubSource,
                     onCoverClick = onCoverClick,
                     doSearch = doSearch,
+                    onStatusClick = onStatusClick,
+                    isEditingMetadata = isEditingMetadata,
+                    metadataDraft = metadataDraft,
+                    onMetadataDraftChange = onMetadataDraftChange,
                 )
             }
         }
@@ -255,25 +271,49 @@ fun ExpandableMangaDescription(
     onTagSearch: (String) -> Unit,
     onCopyTagToClipboard: (tag: String) -> Unit,
     onEditNotes: () -> Unit,
+    isEditingMetadata: Boolean = false,
+    descriptionDraft: String = "",
+    onDescriptionDraftChange: (String) -> Unit = {},
     modifier: Modifier = Modifier,
 ) {
     Column(modifier = modifier) {
         val (expanded, onExpanded) = rememberSaveable {
             mutableStateOf(defaultExpandState)
         }
-        val desc =
-            description.takeIf { !it.isNullOrBlank() } ?: stringResource(MR.strings.description_placeholder)
 
-        MangaSummary(
-            description = desc,
-            expanded = expanded,
-            notes = notes,
-            onEditNotesClicked = onEditNotes,
-            modifier = Modifier
-                .padding(top = 8.dp)
-                .padding(horizontal = 16.dp)
-                .clickableNoIndication { onExpanded(!expanded) },
-        )
+        if (isEditingMetadata) {
+            // Edit mode: replace markdown summary + notes with a single editable multi-line text field.
+            OutlinedTextField(
+                value = descriptionDraft,
+                onValueChange = onDescriptionDraftChange,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 8.dp, start = 16.dp, end = 16.dp)
+                    .heightIn(min = 160.dp),
+                textStyle = MaterialTheme.typography.bodyMedium,
+                placeholder = { Text(text = stringResource(MR.strings.description_placeholder)) },
+                colors = TextFieldDefaults.colors(
+                    focusedContainerColor = Color.Transparent,
+                    unfocusedContainerColor = Color.Transparent,
+                ),
+                minLines = 6,
+            )
+        } else {
+            val desc =
+                description.takeIf { !it.isNullOrBlank() }
+                    ?: stringResource(MR.strings.description_placeholder)
+
+            MangaSummary(
+                description = desc,
+                expanded = expanded,
+                notes = notes,
+                onEditNotesClicked = onEditNotes,
+                modifier = Modifier
+                    .padding(top = 8.dp)
+                    .padding(horizontal = 16.dp)
+                    .clickableNoIndication { onExpanded(!expanded) },
+            )
+        }
         val tags = tagsProvider()
         if (!tags.isNullOrEmpty()) {
             Box(
@@ -350,6 +390,10 @@ private fun MangaAndSourceTitlesLarge(
     isStubSource: Boolean,
     onCoverClick: () -> Unit,
     doSearch: (query: String, global: Boolean) -> Unit,
+    onStatusClick: (() -> Unit)?,
+    isEditingMetadata: Boolean,
+    metadataDraft: MangaMetadataDraft,
+    onMetadataDraftChange: (MangaMetadataDraft) -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -375,7 +419,11 @@ private fun MangaAndSourceTitlesLarge(
             sourceName = sourceName,
             isStubSource = isStubSource,
             doSearch = doSearch,
+            onStatusClick = onStatusClick,
             textAlign = TextAlign.Center,
+            isEditingMetadata = isEditingMetadata,
+            metadataDraft = metadataDraft,
+            onMetadataDraftChange = onMetadataDraftChange,
         )
     }
 }
@@ -388,6 +436,10 @@ private fun MangaAndSourceTitlesSmall(
     isStubSource: Boolean,
     onCoverClick: () -> Unit,
     doSearch: (query: String, global: Boolean) -> Unit,
+    onStatusClick: (() -> Unit)?,
+    isEditingMetadata: Boolean,
+    metadataDraft: MangaMetadataDraft,
+    onMetadataDraftChange: (MangaMetadataDraft) -> Unit,
 ) {
     Row(
         modifier = Modifier
@@ -418,6 +470,10 @@ private fun MangaAndSourceTitlesSmall(
                 sourceName = sourceName,
                 isStubSource = isStubSource,
                 doSearch = doSearch,
+                onStatusClick = onStatusClick,
+                isEditingMetadata = isEditingMetadata,
+                metadataDraft = metadataDraft,
+                onMetadataDraftChange = onMetadataDraftChange,
             )
         }
     }
@@ -432,83 +488,119 @@ private fun ColumnScope.MangaContentInfo(
     sourceName: String,
     isStubSource: Boolean,
     doSearch: (query: String, global: Boolean) -> Unit,
+    onStatusClick: (() -> Unit)? = null,
     textAlign: TextAlign? = LocalTextStyle.current.textAlign,
+    isEditingMetadata: Boolean = false,
+    metadataDraft: MangaMetadataDraft = MangaMetadataDraft(),
+    onMetadataDraftChange: (MangaMetadataDraft) -> Unit = {},
 ) {
     val context = LocalContext.current
-    Text(
-        text = title.ifBlank { stringResource(MR.strings.unknown_title) },
-        style = MaterialTheme.typography.titleLarge,
-        modifier = Modifier.clickableNoIndication(
-            onLongClick = {
-                if (title.isNotBlank()) {
-                    context.copyToClipboard(
-                        title,
-                        title,
-                    )
-                }
+    if (isEditingMetadata) {
+        OutlinedTextField(
+            value = metadataDraft.title,
+            onValueChange = { onMetadataDraftChange(metadataDraft.copy(title = it)) },
+            modifier = Modifier.fillMaxWidth(),
+            textStyle = MaterialTheme.typography.titleLarge.let { base ->
+                if (textAlign != null) base.copy(textAlign = textAlign) else base
             },
-            onClick = { if (title.isNotBlank()) doSearch(title, true) },
-        ),
-        textAlign = textAlign,
-    )
-
-    Spacer(modifier = Modifier.height(2.dp))
-
-    Row(
-        modifier = Modifier.secondaryItemAlpha(),
-        horizontalArrangement = Arrangement.spacedBy(MaterialTheme.padding.extraSmall),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        Icon(
-            imageVector = Icons.Filled.PersonOutline,
-            contentDescription = null,
-            modifier = Modifier.size(16.dp),
+            label = { Text(text = stringResource(MR.strings.title)) },
+            singleLine = true,
         )
+        Spacer(modifier = Modifier.height(4.dp))
+        OutlinedTextField(
+            value = metadataDraft.author,
+            onValueChange = { onMetadataDraftChange(metadataDraft.copy(author = it)) },
+            modifier = Modifier.fillMaxWidth(),
+            textStyle = MaterialTheme.typography.titleSmall,
+            label = { Text(text = stringResource(MR.strings.author)) },
+            singleLine = true,
+        )
+        Spacer(modifier = Modifier.height(2.dp))
+        OutlinedTextField(
+            value = metadataDraft.artist,
+            onValueChange = { onMetadataDraftChange(metadataDraft.copy(artist = it)) },
+            modifier = Modifier.fillMaxWidth(),
+            textStyle = MaterialTheme.typography.titleSmall,
+            label = { Text(text = stringResource(MR.strings.artist)) },
+            singleLine = true,
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+    } else {
         Text(
-            text = author?.takeIf { it.isNotBlank() }
-                ?: stringResource(MR.strings.unknown_author),
-            style = MaterialTheme.typography.titleSmall,
-            modifier = Modifier
-                .clickableNoIndication(
-                    onLongClick = {
-                        if (!author.isNullOrBlank()) {
-                            context.copyToClipboard(
-                                author,
-                                author,
-                            )
-                        }
-                    },
-                    onClick = { if (!author.isNullOrBlank()) doSearch(author, true) },
-                ),
+            text = title.ifBlank { stringResource(MR.strings.unknown_title) },
+            style = MaterialTheme.typography.titleLarge,
+            modifier = Modifier.clickableNoIndication(
+                onLongClick = {
+                    if (title.isNotBlank()) {
+                        context.copyToClipboard(
+                            title,
+                            title,
+                        )
+                    }
+                },
+                onClick = { if (title.isNotBlank()) doSearch(title, true) },
+            ),
             textAlign = textAlign,
         )
-    }
 
-    if (!artist.isNullOrBlank() && author != artist) {
+        Spacer(modifier = Modifier.height(2.dp))
+
         Row(
             modifier = Modifier.secondaryItemAlpha(),
             horizontalArrangement = Arrangement.spacedBy(MaterialTheme.padding.extraSmall),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Icon(
-                imageVector = Icons.Filled.Brush,
+                imageVector = Icons.Filled.PersonOutline,
                 contentDescription = null,
                 modifier = Modifier.size(16.dp),
             )
             Text(
-                text = artist,
+                text = author?.takeIf { it.isNotBlank() }
+                    ?: stringResource(MR.strings.unknown_author),
                 style = MaterialTheme.typography.titleSmall,
                 modifier = Modifier
                     .clickableNoIndication(
-                        onLongClick = { context.copyToClipboard(artist, artist) },
-                        onClick = { doSearch(artist, true) },
+                        onLongClick = {
+                            if (!author.isNullOrBlank()) {
+                                context.copyToClipboard(
+                                    author,
+                                    author,
+                                )
+                            }
+                        },
+                        onClick = { if (!author.isNullOrBlank()) doSearch(author, true) },
                     ),
                 textAlign = textAlign,
             )
         }
-    }
 
-    Spacer(modifier = Modifier.height(2.dp))
+        if (!artist.isNullOrBlank() && author != artist) {
+            Row(
+                modifier = Modifier.secondaryItemAlpha(),
+                horizontalArrangement = Arrangement.spacedBy(MaterialTheme.padding.extraSmall),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.Brush,
+                    contentDescription = null,
+                    modifier = Modifier.size(16.dp),
+                )
+                Text(
+                    text = artist,
+                    style = MaterialTheme.typography.titleSmall,
+                    modifier = Modifier
+                        .clickableNoIndication(
+                            onLongClick = { context.copyToClipboard(artist, artist) },
+                            onClick = { doSearch(artist, true) },
+                        ),
+                    textAlign = textAlign,
+                )
+            }
+        }
+
+        Spacer(modifier = Modifier.height(2.dp))
+    }
 
     Row(
         modifier = Modifier.secondaryItemAlpha(),
@@ -530,18 +622,24 @@ private fun ColumnScope.MangaContentInfo(
                 .size(16.dp),
         )
         ProvideTextStyle(MaterialTheme.typography.bodyMedium) {
+            val statusLabel = when (status) {
+                SManga.ONGOING.toLong() -> stringResource(MR.strings.ongoing)
+                SManga.COMPLETED.toLong() -> stringResource(MR.strings.completed)
+                SManga.LICENSED.toLong() -> stringResource(MR.strings.licensed)
+                SManga.PUBLISHING_FINISHED.toLong() -> stringResource(MR.strings.publishing_finished)
+                SManga.CANCELLED.toLong() -> stringResource(MR.strings.cancelled)
+                SManga.ON_HIATUS.toLong() -> stringResource(MR.strings.on_hiatus)
+                else -> stringResource(MR.strings.unknown)
+            }
             Text(
-                text = when (status) {
-                    SManga.ONGOING.toLong() -> stringResource(MR.strings.ongoing)
-                    SManga.COMPLETED.toLong() -> stringResource(MR.strings.completed)
-                    SManga.LICENSED.toLong() -> stringResource(MR.strings.licensed)
-                    SManga.PUBLISHING_FINISHED.toLong() -> stringResource(MR.strings.publishing_finished)
-                    SManga.CANCELLED.toLong() -> stringResource(MR.strings.cancelled)
-                    SManga.ON_HIATUS.toLong() -> stringResource(MR.strings.on_hiatus)
-                    else -> stringResource(MR.strings.unknown)
-                },
+                text = statusLabel,
                 overflow = TextOverflow.Ellipsis,
                 maxLines = 1,
+                modifier = if (onStatusClick != null) {
+                    Modifier.clickableNoIndication(onClick = onStatusClick)
+                } else {
+                    Modifier
+                },
             )
             DotSeparatorText()
             if (isStubSource) {

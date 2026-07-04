@@ -458,6 +458,8 @@
     <string name="unknown_author">Autor i panjohur</string>
     <string name="cancelled">Anuluar</string>
     <string name="on_hiatus">Në pauzë</string>
+    <string name="edit_status_dialog_title">Cakto statusin</string>
+    <string name="edit_status_dialog_message">Mbishkruaj statusin e kësaj mange</string>
     <string name="publishing_finished">Botim i përfunduar</string>
     <string name="manga_added_library">Shtuar në bibliotekë</string>
     <string name="manga_info_collapse">Më pak</string>

@@ -556,6 +556,8 @@
     <string name="extension_api_error">एक्सटेंशन सूची प्राप्त करने में विफल</string>
     <string name="cancelled">रद्द किया गया</string>
     <string name="on_hiatus">अंतराल पर है</string>
+    <string name="edit_status_dialog_title">स्थिति निर्धारित करें</string>
+    <string name="edit_status_dialog_message">इस मंगा की स्थिति को ओवरराइड करें</string>
     <string name="publishing_finished">प्रकाशन समाप्त</string>
     <string name="learn_more">अधिक जानकारी के लिए दबाए</string>
     <string name="skipped_reason_completed">छोड़े गए क्योंकि श्रृंखला पूरी हो गई है</string>

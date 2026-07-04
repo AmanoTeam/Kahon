@@ -584,6 +584,8 @@
     <string name="action_update_category">بروزرسانی دسته بندی</string>
     <string name="action_copy_to_clipboard">کپی کردن به کلیپ‌برد</string>
     <string name="on_hiatus">متوقف شده</string>
+    <string name="edit_status_dialog_title">تنظیم وضعیت</string>
+    <string name="edit_status_dialog_message">بازنویسی وضعیت این مانگا</string>
     <string name="unlock_app_title">باز گشایی %s</string>
     <string name="delete_downloaded">پاک کردن قسمت های دانلود شده</string>
     <string name="action_apply">ذخیره</string>

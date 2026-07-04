@@ -594,6 +594,8 @@
     <string name="pref_acra_summary">Segít a hibák javításában. Semmilyen bizalmas információ nem lesz elküldve</string>
     <string name="cancelled">Félbeszakított</string>
     <string name="on_hiatus">Szünetelő</string>
+    <string name="edit_status_dialog_title">Állapot beállítása</string>
+    <string name="edit_status_dialog_message">A manga állapotának felülírása</string>
     <string name="show_title">Forrás címe</string>
     <string name="sort_by_source">Forrás szerint</string>
     <string name="sort_by_number">Fejezetek száma szerint</string>

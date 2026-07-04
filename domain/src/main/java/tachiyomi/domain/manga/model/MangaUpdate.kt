@@ -27,6 +27,7 @@ data class MangaUpdate(
     val version: Long? = null,
     val notes: String? = null,
     val memo: JsonObject? = null,
+    val overrideMetadata: Long? = null,
 )
 
 fun Manga.toMangaUpdate(): MangaUpdate {
@@ -54,5 +55,6 @@ fun Manga.toMangaUpdate(): MangaUpdate {
         version = version,
         notes = notes,
         memo = memo,
+        overrideMetadata = overrideMetadata,
     )
 }

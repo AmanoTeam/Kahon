@@ -542,6 +542,8 @@
     <string name="publishing_finished">انتهى النشر</string>
     <string name="cancelled">أُلغيت</string>
     <string name="on_hiatus">متوقفة</string>
+    <string name="edit_status_dialog_title">عيِّن الحالة</string>
+    <string name="edit_status_dialog_message">تجاوز حالة هذه المانغا</string>
     <string name="library_errors_help">للحصول على المساعده في إصلاح أخطاء تحديث المكتبة، أنظر هنا%1$s</string>
     <string name="save_chapter_as_cbz">احفظ كأرشيف CBZ</string>
     <string name="privacy_policy">سياسة الخصوصية</string>

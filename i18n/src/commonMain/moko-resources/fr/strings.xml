@@ -553,6 +553,8 @@
     <string name="save_chapter_as_cbz">Enregistrer comme archive CBZ</string>
     <string name="library_errors_help">Pour savoir comment corriger les erreurs de mise à jour de la bibliothèque, voir %1$s</string>
     <string name="on_hiatus">En pause</string>
+    <string name="edit_status_dialog_title">Définir le statut</string>
+    <string name="edit_status_dialog_message">Remplacer le statut de ce manga</string>
     <string name="publishing_finished">Publication terminée</string>
     <string name="cancelled">Annulé</string>
     <string name="action_show_manga">Afficher la série</string>

@@ -551,6 +551,8 @@
     <string name="library_errors_help">Si necesitas ayuda para resolver los errores de actualización de la biblioteca mira en %1$s</string>
     <string name="save_chapter_as_cbz">Guardar como archivo CBZ</string>
     <string name="on_hiatus">En pausa</string>
+    <string name="edit_status_dialog_title">Establecer estado</string>
+    <string name="edit_status_dialog_message">Sobrescribir el estado de este manga</string>
     <string name="publishing_finished">Publicación finalizada</string>
     <string name="cancelled">Cancelada</string>
     <string name="action_show_manga">Ver la obra</string>

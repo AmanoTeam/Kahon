@@ -554,6 +554,8 @@
     <string name="save_chapter_as_cbz">Αποθήκευση ως αρχείο CBZ</string>
     <string name="cancelled">Ακυρώθηκε</string>
     <string name="on_hiatus">Σε αναστολή</string>
+    <string name="edit_status_dialog_title">Ορισμός κατάστασης</string>
+    <string name="edit_status_dialog_message">Παράκαμψη της κατάστασης αυτού του manga</string>
     <string name="publishing_finished">Η έκδοση ολοκληρώθηκε</string>
     <string name="action_show_manga">Εμφάνιση καταχώρισης</string>
     <string name="pref_landscape_zoom">Αυτόματο ζουμ σε ευρείες εικόνες</string>

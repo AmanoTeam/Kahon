@@ -542,6 +542,8 @@
     <string name="pref_download_new_categories_details">Baztertutako kategorietako mangak ez dira deskargatuko, sarturiko kategorietan egon arren.</string>
     <string name="cancelled">Bertan behera utzia</string>
     <string name="on_hiatus">Etenaldian</string>
+    <string name="edit_status_dialog_title">Ezarri egoera</string>
+    <string name="edit_status_dialog_message">Manga honen egoera gainidatzi</string>
     <string name="library_errors_help">Liburutegi eguneraketen akatsak nola konpondu jakiteko, ikusi %1$s</string>
     <string name="action_display_local_badge">Manga lokala</string>
     <string name="notification_chapters_single_and_more">%1$s kapitulua eta %2$d gehiago</string>

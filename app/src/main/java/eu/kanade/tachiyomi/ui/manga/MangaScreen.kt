@@ -33,6 +33,7 @@ import eu.kanade.presentation.manga.DuplicateMangaDialog
 import eu.kanade.presentation.manga.EditCoverAction
 import eu.kanade.presentation.manga.MangaScreen
 import eu.kanade.presentation.manga.components.DeleteChaptersDialog
+import eu.kanade.presentation.manga.components.EditStatusDialog
 import eu.kanade.presentation.manga.components.MangaCoverDialog
 import eu.kanade.presentation.manga.components.ScanlatorFilterDialog
 import eu.kanade.presentation.manga.components.SetIntervalDialog
@@ -165,6 +166,9 @@ class MangaScreen(
                 navigator.push(MigrationConfigScreen(successState.manga.id))
             }.takeIf { successState.manga.favorite },
             onEditNotesClicked = { navigator.push(MangaNotesScreen(manga = successState.manga)) },
+            onEditStatusClicked = viewModel::showEditStatusDialog,
+            onEditMetadataClicked = viewModel::toggleMetadataEdit,
+            onMetadataDraftChange = viewModel::updateMetadataDraft,
             onMultiBookmarkClicked = viewModel::bookmarkChapters,
             onMultiMarkAsReadClicked = viewModel::markChaptersRead,
             onMarkPreviousAsReadClicked = viewModel::markPreviousChapterRead,
@@ -281,6 +285,16 @@ class MangaScreen(
                     onDismissRequest = onDismissRequest,
                     onValueChanged = { interval: Int -> viewModel.setFetchInterval(dialog.manga, interval) }
                         .takeIf { viewModel.isUpdateIntervalEnabled },
+                )
+            }
+            MangaViewModel.Dialog.EditStatus -> {
+                EditStatusDialog(
+                    initialStatus = successState.manga.status,
+                    onDismissRequest = onDismissRequest,
+                    onConfirm = { userStatus ->
+                        viewModel.setMangaUserStatus(userStatus)
+                        onDismissRequest()
+                    },
                 )
             }
         }
