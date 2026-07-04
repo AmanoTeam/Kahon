@@ -552,6 +552,8 @@
     <string name="publishing_finished">Đã hoàn thành xuất bản</string>
     <string name="cancelled">Đã ngưng</string>
     <string name="on_hiatus">Đang tạm ngưng</string>
+    <string name="edit_status_dialog_title">Đặt trạng thái</string>
+    <string name="edit_status_dialog_message">Ghi đè trạng thái của manga này</string>
     <string name="library_errors_help">Để được trợ giúp về cách sửa lỗi cập nhật thư viện, hãy xem %1$s</string>
     <string name="save_chapter_as_cbz">Lưu dưới dạng lưu trữ CBZ</string>
     <string name="pref_update_only_started">Chưa bắt đầu đọc</string>

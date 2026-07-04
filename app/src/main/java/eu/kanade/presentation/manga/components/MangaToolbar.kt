@@ -2,6 +2,7 @@ package eu.kanade.presentation.manga.components
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Download
+import androidx.compose.material.icons.outlined.Edit
 import androidx.compose.material.icons.outlined.FilterList
 import androidx.compose.material.icons.outlined.FlipToBack
 import androidx.compose.material.icons.outlined.SelectAll
@@ -37,6 +38,8 @@ fun MangaToolbar(
     onClickRefresh: () -> Unit,
     onClickMigrate: (() -> Unit)?,
     onClickEditNotes: () -> Unit,
+    onClickEditMetadata: () -> Unit,
+isEditingMetadata: Boolean = false,
 
     // For action mode
     actionModeCounter: Int,
@@ -144,6 +147,12 @@ fun MangaToolbar(
                         AppBar.OverflowAction(
                             title = stringResource(MR.strings.action_notes),
                             onClick = onClickEditNotes,
+                        ),
+                    )
+                    add(
+                        AppBar.OverflowAction(
+                            title = stringResource(if (isEditingMetadata) MR.strings.action_save else MR.strings.action_edit),
+                            onClick = onClickEditMetadata,
                         ),
                     )
                 },
