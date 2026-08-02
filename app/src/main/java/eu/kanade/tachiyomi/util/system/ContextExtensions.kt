@@ -155,11 +155,16 @@ fun Context.isPackageInstalled(packageName: String): Boolean {
 val Context.hasMiuiPackageInstaller get() = isPackageInstalled("com.miui.packageinstaller")
 
 val Context.isShizukuInstalled: Boolean
-    get() = try {
-        packageManager.getPermissionInfo(ShizukuProvider.PERMISSION, 0)
-        true
-    } catch (e: PackageManager.NameNotFoundException) {
+    get() = if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+        // Shizuku requires API 24 (Android 7); it is unavailable on Android 6.
         false
+    } else {
+        try {
+            packageManager.getPermissionInfo(ShizukuProvider.PERMISSION, 0)
+            true
+        } catch (e: PackageManager.NameNotFoundException) {
+            false
+        }
     }
 
 fun Context.launchRequestPackageInstallsPermission() {

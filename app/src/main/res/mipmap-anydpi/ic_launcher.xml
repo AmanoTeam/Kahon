@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Launcher icon fallback for API < 26 (Android 6/7). On API 26+ the
+     adaptive-icon in mipmap-anydpi-v26 is preferred.
+     Insets use a fixed dimension (12dp = 25% of the 48dp foreground) because
+     percentage insets (android:inset="25%") are not supported by InsetDrawable
+     before API 26. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/ic_launcher_background" />
+    <item>
+        <inset
+            android:drawable="@drawable/ic_launcher_foreground"
+            android:insetLeft="12dp"
+            android:insetTop="12dp"
+            android:insetRight="12dp"
+            android:insetBottom="12dp" />
+    </item>
+</layer-list>
+
