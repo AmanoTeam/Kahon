@@ -2,11 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Shizuku requires API 24; Kahon still runs on API 23 (Android 6) with Shizuku
-         features unavailable there, so force the manifest merger to accept it.
-         All Shizuku usage is guarded with Build.VERSION.SDK_INT >= N at runtime. -->
-    <uses-sdk tools:overrideLibrary="rikka.shizuku.api,rikka.shizuku.aidl,rikka.shizuku.shared,rikka.shizuku.provider" />
-
     <!-- Internet -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

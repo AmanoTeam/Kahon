@@ -44,14 +44,11 @@ class CreateBackupScreen : Screen() {
             contract = ActivityResultContracts.CreateDocument("application/*"),
         ) {
             if (it != null) {
-                try {
-                    context.contentResolver.takePersistableUriPermission(
-                        it,
-                        Intent.FLAG_GRANT_READ_URI_PERMISSION or
-                            Intent.FLAG_GRANT_WRITE_URI_PERMISSION,
-                    )
-                } catch (_: SecurityException) {
-                }
+                context.contentResolver.takePersistableUriPermission(
+                    it,
+                    Intent.FLAG_GRANT_READ_URI_PERMISSION or
+                        Intent.FLAG_GRANT_WRITE_URI_PERMISSION,
+                )
                 viewModel.createBackup(context, it)
                 navigator.pop()
             }
