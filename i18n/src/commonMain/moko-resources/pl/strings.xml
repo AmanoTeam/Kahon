@@ -185,8 +185,6 @@
     <string name="cookies_cleared">Ciasteczka usunięte</string>
     <string name="pref_clear_database_summary">Usuń historię wpisów, których nie ma w twojej bibliotece</string>
     <string name="pref_clear_database">Wyczyść bazę danych</string>
-    <string name="pref_enable_acra">Wysyłaj raporty o awariach</string>
-    <string name="pref_acra_summary">Pomaga naprawiać błędy. Żadne wrażliwe dane nie będą wysyłane</string>
     <string name="backup_created">Utworzono kopię zapasową</string>
     <string name="restore_completed">Przywracanie ukończone</string>
     <string name="clear_database_completed">Pozycje usunięte</string>
@@ -279,8 +277,6 @@
     <string name="action_webview_forward">Dalej</string>
     <string name="action_webview_refresh">Odśwież</string>
     <string name="pref_category_library">Biblioteka</string>
-    <string name="ext_uninstall_obsolete">Odinstaluj przestarzałe</string>
-    <string name="ext_uninstall_obsolete_dialog">Czy na pewno chcesz odinstalować %1$d przestarzałych rozszerzeń?</string>
     <string name="ext_obsolete">Przestarzałe</string>
     <string name="obsolete_extension_message">To rozszerzenie nie jest już dostępne i może nie funkcjonować prawidłowo, powodując problemy z aplikacją. Zalecamy odinstalowanie go.</string>
     <string name="pref_date_format">Format daty</string>
@@ -537,8 +533,6 @@
     <string name="database_clean">Nie ma nic do wyczyszczynia</string>
     <string name="cancelled">Anulowane</string>
     <string name="on_hiatus">Przerwa wydawnicza</string>
-    <string name="edit_status_dialog_title">Ustaw status</string>
-    <string name="edit_status_dialog_message">Nadpisz status tej mangi</string>
     <string name="library_errors_help">Aby uzyskać pomoc z błędami aktualizacji biblioteki, zobacz %1$s</string>
     <string name="save_chapter_as_cbz">Zapisz jako archiwum CBZ</string>
     <string name="privacy_policy">Polityka prywatności</string>
@@ -811,6 +805,10 @@
     <string name="artist">Artysta</string>
     <string name="author">Autor</string>
     <string name="downloading_with_progress">Pobieranie... (%d%%)</string>
+    <string name="ext_uninstall_obsolete">Odinstaluj przestarzałe</string>
+    <string name="ext_uninstall_obsolete_dialog">Czy na pewno chcesz odinstalować %1$d przestarzałych rozszerzeń?</string>
+    <string name="edit_status_dialog_title">Ustaw status</string>
+    <string name="edit_status_dialog_message">Nadpisz status tej mangi</string>
     <string name="saved_searches">Zapisane wyszukiwania</string>
     <string name="saved_searches_delete">Zapisane wyszukiwania (przytrzymaj, aby usunąć)</string>
     <string name="save_search">Zapisać bieżące zapytanie wyszukiwania?</string>
@@ -819,4 +817,13 @@
     <string name="save_search_delete_message">Czy na pewno chcesz usunąć zapisane zapytanie wyszukiwania: "%1$s"?</string>
     <string name="save_search_invalid">Zapisane wyszukiwanie jest nieprawidłowe, filtry zostały zmienione</string>
     <string name="save_search_invalid_name">Nieprawidłowa nazwa zapisanego wyszukiwania</string>
+    <string name="pref_proxy">Serwer proxy</string>
+    <string name="pref_proxy_host">Host serwera proxy</string>
+    <string name="pref_proxy_port">Port serwera proxy</string>
+    <string name="pref_proxy_username">Nazwa użytkownika serwera proxy</string>
+    <string name="pref_proxy_password">Hasło serwera proxy</string>
+    <string name="error_proxy_host_blank">Host serwera proxy nie może być pusty</string>
+    <string name="error_proxy_port_invalid">Nieprawidłowy port serwera proxy</string>
+    <string name="pref_proxy_socks_partial_support_title">Tylko częściowe wsparcie</string>
+    <string name="pref_proxy_socks_partial_support_desc">Pamiętaj, że Android WebView obsługuje tylko serwery proxy HTTP. Jeśli wybierzesz serwer proxy SOCKS, wewnętrzny klient HTTP (OkHttp) będzie używał określonego serwera proxy, ale klient Android WebView wróci do bezpośredniego łączenia się przez sieć.\n\nMoże to ujawnić Twój prawdziwy adres IP, a także zepsuć rozszerzenia, które zakładają, że WebView i OkHttp używają tych samych ustawień sieciowych. (Tj. niektóre strony za Cloudflare oczekują, że adres IP będzie zgodny w obu przypadkach, a w przeciwnym razie zablokują Cię.)</string>
 </resources>

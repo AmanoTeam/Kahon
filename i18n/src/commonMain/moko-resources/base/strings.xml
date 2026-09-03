@@ -325,8 +325,6 @@
     <string name="ext_updates_pending">Updates pending</string>
     <string name="ext_update">Update</string>
     <string name="ext_update_all">Update all</string>
-    <string name="ext_uninstall_obsolete">Uninstall orphaned</string>
-    <string name="ext_uninstall_obsolete_dialog">Are you sure you want to uninstall %1$d orphaned extensions?</string>
     <string name="ext_obsolete">Orphaned</string>
     <string name="ext_install">Install</string>
     <string name="ext_pending">Pending</string>
@@ -415,12 +413,6 @@
     <string name="pref_webtoon_vertical_navigator_on_left">Place vertical navigator on the left side</string>
     <string name="pref_show_reading_mode">Show reading mode</string>
     <string name="pref_show_reading_mode_summary">Briefly show current mode when reader is opened</string>
-    <string name="pref_high_quality_renderer">Use high quality renderer</string>
-    <string name="pref_hardware_bitmap_threshold">Custom hardware bitmap threshold</string>
-    <string name="pref_hardware_bitmap_threshold_default">Default (%d)</string>
-    <string name="pref_hardware_bitmap_threshold_summary">If reader loads a blank image incrementally reduce the threshold.\nSelected: %s</string>
-    <string name="pref_always_decode_long_strip_with_ssiv_2">Use legacy decoder for long strip reader</string>
-    <string name="pref_always_decode_long_strip_with_ssiv_summary">Affects performance. Only enable if reducing bitmap threshold doesn\'t fix blank image issues</string>
     <string name="pref_display_profile">Custom display profile</string>
     <string name="pref_crop_borders">Crop borders</string>
     <string name="pref_custom_brightness">Custom brightness</string>
@@ -510,34 +502,6 @@
     <string name="pref_low">Low</string>
     <string name="pref_lowest">Lowest</string>
     <string name="pref_webtoon_disable_zoom_out">Disable zoom out</string>
-    <string name="webgpu_viewer">WebGPU</string>
-    <string name="pref_transition_animation">Transition animation</string>
-    <string name="pref_transition_animation_dual">Transition animation (dual)</string>
-    <string name="transition_animation_basic">Basic</string>
-    <string name="transition_animation_flip_left">Page flip (left)</string>
-    <string name="transition_animation_flip_right">Page flip (right)</string>
-    <string name="transition_animation_stack_left">Stack (left)</string>
-    <string name="transition_animation_stack_right">Stack (right)</string>
-    <string name="transition_animation_stack_up">Stack (up)</string>
-    <string name="transition_animation_stack_down">Stack (down)</string>
-    <string name="transition_animation_sphere">Sphere</string>
-    <string name="transition_animation_cube_inside">Cube (Inside)</string>
-    <string name="transition_animation_cube_outside">Cube (Outside)</string>
-    <string name="transition_animation_fade">Fade</string>
-    <string name="transition_animation_fade_white">Fade to white</string>
-    <string name="transition_animation_none">None</string>
-    <string name="transition_animation_flip">Page flip</string>
-    <string name="pref_cutout_mode">Display cutout mode</string>
-    <string name="pref_cutout_mode_dual">Display cutout mode (dual)</string>
-    <string name="cutout_mode_ignore">Ignore</string>
-    <string name="cutout_mode_avoid">Avoid</string>
-    <string name="cutout_mode_shift">Shift</string>
-    <string name="pref_dual_page_view">Dual page view</string>
-    <string name="dual_page_view_never">Never</string>
-    <string name="dual_page_view_always">Always</string>
-    <string name="dual_page_view_wide">When wide</string>
-    <string name="pref_continuous_minwidth">Min width</string>
-    <string name="pref_continuous_gap">Gap</string>
 
       <!-- Downloads section -->
     <string name="pref_category_delete_chapters">Delete chapters</string>
@@ -693,8 +657,6 @@
     <string name="check_for_updates">Check for updates</string>
 
     <!-- ACRA -->
-    <string name="pref_enable_acra">Send crash reports</string>
-    <string name="pref_acra_summary">Helps fix any bugs. No sensitive data will be sent</string>
 
 
     <!-- More -->
@@ -762,8 +724,6 @@
     <string name="publishing_finished">Publishing finished</string>
     <string name="cancelled">Cancelled</string>
     <string name="on_hiatus">On hiatus</string>
-    <string name="edit_status_dialog_title">Set status</string>
-    <string name="edit_status_dialog_message">Override the status for this manga</string>
     <string name="add_to_library">Add to library</string>
     <string name="in_library">In library</string>
     <!-- missing confirm menu after Compose rewrite #7901 -->
@@ -1101,7 +1061,30 @@
     <string name="donationCampaign.paragraph3">Regardless, Mihon will continue to be maintained by me and the volunteers, and it will stay open source.</string>
     <string name="donationCampaign.contactPlatform">Discord</string>
     <string name="donationCampaign.dismiss">Dismiss</string>
-
+    <string name="pref_category_nsfw_content">NSFW (18+) sources</string>
+    <string name="pref_show_nsfw_source">Show in sources and extensions lists</string>
+    <string name="parental_controls_info">This does not prevent unofficial or potentially incorrectly flagged extensions from surfacing NSFW (18+) content within the app.</string>
+    <string name="ext_uninstall_obsolete">Uninstall orphaned</string>
+    <string name="ext_uninstall_obsolete_dialog">Are you sure you want to uninstall %1$d orphaned extensions?</string>
+    <string name="ext_info_age_rating">Age rating</string>
+    <string name="ext_nsfw_short">18+</string>
+    <string name="ext_nsfw_warning">Sources from this extension may contain NSFW (18+) content</string>
+    <string name="pref_hardware_bitmap_threshold">Custom hardware bitmap threshold</string>
+    <string name="pref_hardware_bitmap_threshold_default">Default (%d)</string>
+    <string name="pref_hardware_bitmap_threshold_summary">If reader loads a blank image incrementally reduce the threshold.\nSelected: %s</string>
+    <string name="pref_always_decode_long_strip_with_ssiv_2">Use legacy decoder for long strip reader</string>
+    <string name="pref_always_decode_long_strip_with_ssiv_summary">Affects performance. Only enable if reducing bitmap threshold doesn\'t fix blank image issues</string>
+    <string name="pref_proxy">Proxy</string>
+    <string name="pref_proxy_host">Proxy host</string>
+    <string name="pref_proxy_port">Proxy port</string>
+    <string name="pref_proxy_username">Proxy username</string>
+    <string name="pref_proxy_password">Proxy password</string>
+    <string name="error_proxy_host_blank">Proxy host can not be blank</string>
+    <string name="error_proxy_port_invalid">Invalid proxy port</string>
+    <string name="pref_proxy_socks_partial_support_title">Partial support only</string>
+    <string name="pref_proxy_socks_partial_support_desc">Please note that Android WebView only supports HTTP proxies. If you choose a SOCKS proxy, the internal HTTP client (OkHttp) will use the specified proxy, but the Android WebView client will fall back to connecting directly through the network.\n\nThis can leak your real IP address and may also break extensions that assume the WebView and OkHttp use the same network settings. (I.e., some sites behind Cloudflare expect the IP address to match in both cases and will block you otherwise.)</string>
+    <string name="edit_status_dialog_title">Set status</string>
+    <string name="edit_status_dialog_message">Override the status for this manga</string>
     <string name="saved_searches">Saved Searches</string>
     <string name="saved_searches_delete">Saved Searches (Hold to delete)</string>
     <string name="save_search">Save current search query?</string>
