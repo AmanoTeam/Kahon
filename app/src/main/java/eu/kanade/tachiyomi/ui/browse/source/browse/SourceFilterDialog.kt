@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -18,7 +20,10 @@ import androidx.compose.ui.unit.dp
 import eu.kanade.presentation.components.AdaptiveSheet
 import eu.kanade.tachiyomi.source.model.Filter
 import eu.kanade.tachiyomi.source.model.FilterList
+import mihon.icons.materialsymbols.MaterialSymbols
+import mihon.icons.materialsymbols.rounded.Save
 import tachiyomi.core.common.preference.TriState
+import tachiyomi.domain.source.model.SavedSearch
 import tachiyomi.i18n.MR
 import tachiyomi.presentation.core.components.CheckboxItem
 import tachiyomi.presentation.core.components.CollapsibleBox
@@ -37,6 +42,11 @@ fun SourceFilterDialog(
     onReset: () -> Unit,
     onFilter: () -> Unit,
     onUpdate: (FilterList) -> Unit,
+    savedSearches: List<SavedSearch>,
+    onSave: () -> Unit,
+    onSavedSearch: (SavedSearch) -> Unit,
+    onSavedSearchPress: (SavedSearch) -> Unit,
+    shouldShowSavingButton: Boolean = true,
 ) {
     val updateFilters = { onUpdate(filters) }
 
@@ -59,6 +69,15 @@ fun SourceFilterDialog(
 
                     Spacer(modifier = Modifier.weight(1f))
 
+                    if (shouldShowSavingButton) {
+                        IconButton(onClick = onSave) {
+                            Icon(
+                                MaterialSymbols.Rounded.Save,
+                                contentDescription = stringResource(MR.strings.action_save),
+                                tint = MaterialTheme.colorScheme.onBackground,
+                            )
+                        }
+                    }
                     Button(onClick = {
                         onFilter()
                         onDismissRequest()
@@ -67,6 +86,14 @@ fun SourceFilterDialog(
                     }
                 }
                 HorizontalDivider()
+            }
+
+            item {
+                SavedSearchItem(
+                    savedSearches = savedSearches,
+                    onSavedSearch = onSavedSearch,
+                    onSavedSearchPress = onSavedSearchPress,
+                )
             }
 
             items(filters) {

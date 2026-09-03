@@ -924,4 +924,12 @@
     <string name="migrationListScreen.progressDialog.cancelLabel">لغو</string>
     <string name="supportUsScreen.contactForDetailsMessage">برای گزینه‌های جایگزین یا هرگونه سؤال مرتبط، به سرور دیسکورد ما بپیوندید.</string>
     <string name="theme_nord">نورد</string>
+    <string name="saved_searches">جستجوهای ذخیره‌شده</string>
+    <string name="saved_searches_delete">جستجوهای ذخیره‌شده (برای حذف نگه دارید)</string>
+    <string name="save_search">جستجوی فعلی ذخیره شود؟</string>
+    <string name="save_search_hint">نام جستجوی من</string>
+    <string name="save_search_delete">جستجوی ذخیره‌شده حذف شود؟</string>
+    <string name="save_search_delete_message">آیا مطمئن هستید که می‌خواهید جستجوی ذخیره‌شدهٔ خود را حذف کنید: "%1$s"؟</string>
+    <string name="save_search_invalid">جستجوی ذخیره‌شده نامعتبر است، فیلترها تغییر کرده‌اند</string>
+    <string name="save_search_invalid_name">نام جستجوی ذخیره‌شده نامعتبر است</string>
 </resources>

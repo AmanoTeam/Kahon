@@ -135,6 +135,11 @@ data class MigrateSourceSearchScreen(
                     onReset = viewModel::resetFilters,
                     onFilter = { viewModel.search(filters = state.filters) },
                     onUpdate = viewModel::setFilters,
+                    savedSearches = emptyList(),
+                    onSave = {},
+                    onSavedSearch = {},
+                    onSavedSearchPress = {},
+                    shouldShowSavingButton = false,
                 )
             }
             is BrowseSourceViewModel.Dialog.Migrate -> {
