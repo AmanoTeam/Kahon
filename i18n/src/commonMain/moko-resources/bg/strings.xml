@@ -614,6 +614,8 @@
     <string name="action_remove_everything">Премахни всичко</string>
     <string name="ext_info_version">Версия</string>
     <string name="on_hiatus">В хиатус</string>
+    <string name="edit_status_dialog_title">Задай статус</string>
+    <string name="edit_status_dialog_message">Замени статуса на тази манга</string>
     <string name="custom_cover">Корица по избор</string>
     <string name="action_search_hint">Търсене…</string>
     <string name="disabled_nav">Деактивирано</string>

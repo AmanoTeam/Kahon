@@ -567,6 +567,8 @@
     <string name="delete_downloads_for_manga">Vai dzēst lejupielādētās nodaļas?</string>
     <string name="date">Datums</string>
     <string name="on_hiatus">Pārtraukumā</string>
+    <string name="edit_status_dialog_title">Iestatīt statusu</string>
+    <string name="edit_status_dialog_message">Pārrakstīt šīs mangas statusu</string>
     <string name="display_mode_chapter">Nodaļa %1$s</string>
     <string name="cover_saved">Vāks saglabāts</string>
     <string name="clear_history_confirmation">Vai esat pārliecināts? Visa vēsture tiks pazaudēta.</string>

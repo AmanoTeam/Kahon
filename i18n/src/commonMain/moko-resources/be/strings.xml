@@ -623,6 +623,8 @@
     <string name="publishing_finished">Публікацыя завершана</string>
     <string name="cancelled">Адменена</string>
     <string name="on_hiatus">Замарожана</string>
+    <string name="edit_status_dialog_title">Задаць статус</string>
+    <string name="edit_status_dialog_message">Перавызначыць статус гэтай мангі</string>
     <string name="add_to_library">Дадаць у бібліятэку</string>
     <string name="in_library">У бібліятэцы</string>
     <string name="remove_from_library">Прыбраць з бібліятэкі</string>

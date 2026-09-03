@@ -732,6 +732,8 @@
     <string name="publishing_finished">Eldonado finita</string>
     <string name="cancelled">Rezignita</string>
     <string name="on_hiatus">En hiato</string>
+    <string name="edit_status_dialog_title">Agordi staton</string>
+    <string name="edit_status_dialog_message">Anstataŭigi la staton de ĉi tiu manga</string>
     <string name="possible_duplicates_summary">Vi havas elementojn en via biblioteko kun simila nomo.\n\nElektu elementon por migri aŭ aldoni ĝin malgraŭ.</string>
     <string name="copied_to_clipboard_plain">Kopiita al tondujo</string>
     <string name="manga_display_interval_title">Estimi ĉiu</string>

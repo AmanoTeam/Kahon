@@ -3,3 +3,5 @@
 UPDATE manga_sync
 SET score = score * 2
 WHERE sync_id = 3;
+
+ALTER TABLE mangas ADD COLUMN override_metadata INTEGER NOT NULL DEFAULT 0;

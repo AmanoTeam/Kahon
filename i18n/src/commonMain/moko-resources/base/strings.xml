@@ -747,6 +747,8 @@
     <string name="publishing_finished">Publishing finished</string>
     <string name="cancelled">Cancelled</string>
     <string name="on_hiatus">On hiatus</string>
+    <string name="edit_status_dialog_title">Set status</string>
+    <string name="edit_status_dialog_message">Override the status for this manga</string>
     <string name="add_to_library">Add to library</string>
     <string name="in_library">In library</string>
     <!-- missing confirm menu after Compose rewrite #7901 -->
