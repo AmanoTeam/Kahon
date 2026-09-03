@@ -839,4 +839,12 @@
     <string name="clear_database_text">Estás a piques de borrar elementos da túa base de datos</string>
     <string name="clear_database_history_warning">Perderás os capítulos lidos e o progreso de lectura das obras que non estén na biblioteca</string>
     <string name="clear_db_exclude_read">Conservar as obras con capítulos lidos</string>
+    <string name="saved_searches">Buscas gardadas</string>
+    <string name="saved_searches_delete">Buscas gardadas (manteña premido para borrar)</string>
+    <string name="save_search">Gardar a consulta de busca actual?</string>
+    <string name="save_search_hint">O meu nome de busca</string>
+    <string name="save_search_delete">Borrar a consulta de busca gardada?</string>
+    <string name="save_search_delete_message">Seguro que queres borrar a túa consulta de busca gardada: "%1$s"?</string>
+    <string name="save_search_invalid">A busca gardada non é válida, os filtros cambiaron</string>
+    <string name="save_search_invalid_name">Nome de busca gardada non válido</string>
 </resources>

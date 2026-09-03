@@ -241,4 +241,12 @@
     <string name="pref_category_delete_chapters">അദ്ധ്യായം മായ്ച്ചുകളയുക</string>
     <string name="pref_remove_after_marked_as_read">സ്വന്തമായി വായിച്ചെൻ അടയാളപ്പെടുത്തിയതിൻ ശേഷം</string>
     <string name="pref_remove_after_read">യാന്ത്രികമായി വായിച്ചെതിനു ശേഷം മായ്ച്ചുകളയുക</string>
+    <string name="saved_searches">സംരക്ഷിച്ച തിരയലുകൾ</string>
+    <string name="saved_searches_delete">സംരക്ഷിച്ച തിരയലുകൾ (ഇല്ലാതാക്കാൻ അമർത്തിപ്പിടിക്കുക)</string>
+    <string name="save_search">നിലവിലെ തിരയൽ ക്വറി സംരക്ഷിക്കണോ?</string>
+    <string name="save_search_hint">എന്റെ തിരയലിന്റെ പേര്</string>
+    <string name="save_search_delete">സംരക്ഷിച്ച തിരയൽ ക്വറി ഇല്ലാതാക്കണോ?</string>
+    <string name="save_search_delete_message">നിങ്ങളുടെ സംരക്ഷിച്ച തിരയൽ ക്വറി ഇല്ലാതാക്കാൻ തീർച്ചയാണോ: "%1$s"?</string>
+    <string name="save_search_invalid">സംരക്ഷിച്ച തിരയൽ അസാധുവാണ്, ഫിൽ‌റ്ററുകൾ മാറി</string>
+    <string name="save_search_invalid_name">അസാധുവായ സംരക്ഷിച്ച തിരയൽ പേര്</string>
 </resources>

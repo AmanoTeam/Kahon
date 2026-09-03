@@ -417,4 +417,12 @@
     <string name="label_default">ნაგულისხმევი</string>
     <string name="action_show_errors">დააჭირე დეტალების სანახავად</string>
     <string name="unread">წაუკითხავი</string>
+    <string name="saved_searches">შენახული ძიებები</string>
+    <string name="saved_searches_delete">შენახული ძიებები (დააჭირეთ ხანგრძლივად წასაშლელად)</string>
+    <string name="save_search">შევინახოთ მიმდინარე საძიებო მოთხოვნა?</string>
+    <string name="save_search_hint">ჩემი ძიების სახელი</string>
+    <string name="save_search_delete">გავაუქმოთ შენახული საძიებო მოთხოვნა?</string>
+    <string name="save_search_delete_message">დარწმუნებული ხართ, რომ გსურთ შენახული საძიებო მოთხოვნის წაშლა: "%1$s"?</string>
+    <string name="save_search_invalid">შენახული ძიება არასწორია, ფილტრები შეიცვალა</string>
+    <string name="save_search_invalid_name">შენახული ძიების არასწორი სახელი</string>
 </resources>

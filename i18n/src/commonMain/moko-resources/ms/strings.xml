@@ -913,4 +913,12 @@
     <string name="donationCampaign.dismiss">Tutup</string>
     <string name="donationCampaign.contactPlatform">Discord</string>
     <string name="supportUsScreen.contactPlatform">Discord</string>
+    <string name="saved_searches">Carian yang disimpan</string>
+    <string name="saved_searches_delete">Carian yang disimpan (tekan lama untuk memadam)</string>
+    <string name="save_search">Simpan pertanyaan carian semasa?</string>
+    <string name="save_search_hint">Nama carian saya</string>
+    <string name="save_search_delete">Padam pertanyaan carian yang disimpan?</string>
+    <string name="save_search_delete_message">Adakah anda pasti mahu memadam pertanyaan carian yang disimpan anda: "%1$s"?</string>
+    <string name="save_search_invalid">Carian yang disimpan tidak sah, penapis telah berubah</string>
+    <string name="save_search_invalid_name">Nama carian yang disimpan tidak sah</string>
 </resources>

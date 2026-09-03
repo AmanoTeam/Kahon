@@ -883,4 +883,12 @@
     <string name="pref_download_concurrent_sources">एक साथ स्रोत डाउनलोड</string>
     <string name="pref_download_concurrent_pages">एक साथ पेज डाउनलोड</string>
     <string name="pref_download_concurrent_pages_summary">प्रति स्रोत एक साथ डाउनलोड किए जाने वाले पृष्ठ</string>
+    <string name="saved_searches">सहेजी गई खोजें</string>
+    <string name="saved_searches_delete">सहेजी गई खोजें (हटाने के लिए दबाकर रखें)</string>
+    <string name="save_search">वर्तमान खोज क्वेरी सहेजें?</string>
+    <string name="save_search_hint">मेरी खोज का नाम</string>
+    <string name="save_search_delete">सहेजी गई खोज क्वेरी हटाएं?</string>
+    <string name="save_search_delete_message">क्या आप वाकई अपनी सहेजी गई खोज क्वेरी हटाना चाहते हैं: "%1$s"?</string>
+    <string name="save_search_invalid">सहेजी गई खोज अमान्य है, फ़िल्टर बदल गए हैं</string>
+    <string name="save_search_invalid_name">अमान्य सहेजी गई खोज का नाम</string>
 </resources>

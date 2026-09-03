@@ -916,4 +916,12 @@
     <string name="downloading_with_progress">Đang tải xuống… (%d%%)</string>
     <string name="pref_filter_update_categories_details">Các cập nhật trong các danh mục bị loại trừ sẽ không được hiển thị ngay cả khi chúng cũng nằm trong bất kỳ danh mục nào được bao gồm.</string>
     <string name="pref_filter_upcoming_categories_details">Các tựa sách thuộc các danh mục bị loại trừ sẽ không được hiển thị, ngay cả khi chúng cũng nằm trong bất kỳ danh mục nào được bao gồm.</string>
+    <string name="saved_searches">Tìm kiếm đã lưu</string>
+    <string name="saved_searches_delete">Tìm kiếm đã lưu (giữ để xóa)</string>
+    <string name="save_search">Lưu truy vấn tìm kiếm hiện tại?</string>
+    <string name="save_search_hint">Tên tìm kiếm của tôi</string>
+    <string name="save_search_delete">Xóa truy vấn tìm kiếm đã lưu?</string>
+    <string name="save_search_delete_message">Bạn có chắc chắn muốn xóa truy vấn tìm kiếm đã lưu: "%1$s"?</string>
+    <string name="save_search_invalid">Tìm kiếm đã lưu không hợp lệ, bộ lọc đã thay đổi</string>
+    <string name="save_search_invalid_name">Tên tìm kiếm đã lưu không hợp lệ</string>
 </resources>

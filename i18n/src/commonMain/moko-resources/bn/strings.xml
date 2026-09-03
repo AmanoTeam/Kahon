@@ -828,4 +828,12 @@
     <string name="intervals_header">বিরতি</string>
     <string name="unknown_title">অজানা নাম</string>
     <string name="copied_to_clipboard_plain">ক্লিপবোর্ডে কপি হয়েছে</string>
+    <string name="saved_searches">সংরক্ষিত অনুসন্ধান</string>
+    <string name="saved_searches_delete">সংরক্ষিত অনুসন্ধান (মুছতে চেপে ধরে রাখুন)</string>
+    <string name="save_search">বর্তমান অনুসন্ধান প্রশ্নটি সংরক্ষণ করবেন?</string>
+    <string name="save_search_hint">আমার অনুসন্ধানের নাম</string>
+    <string name="save_search_delete">সংরক্ষিত অনুসন্ধান প্রশ্নটি মুছবেন?</string>
+    <string name="save_search_delete_message">আপনি কি নিশ্চিত আপনি আপনার সংরক্ষিত অনুসন্ধান প্রশ্নটি মুছতে চান: "%1$s"?</string>
+    <string name="save_search_invalid">সংরক্ষিত অনুসন্ধানটি অবৈধ, ফিল্টার পরিবর্তিত হয়েছে</string>
+    <string name="save_search_invalid_name">অবৈধ সংরক্ষিত অনুসন্ধানের নাম</string>
 </resources>

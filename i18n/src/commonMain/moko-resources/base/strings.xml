@@ -1088,4 +1088,13 @@
     <string name="donationCampaign.paragraph3">Regardless, Mihon will continue to be maintained by me and the volunteers, and it will stay open source.</string>
     <string name="donationCampaign.contactPlatform">Discord</string>
     <string name="donationCampaign.dismiss">Dismiss</string>
+
+    <string name="saved_searches">Saved Searches</string>
+    <string name="saved_searches_delete">Saved Searches (Hold to delete)</string>
+    <string name="save_search">Save current search query?</string>
+    <string name="save_search_hint">My search name</string>
+    <string name="save_search_delete">Delete saved search query?</string>
+    <string name="save_search_delete_message">Are you sure you wish to delete your saved search query: \'%1$s\'?</string>
+    <string name="save_search_invalid">Saved search invalid, filters have changed</string>
+    <string name="save_search_invalid_name">Invalid saved search name</string>
 </resources>

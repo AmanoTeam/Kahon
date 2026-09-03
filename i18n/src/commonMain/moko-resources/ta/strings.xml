@@ -880,4 +880,12 @@
     <string name="pref_download_concurrent_pages_summary">ஒவ்வொரு மூலத்திற்கும் ஒரே நேரத்தில் பதிவிறக்கம் செய்யப்பட்ட பக்கங்கள்</string>
     <string name="download_bookmarked">புத்தகக்குறி செய்யப்பட்டது</string>
     <string name="action_filter_excluded_scanlators">நீக்கப்பட்ட ச்கேலேட்டர்களை வடிகட்டி</string>
+    <string name="saved_searches">சேமிக்கப்பட்ட தேடல்கள்</string>
+    <string name="saved_searches_delete">சேமிக்கப்பட்ட தேடல்கள் (நீக்க குத்தி வைத்திருக்கவும்)</string>
+    <string name="save_search">தற்போதைய தேடல் வினவலைச் சேமிக்கவா?</string>
+    <string name="save_search_hint">எனது தேடல் பெயர்</string>
+    <string name="save_search_delete">சேமிக்கப்பட்ட தேடல் வினவலை நீக்கவா?</string>
+    <string name="save_search_delete_message">உங்கள் சேமிக்கப்பட்ட தேடல் வினவலை நீக்க விரும்புகிறீர்களா என்பதில் உறுதியாக இருக்கிறீர்களா: "%1$s"?</string>
+    <string name="save_search_invalid">சேமிக்கப்பட்ட தேடல் தவறானது, வடிப்பான்கள் மாறிவிட்டன</string>
+    <string name="save_search_invalid_name">தவறான சேமிக்கப்பட்ட தேடல் பெயர்</string>
 </resources>

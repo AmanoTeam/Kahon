@@ -906,4 +906,12 @@
     <string name="donationCampaign.contactPlatform">Discord</string>
     <string name="donationCampaign.dismiss">Afwijzen</string>
     <string name="considering">Aan het overwegen</string>
+    <string name="saved_searches">Opgeslagen zoekopdrachten</string>
+    <string name="saved_searches_delete">Opgeslagen zoekopdrachten (ingedrukt houden om te verwijderen)</string>
+    <string name="save_search">Huidige zoekopdracht opslaan?</string>
+    <string name="save_search_hint">Mijn zoeknaam</string>
+    <string name="save_search_delete">Opgeslagen zoekopdracht verwijderen?</string>
+    <string name="save_search_delete_message">Weet u zeker dat u uw opgeslagen zoekopdracht wilt verwijderen: "%1$s"?</string>
+    <string name="save_search_invalid">Opgeslagen zoekopdracht ongeldig, filters zijn gewijzigd</string>
+    <string name="save_search_invalid_name">Ongeldige naam van opgeslagen zoekopdracht</string>
 </resources>

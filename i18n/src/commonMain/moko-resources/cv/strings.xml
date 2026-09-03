@@ -633,4 +633,12 @@
     <string name="source_settings">Ҫӑл куҫ ӗнерӗвӗ</string>
     <string name="non_library_settings">Пур вуланӑ серилӗх</string>
     <string name="library_list">Вулавӑш йат-йышӗ</string>
+    <string name="saved_searches">Перехраненă шыравсем</string>
+    <string name="saved_searches_delete">Перехраненă шыравсем (кăларма тытса тăрăр)</string>
+    <string name="save_search">Хальхи шырав ыйтăвне перехранăлла?</string>
+    <string name="save_search_hint">Манăн шырав ячĕ</string>
+    <string name="save_search_delete">Перехраннă шырав ыйтăвне кăлармалла?</string>
+    <string name="save_search_delete_message">Çирĕппĕн шанса тăратăр-и эсир хăвăрăн перехраннă шырав ыйтăвне кăларма: "%1$s"?</string>
+    <string name="save_search_invalid">Перехраннă шырав тĕрĕс мар, фильтрсем улшăннă</string>
+    <string name="save_search_invalid_name">Тĕрĕс мар перехраннă шырав ячĕ</string>
 </resources>

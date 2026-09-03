@@ -889,4 +889,12 @@
     <string name="download_bookmarked">Segnato</string>
     <string name="action_filter_excluded_scanlators">Filtrare i scanlator esclusi</string>
     <string name="considering">Considerando</string>
+    <string name="saved_searches">Ricerche salvate</string>
+    <string name="saved_searches_delete">Ricerche salvate (tieni premuto per eliminare)</string>
+    <string name="save_search">Salvare la query di ricerca corrente?</string>
+    <string name="save_search_hint">Il mio nome di ricerca</string>
+    <string name="save_search_delete">Eliminare la query di ricerca salvata?</string>
+    <string name="save_search_delete_message">Vuoi davvero eliminare la tua query di ricerca salvata: "%1$s"?</string>
+    <string name="save_search_invalid">Ricerca salvata non valida, i filtri sono cambiati</string>
+    <string name="save_search_invalid_name">Nome di ricerca salvata non valido</string>
 </resources>

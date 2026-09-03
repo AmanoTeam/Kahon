@@ -265,4 +265,12 @@
     <string name="sort_by_source">Etter kjelde</string>
     <string name="manga_cover">Omslag</string>
     <string name="manga_download">Last ned</string>
+    <string name="saved_searches">Lagra søk</string>
+    <string name="saved_searches_delete">Lagra søk (hals inne for å sletta)</string>
+    <string name="save_search">Lagra gjeldande søkjesøk?</string>
+    <string name="save_search_hint">Namnet på søkjet mitt</string>
+    <string name="save_search_delete">Sletta det lagra søkjesøket?</string>
+    <string name="save_search_delete_message">Er du sikker på at du vil sletta det lagra søkjesøket ditt: "%1$s"?</string>
+    <string name="save_search_invalid">Lagra søk er ugyldig, filtra er endra</string>
+    <string name="save_search_invalid_name">Ugyldig namn på lagra søk</string>
 </resources>

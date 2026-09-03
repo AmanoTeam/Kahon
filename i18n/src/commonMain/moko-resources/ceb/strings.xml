@@ -442,4 +442,12 @@
     <string name="information_webview_required">Gikinahanlan ang WebView alang sa Mihon</string>
     <string name="information_required_plain">*gikinahanlan</string>
     <string name="selected">Napili</string>
+    <string name="saved_searches">Gitagana nga mga pagpangita</string>
+    <string name="saved_searches_delete">Gitagana nga mga pagpangita (pindota ug hupti aron papason)</string>
+    <string name="save_search">I-save ang kasamtangan nga pangutana sa pagpangita?</string>
+    <string name="save_search_hint">Akong pangalan sa pagpangita</string>
+    <string name="save_search_delete">Papason ang gitagana nga pangutana sa pagpangita?</string>
+    <string name="save_search_delete_message">Sigurado ka ba nga gusto nimong papason ang imong gitagana nga pangutana sa pagpangita: "%1$s"?</string>
+    <string name="save_search_invalid">Ang gitagana nga pagpangita dili balido, nausab ang mga filter</string>
+    <string name="save_search_invalid_name">Dili balido nga pangalan sa gitagana nga pagpangita</string>
 </resources>

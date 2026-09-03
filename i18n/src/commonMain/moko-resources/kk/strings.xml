@@ -696,4 +696,12 @@
     <string name="unlock_app_title">%s шешу</string>
     <string name="action_filter_interval_custom">Өзгермелі жаңарту жиілігі</string>
     <string name="label_upcoming">Келешек</string>
+    <string name="saved_searches">Сақталған іздеулер</string>
+    <string name="saved_searches_delete">Сақталған іздеулер (жою үшін басып тұрыңыз)</string>
+    <string name="save_search">Ағымдағы іздеу сұрауын сақтау керек пе?</string>
+    <string name="save_search_hint">Менің іздеу атауым</string>
+    <string name="save_search_delete">Сақталған іздеу сұрауын жою керек пе?</string>
+    <string name="save_search_delete_message">Сақталған іздеу сұрауын жойғыңыз келетініне сенімдісіз бе: "%1$s"?</string>
+    <string name="save_search_invalid">Сақталған іздеу жарамсыз, сүзгілер өзгерді</string>
+    <string name="save_search_invalid_name">Сақталған іздеудің жарамсыз атауы</string>
 </resources>

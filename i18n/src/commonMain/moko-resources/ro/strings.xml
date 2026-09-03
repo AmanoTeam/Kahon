@@ -898,4 +898,12 @@
     <string name="donationCampaign.paragraph3">In orice caz, Mihon va continua sa fie intretinut de mine si de voluntari si va ramane open source.</string>
     <string name="donationCampaign.contactPlatform">Discord</string>
     <string name="donationCampaign.dismiss">Ignora</string>
+    <string name="saved_searches">Căutări salvate</string>
+    <string name="saved_searches_delete">Căutări salvate (țineți apăsat pentru a șterge)</string>
+    <string name="save_search">Salvați interogarea de căutare curentă?</string>
+    <string name="save_search_hint">Numele căutării mele</string>
+    <string name="save_search_delete">Ștergeți interogarea de căutare salvată?</string>
+    <string name="save_search_delete_message">Sigur doriți să ștergeți interogarea de căutare salvată: "%1$s"?</string>
+    <string name="save_search_invalid">Căutarea salvată este nevalidă, filtrele s-au schimbat</string>
+    <string name="save_search_invalid_name">Nume de căutare salvată nevalid</string>
 </resources>

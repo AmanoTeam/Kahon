@@ -213,4 +213,12 @@
     <string name="action_set_interval">मध्यांतर</string>
     <string name="action_filter_tracked">ट्रॅक केले</string>
     <string name="action_filter_interval_custom">कस्टमाईज्ड फेच इंटरवल</string>
+    <string name="saved_searches">साठवलेले शोध</string>
+    <string name="saved_searches_delete">साठवलेले शोध (हटवण्यासाठी दाबून ठेवा)</string>
+    <string name="save_search">सध्याचा शोध क्वेरी साठवायचा?</string>
+    <string name="save_search_hint">माझ्या शोधाचे नाव</string>
+    <string name="save_search_delete">साठवलेला शोध क्वेरी हटवायचा?</string>
+    <string name="save_search_delete_message">तुम्हाला खरोखर तुमचा साठवलेला शोध क्वेरी हटवायचा आहे का: "%1$s"?</string>
+    <string name="save_search_invalid">साठवलेला शोध अवैध आहे, फिल्टर बदलले आहेत</string>
+    <string name="save_search_invalid_name">अवैध साठवलेले शोध नाव</string>
 </resources>

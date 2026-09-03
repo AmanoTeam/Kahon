@@ -912,4 +912,12 @@
     <string name="extensionStoresScreen.deleteStore.title">Ta bort tilläggsdepå</string>
     <string name="extensionStoresScreen.deleteStore.body">Vill du ta bort följande tilläggsdepå: \"%1$s\" (%2$s)?</string>
     <string name="pref_webtoon_vertical_navigator_on_left">Placera navigatorn på vänster sida</string>
+    <string name="saved_searches">Sparade sökningar</string>
+    <string name="saved_searches_delete">Sparade sökningar (håll nedtryckt för att radera)</string>
+    <string name="save_search">Spara den aktuella sökfrågan?</string>
+    <string name="save_search_hint">Mitt söknamn</string>
+    <string name="save_search_delete">Radera den sparade sökfrågan?</string>
+    <string name="save_search_delete_message">Är du säker på att du vill radera din sparade sökfråga: "%1$s"?</string>
+    <string name="save_search_invalid">Sparad sökning är ogiltig, filtren har ändrats</string>
+    <string name="save_search_invalid_name">Ogiltigt namn på sparad sökning</string>
 </resources>

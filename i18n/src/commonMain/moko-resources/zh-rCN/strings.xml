@@ -919,4 +919,12 @@
     <string name="downloading_with_progress">正在下载… (%d%%)</string>
     <string name="pref_filter_update_categories_details">同时属于包含和排除分类的作品更新将不予显示。</string>
     <string name="pref_filter_upcoming_categories_details">同时属于包含和排除分类的标题将不予显示。</string>
+    <string name="saved_searches">已保存的搜索</string>
+    <string name="saved_searches_delete">已保存的搜索（长按删除）</string>
+    <string name="save_search">保存当前搜索查询？</string>
+    <string name="save_search_hint">我的搜索名称</string>
+    <string name="save_search_delete">删除已保存的搜索查询？</string>
+    <string name="save_search_delete_message">确定要删除已保存的搜索查询 "%1$s" 吗？</string>
+    <string name="save_search_invalid">已保存的搜索无效，筛选条件已更改</string>
+    <string name="save_search_invalid_name">无效的已保存搜索名称</string>
 </resources>

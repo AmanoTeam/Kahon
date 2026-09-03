@@ -192,4 +192,12 @@
     <string name="portrait">చిత్తరువు</string>
     <string name="landscape">ప్రకృతి దృశ్యం</string>
     <string name="paused">నిలిపివేయబడింది</string>
+    <string name="saved_searches">సేవ్ చేసిన శోధనలు</string>
+    <string name="saved_searches_delete">సేవ్ చేసిన శోధనలు (తొలగించడానికి నొక్కిపట్టుకోండి)</string>
+    <string name="save_search">ప్రస్తుత శోధన ప్రశ్నను సేవ్ చేయాలా?</string>
+    <string name="save_search_hint">నా శోధన పేరు</string>
+    <string name="save_search_delete">సేవ్ చేసిన శోధన ప్రశ్నను తొలగించాలా?</string>
+    <string name="save_search_delete_message">మీరు మీ సేవ్ చేసిన శోధన ప్రశ్నను తొలగించాలని ఖచ్చితంగా కోరుకుంటున్నారా: "%1$s"?</string>
+    <string name="save_search_invalid">సేవ్ చేసిన శోధన చెల్లదు, ఫిల్టర్లు మారాయి</string>
+    <string name="save_search_invalid_name">చెల్లని సేవ్ చేసిన శోధన పేరు</string>
 </resources>

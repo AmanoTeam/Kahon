@@ -839,4 +839,12 @@
     <string name="artist">Artysta</string>
     <string name="author">Autor</string>
     <string name="downloading_with_progress">Pobieranie... (%d%%)</string>
+    <string name="saved_searches">Zapisane wyszukiwania</string>
+    <string name="saved_searches_delete">Zapisane wyszukiwania (przytrzymaj, aby usunąć)</string>
+    <string name="save_search">Zapisać bieżące zapytanie wyszukiwania?</string>
+    <string name="save_search_hint">Nazwa mojego wyszukiwania</string>
+    <string name="save_search_delete">Usunąć zapisane zapytanie wyszukiwania?</string>
+    <string name="save_search_delete_message">Czy na pewno chcesz usunąć zapisane zapytanie wyszukiwania: "%1$s"?</string>
+    <string name="save_search_invalid">Zapisane wyszukiwanie jest nieprawidłowe, filtry zostały zmienione</string>
+    <string name="save_search_invalid_name">Nieprawidłowa nazwa zapisanego wyszukiwania</string>
 </resources>

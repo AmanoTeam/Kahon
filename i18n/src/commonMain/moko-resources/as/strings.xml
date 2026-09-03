@@ -889,4 +889,12 @@
     <string name="donationCampaign.paragraph3">যিকি নহওক, Mihon মই আৰু স্বেচ্ছাসেৱকসকলৰ দ্বাৰা পৰিচালিত হৈ থাকিব, আৰু ই মুক্ত উৎস হৈ থাকিব।</string>
     <string name="donationCampaign.contactPlatform">Discord</string>
     <string name="donationCampaign.dismiss">খাৰিজ কৰক</string>
+    <string name="saved_searches">সংৰক্ষিত অনুসন্ধানসমূহ</string>
+    <string name="saved_searches_delete">সংৰক্ষিত অনুসন্ধানসমূহ (বিলোপ কৰিবলে দীঘলকৈ টিপক)</string>
+    <string name="save_search">বৰ্তমান অনুসন্ধান প্ৰশ্নটো সংৰক্ষণ কৰিবনে?</string>
+    <string name="save_search_hint">মোৰ অনুসন্ধানৰ নাম</string>
+    <string name="save_search_delete">সংৰক্ষিত অনুসন্ধান প্ৰশ্নটো বিলোপ কৰিবনে?</string>
+    <string name="save_search_delete_message">আপুনি সঁচাকৈয়ে আপোনাৰ সংৰক্ষিত অনুসন্ধান প্ৰশ্নটো বিলোপ কৰিব বিচাৰেনে: "%1$s"?</string>
+    <string name="save_search_invalid">সংৰক্ষিত অনুসন্ধান অবৈধ, ফিল্টাৰবোৰ সলনি হৈছে</string>
+    <string name="save_search_invalid_name">অবৈধ সংৰক্ষিত অনুসন্ধান নাম</string>
 </resources>

@@ -895,4 +895,12 @@
     <string name="donationCampaign.paragraph3">عمومًا، سأستمر في صيانة ميهون بواسطتي أنا والمتطوعين، وسيظل مفتوح المصدر.</string>
     <string name="donationCampaign.contactPlatform">ديسكورد</string>
     <string name="donationCampaign.dismiss">إغلاق</string>
+    <string name="saved_searches">عمليات البحث المحفوظة</string>
+    <string name="saved_searches_delete">عمليات البحث المحفوظة (اضغط مطولاً للحذف)</string>
+    <string name="save_search">حفظ استعلام البحث الحالي؟</string>
+    <string name="save_search_hint">اسم البحث</string>
+    <string name="save_search_delete">حذف استعلام البحث المحفوظ؟</string>
+    <string name="save_search_delete_message">هل أنت متأكد من رغبتك في حذف استعلام البحث المحفوظ: "%1$s"؟</string>
+    <string name="save_search_invalid">البحث المحفوظ غير صالح، لقد تغيرت عوامل التصفية</string>
+    <string name="save_search_invalid_name">اسم البحث المحفوظ غير صالح</string>
 </resources>

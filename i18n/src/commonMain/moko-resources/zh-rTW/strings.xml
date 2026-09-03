@@ -934,4 +934,12 @@
     <string name="dual_page_view_wide">寬螢幕時</string>
     <string name="pref_filter_update_categories_details">類別同時屬於「排除」及「包含」的更新將不會顯示。</string>
     <string name="pref_filter_upcoming_categories_details">類別同時屬於「排除」及「包含」的作品將不會顯示。</string>
+    <string name="saved_searches">已儲存的搜尋</string>
+    <string name="saved_searches_delete">已儲存的搜尋（長按刪除）</string>
+    <string name="save_search">儲存目前搜尋查詢？</string>
+    <string name="save_search_hint">我的搜尋名稱</string>
+    <string name="save_search_delete">刪除已儲存的搜尋查詢？</string>
+    <string name="save_search_delete_message">確定要刪除已儲存的搜尋查詢「%1$s」嗎？</string>
+    <string name="save_search_invalid">已儲存的搜尋無效，篩選條件已變更</string>
+    <string name="save_search_invalid_name">無效的已儲存搜尋名稱</string>
 </resources>

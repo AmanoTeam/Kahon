@@ -832,4 +832,12 @@
     <string name="action_webview_close_tab">Закрити вкладку</string>
     <string name="theme_catppuccin">Catppuccin</string>
     <string name="pref_display_images_description">Рендерити зображення в описах манґи</string>
+    <string name="saved_searches">Збережені пошуки</string>
+    <string name="saved_searches_delete">Збережені пошуки (утримуйте для видалення)</string>
+    <string name="save_search">Зберегти поточний пошуковий запит?</string>
+    <string name="save_search_hint">Назва мого пошуку</string>
+    <string name="save_search_delete">Видалити збережений пошуковий запит?</string>
+    <string name="save_search_delete_message">Ви впевнені, що хочете видалити збережений пошуковий запит: "%1$s"?</string>
+    <string name="save_search_invalid">Збережений пошук недійсний, фільтри змінилися</string>
+    <string name="save_search_invalid_name">Недійсна назва збереженого пошуку</string>
 </resources>

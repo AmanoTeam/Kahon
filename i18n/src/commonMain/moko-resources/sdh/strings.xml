@@ -235,4 +235,12 @@
     <string name="action_remove_everything">لادانی هەمووشتێك</string>
     <string name="action_search_hint">گەڕان…</string>
     <string name="delete_category_confirmation">\?ڕەشبکەیتەوە \"%s\"ئایا ئەتەوێ کە بەشی</string>
+    <string name="saved_searches">گەڕانە پاشەکەوتکراوەکان</string>
+    <string name="saved_searches_delete">گەڕانە پاشەکەوتکراوەکان (سڕینەوە بۆ گرتنەوە)</string>
+    <string name="save_search">گەڕانە ئێستایەکە پاشەکەوت بکرێت؟</string>
+    <string name="save_search_hint">ناوی گەڕانەکەم</string>
+    <string name="save_search_delete">گەڕانە پاشەکەوتکراوەکە بسڕینەوە؟</string>
+    <string name="save_search_delete_message">ئایا دڵنیایت کە دەتەوێت گەڕانە پاشەکەوتکراوەکەت بسڕیتەوە: "%1$s"؟</string>
+    <string name="save_search_invalid">گەڕانە پاشەکەوتکراوەکە نادروستە، فلتەرەکان گۆڕاون</string>
+    <string name="save_search_invalid_name">ناوی گەڕانە پاشەکەوتکراوەکە نادروستە</string>
 </resources>

@@ -767,4 +767,12 @@
     <string name="migrationListScreen.copyActionLabel">הוספה כעותק</string>
     <string name="migrationListScreen.migrateDialog.copyLabel">הוספה כעותק</string>
     <string name="migrationListScreen.copyNowActionLabel">הוספה כעותק כעת</string>
+    <string name="saved_searches">חיפושים שמורים</string>
+    <string name="saved_searches_delete">חיפושים שמורים (החזק למחיקה)</string>
+    <string name="save_search">לשמור את שאילתת החיפוש הנוכחית?</string>
+    <string name="save_search_hint">שם החיפוש שלי</string>
+    <string name="save_search_delete">למחוק את שאילתת החיפוש השמורה?</string>
+    <string name="save_search_delete_message">האם אתה בטוח שברצונך למחוק את שאילתת החיפוש השמורה: "%1$s"?</string>
+    <string name="save_search_invalid">החיפוש השמור אינו חוקי, המסננים השתנו</string>
+    <string name="save_search_invalid_name">שם חיפוש שמור אינו חוקי</string>
 </resources>

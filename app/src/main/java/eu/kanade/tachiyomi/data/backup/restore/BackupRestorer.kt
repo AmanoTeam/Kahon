@@ -11,11 +11,13 @@ import eu.kanade.tachiyomi.data.backup.models.BackupCategory
 import eu.kanade.tachiyomi.data.backup.models.BackupExtensionStore
 import eu.kanade.tachiyomi.data.backup.models.BackupManga
 import eu.kanade.tachiyomi.data.backup.models.BackupPreference
+import eu.kanade.tachiyomi.data.backup.models.BackupSavedSearch
 import eu.kanade.tachiyomi.data.backup.models.BackupSourcePreferences
 import eu.kanade.tachiyomi.data.backup.restore.restorers.CategoriesRestorer
 import eu.kanade.tachiyomi.data.backup.restore.restorers.ExtensionStoreRestorer
 import eu.kanade.tachiyomi.data.backup.restore.restorers.MangaRestorer
 import eu.kanade.tachiyomi.data.backup.restore.restorers.PreferenceRestorer
+import eu.kanade.tachiyomi.data.backup.restore.restorers.SavedSearchRestorer
 import eu.kanade.tachiyomi.data.download.DownloadCache
 import eu.kanade.tachiyomi.util.system.createFileInCacheDir
 import kotlinx.coroutines.CoroutineScope
@@ -48,6 +50,7 @@ class BackupRestorer(
     private val preferenceRestorer: PreferenceRestorer,
     private val extensionStoreRestorer: ExtensionStoreRestorer,
     private val mangaRestorer: MangaRestorer,
+    private val savedSearchRestorer: SavedSearchRestorer,
     private val backupDecoder: BackupDecoder,
 ) {
 
@@ -105,6 +108,9 @@ class BackupRestorer(
         if (options.categories) {
             restoreAmount += 1
         }
+        if (options.savedSearches) {
+            restoreAmount += 1
+        }
         if (options.appSettings) {
             restoreAmount += 1
         }
@@ -118,6 +124,9 @@ class BackupRestorer(
         coroutineScope {
             if (options.categories) {
                 restoreCategories(backup.backupCategories)
+            }
+            if (options.savedSearches) {
+                restoreSavedSearches(backup.backupSavedSearches)
             }
             if (options.appSettings) {
                 restoreAppPreferences(backup.backupPreferences, backup.backupCategories.takeIf { options.categories })
@@ -143,6 +152,21 @@ class BackupRestorer(
         val progress = restoreProgress.incrementAndFetch()
         notifier.showRestoreProgress(
             context.stringResource(MR.strings.categories),
+            progress,
+            restoreAmount,
+            isSync,
+        )
+    }
+
+    private fun CoroutineScope.restoreSavedSearches(
+        backupSavedSearches: List<BackupSavedSearch>,
+    ) = launch {
+        ensureActive()
+        savedSearchRestorer.restoreSavedSearches(backupSavedSearches)
+
+        val progress = restoreProgress.incrementAndFetch()
+        notifier.showRestoreProgress(
+            context.stringResource(MR.strings.saved_searches),
             progress,
             restoreAmount,
             isSync,

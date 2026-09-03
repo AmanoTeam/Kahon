@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="saved_searches">Saxlanmış axtarışlar</string>
+    <string name="saved_searches_delete">Saxlanmış axtarışlar (silmək üçün basıb saxlayın)</string>
+    <string name="save_search">Cari axtarış sorğusu saxlanılsın?</string>
+    <string name="save_search_hint">Axtarış adım</string>
+    <string name="save_search_delete">Saxlanmış axtarış sorğusu silinsin?</string>
+    <string name="save_search_delete_message">Saxlanmış axtarış sorğunuzu silmək istədiyinizə əminsiniz: "%1$s"?</string>
+    <string name="save_search_invalid">Saxlanmış axtarış etibarsızdır, filtrlər dəyişib</string>
+    <string name="save_search_invalid_name">Etibarsız saxlanmış axtarış adı</string>
 </resources>

@@ -830,4 +830,12 @@
     <string name="action_toggle_private_on">Privát nyilvántartás</string>
     <string name="action_toggle_private_off">Nyilvános nyilvántartás</string>
     <string name="notes_placeholder">Élveztem azt a részt, ahol…</string>
+    <string name="saved_searches">Mentett keresések</string>
+    <string name="saved_searches_delete">Mentett keresések (tartsd lenyomva a törléshez)</string>
+    <string name="save_search">Menti az aktuális keresési lekérdezést?</string>
+    <string name="save_search_hint">A keresésem neve</string>
+    <string name="save_search_delete">Törli a mentett keresési lekérdezést?</string>
+    <string name="save_search_delete_message">Biztosan törölni szeretné a mentett keresési lekérdezését: "%1$s"?</string>
+    <string name="save_search_invalid">A mentett keresés érvénytelen, a szűrők megváltoztak</string>
+    <string name="save_search_invalid_name">Érvénytelen mentett keresési név</string>
 </resources>

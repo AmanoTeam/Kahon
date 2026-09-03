@@ -912,4 +912,12 @@
     <string name="downloading_with_progress">ダウンロード中… (%d%%)</string>
     <string name="pref_filter_update_categories_details">除外対象カテゴリーに含まれる更新情報は、たとえそれらが対象カテゴリーにも含まれている場合でも表示されません。</string>
     <string name="pref_filter_upcoming_categories_details">除外対象カテゴリーに含まれるタイトルは、たとえそれらが対象カテゴリーにも含まれている場合でも表示されません。</string>
+    <string name="saved_searches">保存した検索</string>
+    <string name="saved_searches_delete">保存した検索（長押しで削除）</string>
+    <string name="save_search">現在の検索クエリを保存しますか？</string>
+    <string name="save_search_hint">検索名</string>
+    <string name="save_search_delete">保存した検索クエリを削除しますか？</string>
+    <string name="save_search_delete_message">保存した検索クエリ「%1$s」を削除してもよろしいですか？</string>
+    <string name="save_search_invalid">保存した検索が無効です。フィルターが変更されました</string>
+    <string name="save_search_invalid_name">無効な保存済み検索名</string>
 </resources>

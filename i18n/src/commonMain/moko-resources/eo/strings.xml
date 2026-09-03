@@ -911,4 +911,12 @@
     <string name="considering">Konsiderataj</string>
     <string name="pref_filter_update_categories_details">Ĝisdatigoj en ekskluzivitaj kategorioj ne estos montrotaj, eĉ se ili estas ankaŭ en inkluzivitaj kategorioj.</string>
     <string name="pref_filter_upcoming_categories_details">Titoloj en ekskluzivitaj kategorioj ne estos montrotaj, eĉ se ili estas ankaŭ en inkluzivitaj kategorioj.</string>
+    <string name="saved_searches">Konservitaj serĉoj</string>
+    <string name="saved_searches_delete">Konservitaj serĉoj (premu kaj tenu por forigi)</string>
+    <string name="save_search">Ĉu konservi la nunan serĉan demandon?</string>
+    <string name="save_search_hint">Mia serĉa nomo</string>
+    <string name="save_search_delete">Ĉu forigi la konservitan serĉan demandon?</string>
+    <string name="save_search_delete_message">Ĉu vi certe volas forigi vian konservitan serĉan demandon: "%1$s"?</string>
+    <string name="save_search_invalid">Konservita serĉo estas malvalida, filtriloj ŝanĝiĝis</string>
+    <string name="save_search_invalid_name">Nevalida nomo de konservita serĉo</string>
 </resources>

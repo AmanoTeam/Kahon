@@ -283,4 +283,12 @@
     <string name="ext_uninstall">သင့်ဖုန်းမှ ဖယ်ရှားရန်</string>
     <string name="theme_monet">Dynamic</string>
     <string name="label_auto">အလိုအလျောက်</string>
+    <string name="saved_searches">သိမ်းဆည်းထားသော ရှာဖွေမှုများ</string>
+    <string name="saved_searches_delete">သိမ်းဆည်းထားသော ရှာဖွေမှုများ (ဖျက်ရန် ဖိထားပါ)</string>
+    <string name="save_search">လက်ရှိ ရှာဖွေမေးခွန်းကို သိမ်းဆည်းမလား?</string>
+    <string name="save_search_hint">ကျွန်ုပ်၏ ရှာဖွေမှုအမည်</string>
+    <string name="save_search_delete">သိမ်းဆည်းထားသော ရှာဖွေမေးခွန်းကို ဖျက်မလား?</string>
+    <string name="save_search_delete_message">သင့်သိမ်းဆည်းထားသော ရှာဖွေမေးခွန်းကို ဖျက်လိုကြောင်း သေချာပါသလား: "%1$s"?</string>
+    <string name="save_search_invalid">သိမ်းဆည်းထားသော ရှာဖွေမှုမှာ တရားဝင်မဟုတ်ပါ၊ စစ်ထုတ်မှုများ ပြောင်းလဲသွားသည်</string>
+    <string name="save_search_invalid_name">တရားဝင်မဟုတ်သော သိမ်းဆည်းထားသော ရှာဖွေမှုအမည်</string>
 </resources>

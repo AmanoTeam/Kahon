@@ -880,4 +880,12 @@
     <string name="migrationListScreen.progressDialog.cancelLabel">Cancel·la</string>
     <string name="migrationListScreen.matchWithoutChapterToast">No s’ha trobat cap capítol, aquest element no es pot utilitzar per a migrar</string>
     <string name="action_filter_excluded_scanlators">Filtra els scanlators exclosos</string>
+    <string name="saved_searches">Cerques desades</string>
+    <string name="saved_searches_delete">Cerques desades (mantén premut per esborrar)</string>
+    <string name="save_search">Desar la consulta de cerca actual?</string>
+    <string name="save_search_hint">El meu nom de cerca</string>
+    <string name="save_search_delete">Suprimir la consulta de cerca desada?</string>
+    <string name="save_search_delete_message">Segur que voleu suprimir la consulta de cerca desada: "%1$s"?</string>
+    <string name="save_search_invalid">La cerca desada no és vàlida, els filtres han canviat</string>
+    <string name="save_search_invalid_name">Nom de cerca desat no vàlid</string>
 </resources>

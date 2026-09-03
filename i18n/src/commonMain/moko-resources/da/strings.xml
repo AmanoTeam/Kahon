@@ -312,4 +312,12 @@
     <string name="creating_backup">Opretter sikkerhedskopi</string>
     <string name="exception_unknown_host">Kunne ikke nå %s</string>
     <string name="channel_new_chapters">Kapitelopdateringer</string>
+    <string name="saved_searches">Gemte søgninger</string>
+    <string name="saved_searches_delete">Gemte søgninger (hold for at slette)</string>
+    <string name="save_search">Gem den aktuelle søgeforespørgsel?</string>
+    <string name="save_search_hint">Mit søgenavn</string>
+    <string name="save_search_delete">Slet den gemte søgeforespørgsel?</string>
+    <string name="save_search_delete_message">Er du sikker på, at du vil slette din gemte søgeforespørgsel: "%1$s"?</string>
+    <string name="save_search_invalid">Gemt søgning er ugyldig, filtre er ændret</string>
+    <string name="save_search_invalid_name">Ugyldigt navn på gemt søgning</string>
 </resources>

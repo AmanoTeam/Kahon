@@ -942,4 +942,12 @@
     <string name="dual_page_view_never">Никогда</string>
     <string name="dual_page_view_always">Всегда</string>
     <string name="dual_page_view_wide">Когда экран широкий</string>
+    <string name="saved_searches">Сохранённые поиски</string>
+    <string name="saved_searches_delete">Сохранённые поиски (удерживайте для удаления)</string>
+    <string name="save_search">Сохранить текущий поисковый запрос?</string>
+    <string name="save_search_hint">Название моего поиска</string>
+    <string name="save_search_delete">Удалить сохранённый поисковый запрос?</string>
+    <string name="save_search_delete_message">Вы уверены, что хотите удалить сохранённый поисковый запрос: "%1$s"?</string>
+    <string name="save_search_invalid">Сохранённый поиск недействителен, фильтры изменились</string>
+    <string name="save_search_invalid_name">Недопустимое название сохранённого поиска</string>
 </resources>

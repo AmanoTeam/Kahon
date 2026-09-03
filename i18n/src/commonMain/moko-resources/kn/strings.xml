@@ -497,4 +497,12 @@
     <string name="categorized_display_settings">ಪ್ರತಿ ವರ್ಗದ ವಿಂಗಡಣೆ ಮತ್ತು ಪ್ರದರ್ಶನಕ್ಕಾಗಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
     <string name="restrictions">ನಿರ್ಬಂಧಗಳು: %s</string>
     <string name="action_start_downloading_now">ಈಗಲೇ ಡೌನ್‌ಲೋಡ್ ಪ್ರಾರಂಭಿಸಿ</string>
+    <string name="saved_searches">ಉಳಿಸಿದ ಹುಡುಕಾಟಗಳು</string>
+    <string name="saved_searches_delete">ಉಳಿಸಿದ ಹುಡುಕಾಟಗಳು (ಅಳಿಸಲು ಹಿಡಿದುಕೊಳ್ಳಿ)</string>
+    <string name="save_search">ಪ್ರಸ್ತುತ ಹುಡುಕಾಟ ಪ್ರಶ್ನೆಯನ್ನು ಉಳಿಸುವುದೇ?</string>
+    <string name="save_search_hint">ನನ್ನ ಹುಡುಕಾಟದ ಹೆಸರು</string>
+    <string name="save_search_delete">ಉಳಿಸಿದ ಹುಡುಕಾಟ ಪ್ರಶ್ನೆಯನ್ನು ಅಳಿಸುವುದೇ?</string>
+    <string name="save_search_delete_message">ನಿಮ್ಮ ಉಳಿಸಿದ ಹುಡುಕಾಟ ಪ್ರಶ್ನೆಯನ್ನು ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುತ್ತೀರಾ: "%1$s"?</string>
+    <string name="save_search_invalid">ಉಳಿಸಿದ ಹುಡುಕಾಟ ಅಮಾನ್ಯವಾಗಿದೆ, ಫಿಲ್ಟರ್ಗಳು ಬದಲಾಗಿವೆ</string>
+    <string name="save_search_invalid_name">ಅಮಾನ್ಯ ಉಳಿಸಿದ ಹುಡುಕಾಟದ ಹೆಸರು</string>
 </resources>

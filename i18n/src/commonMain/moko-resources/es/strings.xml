@@ -906,4 +906,12 @@
     <string name="extensionStoresScreen.deleteStore.title">Quitar listado de extensiones</string>
     <string name="extensionStoresScreen.deleteStore.body">¿Seguro que quieres quitar el listado de extensiones «%1$s» (%2$s)?</string>
     <string name="pref_webtoon_vertical_navigator_on_left">Ubicar la interfaz de navegación en el margen izquierdo</string>
+    <string name="saved_searches">Búsquedas guardadas</string>
+    <string name="saved_searches_delete">Búsquedas guardadas (mantén pulsado para borrar)</string>
+    <string name="save_search">¿Guardar la consulta de búsqueda actual?</string>
+    <string name="save_search_hint">Mi nombre de búsqueda</string>
+    <string name="save_search_delete">¿Borrar la consulta de búsqueda guardada?</string>
+    <string name="save_search_delete_message">¿Seguro que quieres borrar tu consulta de búsqueda guardada: "%1$s"?</string>
+    <string name="save_search_invalid">La búsqueda guardada no es válida, los filtros han cambiado</string>
+    <string name="save_search_invalid_name">Nombre de búsqueda guardada no válido</string>
 </resources>

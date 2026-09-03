@@ -410,4 +410,12 @@
     <string name="action_display_show_number_of_items">Мал төһө элбэҕин көрдөр</string>
     <string name="action_sort_chapter_fetch_date">Кэлэр күнэ</string>
     <string name="action_filter_tracked">Суолун көрө сылдьабыт</string>
+    <string name="saved_searches">Харайыллыбыт көрдөбүллэр</string>
+    <string name="saved_searches_delete">Харайыллыбыт көрдөбүллэр (соторго тута тутуҥ)</string>
+    <string name="save_search">Билиҥҥи көрдөбүлү харайыахха дуо?</string>
+    <string name="save_search_hint">Мин көрдөбүл аатым</string>
+    <string name="save_search_delete">Харайыллыбыт көрдөбүлү сотуохха дуо?</string>
+    <string name="save_search_delete_message">Харайыллыбыт көрдөбүлүҥүн сотуоххун баҕараргын итэҕэйэҕин дуо: "%1$s"?</string>
+    <string name="save_search_invalid">Харайыллыбыт көрдөбүл көтөрө суох, сиидэлэр уларыйбыттар</string>
+    <string name="save_search_invalid_name">Көтөрө суох харайыллыбыт көрдөбүл аата</string>
 </resources>

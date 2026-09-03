@@ -206,4 +206,12 @@
     <string name="action_sort_last_manga_update">ពិនិត្យបច្ចុប្បន្នភាពចុងក្រោយ</string>
     <string name="delete_category">លុបថ្នាក់ក្រម</string>
     <string name="action_sort_next_updated">ភាគថ្មីរំពឹងទុកនៅ</string>
+    <string name="saved_searches">ការស្វែងរកដែលបានរក្សាទុក</string>
+    <string name="saved_searches_delete">ការស្វែងរកដែលបានរក្សាទុក (ចុចឱ្យជាប់ដើម្បីលុប)</string>
+    <string name="save_search">រក្សាទុកសំណួរស្វែងរកបច្ចុប្បន្ន?</string>
+    <string name="save_search_hint">ឈ្មោះស្វែងរករបស់ខ្ញុំ</string>
+    <string name="save_search_delete">លុបសំណួរស្វែងរកដែលបានរក្សាទុក?</string>
+    <string name="save_search_delete_message">តើអ្នកប្រាកដថាចង់លុបសំណួរស្វែងរកដែលបានរក្សាទុករបស់អ្នក: "%1$s"?</string>
+    <string name="save_search_invalid">ការស្វែងរកដែលបានរក្សាទុកមិនត្រឹមត្រូវទេ តម្រងបានផ្លាស់ប្តូរ</string>
+    <string name="save_search_invalid_name">ឈ្មោះស្វែងរកដែលបានរក្សាទុកមិនត្រឹមត្រូវ</string>
 </resources>

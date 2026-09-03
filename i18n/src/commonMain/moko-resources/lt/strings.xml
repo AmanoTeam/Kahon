@@ -679,4 +679,12 @@
     <string name="enhanced_services_not_installed">Turima, bet šaltinis nėra įdiegtas: %s</string>
     <string name="pref_library_update_show_tab_badge">Rodyti neperskaitytų skaičių ant Naujienų piktogramos</string>
     <string name="pref_skip_dupe_chapters">Praleisti pasikartojančius skyrius</string>
+    <string name="saved_searches">Išsaugotos paieškos</string>
+    <string name="saved_searches_delete">Išsaugotos paieškos (laikykite, kad ištrintumėte)</string>
+    <string name="save_search">Išsaugoti dabartinę paieškos užklausą?</string>
+    <string name="save_search_hint">Mano paieškos pavadinimas</string>
+    <string name="save_search_delete">Ištrinti išsaugotą paieškos užklausą?</string>
+    <string name="save_search_delete_message">Ar tikrai norite ištrinti išsaugotą paieškos užklausą: "%1$s"?</string>
+    <string name="save_search_invalid">Išsaugota paieška negalioja, filtrai pasikeitė</string>
+    <string name="save_search_invalid_name">Neteisingas išsaugotos paieškos pavadinimas</string>
 </resources>

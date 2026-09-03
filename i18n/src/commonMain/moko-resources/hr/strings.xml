@@ -901,4 +901,12 @@
     <string name="donationCampaign.paragraph1">Pozdrav! Ja sam glavni programer Mihona i želim te zamoliti da razmisliš o financijskoj potpori njegovom razvoju. Uz dovoljno podrške, moći ću raditi na Mihonu puno radno vrijeme i usredotočiti se na dugogodišnje probleme, kao i na vrlo tražene funkcije.</string>
     <string name="donationCampaign.paragraph2">Možeš donirati putem Patreona (preferiran način) ili putem OpenCollective-a. Ako imaš pitanja ili želiš podržati korištenje alternativnih načina, slobodno me kontaktiraj putem Mihonovog Discord servera.</string>
     <string name="donationCampaign.paragraph3">Bez obzira na to, volonteri i ja ćemo i dalje održavati Mihon, i ostat će otvorenog koda.</string>
+    <string name="saved_searches">Spremljena pretraživanja</string>
+    <string name="saved_searches_delete">Spremljena pretraživanja (držite za brisanje)</string>
+    <string name="save_search">Spremiti trenutni upit pretraživanja?</string>
+    <string name="save_search_hint">Naziv moje pretrage</string>
+    <string name="save_search_delete">Izbrisati spremljeni upit pretraživanja?</string>
+    <string name="save_search_delete_message">Jeste li sigurni da želite izbrisati svoj spremljeni upit pretraživanja: "%1$s"?</string>
+    <string name="save_search_invalid">Spremljeno pretraživanje nije važeće, filtri su se promijenili</string>
+    <string name="save_search_invalid_name">Nevažeći naziv spremljenog pretraživanja</string>
 </resources>

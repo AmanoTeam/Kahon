@@ -919,4 +919,12 @@
     <string name="downloading_with_progress">Stahování… (%d%%)</string>
     <string name="pref_filter_update_categories_details">Aktualizace v kategoriích, které byly vyloučeny, se nezobrazí, i když se zároveň nacházejí v některé ze zahrnutých kategorií.</string>
     <string name="pref_filter_upcoming_categories_details">Položky ve vyloučených kategoriích se nezobrazují, i když patří také do některé ze zahrnutých kategorií.</string>
+    <string name="saved_searches">Uložená hledání</string>
+    <string name="saved_searches_delete">Uložená hledání (podržte pro smazání)</string>
+    <string name="save_search">Uložit aktuální vyhledávací dotaz?</string>
+    <string name="save_search_hint">Můj název hledání</string>
+    <string name="save_search_delete">Smazat uložený vyhledávací dotaz?</string>
+    <string name="save_search_delete_message">Opravdu chcete smazat uložený vyhledávací dotaz: "%1$s"?</string>
+    <string name="save_search_invalid">Uložené hledání je neplatné, filtry se změnily</string>
+    <string name="save_search_invalid_name">Neplatný název uloženého hledání</string>
 </resources>

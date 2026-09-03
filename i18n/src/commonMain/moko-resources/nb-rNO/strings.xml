@@ -776,4 +776,12 @@
     <string name="action_open_repo">Åpne pakkebrønnen</string>
     <string name="label_upcoming">Kommende</string>
     <string name="action_add_anyway">Legg til likevel</string>
+    <string name="saved_searches">Lagrede søk</string>
+    <string name="saved_searches_delete">Lagrede søk (hold inne for å slette)</string>
+    <string name="save_search">Lagre gjeldende søkespørring?</string>
+    <string name="save_search_hint">Mitt søkenavn</string>
+    <string name="save_search_delete">Slette den lagrede søkespørringen?</string>
+    <string name="save_search_delete_message">Er du sikker på at du vil slette din lagrede søkespørring: "%1$s"?</string>
+    <string name="save_search_invalid">Lagret søk er ugyldig, filtrene er endret</string>
+    <string name="save_search_invalid_name">Ugyldig navn på lagret søk</string>
 </resources>

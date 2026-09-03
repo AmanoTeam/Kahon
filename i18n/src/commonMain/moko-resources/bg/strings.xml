@@ -748,4 +748,12 @@
     <string name="onboarding_permission_install_apps">Разрешение за инсталиране на приложения</string>
     <string name="onboarding_permission_ignore_battery_opts">Фоново потребление на батерията</string>
     <string name="onboarding_storage_info">Избери папка, където %1$s ще съхранява изтеглени глави, резервни копия и други.\n\nПрепоръчва се специална папка.\nИзбрана папка: %2$s</string>
+    <string name="saved_searches">Запазени търсения</string>
+    <string name="saved_searches_delete">Запазени търсения (задръжте за изтриване)</string>
+    <string name="save_search">Да се запази ли текущата заявка за търсене?</string>
+    <string name="save_search_hint">Име на моето търсене</string>
+    <string name="save_search_delete">Да се изтрие ли запазената заявка за търсене?</string>
+    <string name="save_search_delete_message">Сигурни ли сте, че искате да изтриете запазената заявка за търсене: "%1$s"?</string>
+    <string name="save_search_invalid">Запазеното търсене е невалидно, филтрите са променени</string>
+    <string name="save_search_invalid_name">Невалидно име на запазено търсене</string>
 </resources>

@@ -275,4 +275,12 @@
     <string name="backup_restore_missing_trackers">መከታተያዎች አልገቡም:</string>
     <string name="backup_restore_missing_sources">የጠፋ ምንጮች:</string>
     <string name="invalid_backup_file_missing_manga">ምትኬ ማንኛውንም ማንጋ አልያዘም ፡፡</string>
+    <string name="saved_searches">የተቀመጡ ፍለጋዎች</string>
+    <string name="saved_searches_delete">የተቀመጡ ፍለጋዎች (ለመሰረዝ ይያዙ)</string>
+    <string name="save_search">የአሁኑን የፍለጋ ጥያቄ ማስቀመጥ?</string>
+    <string name="save_search_hint">የፍለጋ ስሜ</string>
+    <string name="save_search_delete">የተቀመጠውን የፍለጋ ጥያቄ መሰረዝ?</string>
+    <string name="save_search_delete_message">የተቀመጠውን የፍለጋ ጥያቄዎን መሰረዝ እንደሚፈልጉ እርግጠኛ ነዎት: የ"%1$s"?</string>
+    <string name="save_search_invalid">የተቀመጠው ፍለጋ ልክ አይደለም, ማጣሪያዎች ተለውጠዋል</string>
+    <string name="save_search_invalid_name">ትክክለኛ ያልሆነ የተቀመጠ የፍለጋ ስም</string>
 </resources>

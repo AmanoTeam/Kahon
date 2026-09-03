@@ -829,4 +829,12 @@
     <string name="clear_database_text">คุณกำลังจะลบรายการออกจากฐานข้อมูล</string>
     <string name="pref_display_images_description">เรนเดอร์รูปภาพในคำอธิบายเรื่อง</string>
     <string name="pref_disallow_non_ascii_filenames">ไม่อนุญาตชื่อไฟล์ที่ไม่ใช่ ASCII</string>
+    <string name="saved_searches">การค้นหาที่บันทึกไว้</string>
+    <string name="saved_searches_delete">การค้นหาที่บันทึกไว้ (กดค้างเพื่อลบ)</string>
+    <string name="save_search">บันทึกคำค้นหาปัจจุบันหรือไม่</string>
+    <string name="save_search_hint">ชื่อการค้นหาของฉัน</string>
+    <string name="save_search_delete">ลบคำค้นหาที่บันทึกไว้หรือไม่</string>
+    <string name="save_search_delete_message">คุณแน่ใจหรือไม่ว่าต้องการลบคำค้นหาที่บันทึกไว้: "%1$s"?</string>
+    <string name="save_search_invalid">การค้นหาที่บันทึกไว้ไม่ถูกต้อง ตัวกรองมีการเปลี่ยนแปลง</string>
+    <string name="save_search_invalid_name">ชื่อการค้นหาที่บันทึกไว้ไม่ถูกต้อง</string>
 </resources>

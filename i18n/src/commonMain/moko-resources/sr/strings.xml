@@ -781,4 +781,12 @@
     <string name="action_revert_to_default">Врати на подразумевано</string>
     <string name="action_add_anyway">Dodati svejedno</string>
     <string name="label_upcoming">Predstojeći</string>
+    <string name="saved_searches">Sačuvane pretrage</string>
+    <string name="saved_searches_delete">Sačuvane pretrage (držite da obrišete)</string>
+    <string name="save_search">Sačuvati trenutni upit za pretragu?</string>
+    <string name="save_search_hint">Ime moje pretrage</string>
+    <string name="save_search_delete">Obrisati sačuvani upit za pretragu?</string>
+    <string name="save_search_delete_message">Da li ste sigurni da želite da obrišete sačuvani upit za pretragu: "%1$s"?</string>
+    <string name="save_search_invalid">Sačuvana pretraga je nevažeća, filteri su promenjeni</string>
+    <string name="save_search_invalid_name">Nevažeće ime sačuvane pretrage</string>
 </resources>

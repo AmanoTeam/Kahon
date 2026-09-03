@@ -912,4 +912,12 @@
     <string name="donationCampaign.paragraph3">Quoi qu\'il en soit, Mihon continuera d\'être maintenu par les contributeurs et moi-même, et restera open-source.</string>
     <string name="donationCampaign.contactPlatform">Discord</string>
     <string name="donationCampaign.dismiss">Faire disparaitre</string>
+    <string name="saved_searches">Recherches enregistrées</string>
+    <string name="saved_searches_delete">Recherches enregistrées (maintenir appuyé pour supprimer)</string>
+    <string name="save_search">Enregistrer la requête de recherche actuelle ?</string>
+    <string name="save_search_hint">Mon nom de recherche</string>
+    <string name="save_search_delete">Supprimer la requête de recherche enregistrée ?</string>
+    <string name="save_search_delete_message">Voulez-vous vraiment supprimer votre requête de recherche enregistrée : "%1$s" ?</string>
+    <string name="save_search_invalid">Recherche enregistrée invalide, les filtres ont changé</string>
+    <string name="save_search_invalid_name">Nom de recherche enregistrée invalide</string>
 </resources>

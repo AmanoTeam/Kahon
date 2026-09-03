@@ -880,4 +880,12 @@
     <string name="migrationListScreen.migrateDialog.copyLabel">Скапіяваць</string>
     <string name="migrationListScreen.migrateDialog.migrateLabel">Міграваць</string>
     <string name="migrationListScreen.matchWithoutChapterToast">Няма раздзелаў, твор не падыходзіць для міграцыі</string>
+    <string name="saved_searches">Захаваныя пошукі</string>
+    <string name="saved_searches_delete">Захаваныя пошукі (угрымайце, каб выдаліць)</string>
+    <string name="save_search">Захаваць бягучы пошукавы запыт?</string>
+    <string name="save_search_hint">Мая назва пошуку</string>
+    <string name="save_search_delete">Выдаліць захаваны пошукавы запыт?</string>
+    <string name="save_search_delete_message">Вы ўпэўнены, што хочаце выдаліць захаваны пошукавы запыт: "%1$s"?</string>
+    <string name="save_search_invalid">Захаваны пошук несапраўдны, фільтры змяніліся</string>
+    <string name="save_search_invalid_name">Несапраўдная назва захаванага пошуку</string>
 </resources>

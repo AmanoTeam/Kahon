@@ -693,4 +693,12 @@
     <string name="track_activity_name">Gjurmuesi i identifikimit</string>
     <string name="pref_relative_format">Koha relative</string>
     <string name="pref_relative_format_summary">\"%1$s\" në vend të \"%2$s\"</string>
+    <string name="saved_searches">Kërkimet e ruajtura</string>
+    <string name="saved_searches_delete">Kërkimet e ruajtura (mbajeni për të fshirë)</string>
+    <string name="save_search">Ruaj kërkesën aktuale të kërkimit?</string>
+    <string name="save_search_hint">Emri i kërkimit tim</string>
+    <string name="save_search_delete">Fshi kërkesën e kërkuar të ruajtur?</string>
+    <string name="save_search_delete_message">A jeni i sigurt se dëshironi të fshini kërkesën tuaj të kërkimit të ruajtur: "%1$s"?</string>
+    <string name="save_search_invalid">Kërkimi i ruajtur është i pavlefshëm, filtrat kanë ndryshuar</string>
+    <string name="save_search_invalid_name">Emër i pavlefshëm i kërkimit të ruajtur</string>
 </resources>

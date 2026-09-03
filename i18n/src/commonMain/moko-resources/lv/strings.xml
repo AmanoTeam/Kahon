@@ -742,4 +742,12 @@
     <string name="pref_relative_format">Relatīviās laika stampas</string>
     <string name="pref_relative_format_summary">\"%1$s\", nevis \"%2$s\"</string>
     <string name="exclude_scanlators">Izslēgt skanlatorus</string>
+    <string name="saved_searches">Saglabātie meklējumi</string>
+    <string name="saved_searches_delete">Saglabātie meklējumi (turiet nospiestu, lai dzēstu)</string>
+    <string name="save_search">Saglabāt pašreizējo meklēšanas vaicājumu?</string>
+    <string name="save_search_hint">Mans meklēšanas nosaukums</string>
+    <string name="save_search_delete">Dzēst saglabāto meklēšanas vaicājumu?</string>
+    <string name="save_search_delete_message">Vai tiešām vēlaties dzēst savu saglabāto meklēšanas vaicājumu: "%1$s"?</string>
+    <string name="save_search_invalid">Saglabātais meklējums nav derīgs, filtri ir mainīti</string>
+    <string name="save_search_invalid_name">Nederīgs saglabātā meklējuma nosaukums</string>
 </resources>

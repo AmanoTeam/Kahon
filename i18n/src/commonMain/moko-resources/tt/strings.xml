@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="saved_searches">Сакланган эзләүләр</string>
+    <string name="saved_searches_delete">Сакланган эзләүләр (бетерү өчен басып торыгыз)</string>
+    <string name="save_search">Агымдагы эзләү соравын сакларгамы?</string>
+    <string name="save_search_hint">Минем эзләү исемем</string>
+    <string name="save_search_delete">Сакланган эзләү соравын бетерергәме?</string>
+    <string name="save_search_delete_message">Сакланган эзләү соравыгызны бетерергә теләвегезгә ышандырасызмы: "%1$s"?</string>
+    <string name="save_search_invalid">Сакланган эзләү яраксыз, фильтрлар үзгәргән</string>
+    <string name="save_search_invalid_name">Сакланган эзләүнең яраксыз исеме</string>
 </resources>

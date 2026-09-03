@@ -615,4 +615,12 @@
     <string name="label_upcoming">Etorkizunean</string>
     <string name="unlock_app_title">%s desblokeatu</string>
     <string name="action_copy_link">Esteka kopiatu</string>
+    <string name="saved_searches">Gordetako bilaketak</string>
+    <string name="saved_searches_delete">Gordetako bilaketak (eduki sakatuta ezabatzeko)</string>
+    <string name="save_search">Oraingo bilaketa-kontsulta gorde?</string>
+    <string name="save_search_hint">Nire bilaketaren izena</string>
+    <string name="save_search_delete">Gordetako bilaketa-kontsulta ezabatu?</string>
+    <string name="save_search_delete_message">Ziur zaude gordetako bilaketa-kontsulta ezabatu nahi duzula: "%1$s"?</string>
+    <string name="save_search_invalid">Gordetako bilaketa ez da baliozkoa, iragazkiak aldatu dira</string>
+    <string name="save_search_invalid_name">Gordetako bilaketaren izen baliogabea</string>
 </resources>

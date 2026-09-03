@@ -877,4 +877,12 @@
     <string name="migrationListScreen.exitDialog.cancelLabel">रद्द गर्नुहोस्</string>
     <string name="migrationListScreen.migrateDialog.copyLabel">प्रतिलिपि गर्नुहोस्</string>
     <string name="migrationListScreen.matchWithoutChapterToast">कुनै अध्यायहरू फेला परेनन्, यो इन्ट्री स्थानान्तरणका लागि प्रयोग गर्न सकिँदैन</string>
+    <string name="saved_searches">सुरक्षित खोजहरू</string>
+    <string name="saved_searches_delete">सुरक्षित खोजहरू (मेटाउन लामो थिच्नुहोस्)</string>
+    <string name="save_search">हालको खोज प्रश्न सुरक्षित गर्ने?</string>
+    <string name="save_search_hint">मेरो खोजको नाम</string>
+    <string name="save_search_delete">सुरक्षित खोज प्रश्न मेटाउने?</string>
+    <string name="save_search_delete_message">के तपाईं आफ्नो सुरक्षित खोज प्रश्न मेटाउन निश्चित हुनुहुन्छ: "%1$s"?</string>
+    <string name="save_search_invalid">सुरक्षित खोज अवैध छ, फिल्टरहरू परिवर्तन भएका छन्</string>
+    <string name="save_search_invalid_name">अवैध सुरक्षित खोज नाम</string>
 </resources>

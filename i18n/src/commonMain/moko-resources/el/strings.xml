@@ -912,4 +912,12 @@
     <string name="donationCampaign.paragraph3">Ανεξάρτητα από αυτό, το Mihon θα συνεχίσει να συντηρείται από εμένα και τους εθελοντές και θα παραμείνει ανοιχτού κώδικα.</string>
     <string name="donationCampaign.contactPlatform">Discord</string>
     <string name="donationCampaign.dismiss">Απόρριψη</string>
+    <string name="saved_searches">Αποθηκευμένες αναζητήσεις</string>
+    <string name="saved_searches_delete">Αποθηκευμένες αναζητήσεις (πατήστε παρατεταμένα για διαγραφή)</string>
+    <string name="save_search">Να αποθηκευτεί το τρέχον ερώτημα αναζήτησης;</string>
+    <string name="save_search_hint">Το όνομά μου αναζήτησης</string>
+    <string name="save_search_delete">Διαγραφή αποθηκευμένου ερωτήματος αναζήτησης;</string>
+    <string name="save_search_delete_message">Είστε βέβαιοι ότι θέλετε να διαγράψετε το αποθηκευμένο ερώτημα αναζήτησης: "%1$s";</string>
+    <string name="save_search_invalid">Η αποθηκευμένη αναζήτηση δεν είναι έγκυρη, τα φίλτρα άλλαξαν</string>
+    <string name="save_search_invalid_name">Μη έγκυρο όνομα αποθηκευμένης αναζήτησης</string>
 </resources>

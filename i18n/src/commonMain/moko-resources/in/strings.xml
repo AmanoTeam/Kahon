@@ -912,4 +912,12 @@
     <string name="donationCampaign.paragraph3">Bagaimanapun juga, Mihon akan terus dipelihara oleh saya dan para sukarelawan, dan akan tetap bersifat open source.</string>
     <string name="donationCampaign.contactPlatform">Discord</string>
     <string name="donationCampaign.dismiss">Tutup</string>
+    <string name="saved_searches">Pencarian tersimpan</string>
+    <string name="saved_searches_delete">Pencarian tersimpan (tahan untuk menghapus)</string>
+    <string name="save_search">Simpan kueri pencarian saat ini?</string>
+    <string name="save_search_hint">Nama pencarian saya</string>
+    <string name="save_search_delete">Hapus kueri pencarian tersimpan?</string>
+    <string name="save_search_delete_message">Apakah Anda yakin ingin menghapus kueri pencarian tersimpan Anda: "%1$s"?</string>
+    <string name="save_search_invalid">Pencarian tersimpan tidak valid, filter telah berubah</string>
+    <string name="save_search_invalid_name">Nama pencarian tersimpan tidak valid</string>
 </resources>

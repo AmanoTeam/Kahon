@@ -562,4 +562,12 @@
     <string name="action_set_interval">अवधिं स्थापयतु</string>
     <string name="delete_downloaded">अवारोपितं नाशयतु</string>
     <string name="label_downloaded">अवारोपितम्</string>
+    <string name="saved_searches">सञ्चिता अन्वेषणा</string>
+    <string name="saved_searches_delete">सञ्चिता अन्वेषणा (नाशाय तु दीर्घं दबान)</string>
+    <string name="save_search">वर्तमानम् अन्वेषण-प्रश्नं सञ्चिनोतु?</string>
+    <string name="save_search_hint">मम अन्वेषणा-नाम</string>
+    <string name="save_search_delete">सञ्चितम् अन्वेषण-प्रश्नं नाशयतु?</string>
+    <string name="save_search_delete_message">भवतः सञ्चितम् अन्वेषण-प्रश्नं नाशयितुं भवान् निश्चितः किम्: "%1$s"?</string>
+    <string name="save_search_invalid">सञ्चिता अन्वेषणा अमान्या, परिशोधकाः परिवर्तिताः</string>
+    <string name="save_search_invalid_name">अमान्यं सञ्चित-अन्वेषणा-नाम</string>
 </resources>

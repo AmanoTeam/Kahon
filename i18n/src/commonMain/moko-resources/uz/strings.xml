@@ -356,4 +356,12 @@
     <string name="pref_webtoon_side_padding">Yon bo\'shliq</string>
     <string name="pref_remove_bookmarked_chapters">Xatchopli boblarni o\'chirish</string>
     <string name="third_to_last">O\'qilgan bobdan uchinchisi</string>
+    <string name="saved_searches">Saqlangan qidiruvlar</string>
+    <string name="saved_searches_delete">Saqlangan qidiruvlar (o‘chirish uchun bosib turing)</string>
+    <string name="save_search">Joriy qidiruv so‘rovini saqlash kerakmi?</string>
+    <string name="save_search_hint">Mening qidiruv nomim</string>
+    <string name="save_search_delete">Saqlangan qidiruv so‘rovini o‘chirish kerakmi?</string>
+    <string name="save_search_delete_message">Saqlangan qidiruv so‘rovingizni o‘chirmoqchi ekaningizga ishonchingiz komilmi: "%1$s"?</string>
+    <string name="save_search_invalid">Saqlangan qidiruv noto‘g‘ri, filtrlar o‘zgargan</string>
+    <string name="save_search_invalid_name">Noto‘g‘ri saqlangan qidiruv nomi</string>
 </resources>

@@ -919,4 +919,12 @@
     <string name="downloading_with_progress">Wird heruntergeladen… (%d%%)</string>
     <string name="pref_filter_update_categories_details">Aktualisierungen in ausgeschlossen Kategorien werden nicht angezeigt, selbst wenn sie in eingeschlossenen Kategorien vorkommen.</string>
     <string name="pref_filter_upcoming_categories_details">Titel in ausgeschlossen Kategorien werden nicht angezeigt, selbst wenn sie in eingeschlossenen Kategorien vorkommen.</string>
+    <string name="saved_searches">Gespeicherte Suchanfragen</string>
+    <string name="saved_searches_delete">Gespeicherte Suchanfragen (gedrückt halten zum Löschen)</string>
+    <string name="save_search">Aktuelle Suchanfrage speichern?</string>
+    <string name="save_search_hint">Name meiner Suche</string>
+    <string name="save_search_delete">Gespeicherte Suchanfrage löschen?</string>
+    <string name="save_search_delete_message">Möchtest du deine gespeicherte Suchanfrage wirklich löschen: "%1$s"?</string>
+    <string name="save_search_invalid">Gespeicherte Suche ungültig, Filter wurden geändert</string>
+    <string name="save_search_invalid_name">Ungültiger Name der gespeicherten Suche</string>
 </resources>

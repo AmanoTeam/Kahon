@@ -919,4 +919,12 @@
     <string name="downloading_with_progress">İndiriliyor… (%d%%)</string>
     <string name="pref_filter_update_categories_details">Hariç tutulan kategorilerdeki güncellemeler, dahil edilen kategorilerde olsalar bile gösterilmeyecektir.</string>
     <string name="pref_filter_upcoming_categories_details">Hariç tutulan kategorilerdeki girdiler gizlendi. Bu girdiler dahil edilen kategorilerde olsalar bile gösterilmez.</string>
+    <string name="saved_searches">Kayıtlı aramalar</string>
+    <string name="saved_searches_delete">Kayıtlı aramalar (silmek için basılı tutun)</string>
+    <string name="save_search">Geçerli arama sorgusu kaydedilsin mi?</string>
+    <string name="save_search_hint">Arama adım</string>
+    <string name="save_search_delete">Kayıtlı arama sorgusu silinsin mi?</string>
+    <string name="save_search_delete_message">Kayıtlı arama sorgunuzu silmek istediğinize emin misiniz: "%1$s"?</string>
+    <string name="save_search_invalid">Kayıtlı arama geçersiz, filtreler değişti</string>
+    <string name="save_search_invalid_name">Geçersiz kayıtlı arama adı</string>
 </resources>

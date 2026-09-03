@@ -919,4 +919,12 @@
     <string name="pref_filter_update_categories_details">Hindi ipapakita ang mga update sa mga nakabukod na kategorya, kahit kabilang pa ang mga ito sa mga napiling kategorya.</string>
     <string name="pref_filter_upcoming_categories_details">Hindi ipapakita ang mga update sa mga nakabukod na kategorya, kahit kabilang pa ang mga ito sa mga napiling kategorya.</string>
     <string name="theme_tokyonight">Tokyo sa Gabi</string>
+    <string name="saved_searches">Mga naka-save na paghahanap</string>
+    <string name="saved_searches_delete">Mga naka-save na paghahanap (pindutin nang matagal para burahin)</string>
+    <string name="save_search">I-save ang kasalukuyang query sa paghahanap?</string>
+    <string name="save_search_hint">Pangalan ng aking paghahanap</string>
+    <string name="save_search_delete">Burahin ang naka-save na query sa paghahanap?</string>
+    <string name="save_search_delete_message">Sigurado ka bang gusto mong burahin ang iyong naka-save na query sa paghahanap: "%1$s"?</string>
+    <string name="save_search_invalid">Ang naka-save na paghahanap ay hindi wasto, nagbago ang mga filter</string>
+    <string name="save_search_invalid_name">Hindi wastong pangalan ng naka-save na paghahanap</string>
 </resources>

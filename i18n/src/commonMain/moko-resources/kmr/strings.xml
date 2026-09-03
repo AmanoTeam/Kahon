@@ -272,4 +272,12 @@
     <string name="pref_mark_duplicate_read_chapter_read">Beşên dubare yên xwendî wekî xwendî nîşan bide</string>
     <string name="ext_info_age_rating">Nirxandina temenî</string>
     <string name="ext_nsfw_short">18+</string>
+    <string name="saved_searches">Lêgerînên tomarkirî</string>
+    <string name="saved_searches_delete">Lêgerînên tomarkirî (ji bo jêbirinê bigire)</string>
+    <string name="save_search">Qeyda lêgerîna niha tê tomarkirin?</string>
+    <string name="save_search_hint">Navê lêgerîna min</string>
+    <string name="save_search_delete">Qeyda lêgerîna tomarkirî tê jêbirin?</string>
+    <string name="save_search_delete_message">Ma bêguman tu dixwazî qeyda lêgerîna xwe ya tomarkirî jê bibî: "%1$s"?</string>
+    <string name="save_search_invalid">Lêgerîna tomarkirî nerêbaz e, parzûn guherîn</string>
+    <string name="save_search_invalid_name">Navê lêgerîna tomarkirî nerêbaz e</string>
 </resources>

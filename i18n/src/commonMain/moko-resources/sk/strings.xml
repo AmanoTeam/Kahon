@@ -735,4 +735,16 @@
     <string name="pref_flash_style_black">Čiernou</string>
     <string name="pref_flash_style_white">Bielou</string>
     <string name="pref_flash_style_white_black">Čiernou aj Bielou</string>
+    <string name="pref_hardware_bitmap_threshold">Vlastný prah pre hardvérové bitmapy</string>
+    <string name="pref_hardware_bitmap_threshold_default">Predvolený (%d)</string>
+    <string name="pref_hardware_bitmap_threshold_summary">Ak čítacie rozhranie načítava prázdne obrázky, postupne znížte prah.\nVybrané: %s</string>
+    <string name="pref_always_decode_long_strip_with_ssiv_2">Použiť starší dekodér pre čítacie rozhranie \"dlhé pásy\"</string>
+    <string name="saved_searches">Uložené vyhľadávania</string>
+    <string name="saved_searches_delete">Uložené vyhľadávania (podržte pre odstránenie)</string>
+    <string name="save_search">Uložiť aktuálny vyhľadávací dopyt?</string>
+    <string name="save_search_hint">Názov môjho vyhľadávania</string>
+    <string name="save_search_delete">Odstrániť uložený vyhľadávací dopyt?</string>
+    <string name="save_search_delete_message">Naozaj chcete odstrániť uložený vyhľadávací dopyt: "%1$s"?</string>
+    <string name="save_search_invalid">Uložené vyhľadávanie je neplatné, filtre sa zmenili</string>
+    <string name="save_search_invalid_name">Neplatný názov uloženého vyhľadávania</string>
 </resources>

@@ -336,4 +336,12 @@
     <string name="onboarding_action_finish">Rampung</string>
     <string name="onboarding_action_skip">Nglangkungi</string>
     <string name="onboarding_storage_info">Milih direktori kanggo nyimpen isi saka %1$s, kalebu unduhan bab, data backup, lan liya-liyane. \n \nApike kudu nganggo direktori kapisah. \n \ndirektori ingkang dipunpilih: %2$s</string>
+    <string name="saved_searches">Telusuran sing disimpen</string>
+    <string name="saved_searches_delete">Telusuran sing disimpen (tahan kanggo mbusak)</string>
+    <string name="save_search">Simpen kueri telusuran saiki?</string>
+    <string name="save_search_hint">Jeneng telusuranku</string>
+    <string name="save_search_delete">Busak kueri telusuran sing disimpen?</string>
+    <string name="save_search_delete_message">Apa sampeyan yakin pengin mbusak kueri telusuran sing disimpen: "%1$s"?</string>
+    <string name="save_search_invalid">Telusuran sing disimpen ora sah, filter wis diganti</string>
+    <string name="save_search_invalid_name">Jeneng telusuran sing disimpen ora sah</string>
 </resources>

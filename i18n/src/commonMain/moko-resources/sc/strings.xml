@@ -841,4 +841,12 @@
     <string name="migrationConfigScreen.selectAllLabel">Seletziona totu</string>
     <string name="migrationConfigScreen.selectEnabledLabel">Seletziona fontes abilitadas</string>
     <string name="migrationConfigScreen.continueButtonText">Sighi</string>
+    <string name="saved_searches">Chircas sarvadas</string>
+    <string name="saved_searches_delete">Chircas sarvadas (mantene minimadu pro cantzellare)</string>
+    <string name="save_search">Sarvare sa rechirta de chirca atuale?</string>
+    <string name="save_search_hint">Su nùmene de sa chirca mea</string>
+    <string name="save_search_delete">Cantzellare sa rechirta de chirca sarvada?</string>
+    <string name="save_search_delete_message">Seguru chi boles cantzellare sa tua rechirta de chirca sarvada: "%1$s"?</string>
+    <string name="save_search_invalid">Sa chirca sarvada no est bàlida, sos filtros sunt mudados</string>
+    <string name="save_search_invalid_name">Nùmene de chirca sarvada non bàlidu</string>
 </resources>
