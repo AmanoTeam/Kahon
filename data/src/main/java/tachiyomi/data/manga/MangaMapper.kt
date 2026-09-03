@@ -24,6 +24,7 @@ object MangaMapper {
         userNotes: String,
         userReaderFlags: Long,
         userChapterFlags: Long,
+        userOverrideMetadata: Long,
         stateChapterLastUpdate: Long?,
         stateChapterNextUpdate: Long?,
         stateChapterFetchInterval: Long,
@@ -51,6 +52,7 @@ object MangaMapper {
         initialized = stateInitialized,
         notes = userNotes,
         memo = remoteMemo,
+        overrideMetadata = userOverrideMetadata,
     )
 
     fun mapLibraryManga(
@@ -70,6 +72,7 @@ object MangaMapper {
         userNotes: String,
         userReaderFlags: Long,
         userChapterFlags: Long,
+        userOverrideMetadata: Long,
         stateChapterLastUpdate: Long?,
         stateChapterNextUpdate: Long?,
         stateChapterFetchInterval: Long,
@@ -100,6 +103,7 @@ object MangaMapper {
             userNotes = userNotes,
             userReaderFlags = userReaderFlags,
             userChapterFlags = userChapterFlags,
+            userOverrideMetadata = userOverrideMetadata,
             stateChapterLastUpdate = stateChapterLastUpdate,
             stateChapterNextUpdate = stateChapterNextUpdate,
             stateChapterFetchInterval = stateChapterFetchInterval,
@@ -132,6 +136,7 @@ object MangaMapper {
         userNotes: String,
         userReaderFlags: Long,
         userChapterFlags: Long,
+        userOverrideMetadata: Long,
         stateChapterLastUpdate: Long?,
         stateChapterNextUpdate: Long?,
         stateChapterFetchInterval: Long,
@@ -156,6 +161,7 @@ object MangaMapper {
             userNotes = userNotes,
             userReaderFlags = userReaderFlags,
             userChapterFlags = userChapterFlags,
+            userOverrideMetadata = userOverrideMetadata,
             stateChapterLastUpdate = stateChapterLastUpdate,
             stateChapterNextUpdate = stateChapterNextUpdate,
             stateChapterFetchInterval = stateChapterFetchInterval,

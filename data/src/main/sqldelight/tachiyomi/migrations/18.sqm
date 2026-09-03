@@ -1,0 +1,1 @@
+ALTER TABLE manga ADD COLUMN user_override_metadata INTEGER NOT NULL DEFAULT 0;
