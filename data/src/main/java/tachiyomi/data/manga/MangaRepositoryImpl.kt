@@ -236,6 +236,7 @@ class MangaRepositoryImpl(
                 stateCoverLastModified = update.coverLastModified,
                 remoteUpdateStrategy = update.updateStrategy,
                 remoteMemo = update.memo,
+                userOverrideMetadata = update.overrideMetadata,
                 id = update.id,
             )
             true
@@ -260,6 +261,7 @@ class MangaRepositoryImpl(
                         stateCoverLastModified = coverLastModified,
                         id = id,
                         userNotes = notes,
+                        userOverrideMetadata = overrideMetadata,
                     )
                 }
             }
