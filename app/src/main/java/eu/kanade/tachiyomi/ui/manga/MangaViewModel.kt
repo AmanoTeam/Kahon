@@ -82,6 +82,7 @@ import tachiyomi.domain.manga.interactor.GetDuplicateLibraryManga
 import tachiyomi.domain.manga.interactor.GetMangaWithChapters
 import tachiyomi.domain.manga.interactor.SetMangaChapterFlags
 import tachiyomi.domain.manga.model.Manga
+import tachiyomi.domain.manga.model.MangaUpdate
 import tachiyomi.domain.manga.model.MangaWithChapterCount
 import tachiyomi.domain.manga.model.applyFilter
 import tachiyomi.domain.manga.repository.MangaRepository
@@ -415,6 +416,96 @@ class MangaViewModel(
         }
     }
 
+    fun showEditStatusDialog() {
+        updateSuccessState {
+            it.copy(dialog = Dialog.EditStatus)
+        }
+    }
+
+    fun setMangaUserStatus(userStatus: Long) {
+        val manga = successState?.manga ?: return
+            viewModelScope.launchIO {
+            val newOverrideMetadata = if (userStatus != manga.status) {
+                manga.overrideMetadata or Manga.OVERRIDE_STATUS
+            } else {
+                manga.overrideMetadata
+            }
+            updateManga.await(
+                MangaUpdate(
+                    id = manga.id,
+                    status = userStatus,
+                    overrideMetadata = newOverrideMetadata,
+                ),
+            )
+        }
+    }
+
+    fun toggleMetadataEdit() {
+        val state = successState ?: return
+        if (state.isEditingMetadata) {
+            val draft = state.metadataDraft
+            val original = state.manga
+            val nextTitle = draft.title.trim().ifBlank { original.title }
+            val nextAuthor = draft.author.trim().takeUnless { it.isBlank() }
+            val nextArtist = draft.artist.trim().takeUnless { it.isBlank() }
+            val nextDescription = draft.description
+
+            val hasChanges = nextTitle != original.title ||
+                nextAuthor != original.author ||
+                nextArtist != original.artist ||
+                nextDescription != (original.description ?: "")
+
+        viewModelScope.launchIO {
+            if (hasChanges) {
+                val newBits = (
+                    if (nextTitle != original.title) Manga.OVERRIDE_TITLE else 0L
+                ) or (
+                    if (nextAuthor != original.author) Manga.OVERRIDE_AUTHOR else 0L
+                ) or (
+                    if (nextArtist != original.artist) Manga.OVERRIDE_ARTIST else 0L
+                ) or (
+                    if (nextDescription != (original.description ?: "")) Manga.OVERRIDE_DESCRIPTION else 0L
+                )
+                val newOverrideMetadata = original.overrideMetadata or newBits
+
+                updateManga.await(
+                    MangaUpdate(
+                        id = original.id,
+                        title = nextTitle,
+                        author = nextAuthor,
+                        artist = nextArtist,
+                        description = nextDescription,
+                        overrideMetadata = newOverrideMetadata,
+                    ),
+                )
+            }
+                withUIContext {
+                    updateSuccessState {
+                        it.copy(
+                            isEditingMetadata = false,
+                            metadataDraft = MangaMetadataDraft(),
+                        )
+                    }
+                }
+            }
+        } else {
+            updateSuccessState {
+                it.copy(
+                    isEditingMetadata = true,
+                    metadataDraft = MangaMetadataDraft(
+                        title = it.manga.title,
+                        author = it.manga.author.orEmpty(),
+                        artist = it.manga.artist.orEmpty(),
+                        description = it.manga.description.orEmpty(),
+                    ),
+                )
+            }
+        }
+    }
+
+    fun updateMetadataDraft(draft: MangaMetadataDraft) {
+        updateSuccessState { it.copy(metadataDraft = draft) }
+    }
     fun setFetchInterval(manga: Manga, interval: Int) {
         viewModelScope.launchIO {
             if (
@@ -1073,6 +1164,7 @@ class MangaViewModel(
         data class DuplicateManga(val manga: Manga, val duplicates: List<MangaWithChapterCount>) : Dialog
         data class Migrate(val target: Manga, val current: Manga) : Dialog
         data class SetFetchInterval(val manga: Manga) : Dialog
+        data object EditStatus : Dialog
         data object SettingsSheet : Dialog
         data object TrackSheet : Dialog
         data object FullCover : Dialog
@@ -1127,6 +1219,8 @@ class MangaViewModel(
             val dialog: Dialog? = null,
             val hasPromptedToAddBefore: Boolean = false,
             val hideMissingChapters: Boolean = false,
+            val isEditingMetadata: Boolean = false,
+            val metadataDraft: MangaMetadataDraft = MangaMetadataDraft(),
         ) : State {
             val processedChapters by lazy {
                 chapters.applyFilters(manga).toList()
@@ -1191,6 +1285,13 @@ class MangaViewModel(
         }
     }
 }
+
+data class MangaMetadataDraft(
+    val title: String = "",
+    val author: String = "",
+    val artist: String = "",
+    val description: String = "",
+)
 
 @Immutable
 sealed class ChapterList {

@@ -15,3 +15,9 @@ local.properties
 
 # macOS specific files
 .DS_Store
+
+*.diff
+*.patch
+*.orig
+*.rej
+

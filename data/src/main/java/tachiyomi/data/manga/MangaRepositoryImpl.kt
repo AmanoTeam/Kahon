@@ -214,6 +214,7 @@ class MangaRepositoryImpl(
                     isSyncing = 0,
                     notes = value.notes,
                     memo = value.memo,
+                    overrideMetadata = value.overrideMetadata,
                 )
             }
         }
