@@ -1,0 +1,9 @@
+-- The table is created with IF NOT EXISTS because earlier Kahon development
+-- builds already created it under their own migration 15.
+CREATE TABLE IF NOT EXISTS saved_search(
+    _id INTEGER NOT NULL PRIMARY KEY,
+    source INTEGER NOT NULL,
+    name TEXT NOT NULL,
+    query TEXT,
+    filters_json TEXT
+);

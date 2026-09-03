@@ -924,4 +924,12 @@
     <string name="donationCampaign.contactPlatform">डिस्कॉर्ड</string>
     <string name="extensionStoresScreen.emptyLabel">आपने अभी तक कोई एक्सटेंशन स्टोर नहीं जोड़ा है</string>
     <string name="supportUsScreen.contactForDetailsMessage">वैकल्पिक विकल्पों या किसी भी संबंधित प्रश्न के लिए, हमारे Discord सर्वर से जुड़ें।</string>
+    <string name="saved_searches">सहेजी गई खोजें</string>
+    <string name="saved_searches_delete">सहेजी गई खोजें (हटाने के लिए दबाकर रखें)</string>
+    <string name="save_search">वर्तमान खोज क्वेरी सहेजें?</string>
+    <string name="save_search_hint">मेरी खोज का नाम</string>
+    <string name="save_search_delete">सहेजी गई खोज क्वेरी हटाएं?</string>
+    <string name="save_search_delete_message">क्या आप वाकई अपनी सहेजी गई खोज क्वेरी हटाना चाहते हैं: "%1$s"?</string>
+    <string name="save_search_invalid">सहेजी गई खोज अमान्य है, फ़िल्टर बदल गए हैं</string>
+    <string name="save_search_invalid_name">अमान्य सहेजी गई खोज का नाम</string>
 </resources>

@@ -944,4 +944,12 @@
     <string name="pref_continuous_minwidth">Минимальная ширина</string>
     <string name="pref_continuous_gap">Зазор</string>
     <string name="pref_allowed_content_warnings">Разрешенное предупреждение об контенте</string>
+    <string name="saved_searches">Сохранённые поиски</string>
+    <string name="saved_searches_delete">Сохранённые поиски (удерживайте для удаления)</string>
+    <string name="save_search">Сохранить текущий поисковый запрос?</string>
+    <string name="save_search_hint">Название моего поиска</string>
+    <string name="save_search_delete">Удалить сохранённый поисковый запрос?</string>
+    <string name="save_search_delete_message">Вы уверены, что хотите удалить сохранённый поисковый запрос: "%1$s"?</string>
+    <string name="save_search_invalid">Сохранённый поиск недействителен, фильтры изменились</string>
+    <string name="save_search_invalid_name">Недопустимое название сохранённого поиска</string>
 </resources>

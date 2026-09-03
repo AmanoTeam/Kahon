@@ -944,4 +944,13 @@
     <string name="dual_page_view_wide">Em telas largas</string>
     <string name="pref_continuous_minwidth">Largura mínima</string>
     <string name="pref_continuous_gap">Espaçamento</string>
+
+    <string name="saved_searches">Pesquisas salvas</string>
+    <string name="saved_searches_delete">Pesquisas salvas (segure para excluir)</string>
+    <string name="save_search">Salvar a consulta de pesquisa atual?</string>
+    <string name="save_search_hint">Meu nome de pesquisa</string>
+    <string name="save_search_delete">Excluir a consulta de pesquisa salva?</string>
+    <string name="save_search_delete_message">Tem certeza de que deseja excluir sua consulta de pesquisa salva: "%1$s"?</string>
+    <string name="save_search_invalid">Pesquisa salva inválida, os filtros foram alterados</string>
+    <string name="save_search_invalid_name">Nome de pesquisa salva inválido</string>
 </resources>
