@@ -331,8 +331,6 @@
     <string name="login_title">%1$s ಗೆ ಲಾಗ್ ಇನ್ ಮಾಡಿ</string>
     <string name="downloaded_only_summary">ನಿಮ್ಮ ಗ್ರಂಥಾಲಯದ ಎಲ್ಲಾ ಮಾಂಗಾವನ್ನು ಫಿಲ್ಟರ್ ಮಾಡುತ್ತದೆ</string>
     <string name="label_downloaded_only">ಡೌನ್ಲೋಡ್ ಮಾಡಿದ</string>
-    <string name="pref_acra_summary">ಯಾವುದೇ ದೋಷಗಳನ್ನು ಸರಿಪಡಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ. ಯಾವುದೇ ಸೂಕ್ಷ್ಮ ಡೇಟಾವನ್ನು ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ</string>
-    <string name="pref_enable_acra">ಕ್ರ್ಯಾಶ್ ವರದಿಗಳನ್ನು ಕಳುಹಿಸಿ</string>
     <string name="check_for_updates">ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ</string>
     <string name="licenses">ಓಪನ್ ಸೋರ್ಸ್ ಪರವಾನಗಿಗಳು</string>
     <string name="version">ಆವೃತ್ತಿ</string>
@@ -493,4 +491,13 @@
     <string name="save_search_delete_message">ನಿಮ್ಮ ಉಳಿಸಿದ ಹುಡುಕಾಟ ಪ್ರಶ್ನೆಯನ್ನು ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುತ್ತೀರಾ: "%1$s"?</string>
     <string name="save_search_invalid">ಉಳಿಸಿದ ಹುಡುಕಾಟ ಅಮಾನ್ಯವಾಗಿದೆ, ಫಿಲ್ಟರ್ಗಳು ಬದಲಾಗಿವೆ</string>
     <string name="save_search_invalid_name">ಅಮಾನ್ಯ ಉಳಿಸಿದ ಹುಡುಕಾಟದ ಹೆಸರು</string>
+    <string name="pref_proxy">ಪ್ರಾಕ್ಸಿ</string>
+    <string name="pref_proxy_host">ಪ್ರಾಕ್ಸಿ ಹೋಸ್ಟ್</string>
+    <string name="pref_proxy_port">ಪ್ರಾಕ್ಸಿ ಪೋರ್ಟ್</string>
+    <string name="pref_proxy_username">ಪ್ರಾಕ್ಸಿ ಬಳಕೆದಾರ ಹೆಸರು</string>
+    <string name="pref_proxy_password">ಪ್ರಾಕ್ಸಿ ಪಾಸ್‌ವರ್ಡ್</string>
+    <string name="error_proxy_host_blank">ಪ್ರಾಕ್ಸಿ ಹೋಸ್ಟ್ ಖಾಲಿಯಾಗಿರಬಾರದು</string>
+    <string name="error_proxy_port_invalid">ಅಮಾನ್ಯ ಪ್ರಾಕ್ಸಿ ಪೋರ್ಟ್</string>
+    <string name="pref_proxy_socks_partial_support_title">ಭಾಗಶಃ ಬೆಂಬಲ ಮಾತ್ರ</string>
+    <string name="pref_proxy_socks_partial_support_desc">Android WebView ಕೇವಲ HTTP ಪ್ರಾಕ್ಸಿಗಳನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ ಎಂಬುದನ್ನು ಗಮನಿಸಿ. ನೀವು SOCKS ಪ್ರಾಕ್ಸಿ ಆಯ್ಕೆ ಮಾಡಿದರೆ, ಆಂತರಿಕ HTTP ಕ್ಲೈಂಟ್ (OkHttp) ನಿರ್ದಿಷ್ಟ ಪ್ರಾಕ್ಸಿಯನ್ನು ಬಳಸುತ್ತದೆ, ಆದರೆ Android WebView ಕ್ಲೈಂಟ್ ನೆಟ್‌ವರ್ಕ್ ಮೂಲಕ ನೇರವಾಗಿ ಸಂಪರ್ಕಿಸಲು ಹಿಂದಿರುಗುತ್ತದೆ.\n\nಇದು ನಿಮ್ಮ ನಿಜವಾದ IP ವಿಳಾಸವನ್ನು ಸೋರಿಕೆ ಮಾಡಬಹುದು ಮತ್ತು WebView ಮತ್ತು OkHttp ಒಂದೇ ನೆಟ್‌ವರ್ಕ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬಳಸುತ್ತವೆ ಎಂದು ಊಹಿಸುವ ವಿಸ್ತರಣೆಗಳನ್ನು ಮುರಿಯಬಹುದು. (ಅಂದರೆ, Cloudflare ಹಿಂದಿನ ಕೆಲವು ಸೈಟ್‌ಗಳು ಎರಡೂ ಸಂದರ್ಭಗಳಲ್ಲಿ IP ವಿಳಾಸ ಹೊಂದಿಕೆಯಾಗಬೇಕೆಂದು ನಿರೀಕ್ಷಿಸುತ್ತವೆ ಮತ್ತು ಇಲ್ಲದಿದ್ದರೆ ನಿಮ್ಮನ್ನು ನಿರ್ಬಂಧಿಸುತ್ತವೆ.)</string>
 </resources>
