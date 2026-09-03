@@ -5,6 +5,13 @@ DROP VIEW libraryView;
 DROP VIEW updatesView;
 
 DROP TRIGGER update_last_favorited_at_mangas;
+-- Remove the sync scaffolding for databases that ran the previous Kahon
+-- development builds, which had a different migration 15 and skipped its removal.
+DROP TRIGGER IF EXISTS update_manga_version;
+DROP TRIGGER IF EXISTS update_last_modified_at_mangas;
+DROP TRIGGER IF EXISTS update_chapter_and_manga_version;
+DROP TRIGGER IF EXISTS update_last_modified_at_chapters;
+DROP TRIGGER IF EXISTS insert_manga_category_update_version;
 DROP INDEX library_favorite_index;
 
 ALTER TABLE mangas ADD COLUMN favorite_at INTEGER;
