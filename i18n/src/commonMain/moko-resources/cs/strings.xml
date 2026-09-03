@@ -924,4 +924,12 @@
     <string name="transition_animation_stack_left">Balíčky (vlevo)</string>
     <string name="pref_cutout_mode_dual">Režim výřezu displeje (duální)</string>
     <string name="cutout_mode_shift">Posun</string>
+    <string name="saved_searches">Uložená hledání</string>
+    <string name="saved_searches_delete">Uložená hledání (podržte pro smazání)</string>
+    <string name="save_search">Uložit aktuální vyhledávací dotaz?</string>
+    <string name="save_search_hint">Můj název hledání</string>
+    <string name="save_search_delete">Smazat uložený vyhledávací dotaz?</string>
+    <string name="save_search_delete_message">Opravdu chcete smazat uložený vyhledávací dotaz: "%1$s"?</string>
+    <string name="save_search_invalid">Uložené hledání je neplatné, filtry se změnily</string>
+    <string name="save_search_invalid_name">Neplatný název uloženého hledání</string>
 </resources>
