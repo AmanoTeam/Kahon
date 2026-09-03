@@ -10,10 +10,11 @@ data class MangaRemoteUpdate(
     val artist: String?,
     val description: String?,
     val genre: List<String>?,
-    val status: Long,
+    val status: Long?,
     val thumbnailUrl: String?,
     val updateStrategy: UpdateStrategy,
     val memo: JsonObject,
     val initialized: Boolean,
     val coverLastModified: Long?,
+    val overrideMetadata: Long? = null,
 )
