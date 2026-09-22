@@ -36,6 +36,17 @@ android {
             abiFilters += supportedAbis
         }
 
+        externalNativeBuild {
+            cmake {
+                arguments += listOf(
+                    "-DKAD_STATIC=ON",
+                    "-DKAD_LIBRARY=ON",
+                    "-DKAD_LTO=ON",
+                    "-DKAD_SSL_VERIFY=OFF",
+                )
+            }
+        }
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -51,6 +62,12 @@ android {
             isProfileable = true
 
             proguardFiles("proguard-android-optimize.txt", "proguard-rules.pro")
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path = file("$projectDir/../submodules/kad/CMakeLists.txt")
         }
     }
 
@@ -78,7 +95,7 @@ android {
                 "META-INF/LICENSE",
                 "META-INF/NOTICE",
                 "META-INF/README.md",
-                "META-INF/versions/*/OSGI-INF/MANIFEST.MF"
+                "META-INF/versions/*/OSGI-INF/MANIFEST.MF",
             )
         }
     }

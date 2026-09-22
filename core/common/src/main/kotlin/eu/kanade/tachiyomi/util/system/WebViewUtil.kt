@@ -6,12 +6,19 @@ import android.content.pm.PackageManager
 import android.webkit.CookieManager
 import android.webkit.WebSettings
 import android.webkit.WebView
+import androidx.webkit.ProxyConfig
+import androidx.webkit.ProxyController
 import androidx.webkit.UserAgentMetadata
 import androidx.webkit.WebSettingsCompat
 import androidx.webkit.WebViewFeature
+import eu.kanade.tachiyomi.network.KAD_PROXY_HOST
+import eu.kanade.tachiyomi.network.KadProxy
+import eu.kanade.tachiyomi.network.NetworkPreferences
 import kotlinx.coroutines.suspendCancellableCoroutine
 import logcat.LogPriority
+import tachiyomi.core.common.preference.AndroidPreferenceStore
 import tachiyomi.core.common.util.system.logcat
+import java.util.concurrent.Executor
 import kotlin.coroutines.resume
 
 object WebViewUtil {
@@ -100,6 +107,37 @@ fun WebView.setDefaultSettings() {
     }
 
     CookieManager.getInstance().acceptThirdPartyCookies(this)
+
+    applyKadProxy()
+}
+
+/**
+ * Routes WebView traffic through kad when the fingerprint spoofer is enabled, or clears any
+ * previously set override otherwise. The proxy override persists across app restarts, so it
+ * must be cleared when spoofing is off.
+ */
+private fun WebView.applyKadProxy() {
+    if (!WebViewFeature.isFeatureSupported(WebViewFeature.PROXY_OVERRIDE)) return
+
+    val spooferEnabled = NetworkPreferences(AndroidPreferenceStore(context.applicationContext), false)
+        .fingerprintSpoofer
+        .get()
+        .isNotEmpty()
+
+    val executor = Executor { it.run() }
+
+    try {
+        if (spooferEnabled) {
+            val config = ProxyConfig.Builder()
+                .addProxyRule("$KAD_PROXY_HOST:${KadProxy.port}")
+                .build()
+            ProxyController.getInstance().setProxyOverride(config, executor, Runnable {})
+        } else {
+            ProxyController.getInstance().clearProxyOverride(executor, Runnable {})
+        }
+    } catch (e: Exception) {
+        logcat(LogPriority.ERROR, e) { "Failed to configure WebView proxy" }
+    }
 }
 
 /**

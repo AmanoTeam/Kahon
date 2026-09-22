@@ -612,6 +612,7 @@
     <string name="label_network">Networking</string>
     <string name="pref_clear_cookies">Clear cookies</string>
     <string name="pref_dns_over_https">DNS over HTTPS (DoH)</string>
+    <string name="pref_fingerprint_spoofer">Fingerprint spoofer</string>
     <string name="pref_user_agent_string">Default user agent string</string>
     <string name="error_user_agent_string_blank">User agent string can not be blank</string>
     <string name="error_user_agent_string_invalid">Invalid user agent string</string>
@@ -1078,15 +1079,6 @@
     <string name="pref_hardware_bitmap_threshold_summary">If reader loads a blank image incrementally reduce the threshold.\nSelected: %s</string>
     <string name="pref_always_decode_long_strip_with_ssiv_2">Use legacy decoder for long strip reader</string>
     <string name="pref_always_decode_long_strip_with_ssiv_summary">Affects performance. Only enable if reducing bitmap threshold doesn\'t fix blank image issues</string>
-    <string name="pref_proxy">Proxy</string>
-    <string name="pref_proxy_host">Proxy host</string>
-    <string name="pref_proxy_port">Proxy port</string>
-    <string name="pref_proxy_username">Proxy username</string>
-    <string name="pref_proxy_password">Proxy password</string>
-    <string name="error_proxy_host_blank">Proxy host can not be blank</string>
-    <string name="error_proxy_port_invalid">Invalid proxy port</string>
-    <string name="pref_proxy_socks_partial_support_title">Partial support only</string>
-    <string name="pref_proxy_socks_partial_support_desc">Please note that Android WebView only supports HTTP proxies. If you choose a SOCKS proxy, the internal HTTP client (OkHttp) will use the specified proxy, but the Android WebView client will fall back to connecting directly through the network.\n\nThis can leak your real IP address and may also break extensions that assume the WebView and OkHttp use the same network settings. (I.e., some sites behind Cloudflare expect the IP address to match in both cases and will block you otherwise.)</string>
     <string name="edit_status_dialog_title">Set status</string>
     <string name="edit_status_dialog_message">Override the status for this manga</string>
     <string name="saved_searches">Saved Searches</string>

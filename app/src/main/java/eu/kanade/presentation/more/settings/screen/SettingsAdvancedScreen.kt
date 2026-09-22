@@ -42,6 +42,7 @@ import eu.kanade.tachiyomi.network.PREF_DOH_NJALLA
 import eu.kanade.tachiyomi.network.PREF_DOH_QUAD101
 import eu.kanade.tachiyomi.network.PREF_DOH_QUAD9
 import eu.kanade.tachiyomi.network.PREF_DOH_SHECAN
+import eu.kanade.tachiyomi.network.kadImpersonateTargets
 import eu.kanade.tachiyomi.ui.more.OnboardingScreen
 import eu.kanade.tachiyomi.util.system.GLUtil
 import eu.kanade.tachiyomi.util.system.isReleaseBuildType
@@ -201,6 +202,8 @@ object SettingsAdvancedScreen : SearchableSettings {
         val userAgentPref = networkPreferences.defaultUserAgent
         val userAgent by userAgentPref.collectAsState()
 
+        val spooferTarget by networkPreferences.fingerprintSpoofer.collectAsState()
+
         return Preference.PreferenceGroup(
             title = stringResource(MR.strings.label_network),
             preferenceItems = listOf(
@@ -254,9 +257,19 @@ object SettingsAdvancedScreen : SearchableSettings {
                         true
                     },
                 ),
+                Preference.PreferenceItem.ListPreference(
+                    preference = networkPreferences.fingerprintSpoofer,
+                    entries = mapOf("" to "Default") + kadImpersonateTargets.toMap(),
+                    title = stringResource(MR.strings.pref_fingerprint_spoofer),
+                    onValueChanged = {
+                        context.toast(MR.strings.requires_app_restart)
+                        true
+                    },
+                ),
                 Preference.PreferenceItem.EditTextPreference(
                     preference = userAgentPref,
                     title = stringResource(MR.strings.pref_user_agent_string),
+                    visible = remember(spooferTarget) { spooferTarget.isEmpty() },
                     onValueChanged = {
                         try {
                             // OkHttp checks for valid values internally
@@ -271,7 +284,9 @@ object SettingsAdvancedScreen : SearchableSettings {
                 ),
                 Preference.PreferenceItem.TextPreference(
                     title = stringResource(MR.strings.pref_reset_user_agent_string),
-                    visible = remember(userAgent) { userAgent != userAgentPref.defaultValue() },
+                    visible = remember(userAgent, spooferTarget) {
+                        spooferTarget.isEmpty() && userAgent != userAgentPref.defaultValue()
+                    },
                     onClick = {
                         userAgentPref.delete()
                         context.toast(MR.strings.requires_app_restart)
