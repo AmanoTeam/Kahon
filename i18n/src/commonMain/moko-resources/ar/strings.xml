@@ -441,6 +441,15 @@
     <string name="action_order_by_upload_date">حسب تاريخ الرفع</string>
     <string name="action_order_by_chapter_number">حسب رقم الفصل</string>
     <string name="pref_dns_over_https">إستخدام DNS عبر HTTPS (DoH)</string>
+    <string name="pref_proxy">البروكسي</string>
+    <string name="pref_proxy_host">مضيف البروكسي</string>
+    <string name="pref_proxy_port">منفذ البروكسي</string>
+    <string name="pref_proxy_username">اسم مستخدم البروكسي</string>
+    <string name="pref_proxy_password">كلمة مرور البروكسي</string>
+    <string name="error_proxy_host_blank">لا يمكن أن يكون مضيف البروكسي فارغًا</string>
+    <string name="error_proxy_port_invalid">منفذ البروكسي غير صالح</string>
+    <string name="pref_proxy_socks_partial_support_title">دعم جزئي فقط</string>
+    <string name="pref_proxy_socks_partial_support_desc">يُرجى ملاحظة أن Android WebView يدعم بروكسيات HTTP فقط. إذا اخترت بروكسي SOCKS، فسيستخدم عميل HTTP الداخلي (OkHttp) البروكسي المحدد، ولكن عميل Android WebView سيعود إلى الاتصال مباشرة عبر الشبكة.\n\nقد يكشف هذا عنوان IP الحقيقي الخاص بك وقد يعطل أيضًا الإضافات التي تفترض أن WebView وOkHttp يستخدمان إعدادات الشبكة نفسها. (أي أن بعض المواقع خلف Cloudflare تتوقع تطابق عنوان IP في كلتا الحالتين وستحظرك خلاف ذلك.)</string>
     <string name="backup_restore_content_full">قد تحتاج إلى تثبيت أي إضافات مفقودة وتسجيل الدخول إلى خدمات التتبع بعد ذلك لاستخدامها.</string>
     <string name="nav_zone_right">يمين</string>
     <string name="nav_zone_left">يسار</string>

@@ -631,6 +631,15 @@
     <string name="library_sync_complete">Biblioteka sinkronigo finita</string>
     <string name="non_library_settings">Ĉiuj legitaj elementoj</string>
     <string name="pref_dns_over_https">DNS per HTTPS (DoH)</string>
+    <string name="pref_proxy">Prokurilo</string>
+    <string name="pref_proxy_host">Gastiganto de prokurilo</string>
+    <string name="pref_proxy_port">Pordo de prokurilo</string>
+    <string name="pref_proxy_username">Uzantnomo por la prokurilo</string>
+    <string name="pref_proxy_password">Pasvorto por la prokurilo</string>
+    <string name="error_proxy_host_blank">La gastiganto de la prokurilo ne rajtas esti malplena</string>
+    <string name="error_proxy_port_invalid">Nevalida pordo de prokurilo</string>
+    <string name="pref_proxy_socks_partial_support_title">Nur parta subteno</string>
+    <string name="pref_proxy_socks_partial_support_desc">Rimarku, ke Android WebView subtenas nur HTTP-prokurilojn. Se vi elektas SOCKS-prokurilon, la interna HTTP-kliento (OkHttp) uzos la specifitan prokurilon, sed la Android WebView-kliento revenos al rekta konekto tra la reto.\n\nĈi tio povas malkaŝi vian veran IP-adreson kaj ankaŭ povas rompi kromprogramojn, kiuj supozas, ke WebView kaj OkHttp uzas la samajn retajn agordojn. (T.e., iuj retejoj malantaŭ Cloudflare atendas, ke la IP-adreso kongruas en ambaŭ kazoj, kaj alie blokos vin.)</string>
     <string name="track_activity_name">Sekvila ensaluto</string>
     <string name="pref_user_agent_string">Defaŭlta ĉeno por \"user agent\"</string>
     <string name="syncing_library">Biblioteka sinkronigo</string>

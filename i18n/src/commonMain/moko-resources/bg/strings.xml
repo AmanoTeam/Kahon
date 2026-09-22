@@ -444,6 +444,15 @@
     <string name="pref_high">Висока</string>
     <string name="information_empty_category_dialog">Нямате никакви категории.</string>
     <string name="pref_dns_over_https">DNS пред HTTPS</string>
+    <string name="pref_proxy">Прокси</string>
+    <string name="pref_proxy_host">Хост на проксито</string>
+    <string name="pref_proxy_port">Порт на проксито</string>
+    <string name="pref_proxy_username">Потребителско име за проксито</string>
+    <string name="pref_proxy_password">Парола за проксито</string>
+    <string name="error_proxy_host_blank">Хостът на проксито не може да бъде празен</string>
+    <string name="error_proxy_port_invalid">Невалиден порт на проксито</string>
+    <string name="pref_proxy_socks_partial_support_title">Само частична поддръжка</string>
+    <string name="pref_proxy_socks_partial_support_desc">Имайте предвид, че Android WebView поддържа само HTTP проксита. Ако изберете SOCKS прокси, вътрешният HTTP клиент (OkHttp) ще използва посоченото прокси, но клиентът Android WebView ще се върне към директна връзка през мрежата.\n\nТова може да разкрие истинския ви IP адрес и може да наруши и разширения, които предполагат, че WebView и OkHttp използват едни и същи мрежови настройки. (Т.е. някои сайтове зад Cloudflare очакват IP адресът да съвпада и в двата случая и иначе ще ви блокират.)</string>
     <string name="action_sort_count">Общ брой манга</string>
     <string name="action_sort_chapter_fetch_date">Дата на получаване</string>
     <string name="action_display_local_badge">Локална манга</string>

@@ -453,6 +453,15 @@
     <string name="nav_zone_left">Sinistra</string>
     <string name="pref_library_update_categories_details">Le voci in categorie escluse non saranno aggiornati nonostante si trovino anche in categorie incluse.</string>
     <string name="pref_dns_over_https">DNS su HTTPS (DoH)</string>
+    <string name="pref_proxy">Proxy</string>
+    <string name="pref_proxy_host">Host del proxy</string>
+    <string name="pref_proxy_port">Porta del proxy</string>
+    <string name="pref_proxy_username">Nome utente del proxy</string>
+    <string name="pref_proxy_password">Password del proxy</string>
+    <string name="error_proxy_host_blank">L\'host del proxy non può essere vuoto</string>
+    <string name="error_proxy_port_invalid">Porta del proxy non valida</string>
+    <string name="pref_proxy_socks_partial_support_title">Solo supporto parziale</string>
+    <string name="pref_proxy_socks_partial_support_desc">Tieni presente che Android WebView supporta solo proxy HTTP. Se scegli un proxy SOCKS, il client HTTP interno (OkHttp) utilizzerà il proxy specificato, ma il client Android WebView tornerà a connettersi direttamente tramite la rete.\n\nQuesto può far trapelare il tuo indirizzo IP reale e può anche rompere le estensioni che presumono che WebView e OkHttp usino le stesse impostazioni di rete. (Cioè, alcuni siti dietro Cloudflare si aspettano che l\'indirizzo IP corrisponda in entrambi i casi e ti bloccano altrimenti.)</string>
     <string name="pref_show_navigation_mode">Mostra sovrapposizione con zone di tocco</string>
     <string name="pref_show_navigation_mode_summary">Mostra brevemente quando il lettore viene aperto</string>
     <string name="action_show_errors">Tocca per vedere i dettagli</string>

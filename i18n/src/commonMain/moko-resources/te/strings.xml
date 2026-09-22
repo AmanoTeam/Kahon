@@ -197,4 +197,13 @@
     <string name="save_search_delete_message">మీరు మీ సేవ్ చేసిన శోధన ప్రశ్నను తొలగించాలని ఖచ్చితంగా కోరుకుంటున్నారా: "%1$s"?</string>
     <string name="save_search_invalid">సేవ్ చేసిన శోధన చెల్లదు, ఫిల్టర్లు మారాయి</string>
     <string name="save_search_invalid_name">చెల్లని సేవ్ చేసిన శోధన పేరు</string>
+    <string name="pref_proxy">ప్రాక్సీ</string>
+    <string name="pref_proxy_host">ప్రాక్సీ హోస్ట్</string>
+    <string name="pref_proxy_port">ప్రాక్సీ పోర్ట్</string>
+    <string name="pref_proxy_username">ప్రాక్సీ వినియోగదారు పేరు</string>
+    <string name="pref_proxy_password">ప్రాక్సీ పాస్‌వర్డ్</string>
+    <string name="error_proxy_host_blank">ప్రాక్సీ హోస్ట్ ఖాళీగా ఉండకూడదు</string>
+    <string name="error_proxy_port_invalid">చెల్లని ప్రాక్సీ పోర్ట్</string>
+    <string name="pref_proxy_socks_partial_support_title">పాక్షిక మద్దతు మాత్రమే</string>
+    <string name="pref_proxy_socks_partial_support_desc">Android WebView HTTP ప్రాక్సీలను మాత్రమే మద్దతిస్తుందని గుర్తుంచుకోండి. మీరు SOCKS ప్రాక్సీని ఎంచుకుంటే, అంతర్గత HTTP క్లయింట్ (OkHttp) నిర్దేశించిన ప్రాక్సీని ఉపయోగిస్తుంది, కానీ Android WebView క్లయింట్ నెట్‌వర్క్ ద్వారా నేరుగా కనెక్ట్ కావడానికి తిరిగి వెళ్తుంది.\n\nఇది మీ నిజమైన IP చిరునామా లీక్ కావచ్చు మరియు WebView, OkHttp ఒకే నెట్‌వర్క్ సెట్టింగ్‌లను ఉపయోగిస్తాయని భావించే ఎక్స్‌టెన్షన్‌లను కూడా విరిగిపోయేలా చేయవచ్చు. (అంటే, Cloudflare వెనుక ఉన్న కొన్ని సైట్‌లు రెండు సందర్భాల్లోనూ IP చిరునామా సరిపోవాలని ఊహిస్తాయి, లేకపోతే మిమ్మల్ని బ్లాక్ చేస్తాయి.)</string>
 </resources>

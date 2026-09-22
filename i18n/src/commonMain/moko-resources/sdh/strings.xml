@@ -239,4 +239,13 @@
     <string name="save_search_delete_message">ئایا دڵنیایت کە دەتەوێت گەڕانە پاشەکەوتکراوەکەت بسڕیتەوە: "%1$s"؟</string>
     <string name="save_search_invalid">گەڕانە پاشەکەوتکراوەکە نادروستە، فلتەرەکان گۆڕاون</string>
     <string name="save_search_invalid_name">ناوی گەڕانە پاشەکەوتکراوەکە نادروستە</string>
+    <string name="pref_proxy">پرۆکسی</string>
+    <string name="pref_proxy_host">هۆستی پرۆکسی</string>
+    <string name="pref_proxy_port">پۆرتی پرۆکسی</string>
+    <string name="pref_proxy_username">ناوی بەکارهێنەری پرۆکسی</string>
+    <string name="pref_proxy_password">وشەی نهێنی پرۆکسی</string>
+    <string name="error_proxy_host_blank">هۆستی پرۆکسی ناتوانێت بەتاڵ بێت</string>
+    <string name="error_proxy_port_invalid">پۆرتی پرۆکسی نادروستە</string>
+    <string name="pref_proxy_socks_partial_support_title">تەنیا پشتگیرییەکی کەمەڵی</string>
+    <string name="pref_proxy_socks_partial_support_desc">تێبینی بکە کە Android WebView تەنیا پرۆکسییەکانی HTTP پشتگیری دەکات. ئەگەر پرۆکسییەکی SOCKS هەڵبژێری، کلایەنتی ناوخۆیی HTTP (OkHttp) پرۆکسی دیاریکراو بەکاردەهێنێت، بەڵام کلایەنتی Android WebView دەگەڕێتەوە بۆ پەیوەندیکردنی ڕاستەوخۆ لە ڕێگەی تۆڕەوە.\n\nئەمە دەکرێت ناونیشانی IP ڕاستەقینەی ئێوە ئاشکرا بکات و هەروەها دەکرێت زیان بە درێژکراوەکان بگەیەنێت کە وا دابنێن WebView و OkHttp هەمان ڕێکخستنەکانی تۆڕ بەکاردەهێنن. (واتە، هەندێک لە ماڵپەڕەکان لە پشت Cloudflare چاوەڕێی ئەوە دەکەن ناونیشانی IP لە هەردوو حاڵەتدا یەک بخۆت و ئەگەر نا، ئێوە بلۆک دەکەن.)</string>
 </resources>

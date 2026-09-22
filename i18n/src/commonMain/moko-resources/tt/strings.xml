@@ -8,4 +8,13 @@
     <string name="save_search_delete_message">Сакланган эзләү соравыгызны бетерергә теләвегезгә ышандырасызмы: "%1$s"?</string>
     <string name="save_search_invalid">Сакланган эзләү яраксыз, фильтрлар үзгәргән</string>
     <string name="save_search_invalid_name">Сакланган эзләүнең яраксыз исеме</string>
+    <string name="pref_proxy">Прокси</string>
+    <string name="pref_proxy_host">Прокси хосты</string>
+    <string name="pref_proxy_port">Прокси порты</string>
+    <string name="pref_proxy_username">Прокси кулланучы исеме</string>
+    <string name="pref_proxy_password">Прокси серсүзе</string>
+    <string name="error_proxy_host_blank">Прокси хосты буш булмаска тиеш</string>
+    <string name="error_proxy_port_invalid">Яраксыз прокси порты</string>
+    <string name="pref_proxy_socks_partial_support_title">Өлешчә генә ярдәм</string>
+    <string name="pref_proxy_socks_partial_support_desc">Android WebView HTTP-проксины гына хуплыйсын исегезгә алыгыз. SOCKS-проксины сайласагыз, эчке HTTP-клиент (OkHttp) күрсәтелгән проксины кулланачак, ләкин Android WebView клиенты челтәр аша турыдан-туры тоташуга кайтарылачак.\n\nБу сезнең чын IP-адресегезне ачыклый ала, шулай ук WebView белән OkHttp бер үк челтәр көйләүләрен куллана дип уйлаган киңәюләрне бозарга мөмкин. (Ягъни, Cloudflare артындагы кайбер сайтлар ике очракта да IP-адрес туры килүен көтәләр һәм югыйсә сезне блоклыйлар.)</string>
     </resources>

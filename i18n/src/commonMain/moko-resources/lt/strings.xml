@@ -419,6 +419,15 @@
     <string name="pref_dump_crash_logs_summary">Įrašyti strigčių žurnalus į failą, kad būtų galima juos bendrinti su kūrėjais</string>
     <string name="creating_backup">Atsarginės kopijos kūrimas</string>
     <string name="pref_dns_over_https">DNS per HTTPS (DoH)</string>
+    <string name="pref_proxy">Įgaliotasis serveris</string>
+    <string name="pref_proxy_host">Įgaliotojo serverio hostas</string>
+    <string name="pref_proxy_port">Įgaliotojo serverio prievadas</string>
+    <string name="pref_proxy_username">Įgaliotojo serverio naudotojo vardas</string>
+    <string name="pref_proxy_password">Įgaliotojo serverio slaptažodis</string>
+    <string name="error_proxy_host_blank">Įgaliotojo serverio hostas negali būti tuščias</string>
+    <string name="error_proxy_port_invalid">Netinkamas įgaliotojo serverio prievadas</string>
+    <string name="pref_proxy_socks_partial_support_title">Tik dalinis palaikymas</string>
+    <string name="pref_proxy_socks_partial_support_desc">Atminkite, kad Android WebView palaiko tik HTTP įgaliotuosius serverius. Jei pasirinksite SOCKS įgaliotąjį serverį, vidinis HTTP klientas (OkHttp) naudos nurodytą įgaliotąjį serverį, tačiau Android WebView klientas grįš prie tiesioginio ryšio per tinklą.\n\nTai gali atskleisti jūsų tikrąjį IP adresą ir taip pat gali sugadinti plėtinius, kurie daro prielaidą, kad WebView ir OkHttp naudoja tuos pačius tinklo nustatymus. (T. y. kai kurios už Cloudflare esančios svetainės tikisi, kad IP adresas abiem atvejais sutaps, kitaip jus užblokuos.)</string>
     <string name="download_notifier_no_network">Tinklo ryšis nepasiekiamas</string>
     <string name="download_notifier_unknown_error">Nepavyko atsisiųsti skyriaus dėl netikėtos klaidos</string>
     <string name="appwidget_unavailable_locked">Valdiklis nepasiekiamas, kai įjungtas programėlės užraktas</string>

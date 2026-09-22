@@ -442,6 +442,15 @@
     <string name="pref_dual_page_invert">Baligtarin ang paghahati sa pahina</string>
     <string name="backup_restore_content_full">Kailangan mong i-install muli ang mga nawawalang extension at mag-login muli sa mga tracker pagkatapos para magamit ang mga ito.</string>
     <string name="pref_dns_over_https">DNS kesa HTTPS (DoH)</string>
+    <string name="pref_proxy">Proxy</string>
+    <string name="pref_proxy_host">Host ng proxy</string>
+    <string name="pref_proxy_port">Port ng proxy</string>
+    <string name="pref_proxy_username">Username ng proxy</string>
+    <string name="pref_proxy_password">Password ng proxy</string>
+    <string name="error_proxy_host_blank">Hindi maaaring blangko ang host ng proxy</string>
+    <string name="error_proxy_port_invalid">Di-wastong port ng proxy</string>
+    <string name="pref_proxy_socks_partial_support_title">Bahagyang suporta lamang</string>
+    <string name="pref_proxy_socks_partial_support_desc">Tandaan na sumusuporta lang ang Android WebView sa mga HTTP proxy. Kung pumili ka ng SOCKS proxy, gagamitin ng panloob na HTTP client (OkHttp) ang tinukoy na proxy, ngunit babalik ang Android WebView client sa direktang pagkonekta sa pamamagitan ng network.\n\nMaaari nitong i-leak ang totoo mong IP address at maaari ring masira ang mga extension na nangangailangan na pareho ang network settings ng WebView at OkHttp. (Ibig sabihin, inaasahan ng ilang site sa likod ng Cloudflare na tumugma ang IP address sa parehong mga kaso at haharangin ka kung hindi.)</string>
     <string name="pref_download_new_categories_details">Ang mga entry sa mga ibinukod na kategorya ay hindi mada-download kahit na sila ay kasama rin sa mga kategoryang kasama.</string>
     <string name="pref_category_auto_download">Awtomatikong pag-download</string>
     <string name="nav_zone_right">Kanan</string>

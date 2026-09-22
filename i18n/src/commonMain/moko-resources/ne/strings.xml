@@ -294,6 +294,15 @@
     <string name="backup_choice">तपाई के ब्याकअप गर्न चाहनुहुन्छ?</string>
     <string name="creating_backup_error">ब्याकअप असफल भयो</string>
     <string name="pref_dns_over_https">HTTPS (DoH) माथि DNS</string>
+    <string name="pref_proxy">प्रोक्सी</string>
+    <string name="pref_proxy_host">प्रोक्सी होस्ट</string>
+    <string name="pref_proxy_port">प्रोक्सी पोर्ट</string>
+    <string name="pref_proxy_username">प्रोक्सी प्रयोगकर्ता नाम</string>
+    <string name="pref_proxy_password">प्रोक्सी पासवर्ड</string>
+    <string name="error_proxy_host_blank">प्रोक्सी होस्ट खाली हुन सक्दैन</string>
+    <string name="error_proxy_port_invalid">अमान्य प्रोक्सी पोर्ट</string>
+    <string name="pref_proxy_socks_partial_support_title">आंशिक समर्थन मात्र</string>
+    <string name="pref_proxy_socks_partial_support_desc">कृपया ध्यान दिनुहोस् कि Android WebView ले HTTP प्रोक्सीहरूलाई मात्र समर्थन गर्छ। तपाईंले SOCKS प्रोक्सी छान्नुभयो भने, आन्तरिक HTTP क्लाइन्ट (OkHttp) ले निर्दिष्ट प्रोक्सी प्रयोग गर्नेछ, तर Android WebView क्लाइन्ट नेटवर्कमार्फत प्रत्यक्ष जडानमा फर्कनेछ।\n\nयसले तपाईंको वास्तविक IP ठेगाना चुहाउन सक्छ र WebView र OkHttp ले एउटै नेटवर्क सेटिङ प्रयोग गर्छन् भनी मान्ने विस्तारहरू पनि बिगार्न सक्छ। (अर्थात्, Cloudflare पछाडिका केही साइटहरू दुवै अवस्थामा IP ठेगाना मिल्ने अपेक्षा गर्छन् र नत्र तपाईंलाई रोक्छन्।)</string>
     <string name="requires_app_restart">प्रभाव पार्न एप फेरि सुरु गर्न आवश्यक छ</string>
     <string name="notification_cover_update_failed">आवरण अपडेट गर्न असफल भयो</string>
     <string name="notification_first_add_to_library">यो गर्नु अघि कृपया आफ्नो पुस्तकालयमा यस इन्ट्रीलाई राख्नुहोस्</string>

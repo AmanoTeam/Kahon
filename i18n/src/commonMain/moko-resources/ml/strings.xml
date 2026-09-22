@@ -239,4 +239,13 @@
     <string name="save_search_delete_message">നിങ്ങളുടെ സംരക്ഷിച്ച തിരയൽ ക്വറി ഇല്ലാതാക്കാൻ തീർച്ചയാണോ: "%1$s"?</string>
     <string name="save_search_invalid">സംരക്ഷിച്ച തിരയൽ അസാധുവാണ്, ഫിൽ‌റ്ററുകൾ മാറി</string>
     <string name="save_search_invalid_name">അസാധുവായ സംരക്ഷിച്ച തിരയൽ പേര്</string>
+    <string name="pref_proxy">പ്രോക്സി</string>
+    <string name="pref_proxy_host">പ്രോക്സി ഹോസ്റ്റ്</string>
+    <string name="pref_proxy_port">പ്രോക്സി പോർട്ട്</string>
+    <string name="pref_proxy_username">പ്രോക്സി ഉപയോക്തൃനാമം</string>
+    <string name="pref_proxy_password">പ്രോക്സി പാസ്‌വേഡ്</string>
+    <string name="error_proxy_host_blank">പ്രോക്സി ഹോസ്റ്റ് ശൂന്യമായിരിക്കരുത്</string>
+    <string name="error_proxy_port_invalid">അസാധുവായ പ്രോക്സി പോർട്ട്</string>
+    <string name="pref_proxy_socks_partial_support_title">ഭാഗിക പിന്തുണ മാത്രം</string>
+    <string name="pref_proxy_socks_partial_support_desc">Android WebView HTTP പ്രോക്സികളെ മാത്രം പിന്തുണയ്ക്കുന്നു എന്നത് ശ്രദ്ധിക്കുക. നിങ്ങൾ SOCKS പ്രോക്സി തിരഞ്ഞെടുക്കുകയാണെങ്കിൽ, ആന്തരിക HTTP ക്ലയന്റ് (OkHttp) വ്യക്തമാക്കിയ പ്രോക്സി ഉപയോഗിക്കും, പക്ഷേ Android WebView ക്ലയന്റ് നെറ്റ്‌വർക്കിലൂടെ നേരിട്ട് കണക്റ്റ് ചെയ്യാൻ മടങ്ങും.\n\nഇത് നിങ്ങളുടെ യഥാർത്ഥ IP വിലാസം ചോർത്തിയേക്കാം, കൂടാതെ WebView-ഉം OkHttp-യും ഒരേ നെറ്റ്‌വർക്ക് ക്രമീകരണങ്ങൾ ഉപയോഗിക്കുന്നു എന്ന് അനുമാനിക്കുന്ന എക്സ്റ്റെൻഷനുകൾ തകരാറിലായേക്കാം. (അതായത്, Cloudflare-ന് പിന്നിലുള്ള ചില സൈറ്റുകൾ രണ്ട് സന്ദർഭങ്ങളിലും IP വിലാസം പൊരുത്തപ്പെടണമെന്ന് പ്രതീക്ഷിക്കുന്നു, അല്ലെങ്കിൽ നിങ്ങളെ തടയും.)</string>
 </resources>

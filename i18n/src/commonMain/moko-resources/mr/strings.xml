@@ -197,6 +197,15 @@
     <string name="pref_category_appearance">प्रदर्शन</string>
     <string name="last_read_chapter">शेवटी वाचलेला पाठ</string>
     <string name="label_network">नेटवर्क</string>
+    <string name="pref_proxy">प्रॉक्सी</string>
+    <string name="pref_proxy_host">प्रॉक्सी होस्ट</string>
+    <string name="pref_proxy_port">प्रॉक्सी पोर्ट</string>
+    <string name="pref_proxy_username">प्रॉक्सी वापरकर्तानाव</string>
+    <string name="pref_proxy_password">प्रॉक्सी पासवर्ड</string>
+    <string name="error_proxy_host_blank">प्रॉक्सी होस्ट रिक्त असू शकत नाही</string>
+    <string name="error_proxy_port_invalid">अवैध प्रॉक्सी पोर्ट</string>
+    <string name="pref_proxy_socks_partial_support_title">फक्त अंशतः समर्थन</string>
+    <string name="pref_proxy_socks_partial_support_desc">कृपया लक्षात घ्या की Android WebView फक्त HTTP प्रॉक्सी समर्थित करते. तुम्ही SOCKS प्रॉक्सी निवडल्यास, अंतर्गत HTTP क्लायंट (OkHttp) निर्दिष्ट प्रॉक्सी वापरेल, परंतु Android WebView क्लायंट नेटवर्कद्वारे थेट जोडणीकडे परत येईल.\n\nयामुळे तुमचा खरा IP पत्ता गळू शकतो आणि WebView आणि OkHttp समान नेटवर्क सेटिंग्ज वापरतात असे गृहीत धरणारे विस्तारही तुटू शकतात. (म्हणजे, Cloudflare मागील काही साइट्स दोन्ही बाबतीत IP पत्ता जुळण्याची अपेक्षा करतात आणि अन्यथा तुम्हाला ब्लॉक करतात.)</string>
     <string name="label_downloaded_only">केवळ डाउनलोड केलेले</string>
     <string name="pref_category_theme">थीम</string>
     <string name="label_started">चालु केले</string>

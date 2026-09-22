@@ -448,6 +448,15 @@
     <string name="pref_show_navigation_mode_summary">Laat de tikzones zien als de lezer wordt geopend</string>
     <string name="pref_show_navigation_mode">Navigatielayout als overlay laten zien</string>
     <string name="pref_dns_over_https">DNS over HTTPS (DoH)</string>
+    <string name="pref_proxy">Proxy</string>
+    <string name="pref_proxy_host">Proxy-host</string>
+    <string name="pref_proxy_port">Proxy-poort</string>
+    <string name="pref_proxy_username">Proxy-gebruikersnaam</string>
+    <string name="pref_proxy_password">Proxy-wachtwoord</string>
+    <string name="error_proxy_host_blank">De proxy-host mag niet leeg zijn</string>
+    <string name="error_proxy_port_invalid">Ongeldige proxy-poort</string>
+    <string name="pref_proxy_socks_partial_support_title">Slechts gedeeltelijke ondersteuning</string>
+    <string name="pref_proxy_socks_partial_support_desc">Let op: Android WebView ondersteunt alleen HTTP-proxy\'s. Als je een SOCKS-proxy kiest, gebruikt de interne HTTP-client (OkHttp) de opgegeven proxy, maar valt de Android WebView-client terug op een directe verbinding via het netwerk.\n\nDit kan je echte IP-adres lekken en kan ook extensies breken die ervan uitgaan dat WebView en OkHttp dezelfde netwerkinstellingen gebruiken. (D.w.z. sommige sites achter Cloudflare verwachten dat het IP-adres in beide gevallen overeenkomt en blokkeren je anders.)</string>
     <string name="pref_download_new_categories_details">Items in uitgezonderde categorieën worden niet gedownload, zelfs niet als ze onder opgenomen categorieën vallen.</string>
     <string name="pref_category_auto_download">Automatisch downloaden</string>
     <string name="exclude">Uitgezonderd: %s</string>

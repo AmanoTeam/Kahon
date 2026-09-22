@@ -510,6 +510,15 @@
     <string name="label_network">Сетка</string>
     <string name="pref_clear_cookies">Ачысціць кукі</string>
     <string name="pref_dns_over_https">DNS праз HTTPS (DoH)</string>
+    <string name="pref_proxy">Проксі</string>
+    <string name="pref_proxy_host">Хост проксі</string>
+    <string name="pref_proxy_port">Порт проксі</string>
+    <string name="pref_proxy_username">Імя карыстальніка проксі</string>
+    <string name="pref_proxy_password">Пароль проксі</string>
+    <string name="error_proxy_host_blank">Хост проксі не можа быць пустым</string>
+    <string name="error_proxy_port_invalid">Няправільны порт проксі</string>
+    <string name="pref_proxy_socks_partial_support_title">Толькі частковая падтрымка</string>
+    <string name="pref_proxy_socks_partial_support_desc">Звярніце ўвагу, што Android WebView падтрымлівае толькі HTTP-проксі. Калі вы выберыце SOCKS-проксі, унутраны HTTP-кліент (OkHttp) будзе выкарыстоўваць указаны проксі, але кліент Android WebView вернецца да прамога злучэння праз сетку.\n\nГэта можа раскрыць ваш рэальны IP-адрас, а таксама можа парушыць працу пашырэнняў, якія мяркуюць, што WebView і OkHttp выкарыстоўваюць адны і тыя ж сеткавыя налады. (Тобас некаторыя сайты за Cloudflare чакаюць, што IP-адрас будзе супадаць у абодвух выпадках, інакш яны заблакуюць вас.)</string>
     <string name="pref_user_agent_string">Прадвызначаны user agent</string>
     <string name="error_user_agent_string_blank">User agent не можа быць пустым</string>
     <string name="error_user_agent_string_invalid">Недапушчальны user agent</string>

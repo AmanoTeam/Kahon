@@ -443,6 +443,15 @@
     <string name="nav_zone_next">Хыҫҫӑнхи</string>
     <string name="nav_zone_prev">Умӗнхи</string>
     <string name="pref_dns_over_https">HTTPS урлӑ DNS</string>
+    <string name="pref_proxy">Прокси</string>
+    <string name="pref_proxy_host">Прокси хостӗ</string>
+    <string name="pref_proxy_port">Прокси портӗ</string>
+    <string name="pref_proxy_username">Прокси валли усӑракан ячӗ</string>
+    <string name="pref_proxy_password">Прокси паролӗ</string>
+    <string name="error_proxy_host_blank">Прокси хостӗ пустӑ пулма пултараймасть</string>
+    <string name="error_proxy_port_invalid">Тӗрӗс мар прокси портӗ</string>
+    <string name="pref_proxy_socks_partial_support_title">Пайӑк пулӑшу ҫеҫ</string>
+    <string name="pref_proxy_socks_partial_support_desc">Android WebView HTTP-прокси ҫеҫ пулӑшать иккен асӑнах. SOCKS-прокси суйласан, ӑшӑлти HTTP-клиент (OkHttp) сӑнарланӑ проксине усӑ курӗ, анчах Android WebView клиентӗ ҫыхӑнӑвне тӗрӗс тӳрӗмӗ тӑрӑх тӑвасӑмӑша таврӑнать.\n\nКу санӑн чӑнки IP-адресӗ ӗлӗкне тухма пултарать тата WebViewпа OkHttp пӗрpeх мамӑкӑрлавӗсене усӑ курассӗ тесе шутланӑ кӗҫӗнесем ӗҫлемӗ пултараймаҫҫӗ. (Сӑлах, Cloudflare хыҫӗнчи нумайрах мар сайтсем икӗ тӗслӗхре те IP-адрес танлашмалла кӗтсе лараҫҫӗ, санах ун пек пулмасан чарса хураҫҫӗ.)</string>
     <string name="pref_category_auto_download">Хӑй халлӗн тийени</string>
     <string name="exclude">Кӑлармалла: %s</string>
     <string name="include">Кӗртмелле: %s</string>

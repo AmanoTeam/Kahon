@@ -448,6 +448,15 @@
     <string name="nav_zone_next">Επόμενο</string>
     <string name="nav_zone_prev">Προηγούμενο</string>
     <string name="pref_dns_over_https">DNS μέσω HTTPS (DoH)</string>
+    <string name="pref_proxy">Διακομιστής μεσολάβησης</string>
+    <string name="pref_proxy_host">Κεντρικός υπολογιστής του διακομιστή μεσολάβησης</string>
+    <string name="pref_proxy_port">Θύρα διακομιστή μεσολάβησης</string>
+    <string name="pref_proxy_username">Όνομα χρήστη του διακομιστή μεσολάβησης</string>
+    <string name="pref_proxy_password">Κωδικός πρόσβασης διακομιστή μεσολάβησης</string>
+    <string name="error_proxy_host_blank">Ο κεντρικός υπολογιστής του διακομιστή μεσολάβησης δεν μπορεί να είναι κενός</string>
+    <string name="error_proxy_port_invalid">Μη έγκυρη θύρα διακομιστή μεσολάβησης</string>
+    <string name="pref_proxy_socks_partial_support_title">Μερική υποστήριξη μόνο</string>
+    <string name="pref_proxy_socks_partial_support_desc">Λάβετε υπόψη ότι το Android WebView υποστηρίζει μόνο διακομιστές μεσολάβησης HTTP. Αν επιλέξετε διακομιστή μεσολάβησης SOCKS, ο εσωτερικός πελάτης HTTP (OkHttp) θα χρησιμοποιήσει τον καθορισμένο διακομιστή μεσολάβησης, αλλά ο πελάτης Android WebView θα επιστρέψει στην απευθείας σύνδεση μέσω του δικτύου.\n\nΑυτό μπορεί να αποκαλύψει την πραγματική σας διεύθυνση IP και ενδέχεται να χαλάσει επεκτάσεις που υποθέτουν ότι το WebView και το OkHttp χρησιμοποιούν τις ίδιες ρυθμίσεις δικτύου. (Δηλαδή, ορισμένες ιστοσελίδες πίσω από το Cloudflare περιμένουν η διεύθυνση IP να ταιριάζει και στις δύο περιπτώσεις, αλλιώς θα σας μπλοκάρουν.)</string>
     <string name="exclude">Εξαίρεση: %s</string>
     <string name="include">Συμπερίληψη: %s</string>
     <string name="none">Κανένα</string>

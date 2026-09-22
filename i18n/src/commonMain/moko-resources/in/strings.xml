@@ -452,6 +452,15 @@
     <string name="update_check_eol">Versi Android ini tidak lagi didukung</string>
     <string name="clipboard_copy_error">Gagal menyalin ke papan klip</string>
     <string name="pref_dns_over_https">DNS melalui HTTPS (DoH)</string>
+    <string name="pref_proxy">Proxy</string>
+    <string name="pref_proxy_host">Host proksi</string>
+    <string name="pref_proxy_port">Port proksi</string>
+    <string name="pref_proxy_username">Nama pengguna proksi</string>
+    <string name="pref_proxy_password">Kata sandi proksi</string>
+    <string name="error_proxy_host_blank">Host proksi tidak boleh kosong</string>
+    <string name="error_proxy_port_invalid">Port proksi tidak valid</string>
+    <string name="pref_proxy_socks_partial_support_title">Hanya dukungan sebagian</string>
+    <string name="pref_proxy_socks_partial_support_desc">Harap diperhatikan bahwa Android WebView hanya mendukung proksi HTTP. Jika kamu memilih proksi SOCKS, klien HTTP internal (OkHttp) akan menggunakan proksi yang ditentukan, tetapi klien Android WebView akan kembali terhubung langsung melalui jaringan.\n\nIni dapat membocorkan alamat IP aslimu dan juga dapat merusak ekstensi yang menganggap WebView dan OkHttp menggunakan pengaturan jaringan yang sama. (Yaitu, beberapa situs di balik Cloudflare mengharapkan alamat IP cocok dalam kedua kasus dan akan memblokirmu jika tidak.)</string>
     <string name="kindlish_nav">semacam Kindle</string>
     <string name="pref_category_auto_download">Unduh otomatis</string>
     <string name="backup_restore_content_full">Anda mungkin perlu memasang ulang ekstensi yang hilang dan log in ke layanan pelacakan setelahnya untuk menggunakannya.</string>

@@ -448,6 +448,15 @@
     <string name="clipboard_copy_error">No s’ha pogut copiar al porta-retalls</string>
     <string name="notification_incognito_text">Desactiva el mode d’incògnit</string>
     <string name="pref_dns_over_https">DNS sobre HTTPS (DoH)</string>
+    <string name="pref_proxy">Servidor intermediari</string>
+    <string name="pref_proxy_host">Amfitrió del servidor intermediari</string>
+    <string name="pref_proxy_port">Port del servidor intermediari</string>
+    <string name="pref_proxy_username">Nom d\'usuari del servidor intermediari</string>
+    <string name="pref_proxy_password">Contrasenya del servidor intermediari</string>
+    <string name="error_proxy_host_blank">L\'amfitrió del servidor intermediari no pot estar en blanc</string>
+    <string name="error_proxy_port_invalid">Port del servidor intermediari no vàlid</string>
+    <string name="pref_proxy_socks_partial_support_title">Només suport parcial</string>
+    <string name="pref_proxy_socks_partial_support_desc">Tingueu en compte que Android WebView només admet servidors intermediaris HTTP. Si trieu un servidor intermediari SOCKS, el client HTTP intern (OkHttp) utilitzarà el servidor intermediari especificat, però el client Android WebView tornarà a connectar-se directament a través de la xarxa.\n\nAixò pot filtrar la vostra adreça IP real i també pot trencar extensions que assumeixen que WebView i OkHttp utilitzen la mateixa configuració de xarxa. (És a dir, alguns llocs darrere de Cloudflare esperen que l\'adreça IP coincideixi en tots dos casos i us blocaran en cas contrari.)</string>
     <string name="pref_download_new_categories_details">Els elements de les categories excloses no es baixaran encara que també siguin a les categories incloses.</string>
     <string name="pref_library_update_categories_details">Els elements de les categories excloses no s’actualitzaran encara que també siguin a les categories incloses.</string>
     <string name="pref_category_auto_download">Baixada automàtica</string>

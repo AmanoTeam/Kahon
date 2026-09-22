@@ -448,6 +448,15 @@
     <string name="pref_show_navigation_mode_summary">开始阅读时，短暂显示点按区域</string>
     <string name="pref_show_navigation_mode">点按区域提示</string>
     <string name="pref_dns_over_https">DNS over HTTPS (DoH)</string>
+    <string name="pref_proxy">代理</string>
+    <string name="pref_proxy_host">代理主机</string>
+    <string name="pref_proxy_port">代理端口</string>
+    <string name="pref_proxy_username">代理用户名</string>
+    <string name="pref_proxy_password">代理密码</string>
+    <string name="error_proxy_host_blank">代理主机不能为空</string>
+    <string name="error_proxy_port_invalid">无效的代理端口</string>
+    <string name="pref_proxy_socks_partial_support_title">仅部分支持</string>
+    <string name="pref_proxy_socks_partial_support_desc">请注意，Android WebView 仅支持 HTTP 代理。如果您选择 SOCKS 代理，内部 HTTP 客户端 (OkHttp) 将使用指定的代理，但 Android WebView 客户端将回退为直接通过网络连接。\n\n这可能会泄露您的真实 IP 地址，也可能会破坏那些假设 WebView 和 OkHttp 使用相同网络设置的扩展。（也就是说，Cloudflare 背后的某些站点期望两种情况下 IP 地址一致，否则会封锁您。）</string>
     <string name="none">无</string>
     <string name="exclude">排除：%s</string>
     <string name="include">包含：%s</string>

@@ -448,6 +448,15 @@
     <string name="pref_show_navigation_mode_summary">Näytä napautusalueet, kun lukija avataan</string>
     <string name="pref_show_navigation_mode">Näytä navigointiasettelun peittokuva</string>
     <string name="pref_dns_over_https">DNS HTTPS:n kautta</string>
+    <string name="pref_proxy">Välityspalvelin</string>
+    <string name="pref_proxy_host">Välityspalvelimen isäntä</string>
+    <string name="pref_proxy_port">Välityspalvelimen portti</string>
+    <string name="pref_proxy_username">Välityspalvelimen käyttäjätunnus</string>
+    <string name="pref_proxy_password">Välityspalvelimen salasana</string>
+    <string name="error_proxy_host_blank">Välityspalvelimen isäntä ei voi olla tyhjä</string>
+    <string name="error_proxy_port_invalid">Virheellinen välityspalvelimen portti</string>
+    <string name="pref_proxy_socks_partial_support_title">Vain osittainen tuki</string>
+    <string name="pref_proxy_socks_partial_support_desc">Huomaa, että Android WebView tukee vain HTTP-välityspalvelimia. Jos valitset SOCKS-välityspalvelimen, sisäinen HTTP-asiakas (OkHttp) käyttää määritettyä välityspalvelinta, mutta Android WebView -asiakas palaa yhteyden muodostamiseen suoraan verkon kautta.\n\nTämä voi paljastaa oikean IP-osoitteesi ja voi myös rikkoa laajennuksia, jotka olettavat, että WebView ja OkHttp käyttävät samoja verkkoasetuksia. (Eli jotkin Cloudflaren takaiset sivustot odottavat IP-osoitteen vastaavan molemmissa tapauksissa ja muuten estävät sinut.)</string>
     <string name="exclude">Lukuun ottamatta: %s</string>
     <string name="include">Sisällytä: %s</string>
     <string name="none">Ei mitään</string>

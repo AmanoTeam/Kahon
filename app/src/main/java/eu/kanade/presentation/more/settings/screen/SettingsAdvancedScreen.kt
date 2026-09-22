@@ -42,6 +42,11 @@ import eu.kanade.tachiyomi.network.PREF_DOH_NJALLA
 import eu.kanade.tachiyomi.network.PREF_DOH_QUAD101
 import eu.kanade.tachiyomi.network.PREF_DOH_QUAD9
 import eu.kanade.tachiyomi.network.PREF_DOH_SHECAN
+import eu.kanade.tachiyomi.network.DEFAULT_PROXY_PORT_HTTP
+import eu.kanade.tachiyomi.network.DEFAULT_PROXY_PORT_SOCKS
+import eu.kanade.tachiyomi.network.PREF_PROXY_DISABLED
+import eu.kanade.tachiyomi.network.PREF_PROXY_HTTP
+import eu.kanade.tachiyomi.network.PREF_PROXY_SOCKS
 import eu.kanade.tachiyomi.ui.more.OnboardingScreen
 import eu.kanade.tachiyomi.util.CrashLogUtil
 import eu.kanade.tachiyomi.util.system.GLUtil
@@ -202,6 +207,25 @@ object SettingsAdvancedScreen : SearchableSettings {
         val userAgentPref = networkPreferences.defaultUserAgent
         val userAgent by userAgentPref.collectAsState()
 
+        val proxyTypePref = networkPreferences.proxyType
+        val proxyType by proxyTypePref.collectAsState()
+
+        var socksProxyWarning by rememberSaveable { mutableStateOf(false) }
+
+        if (socksProxyWarning) {
+            val dismiss = { socksProxyWarning = false }
+            AlertDialog(
+                onDismissRequest = dismiss,
+                title = { Text(text = stringResource(MR.strings.pref_proxy_socks_partial_support_title)) },
+                text = { Text(text = stringResource(MR.strings.pref_proxy_socks_partial_support_desc)) },
+                confirmButton = {
+                    TextButton(onClick = dismiss) {
+                        Text(text = stringResource(MR.strings.action_ok))
+                    }
+                },
+            )
+        }
+
         return Preference.PreferenceGroup(
             title = stringResource(MR.strings.label_network),
             preferenceItems = listOf(
@@ -250,6 +274,84 @@ object SettingsAdvancedScreen : SearchableSettings {
                         PREF_DOH_SHECAN to "Shecan",
                     ),
                     title = stringResource(MR.strings.pref_dns_over_https),
+                    onValueChanged = {
+                        context.toast(MR.strings.requires_app_restart)
+                        true
+                    },
+                ),
+                Preference.PreferenceItem.ListPreference(
+                    preference = proxyTypePref,
+                    entries = mapOf(
+                        PREF_PROXY_DISABLED to stringResource(MR.strings.disabled),
+                        PREF_PROXY_HTTP to "HTTP",
+                        PREF_PROXY_SOCKS to "SOCKS",
+                    ),
+                    title = stringResource(MR.strings.pref_proxy),
+                    onValueChanged = { newValue ->
+                        val defaultPort = when (newValue) {
+                            PREF_PROXY_HTTP -> DEFAULT_PROXY_PORT_HTTP
+                            PREF_PROXY_SOCKS -> DEFAULT_PROXY_PORT_SOCKS
+                            else -> null
+                        }
+                        if (defaultPort != null) {
+                            val currentPort = networkPreferences.proxyPort.get()
+                            val isCustomPort = currentPort.isNotBlank() &&
+                                currentPort != DEFAULT_PROXY_PORT_HTTP.toString() &&
+                                currentPort != DEFAULT_PROXY_PORT_SOCKS.toString()
+                            if (!isCustomPort) {
+                                networkPreferences.proxyPort.set(defaultPort.toString())
+                            }
+                        }
+                        if (newValue == PREF_PROXY_SOCKS) {
+                            socksProxyWarning = true
+                        }
+                        context.toast(MR.strings.requires_app_restart)
+                        true
+                    },
+                ),
+                Preference.PreferenceItem.EditTextPreference(
+                    preference = networkPreferences.proxyHost,
+                    title = stringResource(MR.strings.pref_proxy_host),
+                    enabled = remember(proxyType) { proxyType != PREF_PROXY_DISABLED },
+                    onValueChanged = {
+                        if (it.isBlank()) {
+                            context.toast(MR.strings.error_proxy_host_blank)
+                            false
+                        } else {
+                            context.toast(MR.strings.requires_app_restart)
+                            true
+                        }
+                    },
+                ),
+                Preference.PreferenceItem.EditTextPreference(
+                    preference = networkPreferences.proxyPort,
+                    title = stringResource(MR.strings.pref_proxy_port),
+                    enabled = remember(proxyType) { proxyType != PREF_PROXY_DISABLED },
+                    onValueChanged = {
+                        val port = it.toIntOrNull()
+                        if (port == null || port !in 1..65535) {
+                            context.toast(MR.strings.error_proxy_port_invalid)
+                            false
+                        } else {
+                            context.toast(MR.strings.requires_app_restart)
+                            true
+                        }
+                    },
+                ),
+                Preference.PreferenceItem.EditTextPreference(
+                    preference = networkPreferences.proxyUsername,
+                    title = stringResource(MR.strings.pref_proxy_username),
+                    enabled = remember(proxyType) { proxyType != PREF_PROXY_DISABLED },
+                    onValueChanged = {
+                        context.toast(MR.strings.requires_app_restart)
+                        true
+                    },
+                ),
+                Preference.PreferenceItem.EditTextPreference(
+                    preference = networkPreferences.proxyPassword,
+                    title = stringResource(MR.strings.pref_proxy_password),
+                    subtitle = null,
+                    enabled = remember(proxyType) { proxyType != PREF_PROXY_DISABLED },
                     onValueChanged = {
                         context.toast(MR.strings.requires_app_restart)
                         true

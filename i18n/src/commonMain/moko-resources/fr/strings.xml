@@ -443,6 +443,15 @@
     <string name="backup_restore_content_full">Vous devrez installer les extensions manquantes et vous connecter ensuite aux services de suivi pour les utiliser.</string>
     <string name="nav_zone_prev">Précédent</string>
     <string name="pref_dns_over_https">DNS sur HTTPS (DoH)</string>
+    <string name="pref_proxy">Proxy</string>
+    <string name="pref_proxy_host">Hôte du proxy</string>
+    <string name="pref_proxy_port">Port du proxy</string>
+    <string name="pref_proxy_username">Nom d\'utilisateur du proxy</string>
+    <string name="pref_proxy_password">Mot de passe du proxy</string>
+    <string name="error_proxy_host_blank">L\'hôte du proxy ne peut pas être vide</string>
+    <string name="error_proxy_port_invalid">Port de proxy non valide</string>
+    <string name="pref_proxy_socks_partial_support_title">Prise en charge partielle uniquement</string>
+    <string name="pref_proxy_socks_partial_support_desc">Veuillez noter qu\'Android WebView ne prend en charge que les proxys HTTP. Si vous choisissez un proxy SOCKS, le client HTTP interne (OkHttp) utilisera le proxy spécifié, mais le client Android WebView reviendra à une connexion directe via le réseau.\n\nCela peut divulguer votre véritable adresse IP et peut également casser les extensions qui supposent que WebView et OkHttp utilisent les mêmes paramètres réseau. (C\'est-à-dire que certains sites derrière Cloudflare s\'attendent à ce que l\'adresse IP corresponde dans les deux cas et vous bloqueront sinon.)</string>
     <string name="nav_zone_right">Droite</string>
     <string name="nav_zone_left">Gauche</string>
     <string name="nav_zone_next">Suivant</string>

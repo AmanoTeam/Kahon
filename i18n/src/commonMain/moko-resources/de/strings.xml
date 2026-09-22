@@ -448,6 +448,15 @@
     <string name="nav_zone_next">Weiter</string>
     <string name="nav_zone_prev">Zurück</string>
     <string name="pref_dns_over_https">DNS over HTTPS (DoH)</string>
+    <string name="pref_proxy">Proxy</string>
+    <string name="pref_proxy_host">Proxy-Host</string>
+    <string name="pref_proxy_port">Proxy-Port</string>
+    <string name="pref_proxy_username">Proxy-Benutzername</string>
+    <string name="pref_proxy_password">Proxy-Passwort</string>
+    <string name="error_proxy_host_blank">Der Proxy-Host darf nicht leer sein</string>
+    <string name="error_proxy_port_invalid">Ungültiger Proxy-Port</string>
+    <string name="pref_proxy_socks_partial_support_title">Nur teilweise Unterstützung</string>
+    <string name="pref_proxy_socks_partial_support_desc">Bitte beachte, dass Android WebView nur HTTP-Proxys unterstützt. Wenn du einen SOCKS-Proxy wählst, verwendet der interne HTTP-Client (OkHttp) den angegebenen Proxy, aber der Android-WebView-Client fällt auf eine direkte Verbindung über das Netzwerk zurück.\n\nDies kann deine echte IP-Adresse verraten und kann auch Erweiterungen brechen, die davon ausgehen, dass WebView und OkHttp dieselben Netzwerkeinstellungen verwenden. (D. h., einige Websites hinter Cloudflare erwarten, dass die IP-Adresse in beiden Fällen übereinstimmt, und blockieren dich andernfalls.)</string>
     <string name="exclude">Ausschließen: %s</string>
     <string name="include">Einschließen: %s</string>
     <string name="none">Nichts</string>

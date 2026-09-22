@@ -448,6 +448,15 @@
     <string name="pref_show_navigation_mode_summary">Короткочасно відобразити, коли читалку відкрито</string>
     <string name="pref_show_navigation_mode">Оверлей зон дотику</string>
     <string name="pref_dns_over_https">DNS поверх HTTPS (DoH)</string>
+    <string name="pref_proxy">Проксі</string>
+    <string name="pref_proxy_host">Хост проксі</string>
+    <string name="pref_proxy_port">Порт проксі</string>
+    <string name="pref_proxy_username">Ім’я користувача проксі</string>
+    <string name="pref_proxy_password">Пароль проксі</string>
+    <string name="error_proxy_host_blank">Хост проксі не може бути порожнім</string>
+    <string name="error_proxy_port_invalid">Неправильний порт проксі</string>
+    <string name="pref_proxy_socks_partial_support_title">Лише часткова підтримка</string>
+    <string name="pref_proxy_socks_partial_support_desc">Зверніть увагу, що Android WebView підтримує лише HTTP-проксі. Якщо ви оберете SOCKS-проксі, внутрішній HTTP-клієнт (OkHttp) використовуватиме вказаний проксі, але клієнт Android WebView повернеться до прямого з’єднання через мережу.\n\nЦе може розкрити вашу справжню IP-адресу, а також може порушити роботу розширень, які припускають, що WebView та OkHttp використовують однакові налаштування мережі. (Тобто деякі сайти за Cloudflare очікують, що IP-адреса збігатиметься в обох випадках, інакше вони заблокують вас.)</string>
     <string name="pref_download_new_categories_details">Записи в виключених категоріях не буде завантажено, навіть якщо вона також знаходиться у включених категоріях.</string>
     <string name="pref_category_auto_download">Автозавантаження</string>
     <string name="exclude">Виключати: %s</string>

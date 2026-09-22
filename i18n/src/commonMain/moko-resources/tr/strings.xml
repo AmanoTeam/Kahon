@@ -448,6 +448,15 @@
     <string name="pref_show_navigation_mode_summary">Okuyucu açıldığında kısaca göster</string>
     <string name="pref_show_navigation_mode">Dokunma bölgelerini göster</string>
     <string name="pref_dns_over_https">HTTPS üzerinden DNS (DoH)</string>
+    <string name="pref_proxy">Vekil sunucu</string>
+    <string name="pref_proxy_host">Vekil sunucu ana makinesi</string>
+    <string name="pref_proxy_port">Vekil sunucu bağlantı noktası</string>
+    <string name="pref_proxy_username">Vekil sunucu kullanıcı adı</string>
+    <string name="pref_proxy_password">Vekil sunucu parolası</string>
+    <string name="error_proxy_host_blank">Vekil sunucu ana makinesi boş olamaz</string>
+    <string name="error_proxy_port_invalid">Geçersiz vekil sunucu bağlantı noktası</string>
+    <string name="pref_proxy_socks_partial_support_title">Yalnızca kısmi destek</string>
+    <string name="pref_proxy_socks_partial_support_desc">Android WebView\'ın yalnızca HTTP vekil sunucularını desteklediğini unutmayın. Bir SOCKS vekil sunucu seçerseniz, dahili HTTP istemcisi (OkHttp) belirtilen vekil sunucuyu kullanacaktır, ancak Android WebView istemcisi ağ üzerinden doğrudan bağlantı kurmaya geri dönecektir.\n\nBu, gerçek IP adresinizi sızdırabilir ve ayrıca WebView ile OkHttp\'nin aynı ağ ayarlarını kullandığını varsayan uzantıları bozabilir. (Yani Cloudflare arkasındaki bazı siteler IP adresinin her iki durumda da eşleşmesini bekler ve aksi halde sizi engeller.)</string>
     <string name="exclude">Hariç tut: %s</string>
     <string name="include">Dahil et: %s</string>
     <string name="none">Hiçbiri</string>

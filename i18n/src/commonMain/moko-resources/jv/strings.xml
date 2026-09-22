@@ -11,6 +11,15 @@
     <string name="username">Jeneng pangguna</string>
     <string name="version">Versi</string>
     <string name="pref_dns_over_https">DNS liwat HTTPS</string>
+    <string name="pref_proxy">Proksi</string>
+    <string name="pref_proxy_host">Host proksi</string>
+    <string name="pref_proxy_port">Port proksi</string>
+    <string name="pref_proxy_username">Jeneng panganggo proksi</string>
+    <string name="pref_proxy_password">Sandhi proksi</string>
+    <string name="error_proxy_host_blank">Host proksi ora bisa kosong</string>
+    <string name="error_proxy_port_invalid">Port proksi ora valid</string>
+    <string name="pref_proxy_socks_partial_support_title">Mung dhukungan parsial</string>
+    <string name="pref_proxy_socks_partial_support_desc">Elinga yen Android WebView mung ndhukung proksi HTTP. Yen sampeyan milih proksi SOCKS, klien HTTP internal (OkHttp) bakal nggunakake proksi sing ditemtokake, nanging klien Android WebView bakal bali menyang nyambungake langsung liwat jaringan.\n\nIki bisa bocor alamat IP asli sampeyan lan uga bisa ngrusak ekstensi sing nganggep yen WebView lan OkHttp nggunakake setelan jaringan sing padha. (Tegese, sawetara situs ing mburi Cloudflare ngarep-arepake alamat IP cocog ing kaloro kasus lan bakal mblokir sampeyan yen ora.)</string>
     <string name="disabled">Dipateni</string>
     <string name="color_filter_a_value">Alfa</string>
     <string name="color_filter_b_value">Biru</string>

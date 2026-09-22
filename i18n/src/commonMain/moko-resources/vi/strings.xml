@@ -415,6 +415,15 @@
     <string name="battery_optimization_setting_activity_not_found">Không thể mở tùy chỉnh thiết bị</string>
     <string name="label_data">Dữ liệu</string>
     <string name="pref_dns_over_https">DNS qua HTTPS (DoH)</string>
+    <string name="pref_proxy">Proxy</string>
+    <string name="pref_proxy_host">Máy chủ proxy</string>
+    <string name="pref_proxy_port">Cổng proxy</string>
+    <string name="pref_proxy_username">Tên người dùng proxy</string>
+    <string name="pref_proxy_password">Mật khẩu proxy</string>
+    <string name="error_proxy_host_blank">Máy chủ proxy không được để trống</string>
+    <string name="error_proxy_port_invalid">Cổng proxy không hợp lệ</string>
+    <string name="pref_proxy_socks_partial_support_title">Chỉ hỗ trợ một phần</string>
+    <string name="pref_proxy_socks_partial_support_desc">Lưu ý rằng Android WebView chỉ hỗ trợ proxy HTTP. Nếu bạn chọn proxy SOCKS, ứng dụng khách HTTP nội bộ (OkHttp) sẽ sử dụng proxy được chỉ định, nhưng ứng dụng khách Android WebView sẽ quay lại kết nối trực tiếp qua mạng.\n\nĐiều này có thể làm lộ địa chỉ IP thực của bạn và cũng có thể làm hỏng các tiện ích mở rộng giả định rằng WebView và OkHttp sử dụng cùng cài đặt mạng. (Nghĩa là, một số trang web phía sau Cloudflare mong đợi địa chỉ IP khớp trong cả hai trường hợp và sẽ chặn bạn nếu không.)</string>
     <string name="label_network">Mạng</string>
     <string name="restoring_backup_canceled">Quá trình khôi phục đã bị hủy</string>
     <string name="restoring_backup_error">Khôi phục thất bại</string>

@@ -499,6 +499,15 @@
     <string name="restore_miui_warning">MIUI உகப்பாக்கம் முடக்கப்பட்டிருந்தால் காப்புப்பிரதி/மீட்டமை சரியாக செயல்படாது.</string>
     <string name="pref_clear_cookies">குக்கீகளை அழிக்கவும்</string>
     <string name="pref_dns_over_https">Https (doh) க்கு மேல் dns</string>
+    <string name="pref_proxy">ப்ராக்ஸி</string>
+    <string name="pref_proxy_host">ப்ராக்ஸி ஹோஸ்ட்</string>
+    <string name="pref_proxy_port">ப்ராக்ஸி போர்ட்</string>
+    <string name="pref_proxy_username">ப்ராக்ஸி பயனர்பெயர்</string>
+    <string name="pref_proxy_password">ப்ராக்ஸி கடவுச்சொல்</string>
+    <string name="error_proxy_host_blank">ப்ராக்ஸி ஹோஸ்ட் காலியாக இருக்கக்கூடாது</string>
+    <string name="error_proxy_port_invalid">தவறான ப்ராக்ஸி போர்ட்</string>
+    <string name="pref_proxy_socks_partial_support_title">பகுதி ஆதரவு மட்டுமே</string>
+    <string name="pref_proxy_socks_partial_support_desc">Android WebView HTTP ப்ராக்ஸிகளை மட்டுமே ஆதரிக்கும் என்பதை கவனிக்கவும். நீங்கள் SOCKS ப்ராக்ஸியைத் தேர்ந்தெடுத்தால், உள்ளமை HTTP கிளையண்ட் (OkHttp) குறிப்பிட்ட ப்ராக்ஸியைப் பயன்படுத்தும், ஆனால் Android WebView கிளையண்ட் நெட்வொர்க் வழியாக நேரடியாக இணைப்பதற்கு மீண்டும் செல்லும்.\n\nஇது உங்கள் உண்மையான IP முகவரியை கசியச் செய்யலாம், மேலும் WebView மற்றும் OkHttp ஒரே நெட்வொர்க் அமைப்புகளைப் பயன்படுத்துகின்றன என்று கருதும் நீட்டிப்புகளையும் சேதப்படுத்தலாம். (அதாவது, Cloudflare-க்குப் பின்னால் உள்ள சில தளங்கள் இரண்டு நிலைகளிலும் IP முகவரி பொருந்த வேண்டும் என்று எதிர்பார்க்கின்றன, இல்லையெனில் உங்களைத் தடுக்கும்.)</string>
     <string name="pref_user_agent_string">இயல்புநிலை பயனர் முகவர் சரம்</string>
     <string name="error_user_agent_string_blank">பயனர் முகவர் சரம் காலியாக இருக்க முடியாது</string>
     <string name="error_user_agent_string_invalid">தவறான பயனர் முகவர் சரம்</string>

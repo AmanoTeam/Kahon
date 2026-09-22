@@ -448,6 +448,15 @@
     <string name="pref_show_navigation_mode">Tunjuk tindanan zon ketik</string>
     <string name="nav_zone_next">Seterusnya</string>
     <string name="pref_dns_over_https">DNS melalui HTTPS (DoH)</string>
+    <string name="pref_proxy">Proksi</string>
+    <string name="pref_proxy_host">Hos proksi</string>
+    <string name="pref_proxy_port">Port proksi</string>
+    <string name="pref_proxy_username">Nama pengguna proksi</string>
+    <string name="pref_proxy_password">Kata laluan proksi</string>
+    <string name="error_proxy_host_blank">Hos proksi tidak boleh kosong</string>
+    <string name="error_proxy_port_invalid">Port proksi tidak sah</string>
+    <string name="pref_proxy_socks_partial_support_title">Sokongan separuh sahaja</string>
+    <string name="pref_proxy_socks_partial_support_desc">Ambil perhatian bahawa Android WebView hanya menyokong proksi HTTP. Jika anda memilih proksi SOCKS, klien HTTP dalaman (OkHttp) akan menggunakan proksi yang ditentukan, tetapi klien Android WebView akan kembali bersambung secara terus melalui rangkaian.\n\nIni boleh membocorkan alamat IP sebenar anda dan juga boleh merosakkan sambungan yang mengandaikan WebView dan OkHttp menggunakan tetapan rangkaian yang sama. (Maksudnya, sesetengah laman di sebalik Cloudflare menjangkakan alamat IP sepadan dalam kedua-dua kes dan akan menyekat anda sebaliknya.)</string>
     <string name="action_sort_chapter_fetch_date">Tarikh bab diambil</string>
     <string name="exclude">Kecuali: %s</string>
     <string name="include">Hanya: %s</string>

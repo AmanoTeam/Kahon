@@ -213,6 +213,15 @@
     <string name="all">Барыта</string>
     <string name="pref_clear_cookies">Кукины ырааста</string>
     <string name="label_network">Ситим</string>
+    <string name="pref_proxy">Прокси</string>
+    <string name="pref_proxy_host">Прокси хоста</string>
+    <string name="pref_proxy_port">Прокси порда</string>
+    <string name="pref_proxy_username">Прокси тутааччы аата</string>
+    <string name="pref_proxy_password">Прокси көмүскэл тыла</string>
+    <string name="error_proxy_host_blank">Прокси хоста кураанах буолбатуохтаах</string>
+    <string name="error_proxy_port_invalid">Сөпкөтө суох прокси порда</string>
+    <string name="pref_proxy_socks_partial_support_title">Чаасткайдыы эрэ өйөбүл</string>
+    <string name="pref_proxy_socks_partial_support_desc">Android WebView HTTP-прокси эрэ өйүүр диэн бэлиэ. SOCKS-прокси таллаххына, ис HTTP-клиен (OkHttp) бэлиэтэммит проксины туттар, ол эрээри Android WebView клиент ситим быстарынан быһаччы холбоно түһэр.\n\nБу эн дьиҥнээх IP-адырыһыҥ таһаарарыан сөп, онуоха WebView уонна OkHttp биир ситим туруорууларын тутталлар диэн санаабыт кэнчээриилэри алдьатыан сөп. (Ол аата, Cloudflare кэнниттэн сорох саайдар икки түгэҥҥэ IP-адырыс сөп түбэһиэхтээх диэн кэтэһэллэр, онуома эн баарыҥ блоктуохтара.)</string>
     <string name="restoring_backup_canceled">Төнүҥнэри тохтоото</string>
     <string name="restoring_backup_error">Хаппаас куопуйа төнүҥнэриитэ туолбата</string>
     <string name="restoring_backup">Хаппаас куопуйаны төнүҥнэри туола турар</string>

@@ -669,6 +669,15 @@
     <string name="download_ahead_info">עובד רק אם הפרק הנוכחי והפרק הבא כבר הורדו.</string>
     <string name="pref_skip_dupe_chapters">דלג על פרקים כפולים</string>
     <string name="pref_dns_over_https">DNS over HTTPS (DoH)</string>
+    <string name="pref_proxy">פרוקסי</string>
+    <string name="pref_proxy_host">מארח הפרוקסי</string>
+    <string name="pref_proxy_port">פורט הפרוקסי</string>
+    <string name="pref_proxy_username">שם משתמש של הפרוקסי</string>
+    <string name="pref_proxy_password">סיסמת הפרוקסי</string>
+    <string name="error_proxy_host_blank">מארח הפרוקסי לא יכול להיות ריק</string>
+    <string name="error_proxy_port_invalid">פורט פרוקסי לא תקין</string>
+    <string name="pref_proxy_socks_partial_support_title">תמיכה חלקית בלבד</string>
+    <string name="pref_proxy_socks_partial_support_desc">שים לב ש-Android WebView תומך רק בפרוקסי HTTP. אם תבחר בפרוקסי SOCKS, לקוח ה-HTTP הפנימי (OkHttp) ישתמש בפרוקסי שצוין, אך לקוח Android WebView יחזור להתחבר ישירות דרך הרשת.\n\nהדבר עלול לחשוף את כתובת ה-IP האמיתית שלך וגם לשבור הרחבות שמניחות ש-WebView ו-OkHttp משתמשים באותן הגדרות רשת. (כלומר, חלק מהאתרים מאחורי Cloudflare מצפים שכתובת ה-IP תתאים בשני המקרים וחסמים אותך אחרת.)</string>
     <string name="download_cache_invalidated">תוקף אינדקס ההורדות בוטל</string>
     <string name="webview_data_deleted">מידע של WebView נוקה בהצלחה</string>
     <string name="pref_reset_viewer_flags_summary">אפס מצב קריאה ואוריינטציה לכל הסדרות</string>

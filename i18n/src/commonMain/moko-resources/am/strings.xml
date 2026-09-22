@@ -255,6 +255,15 @@
     <string name="information_webview_outdated">ለተሻለ ተኳኋኝነት እባክዎ የድር እይታን መተግበሪያውን ያዘምኑ</string>
     <string name="pref_clear_cookies">ኩኪዎችን ያጽዱ</string>
     <string name="label_network">አውታረ መረብ</string>
+    <string name="pref_proxy">ፕሮክሲ</string>
+    <string name="pref_proxy_host">የፕሮክሲ አስተናጋጅ</string>
+    <string name="pref_proxy_port">የፕሮክሲ ፖርት</string>
+    <string name="pref_proxy_username">የፕሮክሲ ተጠቃሚ ስም</string>
+    <string name="pref_proxy_password">የፕሮክሲ ይለፍ ቃል</string>
+    <string name="error_proxy_host_blank">የፕሮክሲ አስተናጋጅ ባዶ መሆን አይችልም</string>
+    <string name="error_proxy_port_invalid">ትክክል ያልሆነ የፕሮክሲ ፖርት</string>
+    <string name="pref_proxy_socks_partial_support_title">የከፊል ድጋፍ ብቻ</string>
+    <string name="pref_proxy_socks_partial_support_desc">እባክዎ ልብ በሉ፣ Android WebView የHTTP ፕሮክሲዎችን ብቻ ይደግፋል። የSOCKS ፕሮክሲ ከመረጡ፣ የውስጣዊው የHTTP ደንበኛ (OkHttp) የተገለጸውን ፕሮክሲ ይጠቀማል፣ ግን Android WebView ደንበኛ በአውታረ መረቡ በቀጥታ ማገናኘት ይመለሳል።\n\nይህ የእውነተኛውን የIP አድራሻ ሊያስተዋውቅ ይችላል፣ እንዲሁም WebView እና OkHttp ተመሳሳይ የአውታረ መረብ ቅንብሮችን እንደሚጠቀሙ ተብለው በሚታሰቡ ቅጥያቾችን ሊያበላሹ ይችላል። (ማለትም፣ በCloudflare ጀርባ ያሉ አንዳንድ ጣቢያዎች የIP አድራሻው በሁለቱም ሁኔታዎች እኩል መሆኑን ይጠብቃሉ፤ ካልሆነ ደግሞ ያግዱዎታል።)</string>
     <string name="restoring_backup_canceled">ተሰርዟል ወደነበረበት መመለስ</string>
     <string name="restoring_backup_error">ምትኬን ወደነበረበት መመለስ አልተሳካም</string>
     <string name="restoring_backup">ምትኬን ወደነበረበት መመለስ</string>

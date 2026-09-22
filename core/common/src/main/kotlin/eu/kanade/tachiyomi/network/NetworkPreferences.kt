@@ -7,6 +7,13 @@ import mihon.core.metro.IsDebugBuild
 import tachiyomi.core.common.preference.Preference
 import tachiyomi.core.common.preference.PreferenceStore
 
+const val PREF_PROXY_DISABLED = 0
+const val PREF_PROXY_HTTP = 1
+const val PREF_PROXY_SOCKS = 2
+
+const val DEFAULT_PROXY_PORT_HTTP = 8080
+const val DEFAULT_PROXY_PORT_SOCKS = 1080
+
 @Inject
 @SingleIn(AppScope::class)
 class NetworkPreferences(
@@ -20,6 +27,16 @@ class NetworkPreferences(
     )
 
     val dohProvider: Preference<Int> = preferenceStore.getInt("doh_provider", -1)
+
+    val proxyType: Preference<Int> = preferenceStore.getInt("proxy_type", PREF_PROXY_DISABLED)
+
+    val proxyHost: Preference<String> = preferenceStore.getString("proxy_host", "")
+
+    val proxyPort: Preference<String> = preferenceStore.getString("proxy_port", "")
+
+    val proxyUsername: Preference<String> = preferenceStore.getString("proxy_username", "")
+
+    val proxyPassword: Preference<String> = preferenceStore.getString(Preference.privateKey("proxy_password"), "")
 
     val defaultUserAgent: Preference<String> = preferenceStore.getString(
         "default_user_agent",

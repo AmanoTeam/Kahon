@@ -6,12 +6,18 @@ import android.content.pm.PackageManager
 import android.webkit.CookieManager
 import android.webkit.WebSettings
 import android.webkit.WebView
+import androidx.webkit.ProxyConfig
+import androidx.webkit.ProxyController
 import androidx.webkit.UserAgentMetadata
 import androidx.webkit.WebSettingsCompat
 import androidx.webkit.WebViewFeature
+import eu.kanade.tachiyomi.network.NetworkPreferences
+import eu.kanade.tachiyomi.network.PREF_PROXY_HTTP
 import kotlinx.coroutines.suspendCancellableCoroutine
 import logcat.LogPriority
+import tachiyomi.core.common.preference.AndroidPreferenceStore
 import tachiyomi.core.common.util.system.logcat
+import java.util.concurrent.Executor
 import kotlin.coroutines.resume
 
 object WebViewUtil {
@@ -100,6 +106,26 @@ fun WebView.setDefaultSettings() {
     }
 
     CookieManager.getInstance().acceptThirdPartyCookies(this)
+
+    applyWebViewProxy()
+}
+
+private fun WebView.applyWebViewProxy() {
+    if (!WebViewFeature.isFeatureSupported(WebViewFeature.PROXY_OVERRIDE)) return
+
+    val preferences = NetworkPreferences(AndroidPreferenceStore(context.applicationContext), false)
+    val host = preferences.proxyHost.get().trim()
+    val port = preferences.proxyPort.get().toIntOrNull()
+    if (preferences.proxyType.get() != PREF_PROXY_HTTP || host.isBlank() || port == null || port !in 1..65535) return
+
+    try {
+        val config = ProxyConfig.Builder()
+            .addProxyRule("$host:$port")
+            .build()
+        ProxyController.getInstance().setProxyOverride(config, Executor { it.run() }, Runnable {})
+    } catch (e: Exception) {
+        logcat(LogPriority.ERROR, e) { "Failed to set WebView proxy" }
+    }
 }
 
 /**

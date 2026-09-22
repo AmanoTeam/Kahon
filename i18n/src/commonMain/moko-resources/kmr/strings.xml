@@ -270,4 +270,13 @@
     <string name="save_search_delete_message">Ma bêguman tu dixwazî qeyda lêgerîna xwe ya tomarkirî jê bibî: "%1$s"?</string>
     <string name="save_search_invalid">Lêgerîna tomarkirî nerêbaz e, parzûn guherîn</string>
     <string name="save_search_invalid_name">Navê lêgerîna tomarkirî nerêbaz e</string>
+    <string name="pref_proxy">Proksî</string>
+    <string name="pref_proxy_host">Hostê proksîyê</string>
+    <string name="pref_proxy_port">Porta proksîyê</string>
+    <string name="pref_proxy_username">Navê bikarhêner ê proksîyê</string>
+    <string name="pref_proxy_password">Şîfreya proksîyê</string>
+    <string name="error_proxy_host_blank">Hostê proksîyê nikare vala be</string>
+    <string name="error_proxy_port_invalid">Porta proksîyê ya nederbasdar</string>
+    <string name="pref_proxy_socks_partial_support_title">Tenê piştgiriya beşî</string>
+    <string name="pref_proxy_socks_partial_support_desc">Ji kerema xwe hay ji xwe hebe ku Android WebView tenê proksiyên HTTP piştgirî dike. Ger hûn proksiyekê SOCKS hilbijêrin, klientê HTTP ê navxweyî (OkHttp) ê proksiya diyarkirî bikar bîne, lê klientê Android WebView ê vegerê ser girêdanê rasterast bi rêya torê.\n\nEv dikare adresa IP ya rastî ya we eşkere bike û dikare pêvekên ku difikirin ku WebView û OkHttp heman mîhengên torê bi kar tînin jî xera bike. (Ango, hin malper li pişt Cloudflare hêvî dikin ku adresa IP di herdu rewşan de wekhev be, wekî din ê we asteng bikin.)</string>
 </resources>

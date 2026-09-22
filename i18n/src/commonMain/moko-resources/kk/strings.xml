@@ -405,6 +405,15 @@
     <string name="help_translate">Аудармамен көмектесу</string>
     <string name="restoring_backup_error">Сақтық көшірмесін қалпына келтіру сәтсіз өтті</string>
     <string name="pref_dns_over_https">DNS арқылы HTTPS (DoH)</string>
+    <string name="pref_proxy">Прокси</string>
+    <string name="pref_proxy_host">Прокси хосты</string>
+    <string name="pref_proxy_port">Прокси порты</string>
+    <string name="pref_proxy_username">Прокси пайдаланушы аты</string>
+    <string name="pref_proxy_password">Прокси құпиясөзі</string>
+    <string name="error_proxy_host_blank">Прокси хосты бос болмауы тиіс</string>
+    <string name="error_proxy_port_invalid">Жарамсыз прокси порты</string>
+    <string name="pref_proxy_socks_partial_support_title">Тек жартылай қолдау</string>
+    <string name="pref_proxy_socks_partial_support_desc">Android WebView тек HTTP проксилерін қолдайтынын ескеріңіз. SOCKS проксисін таңдасаңыз, ішкі HTTP клиенті (OkHttp) көрсетілген проксини пайдаланады, бірақ Android WebView клиенті желі арқылы тікелей қосылуға оралады.\n\nБұл нақты IP мекенжайыңызды ашып қалуы мүмкін, сондай-ақ WebView мен OkHttp бірдей желі параметрлерін пайдаланады деп санаған кеңейтулерді бұзуы мүмкін. (Яғни, Cloudflare артындағы кейбір сайттар екі жағдайда да IP мекенжайы сәйкес келуін күтеді және әйтпесе сізді блоктайды.)</string>
     <string name="restoring_backup_canceled">Қалпына келтіру күші жойылды</string>
     <string name="popular">Танымал</string>
     <string name="backup_restore_content_full">Сақтық көшірме файлынан дерек қалпына келеді. \n \nОны қолдану үшін сізге түгел жетпей тұрған кеңейтулерді жүктеп, бақылау қызметтеріне кіру керек.</string>

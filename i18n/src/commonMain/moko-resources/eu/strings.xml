@@ -284,6 +284,15 @@
     <string name="pref_create_backup_summ">Liburutegia berreskuratzeko erabil daiteke</string>
     <string name="downloaded_only_summary">Zure liburutegiko manga guztiak iragazten ditu</string>
     <string name="pref_dns_over_https">DNS HTTPS bidez (DoH)</string>
+    <string name="pref_proxy">Proxy</string>
+    <string name="pref_proxy_host">Proxyaren ostalaria</string>
+    <string name="pref_proxy_port">Proxyaren ataka</string>
+    <string name="pref_proxy_username">Proxyaren erabiltzaile-izena</string>
+    <string name="pref_proxy_password">Proxyaren pasahitza</string>
+    <string name="error_proxy_host_blank">Proxyaren ostalariak ezin du hutsik egon</string>
+    <string name="error_proxy_port_invalid">Proxyaren ataka baliogabea</string>
+    <string name="pref_proxy_socks_partial_support_title">Euskarri partziala soilik</string>
+    <string name="pref_proxy_socks_partial_support_desc">Kontuan izan Android WebView-ek HTTP proxyak bakarrik onartzen dituela. SOCKS proxy bat hautatzen baduzu, barneko HTTP bezeroak (OkHttp) zehaztutako proxya erabiliko du, baina Android WebView bezeroa sarearen bidez zuzenean konektatzera itzuliko da.\n\nHonek zure benetako IP helbidea iragazi dezake eta WebView eta OkHttp-ek sare-konfigurazio bera erabiltzen dutela suposatzen duten hedapenak ere hautsi ditzake. (Hau da, Cloudflareren atzean dauden gune batzuek IP helbidea bi kasuetan bat etortzea espero dute eta bestela blokeatu egingo zaituzte.)</string>
     <string name="pref_enable_acra">Bidali hutsegite-txostenak</string>
     <string name="notification_incognito_text">Desgaitu ezkutuko modua</string>
     <string name="used_cache">Erabilia: %1$s</string>

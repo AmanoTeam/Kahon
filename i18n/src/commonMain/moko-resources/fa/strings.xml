@@ -639,6 +639,15 @@
     <string name="pref_storage_location_info">قابل استفاده برای به روز رسانی خودکار، بارگیری قسمت ها، و منابع محلی.</string>
     <string name="last_auto_backup_info">آخرین پشتیبان گیری خودکار: %s</string>
     <string name="pref_dns_over_https">DNS بیش از HTTPS (DoH)</string>
+    <string name="pref_proxy">پروکسی</string>
+    <string name="pref_proxy_host">میزبان پروکسی</string>
+    <string name="pref_proxy_port">پورت پروکسی</string>
+    <string name="pref_proxy_username">نام کاربری پروکسی</string>
+    <string name="pref_proxy_password">رمز عبور پروکسی</string>
+    <string name="error_proxy_host_blank">میزبان پروکسی نمی‌تواند خالی باشد</string>
+    <string name="error_proxy_port_invalid">پورت پروکسی نامعتبر است</string>
+    <string name="pref_proxy_socks_partial_support_title">فقط پشتیبانی جزئی</string>
+    <string name="pref_proxy_socks_partial_support_desc">لطفاً توجه داشته باشید که Android WebView فقط از پروکسی‌های HTTP پشتیبانی می‌کند. اگر پروکسی SOCKS انتخاب کنید، کلاینت HTTP داخلی (OkHttp) از پروکسی مشخص‌شده استفاده می‌کند، اما کلاینت Android WebView به اتصال مستقیم از طریق شبکه برمی‌گردد.\n\nاین می‌تواند آدرس IP واقعی شما را افشا کند و همچنین ممکن است افزونه‌هایی که فرض می‌کنند WebView و OkHttp از تنظیمات شبکه یکسان استفاده می‌کنند را خراب کند. (یعنی برخی از سایت‌های پشت Cloudflare انتظار دارند آدرس IP در هر دو مورد یکسان باشد و در غیر این صورت شما را مسدود می‌کنند.)</string>
     <string name="library_sync_complete">همگام سازی کتاب خانه کامل شد</string>
     <string name="ext_confirm_remove">افزونه حذف شود؟</string>
     <string name="extensionStoresScreen.deleteStore.body">آیا می‌خواهید فروشگاه افزونه \"%1$s\" (%2$s) را حذف کنید؟</string>

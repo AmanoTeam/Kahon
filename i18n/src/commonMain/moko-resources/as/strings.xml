@@ -482,6 +482,15 @@
     <string name="label_network">নেটৱৰ্কিং</string>
     <string name="pref_clear_cookies">কুকী খালী কৰক</string>
     <string name="pref_dns_over_https">DNS ওভাৰ HTTPS (DoH)</string>
+    <string name="pref_proxy">প্ৰক্সি</string>
+    <string name="pref_proxy_host">প্ৰক্সি হষ্ট</string>
+    <string name="pref_proxy_port">প্ৰক্সি পোৰ্ট</string>
+    <string name="pref_proxy_username">প্ৰক্সি ব্যৱহাৰকাৰীৰ নাম</string>
+    <string name="pref_proxy_password">প্ৰক্সি পাছৱৰ্ড</string>
+    <string name="error_proxy_host_blank">প্ৰক্সি হষ্ট খালী থাকিব নোৱাৰে</string>
+    <string name="error_proxy_port_invalid">অবৈধ প্ৰক্সি পোৰ্ট</string>
+    <string name="pref_proxy_socks_partial_support_title">কেৱল আংশিক সমৰ্থন</string>
+    <string name="pref_proxy_socks_partial_support_desc">অনুগ্ৰহ কৰি মন কৰিব যে Android WebView এ কেৱল HTTP প্ৰক্সি সমৰ্থন কৰে। আপুনি SOCKS প্ৰক্সি বাছিলে, অভ্যন্তৰীণ HTTP ক্লায়েণ্টে (OkHttp) নিৰ্ধাৰিত প্ৰক্সি ব্যৱহাৰ কৰিব, কিন্তু Android WebView ক্লায়েণ্টে নেটৱৰ্কৰ জৰিয়তে প্ৰত্যক্ষভাৱে সংযোগ কৰিবলৈ ঘূৰি যাব।\n\nইয়াৰ ফলত আপোনাৰ প্ৰকৃত IP ঠিকনা ফাঁলি যাব পাৰে আৰু WebView আৰু OkHttp একেই নেটৱৰ্ক ছেটিং ব্যৱহাৰ কৰে বুলি ধৰি লোৱা এক্সটেনশনবোৰো ভাঙিব পাৰে। (অৰ্থাৎ, Cloudflareৰ পিছত থকা কিছুমান ছাইটে দুয়োটা ক্ষেত্ৰতে IP ঠিকনা মিলাব বিচাৰে আৰু নহলে আপোনাক অৱৰোধ কৰিব।)</string>
     <string name="pref_user_agent_string">ডিফল্ট ইউজাৰ এজেণ্ট ষ্ট্ৰিং</string>
     <string name="error_user_agent_string_blank">ইউজাৰ এজেণ্ট ষ্ট্ৰিং খালী হ\'ব নোৱাৰে</string>
     <string name="error_user_agent_string_invalid">অবৈধ ইউজাৰ এজেণ্ট ষ্ট্ৰিং</string>

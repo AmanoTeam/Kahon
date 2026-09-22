@@ -210,4 +210,13 @@
     <string name="save_search_delete_message">តើអ្នកប្រាកដថាចង់លុបសំណួរស្វែងរកដែលបានរក្សាទុករបស់អ្នក: "%1$s"?</string>
     <string name="save_search_invalid">ការស្វែងរកដែលបានរក្សាទុកមិនត្រឹមត្រូវទេ តម្រងបានផ្លាស់ប្តូរ</string>
     <string name="save_search_invalid_name">ឈ្មោះស្វែងរកដែលបានរក្សាទុកមិនត្រឹមត្រូវ</string>
+    <string name="pref_proxy">ប្រូកស៊ី</string>
+    <string name="pref_proxy_host">ហូស្តប្រូកស៊ី</string>
+    <string name="pref_proxy_port">ច្រកប្រូកស៊ី</string>
+    <string name="pref_proxy_username">ឈ្មោះអ្នកប្រើប្រូកស៊ី</string>
+    <string name="pref_proxy_password">ពាក្យសម្ងាត់ប្រូកស៊ី</string>
+    <string name="error_proxy_host_blank">ហូស្តប្រូកស៊ីមិនអាចទំនេរបានទេ</string>
+    <string name="error_proxy_port_invalid">ច្រកប្រូកស៊ីមិនត្រឹមត្រូវ</string>
+    <string name="pref_proxy_socks_partial_support_title">គាំទ្រតែមួយផ្នែកប៉ុណ្ណោះ</string>
+    <string name="pref_proxy_socks_partial_support_desc">សូមកត់សម្គាល់ថា Android WebView គាំទ្រតែប្រូកស៊ី HTTP ប៉ុណ្ណោះ។ ប្រសិនបើអ្នកជ្រើសរើសប្រូកស៊ី SOCKS ម៉ាស៊ីនភ្ញៀវ HTTP ខាងក្នុង (OkHttp) នឹងប្រើប្រូកស៊ីដែលបានកំណត់ ប៉ុន្តែម៉ាស៊ីនភ្ញៀវ Android WebView នឹងត្រឡប់ទៅភ្ជាប់ដោយផ្ទាល់តាមរយៈបណ្តាញវិញ។\n\nវាអាចធ្វើឱ្យអាសយដ្ឋាន IP ពិតប្រាកដរបស់អ្នក ដាច់រត់បាត់បង់ ហើយក៏អាចបំផ្លាញផ្នែកបន្ថែមដែលសន្មតថា WebView និង OkHttp ប្រើការកំណត់បណ្តាញដូចគ្នាផងដែរ។ (និយាយថា គេហទំព័រមួយចំនួននៅក្រោយ Cloudflare រំពឹងថាអាសយដ្ឋាន IP ត្រូវផ្គូផ្គងនៅក្នុងករណីទាំងពីរ ហើយនឹងរារាំងអ្នកប្រសិនបើមិនដូច្នេះ។)</string>
 </resources>

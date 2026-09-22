@@ -453,6 +453,15 @@
     <string name="label_background_activity">পটভূমি কার্যকলাপ</string>
     <string name="pref_dump_crash_logs">ক্র্যাশ লগ শেয়ার</string>
     <string name="pref_dns_over_https">এইচটিটিপিএস এর উপর ডিএনএস</string>
+    <string name="pref_proxy">প্রক্সি</string>
+    <string name="pref_proxy_host">প্রক্সি হোস্ট</string>
+    <string name="pref_proxy_port">প্রক্সি পোর্ট</string>
+    <string name="pref_proxy_username">প্রক্সি ব্যবহারকারীর নাম</string>
+    <string name="pref_proxy_password">প্রক্সি পাসওয়ার্ড</string>
+    <string name="error_proxy_host_blank">প্রক্সি হোস্ট খালি রাখা যাবে না</string>
+    <string name="error_proxy_port_invalid">অবৈধ প্রক্সি পোর্ট</string>
+    <string name="pref_proxy_socks_partial_support_title">শুধুমাত্র আংশিক সমর্থন</string>
+    <string name="pref_proxy_socks_partial_support_desc">অনুগ্রহ করে মনে রাখবেন যে Android WebView শুধুমাত্র HTTP প্রক্সি সমর্থন করে। আপনি যদি SOCKS প্রক্সি বেছে নেন, অভ্যন্তরীণ HTTP ক্লায়েন্ট (OkHttp) নির্দিষ্ট প্রক্সি ব্যবহার করবে, কিন্তু Android WebView ক্লায়েন্ট নেটওয়ার্কের মাধ্যমে সরাসরি সংযোগ করায় ফিরে যাবে।\n\nএটি আপনার আসল IP ঠিকানা ফাঁস করতে পারে এবং WebView এবং OkHttp একই নেটওয়ার্ক সেটিংস ব্যবহার করে ধরে নেওয়া এক্সটেনশনগুলিও ভেঙে দিতে পারে। (অর্থাৎ, Cloudflare-এর পিছনে কিছু সাইট উভয় ক্ষেত্রেই IP ঠিকানা মেলাতে আশা করে এবং অন্যথায় আপনাকে ব্লক করবে।)</string>
     <string name="restore_miui_warning">এমআইইউআই অপ্টিমাইজেশন নিষ্ক্রিয় থাকলে ব্যাকআপ/রিস্টোর সঠিকভাবে কাজ নাও করতে পারে।</string>
     <string name="backup_restore_content_full">সম্ভবত অনুপস্থিত এক্সটেনশন ইনস্টল করতে হবে এবং ট্র্যাকিং সার্ভিসগুলোতে পরে লগইন করতে হবে এগুলো ব্যবহার করতে।</string>
     <string name="action_track">ট্র্যাক</string>

@@ -448,6 +448,15 @@
     <string name="nav_zone_prev">Prethodno</string>
     <string name="pref_show_navigation_mode">Prikaži raspored navigacije</string>
     <string name="pref_dns_over_https">DNS preko HTTPS-a (DoH)</string>
+    <string name="pref_proxy">Proxy</string>
+    <string name="pref_proxy_host">Proxy host</string>
+    <string name="pref_proxy_port">Proxy port</string>
+    <string name="pref_proxy_username">Korisničko ime proxyja</string>
+    <string name="pref_proxy_password">Lozinka proxyja</string>
+    <string name="error_proxy_host_blank">Proxy host ne može biti prazan</string>
+    <string name="error_proxy_port_invalid">Nevaljan proxy port</string>
+    <string name="pref_proxy_socks_partial_support_title">Samo djelomična podrška</string>
+    <string name="pref_proxy_socks_partial_support_desc">Imajte na umu da Android WebView podržava samo HTTP proxyje. Ako odaberete SOCKS proxy, unutarnji HTTP klijent (OkHttp) koristit će navedeni proxy, ali će se Android WebView klijent vratiti na izravno povezivanje putem mreže.\n\nTo može otkriti vašu stvarnu IP adresu i može također pokvariti proširenja koja pretpostavljaju da WebView i OkHttp koriste iste mrežne postavke. (To jest, neke web-stranice iza Cloudflarea očekuju da se IP adresa podudara u oba slučaja i u protivnom će vas blokirati.)</string>
     <string name="none">Ništa</string>
     <string name="pref_download_new_categories_details">Unosi u isključenim kategorijama neće se ažurirati čak i ako su također u uključenim kategorijama.</string>
     <string name="pref_category_auto_download">Automatsko preuzimanje</string>

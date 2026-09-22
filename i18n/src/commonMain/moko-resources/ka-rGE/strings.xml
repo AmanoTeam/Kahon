@@ -388,6 +388,15 @@
     <string name="whats_new">რა არის ახალი</string>
     <string name="requires_app_restart">ასამოქმედებლად საჭიროა აპლიკაციის გადატვირთვა</string>
     <string name="label_network">ქსელი</string>
+    <string name="pref_proxy">პროქსი</string>
+    <string name="pref_proxy_host">პროქსის ჰოსტი</string>
+    <string name="pref_proxy_port">პროქსის პორტი</string>
+    <string name="pref_proxy_username">პროქსის მომხმარებლის სახელი</string>
+    <string name="pref_proxy_password">პროქსის პაროლი</string>
+    <string name="error_proxy_host_blank">პროქსის ჰოსტი ვერ იქნება ცარიელი</string>
+    <string name="error_proxy_port_invalid">პროქსის პორტი არასწორია</string>
+    <string name="pref_proxy_socks_partial_support_title">მხოლოდ ნაწილობრივი მხარდაჭერა</string>
+    <string name="pref_proxy_socks_partial_support_desc">გთხოვთ გაითვალისწმონოთ, რომ Android WebView მხოლოდ HTTP პროქსის უჭერს მხარს. თუ აირჩევთ SOCKS პროქსის, შიდა HTTP კლიენტი (OkHttp) გამოიყენებს მითითებულ პროქსის, მაგრამ Android WebView კლიენტი დაუბრუნდება ქსელის მეშვეობით პირდაპირ დაკავშირებას.\n\nეს შეიძლება გაამჟღავნოს თქვენი რეალური IP მისამართი და ასევე შეიძლება დააზიანოს გაფართოებები, რომლებიც ვარაუდობენ, რომ WebView და OkHttp იყენებენ ერთსა და იმავე ქსელის პარამეტრებს. (ანუ, Cloudflare-ის უკან მყოფი ზოგიერთი საიტი მოელოს, რომ IP მისამართი ორივე შემთხვევაში დაემთხმება და წინააღმდეგ შემთხვევაში დაბლოკავს თქვენ.)</string>
     <string name="pref_category_reading_mode">კითხვის რეჟიმი</string>
     <string name="pref_category_theme">თემა</string>
     <string name="action_disable">გამორთვა</string>

@@ -278,4 +278,13 @@
     <string name="save_search_delete_message">သင့်သိမ်းဆည်းထားသော ရှာဖွေမေးခွန်းကို ဖျက်လိုကြောင်း သေချာပါသလား: "%1$s"?</string>
     <string name="save_search_invalid">သိမ်းဆည်းထားသော ရှာဖွေမှုမှာ တရားဝင်မဟုတ်ပါ၊ စစ်ထုတ်မှုများ ပြောင်းလဲသွားသည်</string>
     <string name="save_search_invalid_name">တရားဝင်မဟုတ်သော သိမ်းဆည်းထားသော ရှာဖွေမှုအမည်</string>
+    <string name="pref_proxy">ပရောက်စီ</string>
+    <string name="pref_proxy_host">ပရောက်စီ ဟို့စ်</string>
+    <string name="pref_proxy_port">ပရောက်စီ ပို့</string>
+    <string name="pref_proxy_username">ပရောက်စီ အသုံးပြုသူ အမည်</string>
+    <string name="pref_proxy_password">ပရောက်စီ စကားဝှက်</string>
+    <string name="error_proxy_host_blank">ပရောက်စီ ဟို့စ် ကို အလွတ်မထားရ</string>
+    <string name="error_proxy_port_invalid">မမှန်သော ပရောက်စီ ပို့</string>
+    <string name="pref_proxy_socks_partial_support_title">တစိတ်တပိုင်းသာ အထောက်အပံ့ပြု</string>
+    <string name="pref_proxy_socks_partial_support_desc">Android WebView သည် HTTP ပရောက်စီများကိုသာ အထောက်အပံ့ပြုကြောင်း သတိပြုပါ။ SOCKS ပရောက်စီကို ရွေးချယ်ပါက အတွင်းပိုင်း HTTP client (OkHttp) သည် သတ်မှတ်ထားသော ပရောက်စီကို အသုံးပြုမည်ဖြစ်ပြီး Android WebView client သည် ကွန်ရက်မှတဆင့် တိုက်ရိုက် ချိတ်ဆက်ရန် ပြန်လည်ရောက်ရှိမည်။\n\nဤအချက်သည် သင့် IP လိပ်စာ အမှန် ထွက်ပေါ်သွားစေနိုင်ပြီး WebView နှင့် OkHttp တို့သည် ကွန်ရက်ဆက်တင်များ တူညီသည်ဟု ယူဆသော extension များပါ ပျက်စီးစေနိုင်သည်။ (ဆိုလိုသည်မှာ Cloudflare နောက်ရှိ အချို့သော site များသည် IP လိပ်စာနှစ်ခုစလုံး ကိုက်ညီရန် မျှော်လင့်ထားပြီး မဟုတ်ပါက သင့်ကို ပိတ်ဆို့ပါမည်။)</string>
 </resources>

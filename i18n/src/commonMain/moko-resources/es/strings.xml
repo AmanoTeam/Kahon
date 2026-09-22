@@ -440,6 +440,15 @@
     <string name="update_check_eol">Esta versión de Android ya no es compatible</string>
     <string name="clipboard_copy_error">No se pudo copiar al portapapeles</string>
     <string name="pref_dns_over_https">DNS sobre HTTPS (DoH)</string>
+    <string name="pref_proxy">Proxy</string>
+    <string name="pref_proxy_host">Host del proxy</string>
+    <string name="pref_proxy_port">Puerto del proxy</string>
+    <string name="pref_proxy_username">Nombre de usuario del proxy</string>
+    <string name="pref_proxy_password">Contraseña del proxy</string>
+    <string name="error_proxy_host_blank">El host del proxy no puede estar en blanco</string>
+    <string name="error_proxy_port_invalid">Puerto del proxy no válido</string>
+    <string name="pref_proxy_socks_partial_support_title">Solo soporte parcial</string>
+    <string name="pref_proxy_socks_partial_support_desc">Ten en cuenta que Android WebView solo admite proxies HTTP. Si eliges un proxy SOCKS, el cliente HTTP interno (OkHttp) usará el proxy especificado, pero el cliente de Android WebView volverá a conectarse directamente a través de la red.\n\nEsto puede filtrar tu dirección IP real y también puede romper extensiones que asumen que WebView y OkHttp usan la misma configuración de red. (Es decir, algunos sitios detrás de Cloudflare esperan que la dirección IP coincida en ambos casos y te bloquearán de lo contrario.)</string>
     <string name="pref_download_new_categories_details">Los elementos de las categorías excluidas no se descargarán, aunque sí estén en alguna categoría con descargas.</string>
     <string name="pref_category_auto_download">Descarga automática</string>
     <string name="rotation_landscape">En horizontal</string>

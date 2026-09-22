@@ -8,9 +8,14 @@ import eu.kanade.tachiyomi.network.interceptor.CloudflareInterceptor
 import eu.kanade.tachiyomi.network.interceptor.UncaughtExceptionInterceptor
 import eu.kanade.tachiyomi.network.interceptor.UserAgentInterceptor
 import okhttp3.Cache
+import okhttp3.Credentials
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.io.File
+import java.net.Authenticator
+import java.net.InetSocketAddress
+import java.net.PasswordAuthentication
+import java.net.Proxy
 import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
 
@@ -60,6 +65,46 @@ class NetworkHelper(
             PREF_DOH_SHECAN -> builder.dohShecan()
             else -> builder
         }
+
+        val proxyType = preferences.proxyType.get()
+        val proxyHost = preferences.proxyHost.get().trim()
+        val proxyPort = preferences.proxyPort.get().toIntOrNull()
+        if (proxyType != PREF_PROXY_DISABLED && proxyHost.isNotBlank() && proxyPort != null && proxyPort in 1..65535) {
+            val proxy = Proxy(
+                if (proxyType == PREF_PROXY_HTTP) Proxy.Type.HTTP else Proxy.Type.SOCKS,
+                InetSocketAddress(proxyHost, proxyPort),
+            )
+            builder.proxy(proxy)
+
+            val proxyUsername = preferences.proxyUsername.get()
+            val proxyPassword = preferences.proxyPassword.get()
+            if (proxyUsername.isNotBlank()) {
+                if (proxyType == PREF_PROXY_HTTP) {
+                    builder.proxyAuthenticator { _, response ->
+                        if (response.request.header("Proxy-Authorization") != null) {
+                            null
+                        } else {
+                            response.request.newBuilder()
+                                .header("Proxy-Authorization", Credentials.basic(proxyUsername, proxyPassword))
+                                .build()
+                        }
+                    }
+                } else {
+                    Authenticator.setDefault(
+                        object : Authenticator() {
+                            override fun getPasswordAuthentication(): PasswordAuthentication? {
+                                if (requestingPort != proxyPort) return null
+                                val host = requestingHost ?: requestingSite?.hostName
+                                if (host != proxyHost) return null
+                                return PasswordAuthentication(proxyUsername, proxyPassword.toCharArray())
+                            }
+                        },
+                    )
+                }
+            }
+        }
+
+        builder
     }
 
     val client = clientBuilder

@@ -517,6 +517,15 @@
     <string name="pref_verbose_logging_summary">सिस्टम लॉग में वर्बोज़ लॉग प्रिंट करें (ऐप प्रदर्शन को कम करता है)</string>
     <string name="enhanced_tracking_info">ऐसी सेवाएँ जो विशिष्ट स्रोतों के लिए उन्नत सुविधाएँ प्रदान करती हैं। आपकी पुस्तकालय में जोड़े जाने पर आइटम को स्वचालित रूप से ट्रैक किया जाता है।</string>
     <string name="pref_dns_over_https">HTTPS उपर DNS (DoH)</string>
+    <string name="pref_proxy">प्रॉक्सी</string>
+    <string name="pref_proxy_host">प्रॉक्सी होस्ट</string>
+    <string name="pref_proxy_port">प्रॉक्सी पोर्ट</string>
+    <string name="pref_proxy_username">प्रॉक्सी उपयोगकर्ता नाम</string>
+    <string name="pref_proxy_password">प्रॉक्सी पासवर्ड</string>
+    <string name="error_proxy_host_blank">प्रॉक्सी होस्ट खाली नहीं हो सकता</string>
+    <string name="error_proxy_port_invalid">अमान्य प्रॉक्सी पोर्ट</string>
+    <string name="pref_proxy_socks_partial_support_title">केवल आंशिक समर्थन</string>
+    <string name="pref_proxy_socks_partial_support_desc">कृपया ध्यान दें कि Android WebView केवल HTTP प्रॉक्सी का समर्थन करता है। यदि आप SOCKS प्रॉक्सी चुनते हैं, तो आंतरिक HTTP क्लाइंट (OkHttp) निर्दिष्ट प्रॉक्सी का उपयोग करेगा, लेकिन Android WebView क्लाइंट नेटवर्क के माध्यम से सीधे कनेक्ट होने पर वापस आ जाएगा।\n\nयह आपका वास्तविक IP पता लीक कर सकता है और वे एक्सटेंशन भी तोड़ सकता है जो मानते हैं कि WebView और OkHttp समान नेटवर्क सेटिंग्स का उपयोग करते हैं। (अर्थात, Cloudflare के पीछे कुछ साइटें उम्मीद करती हैं कि IP पता दोनों मामलों में मेल खाएगा और अन्यथा आपको ब्लॉक कर देंगी।)</string>
     <string name="pref_verbose_logging">वर्बोज़ लॉगिंग</string>
     <string name="notification_incognito_text">गुप्त मोड अक्षम करें</string>
     <string name="chapter_not_found">अध्याय नहीं मिला</string>

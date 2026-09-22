@@ -291,6 +291,15 @@
     <string name="fourth_to_last">Fjerdesidst læste kapitel</string>
     <string name="rotation_landscape">Liggende</string>
     <string name="requires_app_restart">Kræver genstart af appen for at træde i kraft</string>
+    <string name="pref_proxy">Proxy</string>
+    <string name="pref_proxy_host">Proxyvært</string>
+    <string name="pref_proxy_port">Proxyport</string>
+    <string name="pref_proxy_username">Proxybrugernavn</string>
+    <string name="pref_proxy_password">Proxypassword</string>
+    <string name="error_proxy_host_blank">Proxyværten må ikke være tom</string>
+    <string name="error_proxy_port_invalid">Ugyldig proxyport</string>
+    <string name="pref_proxy_socks_partial_support_title">Kun delvis understøttelse</string>
+    <string name="pref_proxy_socks_partial_support_desc">Bemærk, at Android WebView kun understøtter HTTP-proxyer. Hvis du vælger en SOCKS-proxy, bruger den interne HTTP-klient (OkHttp) den angivne proxy, men Android WebView-klienten falder tilbage til at oprette forbindelse direkte via netværket.\n\nDette kan afsløre din rigtige IP-adresse og kan også ødelægge udvidelser, der antager, at WebView og OkHttp bruger de samme netværksindstillinger. (Dvs. nogle websteder bag Cloudflare forventer, at IP-adressen matcher i begge tilfælde og blokerer dig ellers.)</string>
     <string name="pref_backup_interval">Automatisk sikkerhedskopieringsfrekvens</string>
     <string name="split_tall_images">Opdel høje billeder</string>
     <string name="disabled">Deaktiveret</string>

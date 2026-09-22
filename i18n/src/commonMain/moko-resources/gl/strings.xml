@@ -377,6 +377,15 @@
     <string name="invalid_backup_file">O arquivo da copia de seguridade non é válido:</string>
     <string name="invalid_backup_file_missing_manga">A copia de seguriade non contén ningún elemento da biblioteca.</string>
     <string name="pref_dns_over_https">DNS por HTTPS (DoH)</string>
+    <string name="pref_proxy">Proxy</string>
+    <string name="pref_proxy_host">Host do proxy</string>
+    <string name="pref_proxy_port">Porto do proxy</string>
+    <string name="pref_proxy_username">Nome de usuario do proxy</string>
+    <string name="pref_proxy_password">Contrasinal do proxy</string>
+    <string name="error_proxy_host_blank">O host do proxy non pode estar baleiro</string>
+    <string name="error_proxy_port_invalid">Porto do proxy non válido</string>
+    <string name="pref_proxy_socks_partial_support_title">Só soporte parcial</string>
+    <string name="pref_proxy_socks_partial_support_desc">Ten en conta que Android WebView só admite proxies HTTP. Se escolles un proxy SOCKS, o cliente HTTP interno (OkHttp) usará o proxy especificado, pero o cliente de Android WebView volverá a conectarse directamente a través da rede.\n\nIsto pode filtrar o teu enderezo IP real e tamén pode romper extensións que asumen que WebView e OkHttp usan a mesma configuración de rede. (É dicir, algúns sitios detrás de Cloudflare esperan que o enderezo IP coincida en ambos os casos e bloquearante de non ser así.)</string>
     <string name="update_72hour">Cada 3 días</string>
     <string name="downloaded_only_summary">Filtra tódolos elementos da túa biblioteca</string>
     <string name="snack_add_to_library">Engadir á biblioteca?</string>

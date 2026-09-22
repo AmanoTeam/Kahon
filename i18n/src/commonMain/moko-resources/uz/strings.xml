@@ -353,4 +353,13 @@
     <string name="save_search_delete_message">Saqlangan qidiruv so‘rovingizni o‘chirmoqchi ekaningizga ishonchingiz komilmi: "%1$s"?</string>
     <string name="save_search_invalid">Saqlangan qidiruv noto‘g‘ri, filtrlar o‘zgargan</string>
     <string name="save_search_invalid_name">Noto‘g‘ri saqlangan qidiruv nomi</string>
+    <string name="pref_proxy">Proksi</string>
+    <string name="pref_proxy_host">Proksi xosti</string>
+    <string name="pref_proxy_port">Proksi porti</string>
+    <string name="pref_proxy_username">Proksi foydalanuvchi nomi</string>
+    <string name="pref_proxy_password">Proksi paroli</string>
+    <string name="error_proxy_host_blank">Proksi xosti boʻsh boʻlishi mumkin emas</string>
+    <string name="error_proxy_port_invalid">Notoʻgʻri proksi porti</string>
+    <string name="pref_proxy_socks_partial_support_title">Faqat qisman qoʻllab-quvvatlash</string>
+    <string name="pref_proxy_socks_partial_support_desc">Eʼtibor bering, Android WebView faqat HTTP proksilarni qoʻllab-quvvatlaydi. SOCKS proksisini tanlasangiz, ichki HTTP mijozi (OkHttp) koʻrsatilgan proksidan foydalanadi, biroq Android WebView mijozi tarmoq orqali bevosita ulanishga qaytadi.\n\nBu haqiqiy IP manzilingizni oshkor qilishi mumkin, shuningdek, WebView va OkHttp bir xil tarmoq sozlamalaridan foydalanadi deb hisoblagan kengaytmalarni buzishi ham mumkin. (Yaʼni, Cloudflare ortidagi baʼzi saytlar IP manzil har ikki holatda ham mos kelishini kutadi va aks holda sizni bloklaydi.)</string>
 </resources>

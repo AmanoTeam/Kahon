@@ -446,6 +446,15 @@
     <string name="pref_show_navigation_mode_summary">Ammustra pro pagu cando aberis su leghidore</string>
     <string name="pref_show_navigation_mode">Ammustra sa subrapositzione de sas zonas de tocu</string>
     <string name="pref_dns_over_https">DNS pro mèdiu de HTTPS (DoH)</string>
+    <string name="pref_proxy">Proxy</string>
+    <string name="pref_proxy_host">Host de su proxy</string>
+    <string name="pref_proxy_port">Porta de su proxy</string>
+    <string name="pref_proxy_username">Nòmine utente de su proxy</string>
+    <string name="pref_proxy_password">Crae de su proxy</string>
+    <string name="error_proxy_host_blank">S\'host de su proxy non podet èssere bòidu</string>
+    <string name="error_proxy_port_invalid">Porta de su proxy no vàlida</string>
+    <string name="pref_proxy_socks_partial_support_title">Siat suportu parziale ebbia</string>
+    <string name="pref_proxy_socks_partial_support_desc">Tenet in contu chi Android WebView suportat petzi proxy HTTP. Si seberas unu proxy SOCKS, su cliente HTTP internu (OkHttp) at a impreare su proxy specificadu, ma su cliente de Android WebView at a torrare a si connètere in manera direta tràmite sa retza.\n\nCustu podet iscalare s\'indiritzu IP tuo beru e podet fintzas ruere estensiones chi presumint chi WebView e OkHttp imprèrent sa matessi cunfiguratzione de retza. (Naradu a claru, carchi situ in s\'ispare de Cloudflare isetant chi s\'indiritzu IP coincideat in sos duos casos e, in casu contràriu, t\'ant a blocare.)</string>
     <string name="exclude">Esclude: %s</string>
     <string name="include">Include: %s</string>
     <string name="none">Perunu</string>

@@ -436,6 +436,15 @@
     <string name="label_data">ข้อมูล</string>
     <string name="requires_app_restart">ต้องรีสตาร์ทแอปจึงจะมีผล</string>
     <string name="pref_dns_over_https">DNS ผ่าน HTTPS (DoH)</string>
+    <string name="pref_proxy">พร็อกซี</string>
+    <string name="pref_proxy_host">โฮสต์พร็อกซี</string>
+    <string name="pref_proxy_port">พอร์ตพร็อกซี</string>
+    <string name="pref_proxy_username">ชื่อผู้ใช้พร็อกซี</string>
+    <string name="pref_proxy_password">รหัสผ่านพร็อกซี</string>
+    <string name="error_proxy_host_blank">โฮสต์พร็อกซีต้องไม่เว้นว่าง</string>
+    <string name="error_proxy_port_invalid">พอร์ตพร็อกซีไม่ถูกต้อง</string>
+    <string name="pref_proxy_socks_partial_support_title">รองรับบางส่วนเท่านั้น</string>
+    <string name="pref_proxy_socks_partial_support_desc">โปรดทราบว่า Android WebView รองรับเฉพาะพร็อกซี HTTP เท่านั้น หากคุณเลือกพร็อกซี SOCKS ไคลเอนต์ HTTP ภายใน (OkHttp) จะใช้พร็อกซีที่ระบุ แต่ไคลเอนต์ Android WebView จะกลับไปเชื่อมต่อโดยตรงผ่านเครือข่าย\n\nสิ่งนี้อาจทำให้ที่อยู่ IP จริงของคุณรั่วไหลได้ และอาจทำให้ส่วนขยายที่สันนิษฐานว่า WebView และ OkHttp ใช้การตั้งค่าเครือข่ายเดียวกันเสียหายด้วย (กล่าวคือ บางไซต์ที่อยู่หลัง Cloudflare คาดว่าที่อยู่ IP จะตรงกันในทั้งสองกรณี และจะบล็อกคุณหากไม่เช่นนั้น)</string>
     <string name="label_network">เครือข่าย</string>
     <string name="restoring_backup_canceled">ยกเลิกการคืนค่า</string>
     <string name="restoring_backup_error">การคืนค่าข้อมูลสำรองล้มเหลว</string>

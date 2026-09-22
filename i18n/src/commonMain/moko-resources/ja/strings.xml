@@ -448,6 +448,15 @@
     <string name="pref_show_navigation_mode_summary">ビューアが立ち上がるとしばらく表示します</string>
     <string name="pref_show_navigation_mode">タップ可能なゾーンを表示</string>
     <string name="pref_dns_over_https">DNS over HTTPS (DoH)</string>
+    <string name="pref_proxy">プロキシ</string>
+    <string name="pref_proxy_host">プロキシホスト</string>
+    <string name="pref_proxy_port">プロキシポート</string>
+    <string name="pref_proxy_username">プロキシのユーザー名</string>
+    <string name="pref_proxy_password">プロキシのパスワード</string>
+    <string name="error_proxy_host_blank">プロキシホストは空にできません</string>
+    <string name="error_proxy_port_invalid">無効なプロキシポート</string>
+    <string name="pref_proxy_socks_partial_support_title">部分的なサポートのみ</string>
+    <string name="pref_proxy_socks_partial_support_desc">Android WebView は HTTP プロキシのみをサポートしていることにご注意ください。SOCKS プロキシを選択した場合、内部の HTTP クライアント (OkHttp) は指定されたプロキシを使用しますが、Android WebView クライアントはネットワーク経由の直接接続にフォールバックします。\n\nこれにより実際の IP アドレスが漏洩する可能性があり、また WebView と OkHttp が同じネットワーク設定を使用していると想定する拡張機能が壊れる可能性もあります。(つまり、Cloudflare の背後にある一部のサイトは、どちらの場合も IP アドレスが一致することを期待しており、一致しない場合はブロックされます。)</string>
     <string name="pref_download_new_categories_details">除外対象カテゴリーに含まれる項目は、たとえそれらが対象カテゴリーにも含まれている場合でもダウンロードされません。</string>
     <string name="pref_category_auto_download">自動ダウンロード</string>
     <string name="exclude">下記を除外: %s</string>

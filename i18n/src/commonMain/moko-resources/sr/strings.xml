@@ -389,6 +389,15 @@
     <string name="restore_miui_warning">Резервна копија/враћање можда неће радити исправно ако није омогућена MIUI оптимизација.</string>
     <string name="backup_info">Чувајте резервне копије и на другим местима.</string>
     <string name="pref_dns_over_https">DNS преко HTTPS-а (DoH)</string>
+    <string name="pref_proxy">Прокси</string>
+    <string name="pref_proxy_host">Хост проксија</string>
+    <string name="pref_proxy_port">Порт проксија</string>
+    <string name="pref_proxy_username">Корисничко име проксија</string>
+    <string name="pref_proxy_password">Лозинка проксија</string>
+    <string name="error_proxy_host_blank">Хост проксија не може бити празан</string>
+    <string name="error_proxy_port_invalid">Неисправан порт проксија</string>
+    <string name="pref_proxy_socks_partial_support_title">Само делимична подршка</string>
+    <string name="pref_proxy_socks_partial_support_desc">Имајте на уму да Android WebView подржава само HTTP проксије. Ако изаберете SOCKS прокси, унутрашњи HTTP клијент (OkHttp) користиће наведени прокси, али ће се Android WebView клијент вратити на директно повезивање кроз мрежу.\n\nОво може открити вашу стварну IP адресу и такође може покварити екстензије које претпостављају да WebView и OkHttp користе иста мрежна подешавања. (Тј. неки сајтови иза Cloudflare очекују да се IP адреса подудара у оба случаја и у супротном ће вас блокирати.)</string>
     <string name="pref_tablet_ui_mode">Изглед за таблет</string>
     <string name="requires_app_restart">Захтева поновно покретање апликације</string>
     <string name="pref_dump_crash_logs_summary">Чува евиденцију грешака у датотеку за дељење са програмерима</string>

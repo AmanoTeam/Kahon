@@ -451,6 +451,15 @@
     <string name="channel_new_chapters">अध्यायनवीकरणानि</string>
     <string name="channel_ext_updates">विस्तारनवीकरणानि</string>
     <string name="pref_dns_over_https">HTTPS उपरि DNS (DoH)</string>
+    <string name="pref_proxy">प्रॉक्सी</string>
+    <string name="pref_proxy_host">प्रॉक्सी-होस्ट्</string>
+    <string name="pref_proxy_port">प्रॉक्सी-पोर्ट्</string>
+    <string name="pref_proxy_username">प्रॉक्सी-उपभोक्तृनाम</string>
+    <string name="pref_proxy_password">प्रॉक्सी-सङ्केतशब्दः</string>
+    <string name="error_proxy_host_blank">प्रॉक्सी-होस्ट् रिक्तः भवितुं न शक्नोति</string>
+    <string name="error_proxy_port_invalid">अवैध प्रॉक्सी-पोर्ट्</string>
+    <string name="pref_proxy_socks_partial_support_title">केवलं आंशिकसमर्थनम्</string>
+    <string name="pref_proxy_socks_partial_support_desc">तत्त्वं जानीहि यत् Android WebView केवलं HTTP-प्रॉक्सी अनुमन्यते। यदि त्वं SOCKS-प्रॉक्सी चिनोषि, आन्तरिकः HTTP-ग्राहकः (OkHttp) निर्दिष्टं प्रॉक्सी उपयोजयिष्यति, परन्तु Android WebView-ग्राहकः जालस्य माध्यमेन प्रत्यक्षसम्पर्कं प्रति प्रत्यागमिष्यति।\n\nएतत् तव वास्तविकं IP-सङ्केतसूत्रं प्रकटयेत्, तथा WebView इति OkHttp इति च समानानि जालसंस्थापनानि उपयोजयतः इति अङ्गीकुर्वन्तः विस्ताराः भञ्जितुं शक्नुवन्ति। (यथा — Cloudflare-पृष्ठतः केचन स्थलाः उभयोः सन्दर्भयोः IP-सङ्केतसूत्रं समानं भवेत् इति प्रत्याशन्ति, अन्यथा त्वां निषधिष्यन्ति।)</string>
     <string name="getting_started_guide">प्रारम्भिकमार्गदर्शनम्</string>
     <string name="battery_optimization_setting_activity_not_found">साधनसमायोजनानि उद्घाटयितुं न अशक्नोम्</string>
     <string name="pref_verbose_logging">अतिविस्तीर्णेतिवृत्तलेखनम्</string>
