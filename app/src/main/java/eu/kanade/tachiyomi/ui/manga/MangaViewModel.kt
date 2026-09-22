@@ -43,6 +43,7 @@ import eu.kanade.tachiyomi.data.track.TrackerManager
 import eu.kanade.tachiyomi.source.Source
 import eu.kanade.tachiyomi.ui.reader.setting.ReaderPreferences
 import eu.kanade.tachiyomi.util.chapter.getNextUnread
+import eu.kanade.tachiyomi.util.chapter.removeDuplicates
 import eu.kanade.tachiyomi.util.removeCovers
 import eu.kanade.tachiyomi.util.system.toast
 import kotlinx.coroutines.CancellationException
@@ -217,6 +218,16 @@ class MangaViewModel(
                 }
         }
 
+        viewModelScope.launchIO {
+            readerPreferences.skipDupe.changes()
+                .distinctUntilChanged()
+                .collectLatest { skipDupe ->
+                    updateSuccessState {
+                        it.copy(skipDuplicateChapters = skipDupe)
+                    }
+                }
+        }
+
         observeDownloads()
 
         viewModelScope.launchIO {
@@ -243,6 +254,7 @@ class MangaViewModel(
                     isRefreshingData = needRefreshInfo || needRefreshChapter,
                     dialog = null,
                     hideMissingChapters = libraryPreferences.hideMissingChapters.get(),
+                    skipDuplicateChapters = readerPreferences.skipDupe.get(),
                 )
             }
 
@@ -1219,11 +1231,13 @@ class MangaViewModel(
             val dialog: Dialog? = null,
             val hasPromptedToAddBefore: Boolean = false,
             val hideMissingChapters: Boolean = false,
+            val skipDuplicateChapters: Boolean = false,
             val isEditingMetadata: Boolean = false,
             val metadataDraft: MangaMetadataDraft = MangaMetadataDraft(),
         ) : State {
             val processedChapters by lazy {
                 chapters.applyFilters(manga).toList()
+                    .let { if (skipDuplicateChapters) it.removeDuplicates() else it }
             }
 
             val isAnySelected by lazy {
