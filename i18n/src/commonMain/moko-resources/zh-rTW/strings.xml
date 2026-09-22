@@ -891,15 +891,6 @@
     <string name="pref_filter_upcoming_categories_details">類別同時屬於「排除」及「包含」的作品將不會顯示。</string>
     <string name="ext_uninstall_obsolete">解除安裝無來源</string>
     <string name="ext_uninstall_obsolete_dialog">確定要解除安裝 %1$d 個無來源擴充功能嗎？</string>
-    <string name="pref_proxy">代理伺服器</string>
-    <string name="pref_proxy_host">代理伺服器主機</string>
-    <string name="pref_proxy_port">代理伺服器連接埠</string>
-    <string name="pref_proxy_username">代理伺服器使用者名稱</string>
-    <string name="pref_proxy_password">代理伺服器密碼</string>
-    <string name="error_proxy_host_blank">代理伺服器主機不可為空</string>
-    <string name="error_proxy_port_invalid">無效的代理伺服器連接埠</string>
-    <string name="pref_proxy_socks_partial_support_title">僅部分支援</string>
-    <string name="pref_proxy_socks_partial_support_desc">請注意，Android WebView 僅支援 HTTP 代理伺服器。如果您選擇 SOCKS 代理伺服器，內部 HTTP 用戶端 (OkHttp) 將使用指定的代理伺服器，但 Android WebView 用戶端將回復為直接透過網路連線。\n\n這可能會洩漏您的真實 IP 位址，也可能會破壞假設 WebView 和 OkHttp 使用相同網路設定的擴充功能。（也就是說，Cloudflare 背後的某些網站期望兩種情況下 IP 位址一致，否則會封鎖您。）</string>
     <string name="edit_status_dialog_title">設定狀態</string>
     <string name="edit_status_dialog_message">覆寫此漫畫的狀態</string>
     <string name="saved_searches">已儲存的搜尋</string>

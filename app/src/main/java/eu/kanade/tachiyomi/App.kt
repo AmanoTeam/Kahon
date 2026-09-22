@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.net.ConnectivityManager
 import android.os.Build
 import android.webkit.WebView
 import androidx.core.content.ContextCompat
@@ -21,6 +22,7 @@ import coil3.network.okhttp.OkHttpNetworkFetcherFactory
 import coil3.request.allowRgb565
 import coil3.request.crossfade
 import coil3.util.DebugLogger
+import com.amanoteam.kad.Kad
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.createGraphFactory
 import eu.kanade.domain.base.BasePreferences
@@ -35,12 +37,14 @@ import eu.kanade.tachiyomi.data.coil.MangaCoverKeyer
 import eu.kanade.tachiyomi.data.coil.MangaKeyer
 import eu.kanade.tachiyomi.data.coil.TachiyomiImageDecoder
 import eu.kanade.tachiyomi.data.notification.Notifications
+import eu.kanade.tachiyomi.network.KAD_PROXY_HOST
+import eu.kanade.tachiyomi.network.KadProxy
 import eu.kanade.tachiyomi.network.NetworkHelper
 import eu.kanade.tachiyomi.network.NetworkPreferences
+import eu.kanade.tachiyomi.network.kadDohUrl
 import eu.kanade.tachiyomi.ui.base.delegate.SecureActivityDelegate
 import eu.kanade.tachiyomi.util.system.DeviceUtil
 import eu.kanade.tachiyomi.util.system.GLUtil
-import tachiyomi.core.common.util.system.ImageUtil
 import eu.kanade.tachiyomi.util.system.WebViewUtil
 import eu.kanade.tachiyomi.util.system.animatorDurationScale
 import eu.kanade.tachiyomi.util.system.cancelNotification
@@ -61,6 +65,7 @@ import org.conscrypt.Conscrypt
 import tachiyomi.core.common.i18n.stringResource
 import tachiyomi.core.common.preference.Preference
 import tachiyomi.core.common.preference.PreferenceStore
+import tachiyomi.core.common.util.system.ImageUtil
 import tachiyomi.core.common.util.system.logcat
 import tachiyomi.domain.source.service.SourceManager
 import tachiyomi.i18n.MR
@@ -68,6 +73,7 @@ import tachiyomi.presentation.widget.WidgetManager
 import uy.kohesive.injekt.Injekt
 import uy.kohesive.injekt.api.InjektScope
 import java.security.Security
+import kotlin.concurrent.thread
 
 class App : Application(), DefaultLifecycleObserver, SingletonImageLoader.Factory, GraphProvider<AppGraph> {
 
@@ -172,6 +178,31 @@ class App : Application(), DefaultLifecycleObserver, SingletonImageLoader.Factor
             }
             LogcatLogger.install()
             LogcatLogger.loggers += AndroidLogcatLogger(minLogPriority)
+        }
+
+        val spooferTarget = networkPreferences.fingerprintSpoofer.get()
+
+        if (spooferTarget.isNotEmpty()) {
+            thread(name = "Kad", isDaemon = true) {
+                val connectivityManager = getSystemService(ConnectivityManager::class.java)
+                val systemProxy = connectivityManager.defaultProxy
+                    ?.takeIf { !it.host.isNullOrBlank() && it.port != 0 }
+
+                val arguments = buildList {
+                    add("--host=$KAD_PROXY_HOST")
+                    add("--port=${KadProxy.port}")
+                    add("--target=$spooferTarget")
+                    add("--loglevel=quiet")
+
+                    if (systemProxy != null) {
+                        add("--proxy=http://${systemProxy.host}:${systemProxy.port}")
+                    }
+
+                    kadDohUrl(networkPreferences.dohProvider.get())?.let { add("--doh-url=$it") }
+                }.toTypedArray()
+
+                Kad.kadMain(arguments)
+            }
         }
 
         initializeMigrator()

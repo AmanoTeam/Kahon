@@ -2,7 +2,9 @@ package eu.kanade.tachiyomi.network.interceptor
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.net.http.SslError
 import android.webkit.JavascriptInterface
+import android.webkit.SslErrorHandler
 import android.webkit.WebResourceRequest
 import android.webkit.WebResourceResponse
 import android.webkit.WebView
@@ -26,6 +28,7 @@ class CloudflareInterceptor(
     private val context: Context,
     private val cookieManager: AndroidCookieJar,
     defaultUserAgentProvider: () -> String,
+    private val ignoreSslErrors: Boolean,
 ) : WebViewInterceptor(context, defaultUserAgentProvider) {
 
     private val executor = ContextCompat.getMainExecutor(context)
@@ -91,6 +94,18 @@ class CloudflareInterceptor(
             )
 
             webview.webViewClient = object : WebViewClient() {
+                override fun onReceivedSslError(
+                    view: WebView,
+                    handler: SslErrorHandler,
+                    error: SslError,
+                ) {
+                    if (ignoreSslErrors) {
+                        handler.proceed()
+                    } else {
+                        super.onReceivedSslError(view, handler, error)
+                    }
+                }
+
                 override fun onPageFinished(view: WebView, url: String) {
                     fun isCloudFlareBypassed(): Boolean {
                         return cookieManager.get(origRequestUrl.toHttpUrl())

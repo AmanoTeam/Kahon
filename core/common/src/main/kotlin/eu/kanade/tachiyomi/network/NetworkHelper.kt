@@ -11,6 +11,12 @@ import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.io.File
+import java.net.InetSocketAddress
+import java.net.Proxy
+import java.security.SecureRandom
+import java.security.cert.X509Certificate
+import javax.net.ssl.SSLContext
+import javax.net.ssl.X509TrustManager
 import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
 
@@ -60,11 +66,35 @@ class NetworkHelper(
             PREF_DOH_SHECAN -> builder.dohShecan()
             else -> builder
         }
+
+        if (preferences.fingerprintSpoofer.get().isNotEmpty()) {
+            builder.proxy(
+                Proxy(Proxy.Type.HTTP, InetSocketAddress(KAD_PROXY_HOST, KadProxy.port)),
+            )
+
+            val trustManager = object : X509TrustManager {
+                override fun checkClientTrusted(chain: Array<X509Certificate>, authType: String) {}
+                override fun checkServerTrusted(chain: Array<X509Certificate>, authType: String) {}
+                override fun getAcceptedIssuers(): Array<X509Certificate> = arrayOf()
+            }
+            val sslContext = SSLContext.getInstance("SSL").apply {
+                init(null, arrayOf(trustManager), SecureRandom())
+            }
+            builder.sslSocketFactory(sslContext.socketFactory, trustManager)
+            builder.hostnameVerifier { _, _ -> true }
+        }
+
+        builder
     }
 
     val client = clientBuilder
         .addInterceptor(
-            CloudflareInterceptor(context, cookieJar, ::defaultUserAgentProvider),
+            CloudflareInterceptor(
+                context = context,
+                cookieManager = cookieJar,
+                defaultUserAgentProvider = ::defaultUserAgentProvider,
+                ignoreSslErrors = preferences.fingerprintSpoofer.get().isNotEmpty(),
+            ),
         )
         .build()
 
