@@ -36,6 +36,7 @@ dependencies {
     api(libs.apollo)
 
     implementation(libs.image.decoder)
+    implementation(libs.image.decoder2)
 
     implementation(libs.unifile)
     implementation(libs.archive)
