@@ -2,6 +2,8 @@ package tachiyomi.data
 
 import android.app.ActivityManager
 import android.content.Context
+import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteException
 import androidx.core.content.getSystemService
 import androidx.sqlite.SQLiteConnection
 import androidx.sqlite.SQLiteDriver
@@ -32,6 +34,7 @@ object DatabaseBindings {
     @Provides
     @SingleIn(AppScope::class)
     fun providesSqlDriver(context: Context): SqlDriver {
+        repairStaleSchemaVersion(context)
         val isWal = context.getSystemService<ActivityManager>()?.isLowRamDevice ?: true
         return AndroidxSqliteDriver(
             connectionFactory = object : AndroidxSqliteConnectionFactory {
@@ -70,5 +73,41 @@ object DatabaseBindings {
                 remote_memoAdapter = MemoColumnAdapter,
             ),
         )
+    }
+
+    private fun repairStaleSchemaVersion(context: Context) {
+        val dbFile = context.getDatabasePath("tachiyomi.db")
+        if (!dbFile.exists() || dbFile.length() == 0L) return
+
+        val db = try {
+            SQLiteDatabase.openDatabase(dbFile.path, null, SQLiteDatabase.OPEN_READWRITE)
+        } catch (_: SQLiteException) {
+            return
+        }
+
+        try {
+            val version = db.rawQuery("PRAGMA user_version", null).use { cursor ->
+                if (cursor.moveToFirst()) cursor.getLong(0) else return
+            }
+
+            if (version >= Database.Schema.version && !hasTable(db, "source")) {
+                val targetVersion = if (hasColumn(db, "mangas", "favorite_at")) 17L else 15L
+                db.execSQL("PRAGMA user_version = $targetVersion")
+            }
+        } finally {
+            db.close()
+        }
+    }
+
+    private fun hasTable(db: SQLiteDatabase, name: String): Boolean {
+        return db
+            .rawQuery("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?", arrayOf(name))
+            .use { it.moveToFirst() }
+    }
+
+    private fun hasColumn(db: SQLiteDatabase, table: String, column: String): Boolean {
+        return db
+            .rawQuery("SELECT 1 FROM pragma_table_info(?) WHERE name = ?", arrayOf(table, column))
+            .use { it.moveToFirst() }
     }
 }
