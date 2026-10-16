@@ -64,6 +64,7 @@ import eu.kanade.presentation.components.AppStateBanners
 import eu.kanade.presentation.components.DownloadedOnlyBannerBackgroundColor
 import eu.kanade.presentation.components.IncognitoModeBannerBackgroundColor
 import eu.kanade.presentation.components.IndexingBannerBackgroundColor
+import eu.kanade.presentation.manga.components.PinchZoomOverlayHost
 import eu.kanade.presentation.more.AppMigratingScreen
 import eu.kanade.presentation.more.settings.screen.browse.ExtensionStoreDeepLinkEvent
 import eu.kanade.presentation.more.settings.screen.openSettings
@@ -228,112 +229,114 @@ class MainActivity : BaseActivity() {
                 )
             }
 
-            val navigator = rememberNavigator(HomeRoute)
-            val twoPaneStrategy = rememberTwoPaneSettingsSceneStrategy<NavKey>()
-            val overlaySheetSceneStrategy = rememberOverlaySheetSceneStrategy<NavKey>()
-            val resultEventBus = rememberResultEventBus()
-            val resultEventBusNavEntryDecorator = rememberResultEventBusNavEntryDecorator<NavKey>(
-                resultEventBus = resultEventBus,
-            )
-
-            CompositionLocalProvider(
-                LocalNavigator provides navigator,
-                LocalAssistContentManager provides assistContentManager,
-            ) {
-                LaunchedEffect(navigator) {
-                    this@MainActivity.navigator = navigator
-
-                    if (isLaunch) {
-                        // Set start screen
-                        handleIntentAction(intent, navigator, resultEventBus)
-
-                        // Reset Incognito Mode on relaunch
-                        preferences.incognitoMode.set(false)
-                    }
-                }
-
-                val currentRoute = navigator.current
-                LaunchedEffect(currentRoute) {
-                    (currentRoute as? BrowseSourceRoute)?.sourceId
-                        .let(getIncognitoState::subscribe)
-                        .collectLatest { incognito = it }
-                }
-
-                val scaffoldInsets = WindowInsets.navigationBars.only(WindowInsetsSides.Horizontal)
-                Scaffold(
-                    topBar = {
-                        AppStateBanners(
-                            downloadedOnlyMode = downloadOnly,
-                            incognitoMode = incognito,
-                            indexing = indexing,
-                            modifier = Modifier.windowInsetsPadding(scaffoldInsets),
-                        )
-                    },
-                    contentWindowInsets = scaffoldInsets,
-                ) { contentPadding ->
-                    // Consume insets already used by app state banners
-                    Box {
-                        val slideDistance = rememberSlideDistance()
-                        NavigatorDisplay(
-                            navigator = navigator,
-                            sceneStrategies = listOf(twoPaneStrategy, overlaySheetSceneStrategy),
-                            transitionSpec = { materialSharedAxisX(forward = true, slideDistance = slideDistance) },
-                            popTransitionSpec = { materialSharedAxisX(forward = false, slideDistance = slideDistance) },
-                            predictivePopTransitionSpec = {
-                                materialSharedAxisX(forward = false, slideDistance = slideDistance)
-                            },
-                            entryDecorators = listOf(
-                                rememberSaveableStateHolderNavEntryDecorator(),
-                                rememberViewModelStoreNavEntryDecorator(),
-                                resultEventBusNavEntryDecorator,
-                            ),
-                            entryProvider = entryProvider {
-                                appEntries()
-                            },
-                            modifier = Modifier
-                                .padding(contentPadding)
-                                .consumeWindowInsets(contentPadding),
-                        )
-
-                        // Draw navigation bar scrim when needed
-                        if (remember { isNavigationBarNeedsScrim() }) {
-                            Spacer(
-                                modifier = Modifier
-                                    .align(Alignment.BottomCenter)
-                                    .fillMaxWidth()
-                                    .windowInsetsBottomHeight(WindowInsets.navigationBars)
-                                    .alpha(0.8f)
-                                    .background(MaterialTheme.colorScheme.surfaceContainer),
-                            )
-                        }
-                    }
-                }
-
-                // Pop source-related routes when incognito mode is turned off
-                LaunchedEffect(Unit) {
-                    preferences.incognitoMode.changes()
-                        .drop(1)
-                        .filter { !it }
-                        .onEach {
-                            val currentRoute = navigator.current
-                            if (currentRoute is BrowseSourceRoute ||
-                                (currentRoute is MangaRoute && currentRoute.fromSource)
-                            ) {
-                                navigator.popToRoot()
-                            }
-                        }
-                        .launchIn(this)
-                }
-
-                HandleOnNewIntent(
-                    context = context,
-                    navigator = navigator,
+            PinchZoomOverlayHost {
+                val navigator = rememberNavigator(HomeRoute)
+                val twoPaneStrategy = rememberTwoPaneSettingsSceneStrategy<NavKey>()
+                val overlaySheetSceneStrategy = rememberOverlaySheetSceneStrategy<NavKey>()
+                val resultEventBus = rememberResultEventBus()
+                val resultEventBusNavEntryDecorator = rememberResultEventBusNavEntryDecorator<NavKey>(
                     resultEventBus = resultEventBus,
                 )
 
-                if (!isBenchmarkBuildType) {
-                    if (isLaunch) CheckForUpdates()
-                    ShowOnboarding()
+                CompositionLocalProvider(
+                    LocalNavigator provides navigator,
+                    LocalAssistContentManager provides assistContentManager,
+                ) {
+                    LaunchedEffect(navigator) {
+                        this@MainActivity.navigator = navigator
+
+                        if (isLaunch) {
+                            // Set start screen
+                            handleIntentAction(intent, navigator, resultEventBus)
+
+                            // Reset Incognito Mode on relaunch
+                            preferences.incognitoMode.set(false)
+                        }
+                    }
+
+                    val currentRoute = navigator.current
+                    LaunchedEffect(currentRoute) {
+                        (currentRoute as? BrowseSourceRoute)?.sourceId
+                            .let(getIncognitoState::subscribe)
+                            .collectLatest { incognito = it }
+                    }
+
+                    val scaffoldInsets = WindowInsets.navigationBars.only(WindowInsetsSides.Horizontal)
+                    Scaffold(
+                        topBar = {
+                            AppStateBanners(
+                                downloadedOnlyMode = downloadOnly,
+                                incognitoMode = incognito,
+                                indexing = indexing,
+                                modifier = Modifier.windowInsetsPadding(scaffoldInsets),
+                            )
+                        },
+                        contentWindowInsets = scaffoldInsets,
+                    ) { contentPadding ->
+                        // Consume insets already used by app state banners
+                        Box {
+                            val slideDistance = rememberSlideDistance()
+                            NavigatorDisplay(
+                                navigator = navigator,
+                                sceneStrategies = listOf(twoPaneStrategy, overlaySheetSceneStrategy),
+                                transitionSpec = { materialSharedAxisX(forward = true, slideDistance = slideDistance) },
+                                popTransitionSpec = { materialSharedAxisX(forward = false, slideDistance = slideDistance) },
+                                predictivePopTransitionSpec = {
+                                    materialSharedAxisX(forward = false, slideDistance = slideDistance)
+                                },
+                                entryDecorators = listOf(
+                                    rememberSaveableStateHolderNavEntryDecorator(),
+                                    rememberViewModelStoreNavEntryDecorator(),
+                                    resultEventBusNavEntryDecorator,
+                                ),
+                                entryProvider = entryProvider {
+                                    appEntries()
+                                },
+                                modifier = Modifier
+                                    .padding(contentPadding)
+                                    .consumeWindowInsets(contentPadding),
+                            )
+
+                            // Draw navigation bar scrim when needed
+                            if (remember { isNavigationBarNeedsScrim() }) {
+                                Spacer(
+                                    modifier = Modifier
+                                        .align(Alignment.BottomCenter)
+                                        .fillMaxWidth()
+                                        .windowInsetsBottomHeight(WindowInsets.navigationBars)
+                                        .alpha(0.8f)
+                                        .background(MaterialTheme.colorScheme.surfaceContainer),
+                                )
+                            }
+                        }
+                    }
+
+                    // Pop source-related routes when incognito mode is turned off
+                    LaunchedEffect(Unit) {
+                        preferences.incognitoMode.changes()
+                            .drop(1)
+                            .filter { !it }
+                            .onEach {
+                                val currentRoute = navigator.current
+                                if (currentRoute is BrowseSourceRoute ||
+                                    (currentRoute is MangaRoute && currentRoute.fromSource)
+                                ) {
+                                    navigator.popToRoot()
+                                }
+                            }
+                            .launchIn(this)
+                    }
+
+                    HandleOnNewIntent(
+                        context = context,
+                        navigator = navigator,
+                        resultEventBus = resultEventBus,
+                    )
+
+                    if (!isBenchmarkBuildType) {
+                        if (isLaunch) CheckForUpdates()
+                        ShowOnboarding()
+                    }
                 }
             }
         }
