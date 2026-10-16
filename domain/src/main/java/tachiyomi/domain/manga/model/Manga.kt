@@ -38,6 +38,7 @@ data class Manga(
     val initialized: Boolean,
     val notes: String,
     val memo: JsonObject,
+    val overrideMetadata: Long,
 ) : JavaSerializable {
 
     val favorite: Boolean
@@ -82,6 +83,12 @@ data class Manga(
     companion object {
         // Generic filter that does not filter anything
         const val SHOW_ALL = 0x00000000L
+
+        const val OVERRIDE_TITLE = 0x00000001L
+        const val OVERRIDE_AUTHOR = 0x00000002L
+        const val OVERRIDE_ARTIST = 0x00000004L
+        const val OVERRIDE_DESCRIPTION = 0x00000008L
+        const val OVERRIDE_STATUS = 0x00000010L
 
         const val CHAPTER_SORT_DESC = 0x00000000L
         const val CHAPTER_SORT_ASC = 0x00000001L
@@ -136,6 +143,7 @@ data class Manga(
             initialized = false,
             notes = "",
             memo = JsonObject.EMPTY,
+            overrideMetadata = 0L,
         )
     }
 
