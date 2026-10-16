@@ -97,9 +97,20 @@ class UpdateMangaFromRemote(
             ""
         }
 
+        val overrideBits = localManga.overrideMetadata
+        val titleOverridden = overrideBits and Manga.OVERRIDE_TITLE != 0L
+        val authorOverridden = overrideBits and Manga.OVERRIDE_AUTHOR != 0L
+        val artistOverridden = overrideBits and Manga.OVERRIDE_ARTIST != 0L
+        val descriptionOverridden = overrideBits and Manga.OVERRIDE_DESCRIPTION != 0L
+        val statusOverridden = overrideBits and Manga.OVERRIDE_STATUS != 0L
+
         // if the manga isn't a favorite (or 'update titles' preference is enabled), set its title from source and update in db
         val title =
-            if (remoteTitle.isNotEmpty() && (!localManga.favorite || libraryPreferences.updateMangaTitles.get())) {
+            if (
+                !titleOverridden &&
+                remoteTitle.isNotEmpty() &&
+                (!localManga.favorite || libraryPreferences.updateMangaTitles.get())
+            ) {
                 remoteTitle
             } else {
                 null
@@ -127,15 +138,16 @@ class UpdateMangaFromRemote(
                 id = localManga.id,
                 title = title,
                 coverLastModified = coverLastModified,
-                author = remoteManga.author,
-                artist = remoteManga.artist,
-                description = remoteManga.description,
+                author = remoteManga.author.takeUnless { authorOverridden },
+                artist = remoteManga.artist.takeUnless { artistOverridden },
+                description = remoteManga.description.takeUnless { descriptionOverridden },
                 genre = remoteManga.getGenres(),
                 thumbnailUrl = thumbnailUrl,
-                status = remoteManga.status.toLong(),
+                status = remoteManga.status.toLong().takeUnless { statusOverridden },
                 updateStrategy = remoteManga.update_strategy,
                 initialized = true,
                 memo = remoteManga.memo,
+                overrideMetadata = overrideBits,
             ),
         )
         if (success && title != null) {
