@@ -6,8 +6,6 @@ import mihon.gradle.getLatestCommitCount
 import mihon.gradle.getLatestCommitSha
 import mihon.gradle.getLatestCommitTime
 import mihon.gradle.tasks.ReplaceShortcutsPlaceholderTask
-import java.io.FileInputStream
-import java.util.Properties
 
 plugins {
     alias(mihonx.plugins.android.application)
@@ -21,7 +19,7 @@ plugins {
     alias(libs.plugins.apollo)
 }
 
-val keystorePropertiesFile = layout.settingsDirectory.file("keystore.properties").asFile
+val supportedAbis = setOf("armeabi-v7a", "arm64-v8a")
 
 android {
     namespace = "eu.kanade.tachiyomi"
@@ -35,27 +33,9 @@ android {
         buildConfigField("boolean", "UPDATER_ENABLED", "${Config.enableUpdater}")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
 
-    if (System.getenv("MIHON_GITHUB_RELEASE").toBoolean()) {
-        signingConfigs {
-            named("debug") {
-                storeFile = file(System.getenv("storeFile"))
-                storePassword = System.getenv("storePassword")
-                keyAlias = System.getenv("keyAlias")
-                keyPassword = System.getenv("keyPassword")
-            }
-        }
-    } else if (keystorePropertiesFile.exists()) {
-        val keystoreProperties = FileInputStream(keystorePropertiesFile).use { Properties().apply { load(it) } }
-
-        signingConfigs {
-            named("debug") {
-                storeFile = file(keystoreProperties.getProperty("storeFile"))
-                storePassword = keystoreProperties.getProperty("storePassword")
-                keyAlias = keystoreProperties.getProperty("keyAlias")
-                keyPassword = keystoreProperties.getProperty("keyPassword")
-            }
+        ndk {
+            abiFilters += supportedAbis
         }
     }
 
@@ -68,51 +48,11 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
 
-            signingConfig = debug.signingConfig
-
             isProfileable = true
 
             proguardFiles("proguard-android-optimize.txt", "proguard-rules.pro")
         }
 
-        val commonMatchingFallbacks = listOf(release.name)
-
-        create("foss") {
-            initWith(release)
-
-            applicationIdSuffix = ".foss"
-
-            matchingFallbacks.addAll(commonMatchingFallbacks)
-        }
-        create("nightly") {
-            initWith(release)
-
-            applicationIdSuffix = ".debug"
-
-            matchingFallbacks.addAll(commonMatchingFallbacks)
-        }
-        create("benchmark") {
-            initWith(release)
-
-            versionNameSuffix = "-benchmark"
-            applicationIdSuffix = ".benchmark"
-
-            matchingFallbacks.addAll(commonMatchingFallbacks)
-        }
-    }
-
-    sourceSets {
-        getByName("nightly").res.directories.add("src/debug/res")
-        getByName("benchmark").res.directories.add("src/debug/res")
-    }
-
-    splits {
-        abi {
-            isEnable = true
-            isUniversalApk = true
-            reset()
-            include("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
-        }
     }
 
     packaging {
