@@ -115,6 +115,10 @@ class ReaderPreferences(
 
     val webtoonDisableZoomOut: Preference<Boolean> = preferenceStore.getBoolean("webtoon_disable_zoom_out", false)
 
+    val autoscrollInterval: Preference<Float> = preferenceStore.getFloat("autoscroll_interval", 3f)
+
+    val smoothAutoScroll: Preference<Boolean> = preferenceStore.getBoolean("smooth_autoscroll", true)
+
     // endregion
 
     // region Split two-page spread

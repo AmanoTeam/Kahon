@@ -65,10 +65,12 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
@@ -318,6 +320,22 @@ class ReaderViewModel(
         if (hasValidArgs) {
             viewModelScope.launch { init() }
         }
+
+        state.mapLatest { it.autoscrollFreq }
+            .distinctUntilChanged()
+            .drop(1)
+            .onEach { text ->
+                val parsed = text.toDoubleOrNull()
+
+                if (parsed == null || parsed <= 0 || parsed > 9999) {
+                    readerPreferences.autoscrollInterval.set(-1f)
+                    mutableState.update { it.copy(isAutoScrollEnabled = false) }
+                } else {
+                    readerPreferences.autoscrollInterval.set(parsed.toFloat())
+                    mutableState.update { it.copy(isAutoScrollEnabled = true) }
+                }
+            }
+            .launchIn(viewModelScope)
     }
 
     override fun onCleared() {
@@ -350,7 +368,15 @@ class ReaderViewModel(
                 val manga = getManga.await(mangaId) ?: error("Requested manga of id $mangaId not found")
                 val source = sourceManager.getOrStub(manga.source)
                 incognitoMode = getIncognitoState.await(manga.source)
-                mutableState.update { it.copy(manga = manga, source = source) }
+                val autoscrollInterval = readerPreferences.autoscrollInterval.get()
+                mutableState.update {
+                    it.copy(
+                        manga = manga,
+                        source = source,
+                        autoscrollFreq = if (autoscrollInterval == -1f) "" else autoscrollInterval.toString(),
+                        isAutoScrollEnabled = autoscrollInterval != -1f,
+                    )
+                }
                 if (chapterId == -1L) chapterId = initialChapterId
 
                 loader = ChapterLoader(
@@ -936,6 +962,18 @@ class ReaderViewModel(
         mutableState.update { it.copy(dialog = Dialog.PageActions(page)) }
     }
 
+    fun openAutoScrollHelpDialog() {
+        mutableState.update { it.copy(dialog = Dialog.AutoScrollHelp) }
+    }
+
+    fun toggleAutoScroll(enabled: Boolean) {
+        mutableState.update { it.copy(autoScroll = enabled) }
+    }
+
+    fun setAutoScrollFrequency(frequency: String) {
+        mutableState.update { it.copy(autoscrollFreq = frequency) }
+    }
+
     fun openSettingsDialog() {
         mutableState.update { it.copy(dialog = Dialog.Settings) }
     }
@@ -1118,6 +1156,9 @@ class ReaderViewModel(
         val dialog: Dialog? = null,
         val menuVisible: Boolean = false,
         @IntRange(from = -100, to = 100) val brightnessOverlayValue: Int = 0,
+        val autoScroll: Boolean = false,
+        val isAutoScrollEnabled: Boolean = false,
+        val autoscrollFreq: String = "",
     ) {
         val currentChapter: ReaderChapter?
             get() = viewerChapters?.currChapter
@@ -1131,6 +1172,7 @@ class ReaderViewModel(
         data object Settings : Dialog
         data object ReadingModeSelect : Dialog
         data object OrientationModeSelect : Dialog
+        data object AutoScrollHelp : Dialog
         data class PageActions(val page: ReaderPage) : Dialog
     }
 
