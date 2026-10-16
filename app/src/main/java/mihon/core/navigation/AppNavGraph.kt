@@ -45,7 +45,6 @@ import eu.kanade.tachiyomi.ui.stats.StatsScreen
 import eu.kanade.tachiyomi.ui.webview.WebViewScreen
 import mihon.feature.migration.config.MigrationConfigScreen
 import mihon.feature.migration.list.MigrationListScreen
-import mihon.feature.support.SupportUsScreen
 import mihon.feature.upcoming.UpcomingScreen
 
 fun EntryProviderScope<NavKey>.appEntries() {
@@ -143,9 +142,6 @@ fun EntryProviderScope<NavKey>.appEntries() {
     }
     entry<StatsRoute> {
         StatsScreen()
-    }
-    entry<SupportUsRoute>(metadata = TwoPaneSettingsScene.fullScreen()) {
-        SupportUsScreen()
     }
 
     entry<AboutRoute> {

@@ -104,9 +104,6 @@ data object OnboardingRoute : NavKey
 data object StatsRoute : NavKey
 
 @Serializable
-data object SupportUsRoute : NavKey
-
-@Serializable
 data object AboutRoute : NavKey
 
 @Serializable
