@@ -2,8 +2,10 @@ package eu.kanade.tachiyomi.network.interceptor
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.net.http.SslError
 import android.webkit.JavascriptInterface
 import android.webkit.RenderProcessGoneDetail
+import android.webkit.SslErrorHandler
 import android.webkit.WebResourceRequest
 import android.webkit.WebResourceResponse
 import android.webkit.WebView
@@ -38,6 +40,7 @@ class CloudflareInterceptor(
     private val cookieManager: AndroidCookieJar,
     scope: CoroutineScope,
     defaultUserAgentProvider: () -> String,
+    private val fingerprintSpooferActive: Boolean,
 ) : WebViewInterceptor(context, scope, defaultUserAgentProvider) {
 
     private val executor = ContextCompat.getMainExecutor(context)
@@ -104,6 +107,7 @@ class CloudflareInterceptor(
         try {
             response.close()
             cookieManager.remove(request.url, COOKIE_NAMES, 0)
+            if (fingerprintSpooferActive) throw CloudflareBypassException()
             resolveWithWebView(request, clearance)
         }
         // Because OkHttp's enqueue only handles IOExceptions, wrap the exception so that
@@ -182,6 +186,18 @@ class CloudflareInterceptor(
             }
 
             webview.webViewClient = object : WebViewClient() {
+                override fun onReceivedSslError(
+                    view: WebView,
+                    handler: SslErrorHandler,
+                    error: SslError,
+                ) {
+                    if (fingerprintSpooferActive) {
+                        handler.proceed()
+                    } else {
+                        super.onReceivedSslError(view, handler, error)
+                    }
+                }
+
                 override fun onPageFinished(view: WebView, url: String) {
                     if (!challengeFailed && isCleared(originalRequest.url, originalClearance)) {
                         cloudflareBypassed = true
