@@ -56,6 +56,11 @@ object SettingsReaderScreen : SearchableSettings {
                 subtitle = stringResource(MR.strings.pref_show_navigation_mode_summary),
             ),
             Preference.PreferenceItem.SwitchPreference(
+                preference = readerPref.showAutoscrollToggle,
+                title = stringResource(MR.strings.pref_show_autoscroll_toggle),
+                subtitle = stringResource(MR.strings.pref_show_autoscroll_toggle_summary),
+            ),
+            Preference.PreferenceItem.SwitchPreference(
                 preference = readerPref.pageTransitions,
                 title = stringResource(MR.strings.pref_page_transitions),
             ),
