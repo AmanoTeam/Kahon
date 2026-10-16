@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.net.ConnectivityManager
 import android.os.Build
 import android.webkit.WebView
 import androidx.core.content.ContextCompat
@@ -21,6 +22,7 @@ import coil3.network.okhttp.OkHttpNetworkFetcherFactory
 import coil3.request.allowRgb565
 import coil3.request.crossfade
 import coil3.util.DebugLogger
+import com.amanoteam.kad.Kad
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.createGraphFactory
 import eu.kanade.domain.base.BasePreferences
@@ -40,8 +42,11 @@ import eu.kanade.tachiyomi.data.coil.MangaCoverKeyer
 import eu.kanade.tachiyomi.data.coil.MangaKeyer
 import eu.kanade.tachiyomi.data.notification.Notifications
 import eu.kanade.tachiyomi.extension.ExtensionManager
+import eu.kanade.tachiyomi.network.KAD_PROXY_HOST
+import eu.kanade.tachiyomi.network.KadProxy
 import eu.kanade.tachiyomi.network.NetworkHelper
 import eu.kanade.tachiyomi.network.NetworkPreferences
+import eu.kanade.tachiyomi.network.kadDohUrl
 import eu.kanade.tachiyomi.ui.base.delegate.SecureActivityDelegate
 import eu.kanade.tachiyomi.util.system.DeviceUtil
 import eu.kanade.tachiyomi.util.system.WebViewUtil
@@ -181,6 +186,54 @@ class App : Application(), DefaultLifecycleObserver, SingletonImageLoader.Factor
             }
             LogcatLogger.install()
             LogcatLogger.loggers += AndroidLogcatLogger(minLogPriority)
+        }
+
+        if (networkPreferences.fingerprintSpoofer.get() && WebViewUtil.supportsFingerprintSpoofer()) {
+            thread(name = "Kad", isDaemon = true) {
+                val connectivityManager = getSystemService(ConnectivityManager::class.java)
+                val systemProxy = connectivityManager.defaultProxy
+                    ?.takeIf { !it.host.isNullOrBlank() && it.port != 0 }
+
+                val webViewMajorVersion = WebViewUtil.getMajorVersion()
+
+                val arguments = buildList {
+                    add("--host=$KAD_PROXY_HOST")
+                    add("--port=${KadProxy.port}")
+
+                    if (webViewMajorVersion != null) {
+                        add("--target=chrome$webViewMajorVersion")
+                        add("--platform=android")
+                    }
+
+                    add("--cacert=${Kad.caBundle(this@App)}")
+                    add(
+                        if (networkPreferences.verboseLogging.get()) {
+                            "--loglevel=verbose"
+                        } else {
+                            "--loglevel=quiet"
+                        },
+                    )
+
+                    if (systemProxy != null) {
+                        add("--proxy=http://${systemProxy.host}:${systemProxy.port}")
+                    }
+
+                    connectivityManager.getLinkProperties(connectivityManager.activeNetwork)
+                        ?.dnsServers
+                        ?.mapNotNull { dns -> dns.hostAddress?.let { if (it.contains(':')) "[$it]" else it } }
+                        ?.takeIf { it.isNotEmpty() }
+                        ?.joinToString(",")
+                        ?.let { add("--dns-servers=$it") }
+
+                    kadDohUrl(networkPreferences.dohProvider.get())?.let { add("--doh-url=$it") }
+
+                    add("--retry=5")
+                }.toTypedArray()
+
+                logcat { "Kad args: ${arguments.joinToString(" ")}" }
+
+                Kad.kadMain(arguments)
+            }
         }
 
         initializeMigrator()

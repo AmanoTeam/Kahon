@@ -69,6 +69,13 @@ private fun SwitchPreferenceWidgetPreview() {
                     checked = false,
                     onCheckedChanged = {},
                 )
+                SwitchPreferenceWidget(
+                    title = "Disabled text preference",
+                    subtitle = "Unsupported WebView version",
+                    checked = false,
+                    enabled = false,
+                    onCheckedChanged = {},
+                )
             }
         }
     }
