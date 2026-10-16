@@ -408,6 +408,8 @@
 
       <!-- Reader section -->
     <string name="pref_fullscreen">Fullscreen</string>
+    <string name="pref_show_autoscroll_toggle">Show autoscroll toggle</string>
+    <string name="pref_show_autoscroll_toggle_summary">Display an autoscroll toggle on the topbar in the reader screen</string>
     <string name="pref_show_navigation_mode">Show tap zones overlay</string>
     <string name="pref_show_navigation_mode_summary">Briefly show when reader is opened</string>
     <string name="pref_dual_page_split">Split wide pages</string>
@@ -465,6 +467,11 @@
     <string name="pref_read_with_long_tap">Show actions on long tap</string>
     <string name="pref_create_folder_per_manga">Save pages into separate folders</string>
     <string name="pref_create_folder_per_manga_summary">Creates folders according to entries\' title</string>
+    <string name="autoscroll">Autoscroll</string>
+    <string name="autoscroll_freq_invalid">Invalid frequency</string>
+    <string name="autoscroll_help">Autoscroll help</string>
+    <string name="autoscroll_help_message">Automatically scroll to the next page in the specified interval. Interval is specified in seconds.</string>
+    <string name="pref_smooth_auto_scroll">Smooth auto-scroll</string>
     <string name="pref_reader_theme">Background color</string>
     <string name="white_background">White</string>
     <string name="gray_background">Gray</string>
