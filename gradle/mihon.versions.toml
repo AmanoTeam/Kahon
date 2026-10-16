@@ -3,7 +3,7 @@
 android-sdk-min = "26"
 android-sdk-compile = "37.2"
 android-sdk-target = "36"
-android-ndk = "29.0.14206865"
+android-ndk = "30.0.16248370"
 java = "17"
 
 [plugins]
