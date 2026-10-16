@@ -24,9 +24,9 @@ fun LogoHeader(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Icon(
-            painter = painterResource(R.drawable.ic_mihon),
+            painter = painterResource(R.drawable.ic_launcher_foreground),
             contentDescription = null,
-            tint = MaterialTheme.colorScheme.onSurface,
+	    tint = MaterialTheme.colorScheme.onSurface,
             modifier = Modifier
                 .padding(iconPadding)
                 .size(64.dp),
