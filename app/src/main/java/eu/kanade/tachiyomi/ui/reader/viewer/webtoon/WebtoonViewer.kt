@@ -3,6 +3,7 @@ package eu.kanade.tachiyomi.ui.reader.viewer.webtoon
 import android.graphics.ColorFilter
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
+import android.view.animation.LinearInterpolator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.remember
@@ -33,6 +34,7 @@ import java.util.Collections
 import java.util.WeakHashMap
 import kotlin.math.max
 import kotlin.math.min
+import kotlin.time.Duration
 
 /**
  * Implementation of a [Viewer] to display pages with a [RecyclerView].
@@ -246,6 +248,18 @@ class WebtoonViewer(val activity: ReaderActivity, val isContinuous: Boolean = tr
         } else {
             recycler.scrollBy(0, -scrollDistance)
         }
+    }
+
+    /**
+     * Scrolls one screen over a period of time.
+     */
+    fun linearScroll(duration: Duration) {
+        recycler.smoothScrollBy(
+            0,
+            activity.resources.displayMetrics.heightPixels,
+            LinearInterpolator(),
+            duration.inWholeMilliseconds.toInt(),
+        )
     }
 
     /**
