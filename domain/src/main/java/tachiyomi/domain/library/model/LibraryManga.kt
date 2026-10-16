@@ -8,15 +8,15 @@ data class LibraryManga(
     val categories: List<Long>,
     val totalChapters: Long,
     val readCount: Long,
+    val unreadCount: Long,
+    // Unread count matching the chapter list with duplicate chapter numbers skipped
+    val unreadCountDeduped: Long,
     val bookmarkCount: Long,
     val latestUpload: Instant?,
     val chapterFetchedAt: Instant?,
     val lastRead: Instant?,
 ) {
     val id: Long = manga.id
-
-    val unreadCount
-        get() = totalChapters - readCount
 
     val hasBookmarks
         get() = bookmarkCount > 0

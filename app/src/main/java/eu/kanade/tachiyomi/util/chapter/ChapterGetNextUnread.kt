@@ -7,31 +7,41 @@ import tachiyomi.domain.chapter.model.Chapter
 import tachiyomi.domain.manga.model.Manga
 
 /**
- * Gets next unread chapter with filters and sorting applied
+ * Gets next unread chapter with filters and sorting applied.
+ * When [skipDupe] is true, duplicate chapters are removed the same way as the chapter list,
+ * so hidden duplicates are never picked
  */
 fun List<Chapter>.getNextUnread(
     manga: Manga,
     downloadedOnly: Boolean,
     downloadManager: DownloadManager,
+    skipDupe: Boolean,
 ): Chapter? {
-    return applyFilters(manga, downloadedOnly, downloadManager).let { chapters ->
-        if (manga.sortDescending()) {
-            chapters.findLast { !it.read }
-        } else {
-            chapters.find { !it.read }
+    return applyFilters(manga, downloadedOnly, downloadManager)
+        .let { if (skipDupe) it.removeDuplicates() else it }
+        .let { chapters ->
+            if (manga.sortDescending()) {
+                chapters.findLast { !it.read }
+            } else {
+                chapters.find { !it.read }
+            }
         }
-    }
 }
 
 /**
- * Gets next unread chapter with filters and sorting applied
+ * Gets next unread chapter with filters and sorting applied.
+ * When [skipDupe] is true, duplicate chapters are removed the same way as the chapter list,
+ * so hidden duplicates are never picked
  */
-fun List<ChapterList.Item>.getNextUnread(manga: Manga, downloadedOnly: Boolean): Chapter? {
-    return applyFilters(manga, downloadedOnly).let { chapters ->
-        if (manga.sortDescending()) {
-            chapters.findLast { !it.chapter.read }
-        } else {
-            chapters.find { !it.chapter.read }
-        }
-    }?.chapter
+fun List<ChapterList.Item>.getNextUnread(manga: Manga, downloadedOnly: Boolean, skipDupe: Boolean): Chapter? {
+    return applyFilters(manga, downloadedOnly)
+        .toList()
+        .let { if (skipDupe) it.removeDuplicates() else it }
+        .let { chapters ->
+            if (manga.sortDescending()) {
+                chapters.findLast { !it.chapter.read }
+            } else {
+                chapters.find { !it.chapter.read }
+            }
+        }?.chapter
 }
