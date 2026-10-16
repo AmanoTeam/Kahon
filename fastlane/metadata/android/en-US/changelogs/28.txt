@@ -1,0 +1,2 @@
+* Fix some extensions not working properly with the "Fingerprint spoofer" option enabled
+* Add option to crop out "gutters" from webtoons
