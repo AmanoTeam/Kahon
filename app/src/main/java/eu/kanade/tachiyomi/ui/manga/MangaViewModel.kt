@@ -69,8 +69,8 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.plus
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.plus
 import logcat.LogPriority
 import mihon.core.metro.AppCoroutineScope
 import mihon.domain.chapter.interactor.FilterChaptersForDownload
@@ -96,8 +96,10 @@ import tachiyomi.domain.chapter.service.missingChaptersCount
 import tachiyomi.domain.library.service.LibraryPreferences
 import tachiyomi.domain.manga.interactor.GetDuplicateLibraryManga
 import tachiyomi.domain.manga.interactor.GetMangaWithChapters
+import tachiyomi.domain.manga.repository.MangaRepository
 import tachiyomi.domain.manga.interactor.SetMangaChapterFlags
 import tachiyomi.domain.manga.model.Manga
+import tachiyomi.domain.manga.model.MangaRemoteUpdate
 import tachiyomi.domain.manga.model.MangaWithChapterCount
 import tachiyomi.domain.manga.model.applyFilter
 import tachiyomi.domain.source.service.SourceManager
@@ -136,6 +138,7 @@ class MangaViewModel(
     private val setMangaCategories: SetMangaCategories,
     private val filterChaptersForDownload: FilterChaptersForDownload,
     private val updateMangaFromRemote: UpdateMangaFromRemote,
+    private val mangaRepository: MangaRepository,
     private val sourceManager: SourceManager,
     private val refreshTracks: RefreshTracks,
     private val coverCache: CoverCache,
@@ -185,6 +188,9 @@ class MangaViewModel(
     private val dialog = MutableStateFlow<Dialog?>(null)
 
     private val isRefreshingData = MutableStateFlow(false)
+
+    // Null when metadata is not being edited
+    private val metadataDraft = MutableStateFlow<MangaMetadataDraft?>(null)
 
     private val downloadStates = MutableStateFlow(emptyMap<Long, Download.State>())
 
@@ -254,13 +260,18 @@ class MangaViewModel(
         scanlators,
         trackers,
         combine(selectedChapterIds, queuedDownloadStates.pausedWhileUnsubscribed(), ::Pair),
-        combine(dialog, isRefreshingData, ::Pair),
+        combine(
+            dialog,
+            isRefreshingData,
+            metadataDraft,
+            ::ScreenState,
+        ),
     ) {
             mangaAndChapters,
             (availableScanlators, excludedScanlators),
             (trackingCount, hasLoggedInTrackers),
             (selectedIds, downloads),
-            (dialog, isRefreshingData),
+            screenState,
         ->
         State.Success(
             manga = mangaAndChapters.manga,
@@ -279,9 +290,10 @@ class MangaViewModel(
             excludedScanlators = excludedScanlators,
             trackingCount = trackingCount,
             hasLoggedInTrackers = hasLoggedInTrackers,
-            isRefreshingData = isRefreshingData,
-            dialog = dialog,
+            isRefreshingData = screenState.isRefreshingData,
+            dialog = screenState.dialog,
             hideMissingChapters = hideMissingChapters,
+            metadataDraft = screenState.metadataDraft,
         )
     }
         // Composition would otherwise build these on first read, on the main thread, for every new state
@@ -477,6 +489,89 @@ class MangaViewModel(
     fun showSetFetchIntervalDialog() {
         val manga = successState?.manga ?: return
         dialog.value = Dialog.SetFetchInterval(manga)
+    }
+
+    fun showEditStatusDialog() {
+        dialog.value = Dialog.EditStatus
+    }
+
+    fun setMangaUserStatus(userStatus: Long) {
+        val manga = successState?.manga ?: return
+        viewModelScope.launch(Dispatchers.IO) {
+            val newOverrideMetadata = manga.overrideMetadata or
+                (if (userStatus != manga.status) Manga.OVERRIDE_STATUS else 0L)
+            mangaRepository.updateRemote(
+                MangaRemoteUpdate(
+                    id = manga.id,
+                    title = null,
+                    author = null,
+                    artist = null,
+                    description = null,
+                    genre = null,
+                    status = userStatus,
+                    thumbnailUrl = null,
+                    updateStrategy = manga.updateStrategy,
+                    memo = manga.memo,
+                    initialized = manga.initialized,
+                    coverLastModified = null,
+                    overrideMetadata = newOverrideMetadata,
+                ),
+            )
+        }
+    }
+
+    fun toggleMetadataEdit() {
+        val state = successState ?: return
+        val draft = state.metadataDraft ?: run {
+            metadataDraft.value = MangaMetadataDraft(
+                title = state.manga.title,
+                author = state.manga.author.orEmpty(),
+                artist = state.manga.artist.orEmpty(),
+                description = state.manga.description.orEmpty(),
+            )
+            return
+        }
+
+        val original = state.manga
+        val nextTitle = draft.title.trim().ifBlank { original.title }
+        val nextAuthor = draft.author.trim().takeUnless { it.isBlank() }
+        val nextArtist = draft.artist.trim().takeUnless { it.isBlank() }
+        val nextDescription = draft.description
+
+        var newBits = 0L
+        if (nextTitle != original.title) newBits = newBits or Manga.OVERRIDE_TITLE
+        if (nextAuthor != original.author) newBits = newBits or Manga.OVERRIDE_AUTHOR
+        if (nextArtist != original.artist) newBits = newBits or Manga.OVERRIDE_ARTIST
+        if (nextDescription != (original.description ?: "")) newBits = newBits or Manga.OVERRIDE_DESCRIPTION
+
+        viewModelScope.launch(Dispatchers.IO) {
+            if (newBits != 0L) {
+                mangaRepository.updateRemote(
+                    MangaRemoteUpdate(
+                        id = original.id,
+                        title = nextTitle,
+                        author = nextAuthor,
+                        artist = nextArtist,
+                        description = nextDescription,
+                        genre = null,
+                        status = original.status,
+                        thumbnailUrl = null,
+                        updateStrategy = original.updateStrategy,
+                        memo = original.memo,
+                        initialized = original.initialized,
+                        coverLastModified = null,
+                        overrideMetadata = original.overrideMetadata or newBits,
+                    ),
+                )
+            }
+            withContext(Dispatchers.Main) {
+                metadataDraft.value = null
+            }
+        }
+    }
+
+    fun updateMetadataDraft(draft: MangaMetadataDraft) {
+        metadataDraft.value = draft
     }
 
     fun setFetchInterval(manga: Manga, interval: Int) {
@@ -1055,6 +1150,7 @@ class MangaViewModel(
         data class Migrate(val target: Manga, val current: Manga) : Dialog
         data class SetFetchInterval(val manga: Manga) : Dialog
         data object RemoveFromLibrary : Dialog
+        data object EditStatus : Dialog
         data object SettingsSheet : Dialog
         data object TrackSheet : Dialog
         data object FullCover : Dialog
@@ -1110,7 +1206,11 @@ class MangaViewModel(
             val isRefreshingData: Boolean = false,
             val dialog: Dialog? = null,
             val hideMissingChapters: Boolean = false,
+            val metadataDraft: MangaMetadataDraft? = null,
         ) : State {
+            val isEditingMetadata: Boolean
+                get() = metadataDraft != null
+
             val processedChapters by lazy {
                 chapters.applyFilters(manga).toList()
             }
@@ -1192,6 +1292,19 @@ class MangaViewModel(
         }
     }
 }
+
+private data class ScreenState(
+    val dialog: MangaViewModel.Dialog?,
+    val isRefreshingData: Boolean,
+    val metadataDraft: MangaMetadataDraft?,
+)
+
+data class MangaMetadataDraft(
+    val title: String = "",
+    val author: String = "",
+    val artist: String = "",
+    val description: String = "",
+)
 
 @Immutable
 sealed class ChapterList {
