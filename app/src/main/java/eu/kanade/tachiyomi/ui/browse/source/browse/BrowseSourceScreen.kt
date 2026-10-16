@@ -26,6 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.navigation3.runtime.result.ResultEffect
@@ -34,10 +35,13 @@ import eu.kanade.presentation.browse.BrowseSourceContent
 import eu.kanade.presentation.browse.MissingSourceScreen
 import eu.kanade.presentation.browse.components.BrowseSourceToolbar
 import eu.kanade.presentation.browse.components.RemoveMangaDialog
+import eu.kanade.presentation.browse.components.SavedSearchCreateDialog
+import eu.kanade.presentation.browse.components.SavedSearchDeleteDialog
 import eu.kanade.presentation.category.components.ChangeCategoryDialog
 import eu.kanade.presentation.manga.DuplicateMangaDialog
 import eu.kanade.tachiyomi.source.online.HttpSource
 import eu.kanade.tachiyomi.ui.browse.source.browse.BrowseSourceViewModel.Listing
+import eu.kanade.tachiyomi.util.system.toast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import mihon.core.navigation.CategoryRoute
@@ -71,6 +75,8 @@ fun BrowseSourceScreen(
             create(sourceId = sourceId, listingQuery = listingQuery)
         }
     val state by viewModel.state.collectAsState()
+
+    val context = LocalContext.current
 
     val navigator = LocalNavigator.current
     val setAssistUrl = LocalAssistUrl.current
@@ -182,7 +188,8 @@ fun BrowseSourceScreen(
                     }
                     if (state.filters.isNotEmpty()) {
                         FilterChip(
-                            selected = state.listing is Listing.Search,
+                            selected = state.listing is Listing.Search &&
+                                state.selectedSavedSearchId == null,
                             onClick = viewModel::openFilterSheet,
                             leadingIcon = {
                                 Icon(
@@ -194,6 +201,19 @@ fun BrowseSourceScreen(
                             },
                             label = {
                                 Text(text = stringResource(MR.strings.action_filter))
+                            },
+                        )
+                    }
+                    state.savedSearches.forEach { savedSearch ->
+                        FilterChip(
+                            selected = state.selectedSavedSearchId == savedSearch.id,
+                            onClick = {
+                                viewModel.onSavedSearch(savedSearch) {
+                                    context.toast(it)
+                                }
+                            },
+                            label = {
+                                Text(text = savedSearch.name)
                             },
                         )
                     }
@@ -240,6 +260,14 @@ fun BrowseSourceScreen(
                 onReset = viewModel::resetFilters,
                 onFilter = { viewModel.search(filters = state.filters) },
                 onUpdate = viewModel::setFilters,
+                savedSearches = state.savedSearches,
+                onSave = viewModel::onSaveSearch,
+                onSavedSearch = { search ->
+                    viewModel.onSavedSearch(search) {
+                        context.toast(it)
+                    }
+                },
+                onSavedSearchPress = viewModel::onSavedSearchPress,
             )
         }
         is BrowseSourceViewModel.Dialog.AddDuplicateManga -> {
@@ -281,6 +309,18 @@ fun BrowseSourceScreen(
                 },
             )
         }
+        is BrowseSourceViewModel.Dialog.CreateSavedSearch -> SavedSearchCreateDialog(
+            onDismissRequest = onDismissRequest,
+            currentSavedSearches = dialog.currentSavedSearches,
+            saveSearch = viewModel::saveSearch,
+        )
+        is BrowseSourceViewModel.Dialog.DeleteSavedSearch -> SavedSearchDeleteDialog(
+            onDismissRequest = onDismissRequest,
+            name = dialog.name,
+            deleteSavedSearch = {
+                viewModel.deleteSearch(dialog.idToDelete)
+            },
+        )
         else -> {}
     }
 
