@@ -2,6 +2,8 @@
 .gradle
 .kotlin
 build
+.cxx
+app/src/main/assets/cert.pem
 
 # IDE files
 *.iml
