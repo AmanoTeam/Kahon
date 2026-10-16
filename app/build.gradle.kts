@@ -55,6 +55,12 @@ android {
 
     }
 
+    externalNativeBuild {
+        cmake {
+            path = file("$projectDir/jni/CMakeLists.txt")
+        }
+    }
+
     packaging {
         jniLibs {
             keepDebugSymbols += listOf(
@@ -372,4 +378,13 @@ androidComponents {
         // Layout Inspector's Compose tree
         it.packaging.resources.excludes.add("META-INF/*.version")
     }
+}
+
+val copyCaBundle = tasks.register<Copy>("copyCaBundle") {
+    from("$rootDir/submodules/kad/submodules/cabundle/pem/cert.pem")
+    into("$projectDir/src/main/assets")
+}
+
+tasks.named("preBuild") {
+    dependsOn(copyCaBundle)
 }

@@ -19,6 +19,7 @@ fun SwitchPreferenceWidget(
     subtitle: String? = null,
     icon: ImageVector? = null,
     checked: Boolean = false,
+    enabled: Boolean = true,
     onCheckedChanged: (Boolean) -> Unit,
 ) {
     TextPreferenceWidget(
@@ -30,10 +31,15 @@ fun SwitchPreferenceWidget(
             Switch(
                 checked = checked,
                 onCheckedChange = null,
+                enabled = enabled,
                 modifier = Modifier.padding(start = TrailingWidgetBuffer),
             )
         },
-        onPreferenceClick = { onCheckedChanged(!checked) },
+        onPreferenceClick = if (enabled) {
+            { onCheckedChanged(!checked) }
+        } else {
+            null
+        },
     )
 }
 
@@ -64,6 +70,13 @@ private fun SwitchPreferenceWidgetPreview() {
                 SwitchPreferenceWidget(
                     title = "Another text preference no summary",
                     checked = false,
+                    onCheckedChanged = {},
+                )
+                SwitchPreferenceWidget(
+                    title = "Disabled text preference",
+                    subtitle = "Unsupported WebView version",
+                    checked = false,
+                    enabled = false,
                     onCheckedChanged = {},
                 )
             }

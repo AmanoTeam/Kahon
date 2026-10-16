@@ -5,14 +5,22 @@ import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 import eu.kanade.tachiyomi.network.interceptor.CloudflareInterceptor
+import eu.kanade.tachiyomi.network.interceptor.SecFetchDestInterceptor
 import eu.kanade.tachiyomi.network.interceptor.UncaughtExceptionInterceptor
 import eu.kanade.tachiyomi.network.interceptor.UserAgentInterceptor
+import eu.kanade.tachiyomi.util.system.WebViewUtil
 import kotlinx.coroutines.CoroutineScope
 import mihon.core.metro.AppCoroutineScope
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.io.File
+import java.net.InetSocketAddress
+import java.net.Proxy
+import java.security.SecureRandom
+import java.security.cert.X509Certificate
+import javax.net.ssl.SSLContext
+import javax.net.ssl.X509TrustManager
 import kotlin.time.Duration.Companion.minutes
 import kotlin.time.Duration.Companion.seconds
 
@@ -40,6 +48,19 @@ class NetworkHelper(
             )
             .addInterceptor(UncaughtExceptionInterceptor())
             .addInterceptor(UserAgentInterceptor(::defaultUserAgentProvider))
+            .addInterceptor(
+                SecFetchDestInterceptor(
+                    setOf(
+                        "divascans.org",
+                        "drakecomic.net",
+                        "elftoon.net",
+                        "kaynscans.com",
+                        "keroscans.net",
+                        "valirscans.org",
+                        "witchtoons.net",
+                    ),
+                ),
+            )
 
         if (preferences.verboseLogging.get()) {
             val httpLoggingInterceptor = HttpLoggingInterceptor().apply {
@@ -67,12 +88,38 @@ class NetworkHelper(
             PREF_DOH_SHECAN -> builder.dohShecan()
             else -> builder
         }
+
+        if (preferences.fingerprintSpoofer.get() && WebViewUtil.supportsFingerprintSpoofer()) {
+            builder.proxy(
+                Proxy(Proxy.Type.HTTP, InetSocketAddress(KAD_PROXY_HOST, KadProxy.port)),
+            )
+
+            val trustManager = object : X509TrustManager {
+                override fun checkClientTrusted(chain: Array<X509Certificate>, authType: String) {}
+                override fun checkServerTrusted(chain: Array<X509Certificate>, authType: String) {}
+                override fun getAcceptedIssuers(): Array<X509Certificate> = arrayOf()
+            }
+            val sslContext = SSLContext.getInstance("SSL").apply {
+                init(null, arrayOf(trustManager), SecureRandom())
+            }
+            builder.sslSocketFactory(sslContext.socketFactory, trustManager)
+            builder.hostnameVerifier { _, _ -> true }
+        }
+
+        builder
     }
 
     val client: OkHttpClient by lazy {
         clientBuilder()
             .addInterceptor(
-                CloudflareInterceptor(context, cookieJar, scope, ::defaultUserAgentProvider),
+                CloudflareInterceptor(
+                    context = context,
+                    cookieManager = cookieJar,
+                    scope = scope,
+                    defaultUserAgentProvider = ::defaultUserAgentProvider,
+                    fingerprintSpooferActive = preferences.fingerprintSpoofer.get() &&
+                        WebViewUtil.supportsFingerprintSpoofer(),
+                ),
             )
             .build()
     }
