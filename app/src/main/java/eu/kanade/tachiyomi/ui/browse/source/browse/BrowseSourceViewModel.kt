@@ -13,6 +13,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
 import androidx.paging.filter
 import androidx.paging.map
+import dev.icerock.moko.resources.StringResource
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
@@ -29,9 +30,11 @@ import eu.kanade.domain.track.interactor.AddTracks
 import eu.kanade.tachiyomi.data.cache.CoverCache
 import eu.kanade.tachiyomi.source.Source
 import eu.kanade.tachiyomi.source.model.FilterList
+import eu.kanade.tachiyomi.source.model.FilterSerializer
 import eu.kanade.tachiyomi.util.removeCovers
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -40,13 +43,20 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonArray
+import logcat.LogPriority
 import mihon.core.metro.AppCoroutineScope
 import tachiyomi.core.common.preference.CheckboxState
 import tachiyomi.core.common.preference.mapAsCheckboxState
+import tachiyomi.core.common.util.system.logcat
 import tachiyomi.domain.category.interactor.GetCategories
 import tachiyomi.domain.category.interactor.SetMangaCategories
 import tachiyomi.domain.category.model.Category
@@ -57,8 +67,14 @@ import tachiyomi.domain.manga.interactor.GetManga
 import tachiyomi.domain.manga.model.Manga
 import tachiyomi.domain.manga.model.MangaUpdate
 import tachiyomi.domain.manga.model.MangaWithChapterCount
+import tachiyomi.domain.source.interactor.DeleteSavedSearchById
 import tachiyomi.domain.source.interactor.GetRemoteManga
+import tachiyomi.domain.source.interactor.GetSavedSearchById
+import tachiyomi.domain.source.interactor.GetSavedSearchBySourceId
+import tachiyomi.domain.source.interactor.InsertSavedSearch
+import tachiyomi.domain.source.model.SavedSearch
 import tachiyomi.domain.source.service.SourceManager
+import tachiyomi.i18n.MR
 import kotlin.time.Clock
 import kotlin.time.Duration.Companion.seconds
 import eu.kanade.tachiyomi.source.model.Filter as SourceModelFilter
@@ -81,6 +97,10 @@ class BrowseSourceViewModel(
     private val updateManga: UpdateManga,
     private val addTracks: AddTracks,
     getIncognitoState: GetIncognitoState,
+    private val deleteSavedSearchById: DeleteSavedSearchById,
+    private val getSavedSearchById: GetSavedSearchById,
+    private val getSavedSearchBySourceId: GetSavedSearchBySourceId,
+    private val insertSavedSearch: InsertSavedSearch,
 ) : ViewModel() {
 
     val state: StateFlow<BrowseSourceViewModel.State>
@@ -96,6 +116,8 @@ class BrowseSourceViewModel(
     var displayMode by sourcePreferences.sourceDisplayMode.asState(viewModelScope)
 
     private val source: Source? get() = state.value.source
+
+    private val filterSerializer = FilterSerializer()
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
@@ -129,7 +151,26 @@ class BrowseSourceViewModel(
                 sourcePreferences.lastUsedSources.set(current.take(GetEnabledSources.MAX_LAST_USED_SOURCES))
                 sourcePreferences.lastUsedSource.set(source.id)
             }
+
+            getSavedSearchBySourceId.subscribe(source.id)
+                .map { it.sortedWith(compareBy(String.CASE_INSENSITIVE_ORDER, SavedSearch::name)) }
+                .onEach { savedSearches ->
+                    state.update { it.copy(savedSearches = savedSearches) }
+                }
+                .launchIn(viewModelScope)
         }
+    }
+
+    private fun loadFilters(source: Source, filtersJson: String?): FilterList? {
+        if (filtersJson == null) return null
+        val originalFilters = source.getFilterList()
+        return runCatching {
+            val json = Json.decodeFromString<JsonArray>(filtersJson)
+            filterSerializer.deserialize(originalFilters, json)
+            originalFilters
+        }.onFailure {
+            logcat(LogPriority.ERROR, it)
+        }.getOrNull()
     }
 
     /**
@@ -182,7 +223,10 @@ class BrowseSourceViewModel(
         }
     }
 
-    fun search(query: String? = null, filters: FilterList? = null) {
+    fun search(query: String? = null, filters: FilterList? = null, savedSearchId: Long? = null) {
+        if (filters != null && filters !== state.value.filters) {
+            setFilters(filters)
+        }
         val input = state.value.listing as? Listing.Search
             ?: Listing.Search(query = null, filters = source?.getFilterList() ?: FilterList())
 
@@ -191,6 +235,7 @@ class BrowseSourceViewModel(
                 listing = input.copy(
                     query = query ?: input.query,
                     filters = filters ?: input.filters,
+                    savedSearchId = savedSearchId,
                 ),
                 toolbarQuery = query ?: input.query,
             )
@@ -336,12 +381,90 @@ class BrowseSourceViewModel(
         state.update { it.copy(toolbarQuery = query) }
     }
 
+    /** Show a dialog to enter name for new saved search */
+    fun onSaveSearch() {
+        val names = state.value.savedSearches.map { it.name }
+        state.update { it.copy(dialog = Dialog.CreateSavedSearch(names)) }
+    }
+
+    /** Open a saved search */
+    fun onSavedSearch(
+        loadedSearch: SavedSearch,
+        onToast: (StringResource) -> Unit,
+    ) {
+        resetFilters()
+        viewModelScope.launch(Dispatchers.IO) {
+            val source = source ?: return@launch
+            val search = getSavedSearchById.awaitOrNull(loadedSearch.id) ?: loadedSearch
+            val filterList = loadFilters(source, search.filtersJson)
+
+            if (filterList == null && state.value.filters.isNotEmpty()) {
+                withContext(Dispatchers.Main) {
+                    onToast(MR.strings.save_search_invalid)
+                }
+                return@launch
+            }
+
+            setDialog(null)
+
+            val filters = filterList ?: source.getFilterList()
+
+            state.update {
+                it.copy(
+                    listing = Listing.Search(
+                        query = search.query,
+                        filters = filters,
+                        savedSearchId = search.id,
+                    ),
+                    filters = filters,
+                    toolbarQuery = search.query,
+                )
+            }
+        }
+    }
+
+    /** Show dialog to delete saved search */
+    fun onSavedSearchPress(search: SavedSearch) {
+        state.update { it.copy(dialog = Dialog.DeleteSavedSearch(search.id, search.name)) }
+    }
+
+    /** Save a search */
+    fun saveSearch(
+        name: String,
+    ) {
+        viewModelScope.launch(NonCancellable + Dispatchers.IO) {
+            val source = source ?: return@launch
+            val query = state.value.toolbarQuery?.takeUnless {
+                it.isBlank() || it == GetRemoteManga.QUERY_POPULAR || it == GetRemoteManga.QUERY_LATEST
+            }?.trim()
+            val filterList = state.value.filters.ifEmpty { source.getFilterList() }
+            insertSavedSearch.await(
+                SavedSearch(
+                    id = -1,
+                    source = source.id,
+                    name = name.trim(),
+                    query = query,
+                    filtersJson = runCatching {
+                        filterSerializer.serialize(filterList).ifEmpty { null }?.let { Json.encodeToString(it) }
+                    }.getOrNull(),
+                ),
+            )
+        }
+    }
+
+    fun deleteSearch(savedSearchId: Long) {
+        viewModelScope.launch(NonCancellable + Dispatchers.IO) {
+            deleteSavedSearchById.await(savedSearchId)
+        }
+    }
+
     sealed class Listing(open val query: String?, open val filters: FilterList) {
         data object Popular : Listing(query = GetRemoteManga.QUERY_POPULAR, filters = FilterList())
         data object Latest : Listing(query = GetRemoteManga.QUERY_LATEST, filters = FilterList())
         data class Search(
             override val query: String?,
             override val filters: FilterList,
+            val savedSearchId: Long? = null,
         ) : Listing(query = query, filters = filters)
 
         companion object {
@@ -364,6 +487,8 @@ class BrowseSourceViewModel(
             val initialSelection: List<CheckboxState.State<Category>>,
         ) : Dialog
         data class Migrate(val target: Manga, val current: Manga) : Dialog
+        data class DeleteSavedSearch(val idToDelete: Long, val name: String) : Dialog
+        data class CreateSavedSearch(val currentSavedSearches: List<String>) : Dialog
     }
 
     @Immutable
@@ -373,7 +498,11 @@ class BrowseSourceViewModel(
         val filters: FilterList = FilterList(),
         val toolbarQuery: String? = null,
         val dialog: Dialog? = null,
+        val savedSearches: List<SavedSearch> = emptyList(),
     ) {
         val isUserQuery get() = listing is Listing.Search && !listing.query.isNullOrEmpty()
+
+        val selectedSavedSearchId: Long?
+            get() = (listing as? Listing.Search)?.savedSearchId
     }
 }
