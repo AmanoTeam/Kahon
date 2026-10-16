@@ -1,0 +1,3 @@
+* Update to Mihon Beta r7958
+* Fix showing wrong monochromatic icon in app launcher
+* Add option to allow saving manga search terms/filters

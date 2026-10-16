@@ -1,0 +1,2 @@
+* Update to Mihon Beta r8192
+* Add option to disable "Auto-hide app bars on scroll"
