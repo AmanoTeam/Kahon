@@ -1,0 +1,5 @@
+* Update to Mihon Beta r8170
+* Add pinch-to-zoom support for manga covers
+* Add autoscroll to the reader
+* Make the app and bottom bars hide automatically when scrolling
+* Enable the "Fingerprint spoofer" option by default
