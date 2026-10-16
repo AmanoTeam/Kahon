@@ -22,9 +22,27 @@ const val PREF_DOH_CONTROLD = 10
 const val PREF_DOH_NJALLA = 11
 const val PREF_DOH_SHECAN = 12
 
+private val DOH_ENDPOINTS = mapOf(
+    PREF_DOH_CLOUDFLARE to "https://cloudflare-dns.com/dns-query",
+    PREF_DOH_GOOGLE to "https://dns.google/dns-query",
+    PREF_DOH_ADGUARD to "https://dns-unfiltered.adguard.com/dns-query",
+    PREF_DOH_QUAD9 to "https://dns.quad9.net/dns-query",
+    PREF_DOH_ALIDNS to "https://dns.alidns.com/dns-query",
+    PREF_DOH_DNSPOD to "https://doh.pub/dns-query",
+    PREF_DOH_360 to "https://doh.360.cn/dns-query",
+    PREF_DOH_QUAD101 to "https://dns.twnic.tw/dns-query",
+    PREF_DOH_MULLVAD to "https://dns.mullvad.net/dns-query",
+    PREF_DOH_CONTROLD to "https://freedns.controld.com/p0",
+    PREF_DOH_NJALLA to "https://dns.njal.la/dns-query",
+    PREF_DOH_SHECAN to "https://free.shecan.ir/dns-query",
+)
+
+/** DNS-over-HTTPS endpoint for a provider id, or null when unknown/disabled. */
+fun kadDohUrl(provider: Int): String? = DOH_ENDPOINTS[provider]
+
 fun OkHttpClient.Builder.dohCloudflare() = dns(
     DnsOverHttps.Builder().client(build())
-        .url("https://cloudflare-dns.com/dns-query".toHttpUrl())
+        .url(DOH_ENDPOINTS.getValue(PREF_DOH_CLOUDFLARE).toHttpUrl())
         .bootstrapDnsHosts(
             InetAddress.getByName("162.159.36.1"),
             InetAddress.getByName("162.159.46.1"),
@@ -41,7 +59,7 @@ fun OkHttpClient.Builder.dohCloudflare() = dns(
 
 fun OkHttpClient.Builder.dohGoogle() = dns(
     DnsOverHttps.Builder().client(build())
-        .url("https://dns.google/dns-query".toHttpUrl())
+        .url(DOH_ENDPOINTS.getValue(PREF_DOH_GOOGLE).toHttpUrl())
         .bootstrapDnsHosts(
             InetAddress.getByName("8.8.4.4"),
             InetAddress.getByName("8.8.8.8"),
@@ -55,7 +73,7 @@ fun OkHttpClient.Builder.dohGoogle() = dns(
 // we use "Unfiltered"
 fun OkHttpClient.Builder.dohAdGuard() = dns(
     DnsOverHttps.Builder().client(build())
-        .url("https://dns-unfiltered.adguard.com/dns-query".toHttpUrl())
+        .url(DOH_ENDPOINTS.getValue(PREF_DOH_ADGUARD).toHttpUrl())
         .bootstrapDnsHosts(
             InetAddress.getByName("94.140.14.140"),
             InetAddress.getByName("94.140.14.141"),
@@ -67,7 +85,7 @@ fun OkHttpClient.Builder.dohAdGuard() = dns(
 
 fun OkHttpClient.Builder.dohQuad9() = dns(
     DnsOverHttps.Builder().client(build())
-        .url("https://dns.quad9.net/dns-query".toHttpUrl())
+        .url(DOH_ENDPOINTS.getValue(PREF_DOH_QUAD9).toHttpUrl())
         .bootstrapDnsHosts(
             InetAddress.getByName("9.9.9.9"),
             InetAddress.getByName("149.112.112.112"),
@@ -79,7 +97,7 @@ fun OkHttpClient.Builder.dohQuad9() = dns(
 
 fun OkHttpClient.Builder.dohAliDNS() = dns(
     DnsOverHttps.Builder().client(build())
-        .url("https://dns.alidns.com/dns-query".toHttpUrl())
+        .url(DOH_ENDPOINTS.getValue(PREF_DOH_ALIDNS).toHttpUrl())
         .bootstrapDnsHosts(
             InetAddress.getByName("223.5.5.5"),
             InetAddress.getByName("223.6.6.6"),
@@ -91,7 +109,7 @@ fun OkHttpClient.Builder.dohAliDNS() = dns(
 
 fun OkHttpClient.Builder.dohDNSPod() = dns(
     DnsOverHttps.Builder().client(build())
-        .url("https://doh.pub/dns-query".toHttpUrl())
+        .url(DOH_ENDPOINTS.getValue(PREF_DOH_DNSPOD).toHttpUrl())
         .bootstrapDnsHosts(
             InetAddress.getByName("1.12.12.12"),
             InetAddress.getByName("120.53.53.53"),
@@ -101,7 +119,7 @@ fun OkHttpClient.Builder.dohDNSPod() = dns(
 
 fun OkHttpClient.Builder.doh360() = dns(
     DnsOverHttps.Builder().client(build())
-        .url("https://doh.360.cn/dns-query".toHttpUrl())
+        .url(DOH_ENDPOINTS.getValue(PREF_DOH_360).toHttpUrl())
         .bootstrapDnsHosts(
             InetAddress.getByName("101.226.4.6"),
             InetAddress.getByName("218.30.118.6"),
@@ -116,7 +134,7 @@ fun OkHttpClient.Builder.doh360() = dns(
 
 fun OkHttpClient.Builder.dohQuad101() = dns(
     DnsOverHttps.Builder().client(build())
-        .url("https://dns.twnic.tw/dns-query".toHttpUrl())
+        .url(DOH_ENDPOINTS.getValue(PREF_DOH_QUAD101).toHttpUrl())
         .bootstrapDnsHosts(
             InetAddress.getByName("101.101.101.101"),
             InetAddress.getByName("2001:de4::101"),
@@ -132,7 +150,7 @@ fun OkHttpClient.Builder.dohQuad101() = dns(
  */
 fun OkHttpClient.Builder.dohMullvad() = dns(
     DnsOverHttps.Builder().client(build())
-        .url(" https://dns.mullvad.net/dns-query".toHttpUrl())
+        .url(DOH_ENDPOINTS.getValue(PREF_DOH_MULLVAD).toHttpUrl())
         .bootstrapDnsHosts(
             InetAddress.getByName("194.242.2.2"),
             InetAddress.getByName("2a07:e340::2"),
@@ -147,7 +165,7 @@ fun OkHttpClient.Builder.dohMullvad() = dns(
  */
 fun OkHttpClient.Builder.dohControlD() = dns(
     DnsOverHttps.Builder().client(build())
-        .url("https://freedns.controld.com/p0".toHttpUrl())
+        .url(DOH_ENDPOINTS.getValue(PREF_DOH_CONTROLD).toHttpUrl())
         .bootstrapDnsHosts(
             InetAddress.getByName("76.76.2.0"),
             InetAddress.getByName("76.76.10.0"),
@@ -163,7 +181,7 @@ fun OkHttpClient.Builder.dohControlD() = dns(
  */
 fun OkHttpClient.Builder.dohNajalla() = dns(
     DnsOverHttps.Builder().client(build())
-        .url("https://dns.njal.la/dns-query".toHttpUrl())
+        .url(DOH_ENDPOINTS.getValue(PREF_DOH_NJALLA).toHttpUrl())
         .bootstrapDnsHosts(
             InetAddress.getByName("95.215.19.53"),
             InetAddress.getByName("2001:67c:2354:2::53"),
@@ -176,7 +194,7 @@ fun OkHttpClient.Builder.dohNajalla() = dns(
  */
 fun OkHttpClient.Builder.dohShecan() = dns(
     DnsOverHttps.Builder().client(build())
-        .url("https://free.shecan.ir/dns-query".toHttpUrl())
+        .url(DOH_ENDPOINTS.getValue(PREF_DOH_SHECAN).toHttpUrl())
         .bootstrapDnsHosts(
             InetAddress.getByName("178.22.122.100"),
             InetAddress.getByName("185.51.200.2"),

@@ -95,8 +95,11 @@ abstract class WebViewInterceptor(
     fun createWebView(request: Request): WebView {
         return WebView(context).apply {
             setDefaultSettings()
-            // Avoid sending empty User-Agent, Chromium WebView will reset to default if empty
-            setUserAgent(request.header("User-Agent") ?: defaultUserAgentProvider())
+
+            if (!WebViewUtil.isFingerprintSpooferActive(context)) {
+                // Avoid sending empty User-Agent, Chromium WebView will reset to default if empty
+                setUserAgent(request.header("User-Agent") ?: defaultUserAgentProvider())
+            }
         }
     }
 }

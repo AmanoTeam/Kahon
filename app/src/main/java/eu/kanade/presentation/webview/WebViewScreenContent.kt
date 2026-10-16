@@ -2,10 +2,12 @@ package eu.kanade.presentation.webview
 
 import android.content.pm.ApplicationInfo
 import android.graphics.Bitmap
+import android.net.http.SslError
 import android.os.Message
 import android.webkit.JsPromptResult
 import android.webkit.JsResult
 import android.webkit.RenderProcessGoneDetail
+import android.webkit.SslErrorHandler
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.widget.Toast
@@ -30,6 +32,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.stack.mutableStateStackOf
@@ -44,6 +47,7 @@ import eu.kanade.presentation.components.AppBar
 import eu.kanade.presentation.components.AppBarActions
 import eu.kanade.presentation.components.WarningBanner
 import eu.kanade.tachiyomi.BuildConfig
+import eu.kanade.tachiyomi.util.system.WebViewUtil
 import eu.kanade.tachiyomi.util.system.getHtml
 import eu.kanade.tachiyomi.util.system.setDefaultSettings
 import eu.kanade.tachiyomi.util.system.setUserAgent
@@ -104,12 +108,28 @@ fun WebViewScreenContent(
     var showCloudflareHelp by remember { mutableStateOf(false) }
     var isActive by remember { mutableStateOf(true) }
 
+    val context = LocalContext.current
+    val fingerprintSpooferEnabled =
+        remember { WebViewUtil.isFingerprintSpooferActive(context) }
+
     DisposableEffect(Unit) {
         onDispose { isActive = false }
     }
 
-    val webClient = remember {
+    val webClient = remember(fingerprintSpooferEnabled) {
         object : AccompanistWebViewClient() {
+            override fun onReceivedSslError(
+                view: WebView,
+                handler: SslErrorHandler,
+                error: SslError,
+            ) {
+                if (fingerprintSpooferEnabled) {
+                    handler.proceed()
+                } else {
+                    super.onReceivedSslError(view, handler, error)
+                }
+            }
+
             override fun onPageStarted(view: WebView, url: String?, favicon: Bitmap?) {
                 super.onPageStarted(view, url, favicon)
                 url?.let {
@@ -356,7 +376,9 @@ fun WebViewScreenContent(
                         WebView.setWebContentsDebuggingEnabled(true)
                     }
 
-                    webView.setUserAgent(headers["user-agent"] ?: defaultUserAgentProvider())
+                    if (!fingerprintSpooferEnabled) {
+                        webView.setUserAgent(headers["user-agent"] ?: defaultUserAgentProvider())
+                    }
                 },
                 onDispose = { webView ->
                     val window = windowStack.items.find { it.webView == webView }

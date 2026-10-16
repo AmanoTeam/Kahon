@@ -41,6 +41,7 @@ import eu.kanade.tachiyomi.network.PREF_DOH_QUAD101
 import eu.kanade.tachiyomi.network.PREF_DOH_QUAD9
 import eu.kanade.tachiyomi.network.PREF_DOH_SHECAN
 import eu.kanade.tachiyomi.ui.more.OnboardingScreen
+import eu.kanade.tachiyomi.util.system.WebViewUtil
 import eu.kanade.tachiyomi.util.system.isReleaseBuildType
 import eu.kanade.tachiyomi.util.system.isShizukuInstalled
 import eu.kanade.tachiyomi.util.system.powerManager
@@ -198,6 +199,11 @@ object SettingsAdvancedScreen : SearchableSettings {
         val userAgentPref = networkPreferences.defaultUserAgent
         val userAgent by userAgentPref.collectAsState()
 
+        val spooferEnabled by networkPreferences.fingerprintSpoofer.collectAsState()
+        val spooferSupported = remember { WebViewUtil.supportsFingerprintSpoofer() }
+
+        val spooferActive = spooferEnabled && spooferSupported
+
         return Preference.PreferenceGroup(
             title = stringResource(MR.strings.label_network),
             preferenceItems = listOf(
@@ -253,9 +259,27 @@ object SettingsAdvancedScreen : SearchableSettings {
                         true
                     },
                 ),
+                Preference.PreferenceItem.SwitchPreference(
+                    preference = networkPreferences.fingerprintSpoofer,
+                    title = stringResource(MR.strings.pref_fingerprint_spoofer),
+                    subtitle = if (spooferSupported) {
+                        stringResource(
+                            MR.strings.pref_fingerprint_spoofer_summary,
+                            stringResource(MR.strings.app_name),
+                        )
+                    } else {
+                        stringResource(MR.strings.pref_fingerprint_spoofer_unsupported)
+                    },
+                    enabled = spooferSupported,
+                    onValueChanged = {
+                        context.toast(MR.strings.requires_app_restart)
+                        true
+                    },
+                ),
                 Preference.PreferenceItem.EditTextPreference(
                     preference = userAgentPref,
                     title = stringResource(MR.strings.pref_user_agent_string),
+                    visible = remember(spooferActive) { !spooferActive },
                     onValueChanged = {
                         try {
                             // OkHttp checks for valid values internally
@@ -270,7 +294,9 @@ object SettingsAdvancedScreen : SearchableSettings {
                 ),
                 Preference.PreferenceItem.TextPreference(
                     title = stringResource(MR.strings.pref_reset_user_agent_string),
-                    visible = remember(userAgent) { userAgent != userAgentPref.defaultValue() },
+                    visible = remember(userAgent, spooferActive) {
+                        !spooferActive && userAgent != userAgentPref.defaultValue()
+                    },
                     onClick = {
                         userAgentPref.delete()
                         context.toast(MR.strings.requires_app_restart)
