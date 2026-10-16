@@ -15,6 +15,7 @@ import eu.kanade.core.preference.PreferenceMutableState
 import eu.kanade.core.preference.asState
 import eu.kanade.core.util.fastFilterNot
 import eu.kanade.domain.base.BasePreferences
+import eu.kanade.tachiyomi.ui.reader.setting.ReaderPreferences
 import eu.kanade.domain.chapter.interactor.SetReadStatus
 import eu.kanade.domain.manga.interactor.UpdateManga
 import eu.kanade.presentation.library.components.LibraryToolbarTitle
@@ -93,6 +94,7 @@ class LibraryViewModel(
     private val setMangaCategories: SetMangaCategories,
     private val preferences: BasePreferences,
     private val libraryPreferences: LibraryPreferences,
+    private val readerPreferences: ReaderPreferences,
     private val coverCache: CoverCache,
     private val sourceManager: SourceManager,
     private val downloadManager: DownloadManager,
@@ -420,11 +422,17 @@ class LibraryViewModel(
             getLibraryItemPreferencesFlow(),
             downloadCache.changes.pausedWhileUnsubscribed(),
         ) { libraryManga, preferences, _ ->
-            val sources = libraryManga
+            // Match the unread count to the chapter list, which drops duplicate chapter numbers
+            // when the reader's "skip duplicate chapters" setting is enabled
+            val skipDuplicates = readerPreferences.skipDupe.get()
+            val mangaList = libraryManga.map { manga ->
+                if (skipDuplicates) manga.copy(unreadCount = manga.unreadCountDeduped) else manga
+            }
+            val sources = mangaList
                 .mapTo(mutableSetOf()) { it.manga.source }
                 .associateWith { sourceManager.getOrStub(it) }
-            val downloadCounts = downloadManager.getDownloadCounts(libraryManga.map { it.manga })
-            libraryManga.map { manga ->
+            val downloadCounts = downloadManager.getDownloadCounts(mangaList.map { it.manga })
+            mangaList.map { manga ->
                 val source = sources.getValue(manga.manga.source)
                 val downloadCount = downloadCounts.getValue(manga.id)
                 LibraryItem(
