@@ -1,0 +1,3 @@
+[submodule "submodules/kad"]
+	path = submodules/kad
+	url = https://github.com/AmanoTeam/Kad
