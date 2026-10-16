@@ -1,0 +1,3 @@
+* Fix internet connection inside the app not working when connected to some Wi-Fi networks
+* Fix some extensions not working properly with the "Fingerprint spoofer" option enabled
+* Add an ad blocker to the WebView

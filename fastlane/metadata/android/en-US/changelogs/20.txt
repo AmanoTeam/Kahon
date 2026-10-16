@@ -1,0 +1,4 @@
+* Update to Mihon Beta r7825
+* Add Shizuku-based uninstall service
+* Add option to allow editing manga metadata
+* Show up to 3 items in the "Last used" tab instead of only one
