@@ -27,6 +27,7 @@ import eu.kanade.presentation.manga.DuplicateMangaDialog
 import eu.kanade.presentation.manga.EditCoverAction
 import eu.kanade.presentation.manga.MangaScreen
 import eu.kanade.presentation.manga.components.DeleteChaptersDialog
+import eu.kanade.presentation.manga.components.EditStatusDialog
 import eu.kanade.presentation.manga.components.MangaCoverDialog
 import eu.kanade.presentation.manga.components.ScanlatorFilterDialog
 import eu.kanade.presentation.manga.components.SetIntervalDialog
@@ -42,7 +43,6 @@ import eu.kanade.tachiyomi.util.system.copyToClipboard
 import eu.kanade.tachiyomi.util.system.toShareIntent
 import eu.kanade.tachiyomi.util.system.toast
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import logcat.LogPriority
 import mihon.core.navigation.BrowseSourceRoute
@@ -164,6 +164,9 @@ fun MangaScreen(
             navigator.push(MigrationConfigRoute(successState.manga.id))
         }.takeIf { successState.manga.favorite },
         onEditNotesClicked = { navigator.push(MangaNotesRoute(mangaId = successState.manga.id)) },
+        onEditStatusClicked = viewModel::showEditStatusDialog,
+        onEditMetadataClicked = viewModel::toggleMetadataEdit,
+        onMetadataDraftChange = viewModel::updateMetadataDraft,
         onMultiBookmarkClicked = viewModel::bookmarkChapters,
         onMultiMarkAsReadClicked = viewModel::markChaptersRead,
         onMarkPreviousAsReadClicked = viewModel::markPreviousChapterRead,
@@ -270,6 +273,16 @@ fun MangaScreen(
             } else {
                 LoadingScreen(Modifier.systemBarsPadding())
             }
+        }
+        MangaViewModel.Dialog.EditStatus -> {
+            EditStatusDialog(
+                initialStatus = successState.manga.status,
+                onDismissRequest = onDismissRequest,
+                onConfirm = { userStatus ->
+                    viewModel.setMangaUserStatus(userStatus)
+                    onDismissRequest()
+                },
+            )
         }
         is MangaViewModel.Dialog.SetFetchInterval -> {
             SetIntervalDialog(
