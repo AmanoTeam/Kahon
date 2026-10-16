@@ -55,7 +55,7 @@ object SettingsDownloadScreen : SearchableSettings {
             ),
             Preference.PreferenceItem.SliderPreference(
                 preference = downloadPreferences.parallelPageLimit,
-                valueRange = 1..15,
+                valueRange = 1..20,
                 title = stringResource(MR.strings.pref_download_concurrent_pages),
                 subtitle = stringResource(MR.strings.pref_download_concurrent_pages_summary),
             ),
