@@ -6,14 +6,21 @@ import android.content.pm.PackageManager
 import android.webkit.CookieManager
 import android.webkit.WebSettings
 import android.webkit.WebView
+import androidx.webkit.ProxyConfig
+import androidx.webkit.ProxyController
 import androidx.webkit.UserAgentMetadata
 import androidx.webkit.WebSettingsCompat
 import androidx.webkit.WebViewFeature
+import eu.kanade.tachiyomi.network.KAD_PROXY_HOST
+import eu.kanade.tachiyomi.network.KadProxy
+import eu.kanade.tachiyomi.network.NetworkPreferences
 import kotlinx.coroutines.suspendCancellableCoroutine
 import logcat.LogPriority
 import okhttp3.Headers
+import tachiyomi.core.common.preference.AndroidPreferenceStore
 import tachiyomi.core.common.util.system.logcat
 import java.util.Locale
+import java.util.concurrent.Executor
 import kotlin.coroutines.resume
 
 object WebViewUtil {
@@ -22,6 +29,9 @@ object WebViewUtil {
     private const val SYSTEM_SETTINGS_PACKAGE = "com.android.settings"
 
     const val MINIMUM_WEBVIEW_VERSION = 118
+
+    private const val MINIMUM_SPOOFER_WEBVIEW_VERSION = 99
+    private const val MAXIMUM_SPOOFER_WEBVIEW_VERSION = 160
 
     /**
      * Uses the WebView's user agent string to create something similar to what Chrome on Android
@@ -46,6 +56,25 @@ object WebViewUtil {
         val label = webView.applicationInfo!!.loadLabel(pm)
         val version = webView.versionName
         return "$label $version"
+    }
+
+    fun getMajorVersion(): Int? {
+        return WebView.getCurrentWebViewPackage()
+            ?.versionName
+            ?.substringBefore('.')
+            ?.toIntOrNull()
+    }
+
+    fun supportsFingerprintSpoofer(): Boolean {
+        val majorVersion = getMajorVersion() ?: return false
+        return majorVersion in MINIMUM_SPOOFER_WEBVIEW_VERSION..MAXIMUM_SPOOFER_WEBVIEW_VERSION
+    }
+
+    fun isFingerprintSpooferActive(context: Context): Boolean {
+        return NetworkPreferences(AndroidPreferenceStore(context.applicationContext), false)
+            .fingerprintSpoofer
+            .get() &&
+            supportsFingerprintSpoofer()
     }
 
     fun supportsWebView(context: Context): Boolean {
@@ -102,6 +131,34 @@ fun WebView.setDefaultSettings() {
     }
 
     CookieManager.getInstance().acceptThirdPartyCookies(this)
+
+    applyKadProxy()
+}
+
+/**
+ * Routes WebView traffic through kad when the fingerprint spoofer is enabled, or clears any
+ * previously set override otherwise. The proxy override persists across app restarts, so it
+ * must be cleared when spoofing is off.
+ */
+private fun WebView.applyKadProxy() {
+    if (!WebViewFeature.isFeatureSupported(WebViewFeature.PROXY_OVERRIDE)) return
+
+    val spooferEnabled = WebViewUtil.isFingerprintSpooferActive(context)
+
+    val executor = Executor { it.run() }
+
+    try {
+        if (spooferEnabled) {
+            val config = ProxyConfig.Builder()
+                .addProxyRule("$KAD_PROXY_HOST:${KadProxy.port}")
+                .build()
+            ProxyController.getInstance().setProxyOverride(config, executor, Runnable {})
+        } else {
+            ProxyController.getInstance().clearProxyOverride(executor, Runnable {})
+        }
+    } catch (e: Exception) {
+        logcat(LogPriority.ERROR, e) { "Failed to configure WebView proxy" }
+    }
 }
 
 /**

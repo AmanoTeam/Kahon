@@ -37,6 +37,17 @@ android {
         ndk {
             abiFilters += supportedAbis
         }
+
+        externalNativeBuild {
+            cmake {
+                arguments += listOf(
+                    "-DKAD_STATIC=ON",
+                    "-DKAD_LIBRARY=ON",
+                    "-DKAD_LTO=ON",
+                    "-DKAD_CAPTURE=OFF",
+                )
+            }
+        }
     }
 
     buildTypes {
@@ -53,6 +64,12 @@ android {
             proguardFiles("proguard-android-optimize.txt", "proguard-rules.pro")
         }
 
+    }
+
+    externalNativeBuild {
+        cmake {
+            path = file("$projectDir/../submodules/kad/CMakeLists.txt")
+        }
     }
 
     packaging {
@@ -372,4 +389,13 @@ androidComponents {
         // Layout Inspector's Compose tree
         it.packaging.resources.excludes.add("META-INF/*.version")
     }
+}
+
+val copyCaBundle = tasks.register<Copy>("copyCaBundle") {
+    from("$rootDir/submodules/kad/submodules/cabundle/pem/cert.pem")
+    into("$projectDir/src/main/assets")
+}
+
+tasks.named("preBuild") {
+    dependsOn(copyCaBundle)
 }
