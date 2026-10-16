@@ -227,8 +227,6 @@ class LibraryUpdateWorker(private val context: Context, workerParams: WorkerPara
             }
             .sortedBy { it.manga.title }
 
-        notifier.showQueueSizeWarningNotificationIfNeeded(mangaToUpdate)
-
         if (skippedUpdates.isNotEmpty()) {
             // TODO: surface skipped reasons to user?
             logcat {
@@ -427,8 +425,6 @@ class LibraryUpdateWorker(private val context: Context, workerParams: WorkerPara
         private const val WORK_NAME_MANUAL = "LibraryUpdate-manual"
 
         private const val ERROR_LOG_HELP_URL = "https://mihon.app/docs/guides/troubleshooting/"
-
-        private const val MANGA_PER_SOURCE_QUEUE_WARNING_THRESHOLD = 60
 
         /**
          * Key for category to update.
