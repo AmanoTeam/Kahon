@@ -14,17 +14,21 @@ import androidx.compose.material3.PrimaryTabRow
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Tab
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.surfaceColorAtElevation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.zIndex
 import dev.icerock.moko.resources.StringResource
 import kotlinx.coroutines.launch
 import tachiyomi.presentation.core.components.material.Scaffold
 import tachiyomi.presentation.core.components.material.TabText
+import tachiyomi.presentation.core.components.material.collapseOnScroll
 import tachiyomi.presentation.core.i18n.stringResource
 
 @Composable
@@ -37,8 +41,10 @@ fun TabbedScreen(
 ) {
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
+    val topBarScrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
 
     Scaffold(
+        topBarScrollBehavior = topBarScrollBehavior,
         topBar = {
             val tab = tabs[state.currentPage]
             val searchEnabled = tab.searchEnabled
@@ -49,6 +55,8 @@ fun TabbedScreen(
                 searchQuery = if (searchEnabled) searchQuery else null,
                 onChangeSearchQuery = onChangeSearchQuery,
                 actions = { AppBarActions(tab.actions) },
+                scrollBehavior = topBarScrollBehavior,
+                scrolledContainerColor = MaterialTheme.colorScheme.surfaceColorAtElevation(0.dp),
             )
         },
         snackbarHost = { SnackbarHost(hostState = snackbarHostState) },
@@ -62,7 +70,9 @@ fun TabbedScreen(
         ) {
             PrimaryTabRow(
                 selectedTabIndex = state.currentPage,
-                modifier = Modifier.zIndex(1f),
+                modifier = Modifier
+                    .collapseOnScroll(topBarScrollBehavior)
+                    .zIndex(1f),
             ) {
                 tabs.forEachIndexed { index, tab ->
                     Tab(

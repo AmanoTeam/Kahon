@@ -38,7 +38,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -65,6 +64,7 @@ import androidx.compose.ui.text.toLowerCase
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import eu.kanade.presentation.components.AppBar
 import eu.kanade.presentation.components.DropdownMenu
 import eu.kanade.presentation.manga.components.MangaCover
 import eu.kanade.presentation.theme.TachiyomiPreviewTheme
@@ -106,19 +106,10 @@ fun TrackerSearch(
     }
 
     Scaffold(
-        topBar = {
+        topBar = { scrollBehavior ->
             Column {
-                TopAppBar(
-                    navigationIcon = {
-                        IconButton(onClick = onDismissRequest) {
-                            Icon(
-                                imageVector = MaterialSymbols.AutoMirroredRounded.ArrowBack,
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                            )
-                        }
-                    },
-                    title = {
+                AppBar(
+                    titleContent = {
                         BasicTextField(
                             state = state,
                             modifier = Modifier
@@ -143,6 +134,8 @@ fun TrackerSearch(
                             },
                         )
                     },
+                    navigateUp = onDismissRequest,
+                    scrollBehavior = scrollBehavior,
                     actions = {
                         if (state.text.isNotEmpty()) {
                             IconButton(
