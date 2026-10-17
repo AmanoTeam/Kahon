@@ -64,6 +64,7 @@ import tachiyomi.core.common.Constants
 import tachiyomi.domain.source.model.StubSource
 import tachiyomi.i18n.MR
 import tachiyomi.presentation.core.components.material.Scaffold
+import tachiyomi.presentation.core.components.material.collapseOnScroll
 import tachiyomi.presentation.core.components.material.padding
 import tachiyomi.presentation.core.i18n.stringResource
 import tachiyomi.presentation.core.screens.LoadingScreen
@@ -132,7 +133,7 @@ data class BrowseSourceScreen(
         }
 
         Scaffold(
-            topBar = {
+            topBar = { scrollBehavior ->
                 Column(
                     modifier = Modifier
                         .background(MaterialTheme.colorScheme.surface)
@@ -149,86 +150,91 @@ data class BrowseSourceScreen(
                         onHelpClick = onHelpClick,
                         onSettingsClick = { navigator.push(SourcePreferencesScreen(sourceId)) },
                         onSearch = viewModel::search,
+                        scrollBehavior = scrollBehavior,
                     )
 
-                    Row(
-                        modifier = Modifier
-                            .horizontalScroll(rememberScrollState())
-                            .padding(horizontal = MaterialTheme.padding.small),
-                        horizontalArrangement = Arrangement.spacedBy(MaterialTheme.padding.small),
+                    Column(
+                        modifier = Modifier.collapseOnScroll(scrollBehavior),
                     ) {
-                        FilterChip(
-                            selected = state.listing == Listing.Popular,
-                            onClick = {
-                                viewModel.resetFilters()
-                                viewModel.setListing(Listing.Popular)
-                            },
-                            leadingIcon = {
-                                Icon(
-                                    imageVector = MaterialSymbols.RoundedFilled.Favorite,
-                                    contentDescription = null,
-                                    modifier = Modifier
-                                        .size(FilterChipDefaults.IconSize),
-                                )
-                            },
-                            label = {
-                                Text(text = stringResource(MR.strings.popular))
-                            },
-                        )
-                        if (source.supportsLatest) {
+                        Row(
+                            modifier = Modifier
+                                .horizontalScroll(rememberScrollState())
+                                .padding(horizontal = MaterialTheme.padding.small),
+                            horizontalArrangement = Arrangement.spacedBy(MaterialTheme.padding.small),
+                        ) {
                             FilterChip(
-                                selected = state.listing == Listing.Latest,
+                                selected = state.listing == Listing.Popular,
                                 onClick = {
                                     viewModel.resetFilters()
-                                    viewModel.setListing(Listing.Latest)
+                                    viewModel.setListing(Listing.Popular)
                                 },
                                 leadingIcon = {
                                     Icon(
-                                        imageVector = MaterialSymbols.Rounded.Verified,
+                                        imageVector = MaterialSymbols.RoundedFilled.Favorite,
                                         contentDescription = null,
                                         modifier = Modifier
                                             .size(FilterChipDefaults.IconSize),
                                     )
                                 },
                                 label = {
-                                    Text(text = stringResource(MR.strings.latest))
+                                    Text(text = stringResource(MR.strings.popular))
                                 },
                             )
+                            if (source.supportsLatest) {
+                                FilterChip(
+                                    selected = state.listing == Listing.Latest,
+                                    onClick = {
+                                        viewModel.resetFilters()
+                                        viewModel.setListing(Listing.Latest)
+                                    },
+                                    leadingIcon = {
+                                        Icon(
+                                            imageVector = MaterialSymbols.Rounded.Verified,
+                                            contentDescription = null,
+                                            modifier = Modifier
+                                                .size(FilterChipDefaults.IconSize),
+                                        )
+                                    },
+                                    label = {
+                                        Text(text = stringResource(MR.strings.latest))
+                                    },
+                                )
+                            }
+                            if (state.filters.isNotEmpty()) {
+                                FilterChip(
+                                    selected = state.listing is Listing.Search &&
+                                        state.selectedSavedSearchId == null,
+                                    onClick = viewModel::openFilterSheet,
+                                    leadingIcon = {
+                                        Icon(
+                                            imageVector = MaterialSymbols.Rounded.FilterList,
+                                            contentDescription = null,
+                                            modifier = Modifier
+                                                .size(FilterChipDefaults.IconSize),
+                                        )
+                                    },
+                                    label = {
+                                        Text(text = stringResource(MR.strings.action_filter))
+                                    },
+                                )
+                            }
+                            state.savedSearches.forEach { savedSearch ->
+                                FilterChip(
+                                    selected = state.selectedSavedSearchId == savedSearch.id,
+                                    onClick = {
+                                        viewModel.onSavedSearch(savedSearch) {
+                                            context.toast(it)
+                                        }
+                                    },
+                                    label = {
+                                        Text(text = savedSearch.name)
+                                    },
+                                )
+                            }
                         }
-                        if (state.filters.isNotEmpty()) {
-                            FilterChip(
-                                selected = state.listing is Listing.Search &&
-                                    state.selectedSavedSearchId == null,
-                                onClick = viewModel::openFilterSheet,
-                                leadingIcon = {
-                                    Icon(
-                                        imageVector = MaterialSymbols.Rounded.FilterList,
-                                        contentDescription = null,
-                                        modifier = Modifier
-                                            .size(FilterChipDefaults.IconSize),
-                                    )
-                                },
-                                label = {
-                                    Text(text = stringResource(MR.strings.action_filter))
-                                },
-                            )
-                        }
-                        state.savedSearches.forEach { savedSearch ->
-                            FilterChip(
-                                selected = state.selectedSavedSearchId == savedSearch.id,
-                                onClick = {
-                                    viewModel.onSavedSearch(savedSearch) {
-                                        context.toast(it)
-                                    }
-                                },
-                                label = {
-                                    Text(text = savedSearch.name)
-                                },
-                            )
-                        }
-                    }
 
-                    HorizontalDivider()
+                        HorizontalDivider()
+                    }
                 }
             },
             snackbarHost = { SnackbarHost(hostState = snackbarHostState) },
