@@ -22,7 +22,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -46,7 +45,7 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import eu.kanade.presentation.components.UpIcon
+import eu.kanade.presentation.components.AppBar
 import eu.kanade.presentation.more.settings.Preference
 import eu.kanade.presentation.util.Screen
 import kotlinx.coroutines.flow.collectLatest
@@ -90,18 +89,10 @@ class SettingsSearchScreen : Screen() {
 
         val textFieldState = rememberTextFieldState()
         Scaffold(
-            topBar = {
+            topBar = { scrollBehavior ->
                 Column {
-                    TopAppBar(
-                        navigationIcon = {
-                            val canPop = remember { navigator.canPop }
-                            if (canPop) {
-                                IconButton(onClick = navigator::pop) {
-                                    UpIcon()
-                                }
-                            }
-                        },
-                        title = {
+                    AppBar(
+                        titleContent = {
                             BasicTextField(
                                 state = textFieldState,
                                 modifier = Modifier
@@ -126,6 +117,12 @@ class SettingsSearchScreen : Screen() {
                                 },
                             )
                         },
+                        navigateUp = if (navigator.canPop) {
+                            { navigator.pop() }
+                        } else {
+                            null
+                        },
+                        scrollBehavior = scrollBehavior,
                         actions = {
                             if (textFieldState.text.isNotEmpty()) {
                                 IconButton(onClick = { textFieldState.clearText() }) {

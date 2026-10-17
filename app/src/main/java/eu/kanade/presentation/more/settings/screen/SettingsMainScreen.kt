@@ -80,7 +80,11 @@ object SettingsMainScreen : Screen() {
         val topBarState = rememberTopAppBarState()
 
         Scaffold(
-            topBarScrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(topBarState),
+            topBarScrollBehavior = if (twoPane) {
+                TopAppBarDefaults.pinnedScrollBehavior(topBarState)
+            } else {
+                TopAppBarDefaults.enterAlwaysScrollBehavior(topBarState)
+            },
             topBar = { scrollBehavior ->
                 AppBar(
                     title = stringResource(MR.strings.label_settings),

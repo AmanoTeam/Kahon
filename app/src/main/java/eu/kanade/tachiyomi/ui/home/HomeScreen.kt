@@ -21,6 +21,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
@@ -98,9 +99,19 @@ object HomeScreen : Screen() {
                     }
                 }
 
+                // Hide the bottom navigation bar when scrolling down and show it when scrolling
+                // back up, like JustDeleteMe's bottom navigation view
+                val hideOnScrollConnection = rememberHideOnScrollConnection(navigationSuiteState)
+
+                // Show the bottom navigation bar again when switching tabs
+                LaunchedEffect(tabNavigator.current) {
+                    if (!tabletUi) navigationSuiteState.show()
+                }
+
                 NavigationSuiteScaffold(
                     navigationSuiteType = navigationSuiteType,
                     state = navigationSuiteState,
+                    modifier = if (tabletUi) Modifier else Modifier.nestedScroll(hideOnScrollConnection),
                     navigationSuiteColors = NavigationSuiteDefaults.colors(
                         navigationRailContainerColor = MaterialTheme.colorScheme
                             .surfaceColorAtElevation(3.dp),
