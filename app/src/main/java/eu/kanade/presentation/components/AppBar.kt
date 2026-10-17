@@ -1,10 +1,14 @@
 package eu.kanade.presentation.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.text.input.TextFieldLineLimits
@@ -44,6 +48,7 @@ import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.font.FontWeight
@@ -130,9 +135,25 @@ fun AppBar(
     onCancelActionMode: () -> Unit = {},
 
     scrollBehavior: TopAppBarScrollBehavior? = null,
+    scrolledContainerColor: Color? = null,
 ) {
+    val containerColor = backgroundColor ?: MaterialTheme.colorScheme.surfaceColorAtElevation(
+        elevation = if (isActionMode) 3.dp else 0.dp,
+    )
+
+    // Shrink the status bar inset along with the collapsing app bar so that the content can draw
+    // edge-to-edge behind the status bar once the app bar is fully hidden
+    val density = LocalDensity.current
+    val statusBarTop = WindowInsets.statusBars.getTop(density)
+    val collapseFraction = scrollBehavior?.state?.collapsedFraction ?: 0f
+    val insetTop = with(density) {
+        (statusBarTop * (1f - collapseFraction)).toDp()
+    }
+
     Column(
-        modifier = modifier,
+        modifier = modifier
+            .background(containerColor)
+            .padding(top = insetTop),
     ) {
         TopAppBar(
             navigationIcon = {
@@ -153,11 +174,15 @@ fun AppBar(
             },
             title = titleContent,
             actions = actions,
-            colors = TopAppBarDefaults.topAppBarColors(
-                containerColor = backgroundColor ?: MaterialTheme.colorScheme.surfaceColorAtElevation(
-                    elevation = if (isActionMode) 3.dp else 0.dp,
-                ),
-            ),
+            colors = if (scrolledContainerColor != null) {
+                TopAppBarDefaults.topAppBarColors(
+                    containerColor = containerColor,
+                    scrolledContainerColor = scrolledContainerColor,
+                )
+            } else {
+                TopAppBarDefaults.topAppBarColors(containerColor = containerColor)
+            },
+            windowInsets = WindowInsets(0, 0, 0, 0),
             scrollBehavior = scrollBehavior,
         )
     }
@@ -278,6 +303,7 @@ fun SearchToolbar(
     onClickCloseSearch: () -> Unit = { onChangeSearchQuery(null) },
     actions: @Composable RowScope.() -> Unit = {},
     scrollBehavior: TopAppBarScrollBehavior? = null,
+    scrolledContainerColor: Color? = null,
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
 ) {
     val focusRequester = remember { FocusRequester() }
@@ -414,6 +440,7 @@ fun SearchToolbar(
         },
         isActionMode = false,
         scrollBehavior = scrollBehavior,
+        scrolledContainerColor = scrolledContainerColor,
     )
 }
 
