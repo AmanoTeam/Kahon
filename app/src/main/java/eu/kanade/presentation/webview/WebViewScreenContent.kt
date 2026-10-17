@@ -259,7 +259,7 @@ fun WebViewScreenContent(
     BackHandler(windowStack.size > 1, popState)
 
     Scaffold(
-        topBar = {
+        topBar = { scrollBehavior ->
             Box {
                 Column {
                     AppBar(
@@ -267,6 +267,7 @@ fun WebViewScreenContent(
                         subtitle = currentUrl,
                         navigateUp = onNavigateUp,
                         navigationIcon = MaterialSymbols.Rounded.Close,
+                        scrollBehavior = scrollBehavior,
                         actions = {
                             AppBarActions(
                                 listOf(
