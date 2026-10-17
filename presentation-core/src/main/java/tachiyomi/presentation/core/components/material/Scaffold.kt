@@ -16,19 +16,29 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
+import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
+import androidx.compose.ui.unit.Velocity
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun Scaffold(
     modifier: Modifier = Modifier,
-    topBarScrollBehavior: TopAppBarScrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(
-        rememberTopAppBarState(),
+    // The height offset limit is capped to a 1px sentinel instead of its default (-Float.MAX_VALUE)
+    // because the enterAlways connection consumes the whole scroll delta while the offset is
+    // changing; without a TopAppBar attached to the behavior to set the real limit (e.g. Scaffolds
+    // with a non-app bar topBar like the banners in MainActivity), it would otherwise swallow all
+    // scrolling. A real TopAppBar overwrites this limit on first layout, and the sentinel costs at
+    // most 1px of scroll on unconsumed behaviors.
+    topBarScrollBehavior: TopAppBarScrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(
+        rememberTopAppBarState(initialHeightOffsetLimit = -1f),
     ),
     topBar: @Composable (TopAppBarScrollBehavior) -> Unit = {},
     bottomBar: @Composable () -> Unit = {},
@@ -43,8 +53,33 @@ fun Scaffold(
     var fabHeight by remember { mutableIntStateOf(0) }
     val density = LocalDensity.current
 
+    val topBarConnection = remember(topBarScrollBehavior) {
+        val connection = topBarScrollBehavior.nestedScrollConnection
+        val topBarState = topBarScrollBehavior.state
+        object : NestedScrollConnection {
+            override fun onPreScroll(available: Offset, source: NestedScrollSource): Offset =
+                connection.onPreScroll(available, source)
+
+            override fun onPostScroll(consumed: Offset, available: Offset, source: NestedScrollSource): Offset {
+                val consumedByAppBar = connection.onPostScroll(consumed, available, source)
+                // Pull-to-refresh consumes the overscroll while the gesture is held at the start
+                // of the list, and the app bar scroll behaviors account for all consumed scroll as
+                // content scroll, keeping the bar tinted despite the content being at its start.
+                // The content offset is never legitimately positive, so clamp it.
+                topBarState.contentOffset = topBarState.contentOffset.coerceAtMost(0f)
+                return consumedByAppBar
+            }
+
+            override suspend fun onPreFling(available: Velocity): Velocity =
+                connection.onPreFling(available)
+
+            override suspend fun onPostFling(consumed: Velocity, available: Velocity): Velocity =
+                connection.onPostFling(consumed, available)
+        }
+    }
+
     androidx.compose.material3.Scaffold(
-        modifier = modifier.nestedScroll(topBarScrollBehavior.nestedScrollConnection),
+        modifier = modifier.nestedScroll(topBarConnection),
         topBar = { topBar(topBarScrollBehavior) },
         bottomBar = bottomBar,
         snackbarHost = snackbarHost,
