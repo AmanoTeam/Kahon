@@ -11,6 +11,7 @@ import androidx.compose.material3.Badge
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -59,10 +60,11 @@ fun UpcomingScreenContent(
         }
     }
     Scaffold(
-        topBar = {
+        topBar = { scrollBehavior ->
             UpcomingToolbar(
                 hasFilters = hasActiveFilters,
                 onClickFilter = onClickFilter,
+                scrollBehavior = scrollBehavior,
             )
         },
         modifier = modifier,
@@ -97,6 +99,7 @@ fun UpcomingScreenContent(
 private fun UpcomingToolbar(
     hasFilters: Boolean,
     onClickFilter: () -> Unit,
+    scrollBehavior: TopAppBarScrollBehavior? = null,
 ) {
     val navigator = LocalNavigator.current
     val uriHandler = LocalUriHandler.current
@@ -104,6 +107,7 @@ private fun UpcomingToolbar(
     AppBar(
         title = stringResource(MR.strings.label_upcoming),
         navigateUp = navigator::pop,
+        scrollBehavior = scrollBehavior,
         actions = {
             AppBarActions(
                 listOf(

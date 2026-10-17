@@ -46,7 +46,9 @@ import tachiyomi.domain.category.model.Category
 import tachiyomi.domain.library.model.LibraryManga
 import tachiyomi.domain.manga.model.Manga
 import tachiyomi.i18n.MR
+import tachiyomi.presentation.core.components.material.LocalHideBarsOnScroll
 import tachiyomi.presentation.core.components.material.Scaffold
+import tachiyomi.presentation.core.components.material.rememberTopAppBarScrollBehavior
 import tachiyomi.presentation.core.i18n.stringResource
 import tachiyomi.presentation.core.screens.EmptyScreen
 import tachiyomi.presentation.core.screens.EmptyScreenAction
@@ -80,8 +82,10 @@ fun LibraryTab() {
         started
     }
 
+    val topBarScrollBehavior = rememberTopAppBarScrollBehavior(LocalHideBarsOnScroll.current)
     Scaffold(
-        topBar = { scrollBehavior ->
+        topBarScrollBehavior = topBarScrollBehavior,
+        topBar = {
             val title = state.getToolbarTitle(
                 defaultTitle = stringResource(MR.strings.label_library),
                 defaultCategoryTitle = stringResource(MR.strings.label_default),
@@ -111,8 +115,7 @@ fun LibraryTab() {
                 },
                 searchQuery = state.searchQuery,
                 onSearchQueryChange = viewModel::search,
-                // For scroll overlay when no tab
-                scrollBehavior = scrollBehavior.takeIf { !state.showCategoryTabs },
+                scrollBehavior = topBarScrollBehavior,
             )
         },
         bottomBar = {
@@ -160,6 +163,7 @@ fun LibraryTab() {
                     currentPage = state.coercedActiveCategoryIndex,
                     hasActiveFilters = state.hasActiveFilters,
                     showPageTabs = state.showCategoryTabs || !state.searchQuery.isNullOrEmpty(),
+                    scrollBehavior = topBarScrollBehavior,
                     onChangeCurrentPage = viewModel::updateActiveCategoryIndex,
                     onClickManga = { navigator.push(MangaRoute(it)) },
                     onContinueReadingClicked = { it: LibraryManga ->

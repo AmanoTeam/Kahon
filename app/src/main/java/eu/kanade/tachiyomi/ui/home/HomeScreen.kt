@@ -23,6 +23,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
@@ -57,6 +58,7 @@ import mihon.presentation.core.util.isTabletUi
 import soup.compose.material.motion.animation.materialFadeThroughIn
 import soup.compose.material.motion.animation.materialFadeThroughOut
 import tachiyomi.i18n.MR
+import tachiyomi.presentation.core.components.material.LocalHideBarsOnScroll
 import tachiyomi.presentation.core.i18n.pluralStringResource
 import tachiyomi.presentation.core.i18n.stringResource
 
@@ -156,9 +158,28 @@ fun HomeScreen() {
         }
     }
 
+    // Hide the bottom navigation bar when scrolling down and show it when scrolling back up
+    val hideOnScrollConnection = rememberHideOnScrollConnection(navigationSuiteState)
+    val hideBarsOnScroll = LocalHideBarsOnScroll.current
+
+    // Restore the bottom navigation bar when hiding bars on scroll is disabled
+    LaunchedEffect(hideBarsOnScroll) {
+        if (!hideBarsOnScroll) navigationSuiteState.show()
+    }
+
+    // Show the bottom navigation bar again when switching tabs
+    LaunchedEffect(tabNavigator.current) {
+        if (!tabletUi) navigationSuiteState.show()
+    }
+
     NavigationSuiteScaffold(
         navigationSuiteType = navigationSuiteType,
         state = navigationSuiteState,
+        modifier = if (tabletUi || !hideBarsOnScroll) {
+            Modifier
+        } else {
+            Modifier.nestedScroll(hideOnScrollConnection)
+        },
         navigationSuiteColors = NavigationSuiteDefaults.colors(
             navigationRailContainerColor = MaterialTheme.colorScheme
                 .surfaceColorAtElevation(3.dp),
