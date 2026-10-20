@@ -47,6 +47,8 @@ class UiPreferences(
 
     val tabletUiMode: Preference<TabletUiMode> = preferenceStore.getEnum("tablet_ui_mode", TabletUiMode.AUTOMATIC)
 
+    val hideBarsOnScroll: Preference<Boolean> = preferenceStore.getBoolean("pref_hide_bars_on_scroll", true)
+
     val imagesInDescription: Preference<Boolean> = preferenceStore.getBoolean("pref_render_images_description", true)
 
     companion object {

@@ -6,10 +6,8 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.material3.FabPosition
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ScaffoldDefaults
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.material3.contentColorFor
-import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -37,9 +35,7 @@ fun Scaffold(
     // with a non-app bar topBar like the banners in MainActivity), it would otherwise swallow all
     // scrolling. A real TopAppBar overwrites this limit on first layout, and the sentinel costs at
     // most 1px of scroll on unconsumed behaviors.
-    topBarScrollBehavior: TopAppBarScrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(
-        rememberTopAppBarState(initialHeightOffsetLimit = -1f),
-    ),
+    topBarScrollBehavior: TopAppBarScrollBehavior? = null,
     topBar: @Composable (TopAppBarScrollBehavior) -> Unit = {},
     bottomBar: @Composable () -> Unit = {},
     snackbarHost: @Composable () -> Unit = {},
@@ -53,9 +49,15 @@ fun Scaffold(
     var fabHeight by remember { mutableIntStateOf(0) }
     val density = LocalDensity.current
 
-    val topBarConnection = remember(topBarScrollBehavior) {
-        val connection = topBarScrollBehavior.nestedScrollConnection
-        val topBarState = topBarScrollBehavior.state
+    // The resolved scroll behavior honors LocalHideBarsOnScroll, which is what the pinned fallback
+    // from rememberTopAppBarScrollBehavior() is all about.
+    val hideBarsOnScroll = LocalHideBarsOnScroll.current
+    val resolvedTopBarScrollBehavior =
+        topBarScrollBehavior ?: rememberTopAppBarScrollBehavior(hideBarsOnScroll)
+
+    val topBarConnection = remember(resolvedTopBarScrollBehavior) {
+        val connection = resolvedTopBarScrollBehavior.nestedScrollConnection
+        val topBarState = resolvedTopBarScrollBehavior.state
         object : NestedScrollConnection {
             override fun onPreScroll(available: Offset, source: NestedScrollSource): Offset =
                 connection.onPreScroll(available, source)
@@ -80,7 +82,7 @@ fun Scaffold(
 
     androidx.compose.material3.Scaffold(
         modifier = modifier.nestedScroll(topBarConnection),
-        topBar = { topBar(topBarScrollBehavior) },
+        topBar = { topBar(resolvedTopBarScrollBehavior) },
         bottomBar = bottomBar,
         snackbarHost = snackbarHost,
         floatingActionButton = {
