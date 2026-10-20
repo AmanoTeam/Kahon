@@ -14,7 +14,6 @@ import androidx.compose.material3.PrimaryTabRow
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Tab
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.surfaceColorAtElevation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -26,9 +25,11 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.zIndex
 import dev.icerock.moko.resources.StringResource
 import kotlinx.coroutines.launch
+import tachiyomi.presentation.core.components.material.LocalHideBarsOnScroll
 import tachiyomi.presentation.core.components.material.Scaffold
 import tachiyomi.presentation.core.components.material.TabText
 import tachiyomi.presentation.core.components.material.collapseOnScroll
+import tachiyomi.presentation.core.components.material.rememberTopAppBarScrollBehavior
 import tachiyomi.presentation.core.i18n.stringResource
 
 @Composable
@@ -41,7 +42,7 @@ fun TabbedScreen(
 ) {
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
-    val topBarScrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
+    val topBarScrollBehavior = rememberTopAppBarScrollBehavior(LocalHideBarsOnScroll.current)
 
     Scaffold(
         topBarScrollBehavior = topBarScrollBehavior,

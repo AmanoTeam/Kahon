@@ -19,9 +19,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionContext
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import dev.zacsweers.metrox.viewmodel.LocalMetroViewModelFactory
+import tachiyomi.presentation.core.components.material.LocalHideBarsOnScroll
 import eu.kanade.presentation.theme.TachiyomiTheme
 import mihon.app.di.appGraph
 
@@ -31,10 +33,13 @@ inline fun ComponentActivity.setComposeContent(
 ) {
     setContent(parent) {
         TachiyomiTheme {
+            // Read only once at startup; toggling the setting requires restarting the app
+            val hideBarsOnScroll = remember { appGraph.uiPreferences.hideBarsOnScroll.get() }
             CompositionLocalProvider(
                 LocalTextStyle provides MaterialTheme.typography.bodySmall,
                 LocalContentColor provides MaterialTheme.colorScheme.onBackground,
                 LocalMetroViewModelFactory provides appGraph.viewModelFactory,
+                LocalHideBarsOnScroll provides hideBarsOnScroll,
             ) {
                 content()
             }
@@ -46,11 +51,14 @@ fun ComposeView.setComposeContent(
     content: @Composable () -> Unit,
 ) {
     setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
-    setContent {
+        setContent {
         TachiyomiTheme {
+            // Read only once at startup; toggling the setting requires restarting the app
+            val hideBarsOnScroll = remember { context.appGraph.uiPreferences.hideBarsOnScroll.get() }
             CompositionLocalProvider(
                 LocalTextStyle provides MaterialTheme.typography.bodySmall,
                 LocalContentColor provides MaterialTheme.colorScheme.onBackground,
+                LocalHideBarsOnScroll provides hideBarsOnScroll,
             ) {
                 content()
             }
