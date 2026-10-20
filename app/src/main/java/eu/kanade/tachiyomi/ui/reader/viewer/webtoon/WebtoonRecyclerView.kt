@@ -245,7 +245,7 @@ class WebtoonRecyclerView @JvmOverloads constructor(
         override fun onSingleTapConfirmed(ev: MotionEvent): Boolean {
             // A tap is confirmed after a delay, by when the reader can be gone, and scrolling a detached list
             // lays out pages that can't compose
-            if (!tapDuringManualScroll && isAttachedToWindow) {
+            if (isAttachedToWindow) {
                 tapListener?.invoke(ev)
             }
             return false
