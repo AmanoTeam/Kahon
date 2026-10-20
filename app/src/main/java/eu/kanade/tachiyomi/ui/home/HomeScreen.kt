@@ -50,6 +50,7 @@ import mihon.app.di.appGraph
 import soup.compose.material.motion.animation.materialFadeThroughIn
 import soup.compose.material.motion.animation.materialFadeThroughOut
 import tachiyomi.i18n.MR
+import tachiyomi.presentation.core.components.material.LocalHideBarsOnScroll
 import tachiyomi.presentation.core.i18n.pluralStringResource
 
 object HomeScreen : Screen() {
@@ -102,6 +103,12 @@ object HomeScreen : Screen() {
                 // Hide the bottom navigation bar when scrolling down and show it when scrolling
                 // back up, like JustDeleteMe's bottom navigation view
                 val hideOnScrollConnection = rememberHideOnScrollConnection(navigationSuiteState)
+                val hideBarsOnScroll = LocalHideBarsOnScroll.current
+
+                // Restore the bottom navigation bar when hiding bars on scroll is disabled
+                LaunchedEffect(hideBarsOnScroll) {
+                    if (!hideBarsOnScroll) navigationSuiteState.show()
+                }
 
                 // Show the bottom navigation bar again when switching tabs
                 LaunchedEffect(tabNavigator.current) {
@@ -111,7 +118,11 @@ object HomeScreen : Screen() {
                 NavigationSuiteScaffold(
                     navigationSuiteType = navigationSuiteType,
                     state = navigationSuiteState,
-                    modifier = if (tabletUi) Modifier else Modifier.nestedScroll(hideOnScrollConnection),
+                    modifier = if (tabletUi || !hideBarsOnScroll) {
+                        Modifier
+                    } else {
+                        Modifier.nestedScroll(hideOnScrollConnection)
+                    },
                     navigationSuiteColors = NavigationSuiteDefaults.colors(
                         navigationRailContainerColor = MaterialTheme.colorScheme
                             .surfaceColorAtElevation(3.dp),

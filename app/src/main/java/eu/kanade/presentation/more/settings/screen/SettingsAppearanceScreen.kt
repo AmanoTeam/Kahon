@@ -131,6 +131,14 @@ object SettingsAppearanceScreen : SearchableSettings {
                         true
                     },
                 ),
+                Preference.PreferenceItem.SwitchPreference(
+                    preference = uiPreferences.hideBarsOnScroll,
+                    title = stringResource(MR.strings.pref_hide_bars_on_scroll),
+                    onValueChanged = {
+                        context.toast(MR.strings.requires_app_restart)
+                        true
+                    },
+                ),
                 Preference.PreferenceItem.ListPreference(
                     preference = uiPreferences.dateFormat,
                     entries = DateFormats
