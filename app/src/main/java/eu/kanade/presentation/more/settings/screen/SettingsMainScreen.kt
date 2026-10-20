@@ -47,7 +47,9 @@ import mihon.icons.materialsymbols.rounded.Storage
 import mihon.icons.materialsymbols.rounded.Sync
 import mihon.presentation.core.util.isTabletUi
 import tachiyomi.i18n.MR
+import tachiyomi.presentation.core.components.material.LocalHideBarsOnScroll
 import tachiyomi.presentation.core.components.material.Scaffold
+import tachiyomi.presentation.core.components.material.rememberTopAppBarScrollBehavior
 import tachiyomi.presentation.core.i18n.stringResource
 
 @Serializable
@@ -80,7 +82,7 @@ data object SettingsMainScreen : NavKey {
             topBarScrollBehavior = if (twoPane) {
                 TopAppBarDefaults.pinnedScrollBehavior(topBarState)
             } else {
-                TopAppBarDefaults.enterAlwaysScrollBehavior(topBarState)
+                rememberTopAppBarScrollBehavior(LocalHideBarsOnScroll.current, topBarState)
             },
             topBar = { scrollBehavior ->
                 AppBar(
