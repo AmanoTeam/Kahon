@@ -14,6 +14,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionContext
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.core.view.inputmethod.EditorInfoCompat
@@ -24,6 +25,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import mihon.app.di.appGraph
+import tachiyomi.presentation.core.components.material.LocalHideBarsOnScroll
 
 inline fun ComponentActivity.setComposeContent(
     parent: CompositionContext? = null,
@@ -31,10 +33,13 @@ inline fun ComponentActivity.setComposeContent(
 ) {
     setContent(parent) {
         TachiyomiTheme {
+            // Read only once at startup; toggling the setting requires restarting the app
+            val hideBarsOnScroll = remember { appGraph.uiPreferences.hideBarsOnScroll.get() }
             CompositionLocalProvider(
                 LocalTextStyle provides MaterialTheme.typography.bodySmall,
                 LocalContentColor provides MaterialTheme.colorScheme.onBackground,
                 LocalMetroViewModelFactory provides appGraph.viewModelFactory,
+                LocalHideBarsOnScroll provides hideBarsOnScroll,
             ) {
                 content()
             }
@@ -48,9 +53,12 @@ fun ComposeView.setComposeContent(
     setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
     setContent {
         TachiyomiTheme {
+            // Read only once at startup; toggling the setting requires restarting the app
+            val hideBarsOnScroll = remember { context.appGraph.uiPreferences.hideBarsOnScroll.get() }
             CompositionLocalProvider(
                 LocalTextStyle provides MaterialTheme.typography.bodySmall,
                 LocalContentColor provides MaterialTheme.colorScheme.onBackground,
+                LocalHideBarsOnScroll provides hideBarsOnScroll,
             ) {
                 content()
             }
