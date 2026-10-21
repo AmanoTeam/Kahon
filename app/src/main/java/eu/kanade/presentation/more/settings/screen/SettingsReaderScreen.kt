@@ -32,7 +32,9 @@ object SettingsReaderScreen : SearchableSettings {
         return listOf(
             Preference.PreferenceItem.ListPreference(
                 preference = readerPref.defaultReadingMode,
-                entries = ReadingMode.entries.drop(1)
+                entries = mapOf(
+                    ReadingMode.DEFAULT.flagValue to stringResource(MR.strings.label_auto),
+                ) + ReadingMode.entries.drop(1)
                     .associate { it.flagValue to stringResource(it.stringRes) },
                 title = stringResource(MR.strings.pref_viewer_type),
             ),

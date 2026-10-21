@@ -50,8 +50,10 @@ import eu.kanade.tachiyomi.ui.reader.setting.ReadingMode
 import eu.kanade.tachiyomi.ui.reader.viewer.Viewer
 import eu.kanade.tachiyomi.util.chapter.filterDownloaded
 import eu.kanade.tachiyomi.util.chapter.removeDuplicates
+import eu.kanade.tachiyomi.util.defaultReaderType
 import eu.kanade.tachiyomi.util.editCover
 import eu.kanade.tachiyomi.util.lang.byteSize
+import eu.kanade.tachiyomi.util.mangaType
 import eu.kanade.tachiyomi.util.storage.DiskUtil
 import eu.kanade.tachiyomi.util.storage.cacheImageDir
 import eu.kanade.tachiyomi.util.system.activeNetworkState
@@ -849,9 +851,21 @@ class ReaderViewModel(
      * Returns the viewer position used by this manga or the default one.
      */
     fun getMangaReadingMode(resolveDefault: Boolean = true): Int {
-        val default = readerPreferences.defaultReadingMode.get()
+        val defaultPref = readerPreferences.defaultReadingMode.get()
+        // The "Default" default cannot be used to instantiate a viewer,
+        // so fall back to the right-to-left pager
+        val default = if (defaultPref == ReadingMode.DEFAULT.flagValue) {
+            ReadingMode.RIGHT_TO_LEFT.flagValue
+        } else {
+            defaultPref
+        }
         val readingMode = ReadingMode.fromPreference(manga?.readingMode?.toInt())
         return when {
+            resolveDefault && readingMode == ReadingMode.DEFAULT && defaultPref == ReadingMode.DEFAULT.flagValue -> {
+                manga?.let {
+                    it.defaultReaderType(it.mangaType(sourceName = state.value.source?.name))
+                } ?: default
+            }
             resolveDefault && readingMode == ReadingMode.DEFAULT -> default
             else -> manga?.readingMode?.toInt() ?: default
         }
