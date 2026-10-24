@@ -25,6 +25,9 @@ class WebtoonConfig(
     var themeChangedListener: (() -> Unit)? = null
 
     var imageCropBorders = false
+
+    var cropGutters = true
+    var cropGuttersMinimum = 0
         private set
 
     var zoomOutDisabled = false
@@ -45,6 +48,12 @@ class WebtoonConfig(
     init {
         readerPreferences.cropBordersWebtoon
             .register({ imageCropBorders = it }, { imagePropertyChangedListener?.invoke() })
+
+        readerPreferences.cropGutters
+            .register({ cropGutters = it }, { imagePropertyChangedListener?.invoke() })
+
+        readerPreferences.cropGuttersMinimum
+            .register({ cropGuttersMinimum = it }, { imagePropertyChangedListener?.invoke() })
 
         readerPreferences.webtoonSidePadding
             .register({ sidePadding = it }, { imagePropertyChangedListener?.invoke() })

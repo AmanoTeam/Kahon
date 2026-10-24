@@ -439,6 +439,9 @@
     <string name="pref_high_quality_renderer">Use high quality renderer</string>
     <string name="pref_display_profile">Custom display profile</string>
     <string name="pref_crop_borders">Crop borders</string>
+    <string name="pref_crop_gutters">Crop gutters</string>
+    <string name="pref_crop_gutters_summary">Crop out empty spaces ("gutters") that appear between panels on long-strip webtoons.</string>
+    <string name="pref_crop_gutters_minimum">Gutter padding</string>
     <string name="pref_custom_brightness">Custom brightness</string>
     <string name="pref_grayscale">Grayscale</string>
     <string name="pref_inverted_colors">Inverted</string>
