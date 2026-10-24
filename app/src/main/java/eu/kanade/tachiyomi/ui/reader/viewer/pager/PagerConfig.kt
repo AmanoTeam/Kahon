@@ -40,6 +40,11 @@ class PagerConfig(
     var imageCropBorders = false
         private set
 
+    var cropGutters = true
+        private set
+    var cropGuttersMinimum = 0
+        private set
+
     var navigateToPan = false
         private set
 
@@ -64,6 +69,12 @@ class PagerConfig(
 
         readerPreferences.cropBorders
             .register({ imageCropBorders = it }, { imagePropertyChangedListener?.invoke() })
+
+        readerPreferences.cropGutters
+            .register({ cropGutters = it }, { imagePropertyChangedListener?.invoke() })
+
+        readerPreferences.cropGuttersMinimum
+            .register({ cropGuttersMinimum = it }, { imagePropertyChangedListener?.invoke() })
 
         readerPreferences.navigateToPan
             .register({ navigateToPan = it })

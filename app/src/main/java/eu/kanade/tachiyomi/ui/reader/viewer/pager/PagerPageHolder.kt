@@ -1,5 +1,6 @@
 package eu.kanade.tachiyomi.ui.reader.viewer.pager
 
+import kotlin.math.roundToInt
 import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
@@ -171,6 +172,8 @@ class PagerPageHolder(
                         cropBorders = viewer.config.imageCropBorders,
                         zoomStartPosition = viewer.config.imageZoomType,
                         landscapeZoom = viewer.config.landscapeZoom,
+                        cropRect = page.bounds.takeIf { viewer.config.cropGutters },
+                        cropRectMinimum = (viewer.config.cropGuttersMinimum * context.resources.displayMetrics.density).roundToInt(),
                     ),
                 )
                 if (!isAnimated) {

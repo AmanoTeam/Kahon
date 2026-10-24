@@ -36,6 +36,8 @@ import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView.SCALE_TYPE_
 import com.github.chrisbanes.photoview.PhotoView
 import eu.kanade.tachiyomi.data.coil.ImageDecoder
 import eu.kanade.tachiyomi.data.coil.cropBorders
+import eu.kanade.tachiyomi.data.coil.cropRect
+import eu.kanade.tachiyomi.data.coil.cropRectMinimum
 import eu.kanade.tachiyomi.data.coil.webtoonStrips
 import eu.kanade.tachiyomi.ui.reader.viewer.webtoon.WebtoonStripImageView
 import eu.kanade.tachiyomi.util.system.animatorDurationScale
@@ -279,6 +281,8 @@ open class ReaderPageImageView @JvmOverloads constructor(
         setDoubleTapZoomDuration(config.zoomDuration.getSystemScaledDuration())
         setMinimumScaleType(config.minimumScaleType)
         setMinimumDpi(1) // Just so that very small image will be fit for initial load
+        setCropRect(config.cropRect)
+        setCropPad(config.cropRectMinimum)
         setCropBorders(config.cropBorders)
         setOnImageEventListener(
             object : SubsamplingScaleImageView.DefaultOnImageEventListener() {
@@ -348,6 +352,8 @@ open class ReaderPageImageView @JvmOverloads constructor(
             .size(ViewSizeResolver(this))
             .precision(Precision.INEXACT)
             .cropBorders(config.cropBorders)
+            .cropRect(config.cropRect)
+            .cropRectMinimum(config.cropRectMinimum)
             .webtoonStrips(true)
             .crossfade(false)
             .build()
@@ -437,6 +443,8 @@ open class ReaderPageImageView @JvmOverloads constructor(
         val cropBorders: Boolean = false,
         val zoomStartPosition: ZoomStartPosition = ZoomStartPosition.CENTER,
         val landscapeZoom: Boolean = false,
+        val cropRect: IntArray? = null,
+        val cropRectMinimum: Int = 0,
     )
 
     enum class ZoomStartPosition {

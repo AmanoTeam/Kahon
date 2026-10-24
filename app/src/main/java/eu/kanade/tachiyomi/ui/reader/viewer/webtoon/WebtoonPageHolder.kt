@@ -1,5 +1,6 @@
 package eu.kanade.tachiyomi.ui.reader.viewer.webtoon
 
+import kotlin.math.roundToInt
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
@@ -202,6 +203,8 @@ class WebtoonPageHolder(
                         zoomDuration = viewer.config.doubleTapAnimDuration,
                         minimumScaleType = SubsamplingScaleImageView.SCALE_TYPE_FIT_WIDTH,
                         cropBorders = viewer.config.imageCropBorders,
+                        cropRect = page?.bounds?.takeIf { viewer.config.cropGutters },
+                        cropRectMinimum = (viewer.config.cropGuttersMinimum * context.resources.displayMetrics.density).roundToInt(),
                     ),
                 )
                 removeErrorLayout()

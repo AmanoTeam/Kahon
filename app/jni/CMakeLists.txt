@@ -11,3 +11,11 @@ add_subdirectory(
 	"${CMAKE_CURRENT_SOURCE_DIR}/../../submodules/kad"
 	"${CMAKE_CURRENT_BINARY_DIR}/kad"
 )
+
+set(FLARE_LIBRARY ON)
+set(FLARE_LTO ON)
+
+add_subdirectory(
+	"${CMAKE_CURRENT_SOURCE_DIR}/../../submodules/flare"
+	"${CMAKE_CURRENT_BINARY_DIR}/flare"
+)

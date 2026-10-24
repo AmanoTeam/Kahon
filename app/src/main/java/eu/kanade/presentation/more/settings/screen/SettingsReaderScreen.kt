@@ -291,6 +291,7 @@ object SettingsReaderScreen : SearchableSettings {
         val navMode by navModePref.collectAsState()
         val dualPageSplit by dualPageSplitPref.collectAsState()
         val rotateToFit by rotateToFitPref.collectAsState()
+        val cropGutters by readerPreferences.cropGutters.collectAsState()
 
         return Preference.PreferenceGroup(
             title = stringResource(MR.strings.webtoon_viewer),
@@ -335,6 +336,20 @@ object SettingsReaderScreen : SearchableSettings {
                 Preference.PreferenceItem.SwitchPreference(
                     preference = readerPreferences.cropBordersWebtoon,
                     title = stringResource(MR.strings.pref_crop_borders),
+                ),
+                Preference.PreferenceItem.SwitchPreference(
+                    preference = readerPreferences.cropGutters,
+                    title = stringResource(MR.strings.pref_crop_gutters),
+                    subtitle = stringResource(MR.strings.pref_crop_gutters_summary),
+                ),
+                Preference.PreferenceItem.SliderPreference(
+                    preference = readerPreferences.cropGuttersMinimum,
+                    valueRange = ReaderPreferences.let {
+                        it.CROP_GUTTERS_MINIMUM_MIN..it.CROP_GUTTERS_MINIMUM_MAX
+                    },
+                    title = stringResource(MR.strings.pref_crop_gutters_minimum),
+                    valueText = { "$it dp" },
+                    visible = cropGutters,
                 ),
                 Preference.PreferenceItem.SwitchPreference(
                     preference = dualPageSplitPref,

@@ -98,6 +98,17 @@ class ReaderPreferences(
 
     val cropBordersWebtoon: Preference<Boolean> = preferenceStore.getBoolean("crop_borders_webtoon", false)
 
+    /**
+     * Removes the blank strips around and between the actual content of each page, keeping the
+     * files themselves untouched.
+     */
+    val cropGutters: Preference<Boolean> = preferenceStore.getBoolean("crop_gutters", true)
+
+    val cropGuttersMinimum: Preference<Int> = preferenceStore.getInt(
+        "crop_gutters_minimum_dp",
+        CROP_GUTTERS_MINIMUM_DEFAULT,
+    )
+
     val webtoonSidePadding: Preference<Int> = preferenceStore.getInt("webtoon_side_padding", WEBTOON_PADDING_MIN)
 
     val readerHideThreshold: Preference<ReaderHideThreshold> = preferenceStore.getEnum(
@@ -317,6 +328,10 @@ class ReaderPreferences(
     companion object {
         const val WEBTOON_PADDING_MIN = 0
         const val WEBTOON_PADDING_MAX = 25
+
+        const val CROP_GUTTERS_MINIMUM_MIN = 0
+        const val CROP_GUTTERS_MINIMUM_MAX = 32
+        const val CROP_GUTTERS_MINIMUM_DEFAULT = 2
 
         const val MILLI_CONVERSION = 100
 
