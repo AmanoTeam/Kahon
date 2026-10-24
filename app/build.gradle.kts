@@ -37,17 +37,6 @@ android {
         ndk {
             abiFilters += supportedAbis
         }
-
-        externalNativeBuild {
-            cmake {
-                arguments += listOf(
-                    "-DKAD_STATIC=ON",
-                    "-DKAD_LIBRARY=ON",
-                    "-DKAD_LTO=ON",
-                    "-DKAD_CAPTURE=OFF",
-                )
-            }
-        }
     }
 
     buildTypes {
@@ -68,7 +57,7 @@ android {
 
     externalNativeBuild {
         cmake {
-            path = file("$projectDir/../submodules/kad/CMakeLists.txt")
+            path = file("$projectDir/jni/CMakeLists.txt")
         }
     }
 
