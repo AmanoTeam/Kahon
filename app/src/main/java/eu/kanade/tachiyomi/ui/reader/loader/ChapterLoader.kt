@@ -99,6 +99,7 @@ class ChapterLoader(
                 source,
                 downloadManager,
                 downloadProvider,
+                chapterCache,
             )
             source is LocalSource -> source.getFormat(chapter.chapter.toSChapter()).let { format ->
                 when (format) {

@@ -248,6 +248,7 @@ internal class HttpPageLoader(
                     throw e
                 }
             }
+            page.bounds = chapterCache.getImageBounds(imageUrl)
             page.status = Page.State.Ready
         } catch (e: Throwable) {
             page.downloadStream = null

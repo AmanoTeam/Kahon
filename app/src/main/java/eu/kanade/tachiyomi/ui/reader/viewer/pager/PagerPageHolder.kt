@@ -20,6 +20,7 @@ import logcat.LogPriority
 import okio.Buffer
 import tachiyomi.core.common.util.system.ImageUtil
 import tachiyomi.core.common.util.system.logcat
+import kotlin.math.roundToInt
 
 /**
  * View of the ViewPager that contains a page of a chapter.
@@ -167,6 +168,11 @@ class PagerPageHolder(
                         cropBorders = viewer.paged.page.cropBorders,
                         zoomStartPosition = viewer.imageZoomType,
                         landscapeZoom = viewer.paged.page.landscapeZoom,
+                        cropRect = page.bounds.takeIf { viewer.paged.page.cropGutters },
+                        cropRectMinimum = (
+                            viewer.paged.page.cropGuttersMinimum *
+                                context.resources.displayMetrics.density
+                            ).roundToInt(),
                     ),
                 )
                 if (!isAnimated) {

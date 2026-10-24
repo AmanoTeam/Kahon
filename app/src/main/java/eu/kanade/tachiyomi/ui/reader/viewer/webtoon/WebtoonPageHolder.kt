@@ -26,6 +26,7 @@ import logcat.LogPriority
 import okio.Buffer
 import tachiyomi.core.common.util.system.ImageUtil
 import tachiyomi.core.common.util.system.logcat
+import kotlin.math.roundToInt
 
 /**
  * Holder of the webtoon reader for a single page of a chapter.
@@ -198,6 +199,11 @@ class WebtoonPageHolder(
                         zoomDuration = viewer.general.doubleTapAnimDuration,
                         minimumScaleType = SubsamplingScaleImageView.SCALE_TYPE_FIT_WIDTH,
                         cropBorders = viewer.longStrip.cropBorders,
+                        cropRect = page?.bounds?.takeIf { viewer.longStrip.cropGutters },
+                        cropRectMinimum = (
+                            viewer.longStrip.cropGuttersMinimum *
+                                context.resources.displayMetrics.density
+                            ).roundToInt(),
                     ),
                 )
                 removeErrorLayout()
