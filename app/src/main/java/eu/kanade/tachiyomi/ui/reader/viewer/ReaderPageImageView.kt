@@ -36,6 +36,7 @@ import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView.SCALE_TYPE_
 import com.github.chrisbanes.photoview.PhotoView
 import eu.kanade.tachiyomi.data.coil.ImageDecoder
 import eu.kanade.tachiyomi.data.coil.cropBorders
+import eu.kanade.tachiyomi.data.coil.cropRect
 import eu.kanade.tachiyomi.data.coil.webtoonStrips
 import eu.kanade.tachiyomi.ui.reader.viewer.webtoon.WebtoonStripImageView
 import eu.kanade.tachiyomi.util.system.animatorDurationScale
@@ -279,6 +280,7 @@ open class ReaderPageImageView @JvmOverloads constructor(
         setDoubleTapZoomDuration(config.zoomDuration.getSystemScaledDuration())
         setMinimumScaleType(config.minimumScaleType)
         setMinimumDpi(1) // Just so that very small image will be fit for initial load
+        setCropRect(config.cropRect)
         setCropBorders(config.cropBorders)
         setOnImageEventListener(
             object : SubsamplingScaleImageView.DefaultOnImageEventListener() {
@@ -348,6 +350,7 @@ open class ReaderPageImageView @JvmOverloads constructor(
             .size(ViewSizeResolver(this))
             .precision(Precision.INEXACT)
             .cropBorders(config.cropBorders)
+            .cropRect(config.cropRect)
             .webtoonStrips(true)
             .crossfade(false)
             .build()
@@ -431,13 +434,35 @@ open class ReaderPageImageView @JvmOverloads constructor(
     /**
      * All of the config except [zoomDuration] will only be used for non-animated image.
      */
-    data class Config(
+    class Config(
         val zoomDuration: Int,
         val minimumScaleType: Int = SCALE_TYPE_CENTER_INSIDE,
         val cropBorders: Boolean = false,
         val zoomStartPosition: ZoomStartPosition = ZoomStartPosition.CENTER,
         val landscapeZoom: Boolean = false,
-    )
+        val cropRect: IntArray? = null,
+    ) {
+        override fun equals(other: Any?): Boolean {
+            if (this === other) return true
+            if (other !is Config) return false
+            return zoomDuration == other.zoomDuration &&
+                minimumScaleType == other.minimumScaleType &&
+                cropBorders == other.cropBorders &&
+                zoomStartPosition == other.zoomStartPosition &&
+                landscapeZoom == other.landscapeZoom &&
+                cropRect.contentEquals(other.cropRect)
+        }
+
+        override fun hashCode(): Int {
+            var result = zoomDuration
+            result = 31 * result + minimumScaleType
+            result = 31 * result + cropBorders.hashCode()
+            result = 31 * result + zoomStartPosition.hashCode()
+            result = 31 * result + landscapeZoom.hashCode()
+            result = 31 * result + (cropRect?.contentHashCode() ?: 0)
+            return result
+        }
+    }
 
     enum class ZoomStartPosition {
         LEFT,

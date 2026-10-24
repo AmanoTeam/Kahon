@@ -34,6 +34,15 @@ val Options.cropBorders: Boolean
 
 private val cropBordersKey = Extras.Key(default = false)
 
+fun ImageRequest.Builder.cropRect(rect: IntArray?) = apply {
+    extras[cropRectKey] = rect
+}
+
+val Options.cropRect: IntArray?
+    get() = getExtra(cropRectKey)
+
+private val cropRectKey = Extras.Key(default = null as IntArray?)
+
 fun ImageRequest.Builder.webtoonStrips(enable: Boolean) = apply {
     extras[webtoonStripsKey] = enable
 }

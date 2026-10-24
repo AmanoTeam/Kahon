@@ -245,6 +245,7 @@ internal class HttpPageLoader(
 
             page.downloadStream = null
             page.stream = { chapterCache.getImageFile(imageUrl).inputStream() }
+            page.bounds = chapterCache.getImageBounds(imageUrl)
             page.status = Page.State.Ready
         } catch (e: Throwable) {
             page.downloadStream = null

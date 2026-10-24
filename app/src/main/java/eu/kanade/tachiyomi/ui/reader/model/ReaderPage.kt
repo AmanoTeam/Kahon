@@ -12,6 +12,10 @@ open class ReaderPage(
 
     open lateinit var chapter: ReaderChapter
 
+    /** The content bounds of the page, [left, top, width, height], set once the page is loaded. */
+    @Volatile
+    var bounds: IntArray? = null
+
     /** Set by a viewer before the download; filled during [Page.State.DownloadImage]. */
     @Volatile
     var downloadStream: DownloadStream? = null

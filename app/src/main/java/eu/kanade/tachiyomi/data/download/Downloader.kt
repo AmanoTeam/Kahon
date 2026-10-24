@@ -440,6 +440,9 @@ class Downloader(
 
             download.status = Download.State.DOWNLOADING
 
+            // The content bounds flare found for each downloaded page, by page index
+            val pageBounds = ConcurrentHashMap<Int, String>()
+
             // Start downloading images, consider we can have downloaded images already
             coroutineScope {
                 pageList.forEach { page ->
@@ -456,7 +459,7 @@ class Downloader(
                             }
                         }
 
-                        getOrDownloadImage(page, download, tmpDir)
+                        getOrDownloadImage(page, download, tmpDir, pageBounds)
                         notifier.onProgressChange(download)
                     }.invokeOnCompletion { slots.release() }
                 }
@@ -469,6 +472,8 @@ class Downloader(
                 download.status = Download.State.ERROR
                 return
             }
+
+            writeBoundsFile(tmpDir, pageList.size, pageBounds)
 
             createComicInfoFile(
                 tmpDir,
@@ -498,13 +503,32 @@ class Downloader(
     }
 
     /**
+     * Writes the content bounds flare found for the downloaded pages, one line per page index.
+     *
+     * @param tmpDir the temporary directory of the download.
+     * @param pageCount the number of pages in the chapter.
+     * @param pageBounds the bounds of each page whose were found, by page index.
+     */
+    private fun writeBoundsFile(tmpDir: UniFile, pageCount: Int, pageBounds: Map<Int, String>) {
+        if (pageBounds.isEmpty()) return
+
+        val content = (0 until pageCount).joinToString("\n") { pageBounds[it] ?: "" }
+
+        tmpDir.findFile(BOUNDS_FILE)?.delete()
+        tmpDir.createFile(BOUNDS_FILE)!!.openOutputStream().use {
+            it.write(content.toByteArray())
+        }
+    }
+
+    /**
      * Gets the image from the filesystem if it exists or downloads it otherwise.
      *
      * @param page the page to download.
      * @param download the download of the page.
      * @param tmpDir the temporary directory of the download.
+     * @param pageBounds receives the content bounds of the page.
      */
-    private suspend fun getOrDownloadImage(page: Page, download: Download, tmpDir: UniFile) {
+    private suspend fun getOrDownloadImage(page: Page, download: Download, tmpDir: UniFile, pageBounds: MutableMap<Int, String>) {
         // If the image URL is empty, do nothing
         if (page.imageUrl == null) {
             return
@@ -519,14 +543,20 @@ class Downloader(
         }
 
         try {
-            // If the image is already downloaded, do nothing. Otherwise download from network
-            val file = when {
-                imageFile != null -> imageFile
+            // The image is stored unmodified; only its content bounds are collected. If the image
+            // is already downloaded, do nothing. Otherwise download from network
+            val (file, bounds) = when {
+                imageFile != null -> imageFile to findDownloadBounds(imageFile)
                 chapterCache.isImageInCache(
                     page.imageUrl!!,
-                ) -> copyImageFromCache(chapterCache.getImageFile(page.imageUrl!!), tmpDir, filename)
-                else -> downloadImage(page, download.source, tmpDir, filename)
+                ) -> {
+                    val cachedBounds = chapterCache.getImageBounds(page.imageUrl!!)?.joinToString(",")
+                    copyImageFromCache(chapterCache.getImageFile(page.imageUrl!!), tmpDir, filename) to cachedBounds
+                }
+                else -> downloadImage(page, download.source, tmpDir, filename).let { it to findDownloadBounds(it) }
             }
+
+            bounds?.let { pageBounds[page.index] = it }
 
             // When the page is ready, set page path, progress (just in case) and status
             page.uri = file.uri
@@ -622,6 +652,28 @@ class Downloader(
     }
 
     /**
+     * Finds the content bounds of the downloaded image in [file], without touching it.
+     *
+     * @return the bounds serialized as text, or null when they cannot be found.
+     */
+    private fun findDownloadBounds(file: UniFile): String? {
+        val input = File.createTempFile("flare_", null, context.cacheDir)
+
+        return try {
+            file.openInputStream().use { stream ->
+                input.outputStream().use { stream.copyTo(it) }
+            }
+
+            chapterCache.findBands(input)?.joinToString(",")
+        } catch (e: Throwable) {
+            if (e is CancellationException) throw e
+            null
+        } finally {
+            input.delete()
+        }
+    }
+
+    /**
      * Checks if the download was successful.
      *
      * @param download the download to check.
@@ -643,7 +695,7 @@ class Downloader(
         val downloadedImagesCount = tmpDir.listFiles().orEmpty().count {
             val fileName = it.name.orEmpty()
             when {
-                fileName in listOf(COMIC_INFO_FILE, NOMEDIA_FILE) -> false
+                fileName in listOf(COMIC_INFO_FILE, NOMEDIA_FILE, BOUNDS_FILE) -> false
                 fileName.endsWith(".tmp") -> false
                 // Only count the first split page and not the others
                 fileName.contains("__") && !fileName.endsWith("__001.jpg") -> false
@@ -823,6 +875,7 @@ class Downloader(
 
     companion object {
         const val TMP_DIR_SUFFIX = "_tmp"
+        const val BOUNDS_FILE = "bounds.txt"
     }
 }
 

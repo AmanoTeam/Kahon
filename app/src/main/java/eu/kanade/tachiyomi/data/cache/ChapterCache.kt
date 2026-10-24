@@ -2,6 +2,7 @@ package eu.kanade.tachiyomi.data.cache
 
 import android.content.Context
 import android.text.format.Formatter
+import com.amanoteam.flare.Flare
 import com.jakewharton.disklrucache.DiskLruCache
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Inject
@@ -15,6 +16,7 @@ import logcat.LogPriority
 import okhttp3.Response
 import okio.buffer
 import okio.sink
+import okio.source
 import tachiyomi.core.common.util.system.logcat
 import tachiyomi.domain.chapter.model.Chapter
 import java.io.File
@@ -34,6 +36,9 @@ class ChapterCache(
     private val context: Context,
     private val json: Json,
 ) {
+
+    /** Guards the native cropping calls of [Flare]. */
+    private val flareLock = Any()
 
     /** Cache class used for cache management. */
     private val diskCache by lazy {
@@ -147,7 +152,27 @@ class ChapterCache(
     }
 
     /**
+     * Finds the content bands of the image stored in [input], without touching any file.
+     *
+     * @return IntArray of [left, top, width, height, bandCount, bandTop, bandHeight, ...], or null
+     * when the image cannot be processed.
+     */
+    fun findBands(input: File): IntArray? {
+        return try {
+            synchronized(flareLock) {
+                Flare.findBands(input.path)
+            }
+        } catch (e: Throwable) {
+            logcat(LogPriority.WARN, e) { "Failed to load flare" }
+            null
+        }
+    }
+
+    /**
      * Add image to cache.
+     *
+     * The image is stored unmodified, with the content bounds flare found for it as the second
+     * value of the entry, so the reader can window the page without re-encoding it.
      *
      * @param imageUrl url of image.
      * @param response http response from page.
@@ -164,22 +189,36 @@ class ChapterCache(
             val key = DiskUtil.hashKeyForDisk(imageUrl)
             editor = diskCache.edit(key) ?: return
 
-            // Get OutputStream and write image with Okio.
-            if (live == null) {
-                response.body.source().saveTo(editor.newOutputStream(0))
-            } else {
-                live.reserve(response.body.contentLength())
-                response.body.source().use { source ->
-                    editor.newOutputStream(0).use { out ->
-                        val buffer = ByteArray(1 shl 16)
-                        while (true) {
-                            val n = source.read(buffer)
-                            if (n < 0) break
-                            out.write(buffer, 0, n)
-                            live.append(buffer, 0, n)
+            // Save the image to a temporary file so flare can decode it from a path.
+            val input = File.createTempFile("flare_", null, context.cacheDir)
+
+            try {
+                if (live == null) {
+                    response.body.source().saveTo(input.outputStream())
+                } else {
+                    live.reserve(response.body.contentLength())
+                    response.body.source().use { source ->
+                        input.outputStream().use { out ->
+                            val buffer = ByteArray(1 shl 16)
+                            while (true) {
+                                val n = source.read(buffer)
+                                if (n < 0) break
+                                out.write(buffer, 0, n)
+                                live.append(buffer, 0, n)
+                            }
                         }
                     }
                 }
+
+                input.inputStream().source().buffer().saveTo(editor.newOutputStream(0))
+
+                val bounds = findBands(input) ?: intArrayOf(0, 0, 0, 0)
+                logcat(LogPriority.INFO) {
+                    "flare: bands=${bounds.joinToString(",")} input=${input.length()}B"
+                }
+                editor.newOutputStream(1).use { it.write(bounds.joinToString(",").toByteArray()) }
+            } finally {
+                input.delete()
             }
 
             diskCache.flush()
@@ -187,6 +226,28 @@ class ChapterCache(
         } finally {
             response.body.close()
             editor?.abortUnlessCommitted()
+        }
+    }
+
+    /**
+     * Get the content bands of the image with the given url, when cached.
+     *
+     * @param imageUrl url of image.
+     * @return the bands flare found, or null when not cached or undecodable.
+     */
+    fun getImageBounds(imageUrl: String): IntArray? {
+        return try {
+            val key = DiskUtil.hashKeyForDisk(imageUrl)
+            diskCache.get(key).use { snapshot ->
+                if (snapshot == null) return null
+                snapshot.getString(1)
+                    ?.split(",")
+                    ?.mapNotNull { it.toIntOrNull() }
+                    ?.toBandsOrNull()
+            }
+        } catch (e: IOException) {
+            logcat(LogPriority.WARN, e) { "Failed to get image bounds from cache" }
+            null
         }
     }
 
@@ -229,10 +290,22 @@ class ChapterCache(
 }
 
 /** Application cache version.  */
-private const val PARAMETER_APP_VERSION = 1
+private const val PARAMETER_APP_VERSION = 3
 
-/** The number of values per cache entry. Must be positive.  */
-private const val PARAMETER_VALUE_COUNT = 1
+/**
+ * Validates the bands flare reported, accepting the bare rect [left, top, width, height] form as a
+ * single full band for entries written before the bands existed.
+ */
+internal fun List<Int>.toBandsOrNull(): IntArray? {
+    return when {
+        size == 4 && this[2] > 0 && this[3] > 0 -> intArrayOf(this[0], this[1], this[2], this[3], 1, this[1], this[3])
+        size >= 5 && this[2] > 0 && this[3] > 0 && this[4] > 0 && size == 5 + 2 * this[4] -> toIntArray()
+        else -> null
+    }
+}
 
-/** The maximum number of bytes this cache should use to store.  */
-private const val PARAMETER_CACHE_SIZE = 100L * 1024 * 1024
+    /** The number of values per cache entry: the image and its content bounds.  */
+    private const val PARAMETER_VALUE_COUNT = 2
+
+    /** The maximum number of bytes this cache should use to store.  */
+    private const val PARAMETER_CACHE_SIZE = 100L * 1024 * 1024

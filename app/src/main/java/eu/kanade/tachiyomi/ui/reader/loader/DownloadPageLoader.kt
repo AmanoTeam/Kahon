@@ -5,6 +5,8 @@ import android.net.Uri
 import com.hippo.unifile.UniFile
 import eu.kanade.tachiyomi.data.download.DownloadManager
 import eu.kanade.tachiyomi.data.download.DownloadProvider
+import eu.kanade.tachiyomi.data.cache.toBandsOrNull
+import eu.kanade.tachiyomi.data.download.Downloader
 import eu.kanade.tachiyomi.source.Source
 import eu.kanade.tachiyomi.source.model.Page
 import eu.kanade.tachiyomi.ui.reader.model.ReaderChapter
@@ -58,11 +60,25 @@ internal class DownloadPageLoader(
 
     private suspend fun getPagesFromDirectory(): List<ReaderPage> {
         val pages = downloadManager.buildPageList(source, manga, chapter.chapter)
-        return pages.map { page ->
+        val chapterDir = downloadProvider.findChapterDir(
+            chapter.chapter.name,
+            chapter.chapter.scanlator,
+            chapter.chapter.url,
+            manga.title,
+            source,
+        )
+        val boundLines = chapterDir?.findFile(Downloader.BOUNDS_FILE)?.let { file ->
+            runCatching { file.openInputStream().bufferedReader().readLines() }.getOrNull()
+        }
+        return pages.mapIndexed { index, page ->
             ReaderPage(page.index, page.url, page.imageUrl) {
                 context.contentResolver.openInputStream(page.uri ?: Uri.EMPTY)!!
             }.apply {
                 status = Page.State.Ready
+                bounds = boundLines?.getOrNull(index)?.takeIf { it.isNotBlank() }
+                    ?.split(",")
+                    ?.mapNotNull { it.toIntOrNull() }
+                    ?.toBandsOrNull()
             }
         }
     }
