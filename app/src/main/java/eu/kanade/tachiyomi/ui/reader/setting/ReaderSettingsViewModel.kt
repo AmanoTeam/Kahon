@@ -120,6 +120,8 @@ class ReaderSettingsViewModel(
         preferences.zoomStart,
         preferences.cropBorders,
         preferences.landscapeZoom,
+        preferences.cropGutters,
+        preferences.cropGuttersMinimum,
         preferences.navigateToPan,
         preferences.navigationModePager,
         preferences.pagerNavInverted,
@@ -130,6 +132,8 @@ class ReaderSettingsViewModel(
                 zoomStart = ReaderPreferences.ZoomStartType.fromValue(zoomStart.get()),
                 cropBorders = cropBorders.get(),
                 landscapeZoom = landscapeZoom.get(),
+                cropGutters = cropGutters.get(),
+                cropGuttersMinimum = cropGuttersMinimum.get(),
             ),
             navigateToPan = navigateToPan.get(),
             navigation = NavigationSettings(
@@ -145,10 +149,14 @@ class ReaderSettingsViewModel(
     val longStrip = settings(
         preferences.cropBordersWebtoon,
         preferences.webtoonDisableZoomOut,
+        preferences.cropGutters,
+        preferences.cropGuttersMinimum,
     ) {
         LongStripSettings(
             cropBorders = cropBordersWebtoon.get(),
             zoomOutDisabled = webtoonDisableZoomOut.get(),
+            cropGutters = cropGutters.get(),
+            cropGuttersMinimum = cropGuttersMinimum.get(),
         )
     }
 

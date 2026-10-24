@@ -1,3 +1,6 @@
 [submodule "submodules/kad"]
 	path = submodules/kad
 	url = https://github.com/AmanoTeam/Kad
+[submodule "submodules/flare"]
+	path = submodules/flare
+	url = https://github.com/AmanoTeam/flare

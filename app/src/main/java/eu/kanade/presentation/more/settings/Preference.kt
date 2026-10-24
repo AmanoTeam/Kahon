@@ -171,9 +171,9 @@ sealed class Preference {
 
         data class CustomPreference(
             override val title: String,
+            override val visible: Boolean = true,
             val content: @Composable () -> Unit,
         ) : PreferenceItem<Unit, Unit>() {
-            override val visible: Boolean = true
             override val subtitle: String? = null
             override val icon: ImageVector? = null
             override val onValueChanged: suspend (value: Unit) -> Unit = {}
