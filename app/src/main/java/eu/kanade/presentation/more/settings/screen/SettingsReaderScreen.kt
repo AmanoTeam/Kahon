@@ -13,6 +13,7 @@ import eu.kanade.tachiyomi.ui.reader.setting.ReadingMode
 import eu.kanade.tachiyomi.util.system.hasDisplayCutout
 import mihon.app.di.appGraph
 import tachiyomi.i18n.MR
+import tachiyomi.presentation.core.components.SliderItem
 import tachiyomi.presentation.core.i18n.pluralStringResource
 import tachiyomi.presentation.core.i18n.stringResource
 import tachiyomi.presentation.core.util.collectAsState
@@ -296,6 +297,7 @@ object SettingsReaderScreen : SearchableSettings {
         val navMode by navModePref.collectAsState()
         val dualPageSplit by dualPageSplitPref.collectAsState()
         val rotateToFit by rotateToFitPref.collectAsState()
+        val cropGutters by readerPreferences.cropGutters.collectAsState()
 
         return Preference.PreferenceGroup(
             title = stringResource(MR.strings.webtoon_viewer),
@@ -341,6 +343,29 @@ object SettingsReaderScreen : SearchableSettings {
                     preference = readerPreferences.cropBordersWebtoon,
                     title = stringResource(MR.strings.pref_crop_borders),
                 ),
+                Preference.PreferenceItem.SwitchPreference(
+                    preference = readerPreferences.cropGutters,
+                    title = stringResource(MR.strings.pref_crop_gutters),
+                    subtitle = stringResource(MR.strings.pref_crop_gutters_summary),
+                ),
+                Preference.PreferenceItem.CustomPreference(
+                    title = stringResource(MR.strings.pref_crop_gutters_minimum),
+                    visible = cropGutters,
+                ) {
+                    val cropGuttersMinimum by readerPreferences.cropGuttersMinimum.collectAsState()
+                    val cropGuttersMinimumIndex = ReaderPreferences.cropGuttersMinimumIndex(cropGuttersMinimum)
+                    SliderItem(
+                        value = cropGuttersMinimumIndex,
+                        valueRange = 0..ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES.lastIndex,
+                        label = stringResource(MR.strings.pref_crop_gutters_minimum),
+                        valueString = "${ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES[cropGuttersMinimumIndex]} dp",
+                        onChange = {
+                            readerPreferences.cropGuttersMinimum.set(
+                                ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES[it],
+                            )
+                        },
+                    )
+                },
                 Preference.PreferenceItem.SwitchPreference(
                     preference = dualPageSplitPref,
                     title = stringResource(MR.strings.pref_dual_page_split),

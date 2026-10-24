@@ -104,58 +104,96 @@ class ImageDecoder(private val resources: ImageSource, private val options: Opti
      * [MAX_PAGE_BYTES]. They are never narrower than the view, so the page stays sharp unzoomed.
      */
     private suspend fun decodeStrips(): DecodeResult = stripDecodes.withPermit {
-        val (frame, isHdr, widths) = resources.source().use {
+        // The content bands flare found for the page: [left, top, width, height, count,
+        // bandTop, bandHeight, ...] in image pixels, or null when the whole page is content
+        val bands = options.cropRect
+
+        var stripWidth = 0
+        var fullWidth = 0
+        var fullHeight = 0
+        val (frame, isHdr) = resources.source().use {
             ImageDecoder.open(it.inputStream()).use { dec ->
                 val bytesPerPixel = if (dec.isHdr) 8 else 4
-                val viewWidth = options.size.widthPx(options.scale) { dec.width }
+                val sourceWidth = bands?.let { it[0] + it[2] } ?: dec.width
+                val sourceHeight = bands?.let { it[1] + it[3] } ?: dec.height
+                val viewWidth = options.size.widthPx(options.scale) { sourceWidth }
                 val sampleSize = DecodeUtils.calculateInSampleSize(
-                    srcWidth = dec.width,
-                    srcHeight = dec.height,
+                    srcWidth = sourceWidth,
+                    srcHeight = sourceHeight,
                     dstWidth = viewWidth,
-                    dstHeight = options.size.heightPx(options.scale) { dec.height },
+                    dstHeight = options.size.heightPx(options.scale) { sourceHeight },
                     scale = options.scale,
                 )
-                val budgetWidth = sqrt(MAX_PAGE_BYTES.toDouble() / bytesPerPixel * dec.width / dec.height).toInt()
-                val stripWidth = maxOf(viewWidth, min(dec.width / sampleSize, budgetWidth))
+                val budgetWidth = sqrt(MAX_PAGE_BYTES.toDouble() / bytesPerPixel * sourceWidth / sourceHeight).toInt()
+                stripWidth = maxOf(viewWidth, min(sourceWidth / sampleSize, budgetWidth))
                     // Older GPUs can't draw a texture wider than this
                     .coerceAtMost(MAX_STRIP_WIDTH)
-                    .coerceIn(1, dec.width)
+                    .coerceIn(1, sourceWidth)
                 // ceil(width / decodeSample) >= stripWidth: strips only scale down
-                val decodeSample = (dec.width / stripWidth).coerceAtLeast(1)
-                Triple(dec.decode(null, decodeSample), dec.isHdr, stripWidth to dec.width)
+                val decodeSample = (sourceWidth / stripWidth).coerceAtLeast(1)
+                fullWidth = dec.width
+                fullHeight = dec.height
+                dec.decode(null, decodeSample) to dec.isHdr
             }
         }
-        val (stripWidth, pageWidth) = widths
         frame.use {
             val config = if (isHdr) Bitmap.Config.RGBA_F16 else Bitmap.Config.ARGB_8888
             val bytesPerPixel = if (isHdr) 8 else 4
             val rowBytes = frame.width * bytesPerPixel
-            val scale = stripWidth.toFloat() / frame.width
+
+            // The bands in the decoded frame's pixels: the frame is the page decoded downscaled,
+            // so image pixels map to frame pixels by frame size over image size. A page without
+            // bands is content all over: one band covering the whole frame.
+            val bands = bands ?: intArrayOf(0, 0, fullWidth, fullHeight, 1, 0, fullHeight)
+            val ratioX = frame.width.toFloat() / fullWidth
+            val ratioY = frame.height.toFloat() / fullHeight
+            val windowLeft = (bands[0] * ratioX).toInt().coerceIn(0, frame.width - 1)
+            val windowWidth = (bands[2] * ratioX).toInt().coerceIn(1, frame.width - windowLeft)
+            val bandRects = (0 until bands[4]).map { band ->
+                val top = (bands[5 + 2 * band] * ratioY).toInt().coerceIn(0, frame.height - 1)
+                val height = (bands[6 + 2 * band] * ratioY).toInt().coerceIn(1, frame.height - top)
+                top to height
+            }
+
+            // Gutters come back into view around each band: up to [minimum] rows of the real
+            // gutter above and below it, never reaching into the neighboring band
+            val minimum = options.cropRectMinimum
+            val windows = bandRects.mapIndexed { index, (top, height) ->
+                val above = (top - (bandRects.getOrNull(index - 1)?.let { it.first + it.second } ?: 0)).coerceAtLeast(0)
+                val below = ((bandRects.getOrNull(index + 1)?.first ?: frame.height) - top - height).coerceAtLeast(0)
+                val padAbove = minimum.coerceAtMost(above)
+                val padBelow = minimum.coerceAtMost(below)
+                (top - padAbove) to (height + padAbove + padBelow)
+            }
 
             // Strips of about the same size in bytes, so each takes about as long to upload
             val stripRows = (STRIP_BYTES / (stripWidth * bytesPerPixel)).coerceAtLeast(1)
-            val bandRows = (stripRows / scale).toInt().coerceIn(1, frame.height)
+            val scale = stripWidth.toFloat() / windowWidth
+            val bandRows = (stripRows / scale).toInt().coerceAtLeast(1)
             val matrix = Matrix().apply { setScale(scale, scale) }
             val band = createBitmap(frame.width, bandRows, config)
-            val strips = (0..<frame.height step bandRows).map { top ->
-                val rows = min(bandRows, frame.height - top)
-                if (rows != band.height) band.reconfigure(frame.width, rows, config)
-                band.copyPixelsFromBuffer(
-                    frame.image.duplicate().apply {
-                        position(top * rowBytes)
-                        limit((top + rows) * rowBytes)
-                    },
-                )
-                val strip = if (stripWidth < frame.width) {
-                    Bitmap.createBitmap(band, 0, 0, frame.width, rows, matrix, true)
-                } else {
-                    band
+            val cuts = mutableListOf<Bitmap>()
+            windows.forEach { (bandTop, bandHeight) ->
+                (bandTop..<bandTop + bandHeight step bandRows).forEach { rowsTop ->
+                    val rows = min(bandRows, bandTop + bandHeight - rowsTop)
+                    if (rows != band.height) band.reconfigure(frame.width, rows, config)
+                    band.copyPixelsFromBuffer(
+                        frame.image.duplicate().apply {
+                            position(rowsTop * rowBytes)
+                            limit((rowsTop + rows) * rowBytes)
+                        },
+                    )
+                    val strip = if (windowLeft == 0 && windowWidth == frame.width && stripWidth >= frame.width) {
+                        band
+                    } else {
+                        Bitmap.createBitmap(band, windowLeft, 0, windowWidth, rows, matrix, true)
+                    }
+                    // createBitmap returns a mutable bitmap despite its docs, and copy is the only way to an immutable one
+                    cuts += strip.copy(config, false).also { if (strip !== band) strip.recycle() }
                 }
-                // createBitmap returns a mutable bitmap despite its docs, and copy is the only way to an immutable one
-                strip.copy(config, false).also { if (strip !== band) strip.recycle() }
             }
             band.recycle()
-            DecodeResult(image = StripsImage(strips), isSampled = stripWidth < pageWidth)
+            DecodeResult(image = StripsImage(cuts), isSampled = stripWidth < windowWidth)
         }
     }
 

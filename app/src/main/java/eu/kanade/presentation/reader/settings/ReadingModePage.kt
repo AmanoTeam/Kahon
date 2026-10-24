@@ -175,6 +175,26 @@ private fun ColumnScope.WebtoonViewerSettings(viewModel: ReaderSettingsViewModel
         pref = viewModel.preferences.cropBordersWebtoon,
     )
 
+    val cropGutters by viewModel.preferences.cropGutters.collectAsState()
+    CheckboxItem(
+        label = stringResource(MR.strings.pref_crop_gutters),
+        pref = viewModel.preferences.cropGutters,
+    )
+    if (cropGutters) {
+        val cropGuttersMinimum by viewModel.preferences.cropGuttersMinimum.collectAsState()
+        val cropGuttersMinimumIndex = ReaderPreferences.cropGuttersMinimumIndex(cropGuttersMinimum)
+        SliderItem(
+            value = cropGuttersMinimumIndex,
+            valueRange = 0..ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES.lastIndex,
+            label = stringResource(MR.strings.pref_crop_gutters_minimum),
+            valueString = "${ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES[cropGuttersMinimumIndex]} dp",
+            onChange = {
+                viewModel.preferences.cropGuttersMinimum.set(ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES[it])
+            },
+            pillColor = MaterialTheme.colorScheme.surfaceContainerHighest,
+        )
+    }
+
     CheckboxItem(
         label = stringResource(MR.strings.pref_smooth_auto_scroll),
         pref = viewModel.preferences.smoothAutoScroll,
