@@ -2,6 +2,7 @@ package mihon.data.cache
 
 import android.content.Context
 import android.text.format.Formatter
+import com.amanoteam.flare.Flare
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
@@ -47,10 +48,16 @@ class ChapterCache(
 
     private val images = TtlDiskCache(File(root, "images"), File(indexes, "images.index"), 1.days, scope)
 
+    private val imageBounds = TtlDiskCache(File(root, "bounds"), File(indexes, "bounds.index"), 1.days, scope)
+
+    /** Guards the native cropping calls of [Flare]. */
+    private val flareLock = Any()
+
     init {
         scope.launch {
             pageLists.warmUp()
             images.warmUp()
+            imageBounds.warmUp()
         }
     }
 
@@ -95,6 +102,39 @@ class ChapterCache(
     }
 
     /**
+     * Finds the content bands of the image stored in [input], without touching any file.
+     *
+     * @return IntArray of [left, top, width, height, bandCount, bandTop, bandHeight, ...], or null
+     * when the image cannot be processed.
+     */
+    fun findBands(input: File): IntArray? {
+        return try {
+            synchronized(flareLock) {
+                Flare.findBands(input.path)
+            }
+        } catch (e: Throwable) {
+            logcat(LogPriority.WARN, e) { "Failed to load flare" }
+            null
+        }
+    }
+
+    /**
+     * Get the content bands of the image with the given url, when cached.
+     *
+     * @param imageUrl url of image.
+     * @return the bands flare found, or null when not cached or undecodable.
+     */
+    suspend fun getImageBounds(imageUrl: String): IntArray? {
+        return try {
+            imageBounds.get(imageUrl)?.bufferedReader()?.useLines { it.firstOrNull() }?.toBandsOrNull()
+        } catch (e: Exception) {
+            if (e is CancellationException) throw e
+            logcat(LogPriority.WARN, e) { "Failed to get image bounds from cache" }
+            null
+        }
+    }
+
+    /**
      * Stores the image [response] holds, and closes it.
      *
      * @param live also receives the bytes as they arrive.
@@ -103,7 +143,7 @@ class ChapterCache(
     suspend fun putImage(imageUrl: String, response: Response, live: DownloadStream? = null): File {
         response.body.use { body ->
             live?.reserve(body.contentLength())
-            return images.put(imageUrl) { out ->
+            val file = images.put(imageUrl) { out ->
                 body.source().use { source ->
                     val buffer = ByteArray(1 shl 16)
                     while (true) {
@@ -114,14 +154,38 @@ class ChapterCache(
                     }
                 }
             }
+
+            // Store the content bounds flare found for the image, so the reader can window it
+            // without re-encoding it
+            try {
+                val bands = findBands(file)
+                imageBounds.put(imageUrl) { out ->
+                    out.write((bands?.joinToString(",") ?: "").toByteArray())
+                }
+            } catch (e: Exception) {
+                if (e is CancellationException) throw e
+                logcat(LogPriority.WARN, e) { "Failed to put image bounds into cache" }
+            }
+
+            return file
         }
     }
 
     /**
      * Removes everything, returning how many entries there were.
      */
-    suspend fun clear(): Int = pageLists.clear() + images.clear()
+    suspend fun clear(): Int = pageLists.clear() + images.clear() + imageBounds.clear()
 
     private val Chapter.key: String
         get() = "$mangaId$url"
+}
+
+/**
+ * Parses the bands flare found for an image, [left, top, width, height, count, bandTop,
+ * bandHeight, ...], or null when the entry is missing or malformed.
+ */
+private fun String.toBandsOrNull(): IntArray? {
+    val bands = split(",").mapNotNull { it.toIntOrNull() }
+    val count = bands.getOrElse(4) { 0 }
+    return if (bands.size == 5 + 2 * count && count > 0 && bands[2] > 0 && bands[3] > 0) bands.toIntArray() else null
 }

@@ -3,7 +3,6 @@ package eu.kanade.tachiyomi.ui.reader.setting
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import eu.kanade.domain.base.BasePreferences
-import eu.kanade.domain.manga.model.readingMode
 import eu.kanade.tachiyomi.ui.reader.ReaderViewModel
 import eu.kanade.tachiyomi.ui.reader.viewer.LongStripSettings
 import eu.kanade.tachiyomi.ui.reader.viewer.NavigationSettings
@@ -50,10 +49,8 @@ class ReaderSettingsViewModel(
     /**
      * The reading mode the viewer is made for, with the default resolved.
      */
-    val readingMode = combine(mangaFlow, preferences.defaultReadingMode.changes()) { manga, default ->
-        ReadingMode.fromPreference(manga?.readingMode?.toInt())
-            .takeIf { it != ReadingMode.DEFAULT }
-            ?: ReadingMode.fromPreference(default)
+    val readingMode = combine(mangaFlow, preferences.defaultReadingMode.changes()) { _, _ ->
+        ReadingMode.fromPreference(readerViewModel.getMangaReadingMode())
     }
         .stateIn(
             viewModelScope,
@@ -120,6 +117,8 @@ class ReaderSettingsViewModel(
         preferences.zoomStart,
         preferences.cropBorders,
         preferences.landscapeZoom,
+        preferences.cropGutters,
+        preferences.cropGuttersMinimum,
         preferences.navigateToPan,
         preferences.navigationModePager,
         preferences.pagerNavInverted,
@@ -130,6 +129,8 @@ class ReaderSettingsViewModel(
                 zoomStart = ReaderPreferences.ZoomStartType.fromValue(zoomStart.get()),
                 cropBorders = cropBorders.get(),
                 landscapeZoom = landscapeZoom.get(),
+                cropGutters = cropGutters.get(),
+                cropGuttersMinimum = cropGuttersMinimum.get(),
             ),
             navigateToPan = navigateToPan.get(),
             navigation = NavigationSettings(
@@ -145,10 +146,14 @@ class ReaderSettingsViewModel(
     val longStrip = settings(
         preferences.cropBordersWebtoon,
         preferences.webtoonDisableZoomOut,
+        preferences.cropGutters,
+        preferences.cropGuttersMinimum,
     ) {
         LongStripSettings(
             cropBorders = cropBordersWebtoon.get(),
             zoomOutDisabled = webtoonDisableZoomOut.get(),
+            cropGutters = cropGutters.get(),
+            cropGuttersMinimum = cropGuttersMinimum.get(),
         )
     }
 
