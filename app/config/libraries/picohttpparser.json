@@ -1,0 +1,13 @@
+{
+    "uniqueId": "h2o:picohttpparser",
+    "name": "PicoHTTPParser",
+    "description": "A tiny, fast HTTP request/response parser.",
+    "website": "https://github.com/h2o/picohttpparser",
+    "developers": [
+        { "name": "Kazuho Oku" },
+        { "name": "Tokuhiro Matsuno" },
+        { "name": "Daisuke Murase" },
+        { "name": "Shigeo Mitsunari" }
+    ],
+    "licenses": ["MIT"]
+}

@@ -1,0 +1,8 @@
+{
+    "uniqueId": "com.amanoteam:cabundle",
+    "name": "CABundle",
+    "description": "Mozilla CA certificate bundle.",
+    "website": "https://github.com/AmanoTeam/CABundle",
+    "developers": [{ "name": "AmanoTeam" }],
+    "licenses": ["MPL-2.0"]
+}

@@ -1,0 +1,8 @@
+{
+    "uniqueId": "NLnetLabs:unbound",
+    "name": "Unbound",
+    "description": "A validating, recursive, and caching DNS resolver.",
+    "website": "https://github.com/NLnetLabs/unbound",
+    "developers": [{ "name": "NLnet Labs" }],
+    "licenses": ["BSD-3-Clause"]
+}

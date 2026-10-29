@@ -1,0 +1,8 @@
+{
+    "uniqueId": "akheron:jansson",
+    "name": "Jansson",
+    "description": "C library for encoding, decoding and manipulating JSON data.",
+    "website": "https://github.com/akheron/jansson",
+    "developers": [{ "name": "Petri Lehtinen" }],
+    "licenses": ["MIT"]
+}
