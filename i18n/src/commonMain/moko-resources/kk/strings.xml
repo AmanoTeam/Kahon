@@ -402,7 +402,6 @@
     <string name="backup_in_progress">Сақтық көшірмесі әлдеқашан орындалуда</string>
     <string name="pref_reset_viewer_flags_error">Оқыма баптауы қалпына келтірілмеді</string>
     <string name="pref_reset_viewer_flags_success">Оқыманың барлық баптауы қалпына келді</string>
-    <string name="whats_new">Не жаңалық</string>
     <string name="help_translate">Аудармамен көмектесу</string>
     <string name="restoring_backup_error">Сақтық көшірмесін қалпына келтіру сәтсіз өтті</string>
     <string name="pref_dns_over_https">DNS арқылы HTTPS (DoH)</string>
@@ -428,7 +427,6 @@
     <string name="label_background_activity">Аялық белсенділік</string>
     <string name="pref_disable_battery_optimization">Батареяның оңтайландыруын өшіру</string>
     <string name="battery_optimization_setting_activity_not_found">Құрылғы баптауы ашылмады</string>
-    <string name="privacy_policy">Құпиялық саясаты</string>
     <string name="pref_acra_summary">Барлық мүмкін қателерді түзетуге көмектеседі. Пайдаланушы деректері жіберілмейді</string>
     <string name="label_downloaded_only">Жүктелгенді ғана</string>
     <string name="login_title">%1$s-ге кіру</string>

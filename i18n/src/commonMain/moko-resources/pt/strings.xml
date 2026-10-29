@@ -387,7 +387,6 @@
     <string name="unknown_author">Autor desconhecido</string>
     <string name="requires_app_restart">Requer reinício da app para ter efeito</string>
     <string name="label_network">Rede</string>
-    <string name="whats_new">Novidades</string>
     <string name="download_insufficient_space">Não foi possível transferir capítulos devido a falta de espaço de armazenamento</string>
     <string name="action_global_search_query">Procurar por \"%1$s\" globalmente</string>
     <string name="pref_category_reading_mode">Modo de leitura</string>
@@ -532,7 +531,6 @@
     <string name="backup_info">Deve manter cópias em outros locais também.</string>
     <string name="pref_tablet_ui_mode">Interface de tablet</string>
     <string name="pref_verbose_logging">Registo de eventos detalhado</string>
-    <string name="privacy_policy">Política de privacidade</string>
     <string name="extension_api_error">Falha ao obter a lista de extensões</string>
     <string name="ext_install_service_notif">Instalando a extensão…</string>
     <string name="ext_installer_pref">Instalador</string>
