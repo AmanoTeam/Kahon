@@ -403,7 +403,6 @@
     <string name="also_set_chapter_settings_for_library">Anvend også for allle oppføringer i biblioteket</string>
     <string name="action_global_search_query">Søk etter \"%1$s\" globalt</string>
     <string name="licenses">Friprog-lisenser</string>
-    <string name="whats_new">Hva er nytt</string>
     <string name="pref_disable_battery_optimization_summary">Hjelper med oppdatering og sikkerhetskopiering av biblioteket</string>
     <string name="pref_refresh_library_covers">Gjenoppfrisk mangaomslag i biblioteket</string>
     <string name="backup_restore_missing_trackers">Sporingstjenester ikke logget inn i:</string>
@@ -533,7 +532,6 @@
     <string name="update_72hour">Hver 3. dag</string>
     <string name="connected_to_wifi">Bare på Wi-Fi</string>
     <string name="action_show_manga">Vis oppføring</string>
-    <string name="privacy_policy">Personvernerklæring</string>
     <string name="publishing_finished">Ferdig publisert</string>
     <string name="pref_update_only_completely_read">Hopp over oppføringer med uleste kapitler</string>
     <string name="cancelled">Kansellert</string>

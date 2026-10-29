@@ -516,12 +516,10 @@
     <string name="pref_verbose_logging">বিশদ লগিং</string>
     <string name="pref_verbose_logging_summary">চিষ্টেম লগলৈ বিশদ লগ প্ৰিন্ট কৰে (এপ কাৰ্য্যক্ষমতা হ্ৰাস কৰে)</string>
     <string name="pref_debug_info">ডিবাগ তথ্য</string>
-    <string name="whats_new">নতুন কি</string>
     <string name="website">ৱেবছাইট</string>
     <string name="version">সংস্কৰণ</string>
     <string name="help_translate">অনুবাদত সহায় কৰক</string>
     <string name="licenses">মুক্ত উৎস লাইচেন্স</string>
-    <string name="privacy_policy">গোপনীয়তা নীতি</string>
     <string name="check_for_updates">আপডেটৰ বাবে পৰীক্ষা কৰক</string>
     <string name="pref_enable_acra">ক্ৰেশ ৰিপৰ্ট পঠিয়াওক</string>
     <string name="pref_acra_summary">যিকোনো বাগ ঠিক কৰাত সহায় কৰে। কোনো সংবেদনশীল তথ্য পঠিওৱা নহ\'ব</string>

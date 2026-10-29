@@ -497,7 +497,6 @@
     <string name="about_dont_kill_my_app">Kai kurie gamintojai taiko papildomus programėlių apribojimus, kurie išjungia fono paslaugas. Šioje svetainėje rasite daugiau informacijos, kaip tai ištaisyti.</string>
     <string name="website">Internetinis puslapis</string>
     <string name="version">Versija</string>
-    <string name="whats_new">Kas naujo</string>
     <string name="last_used_source">Paskutinį kartą naudotas</string>
     <string name="chapter_not_found">Skyrius nerastas</string>
     <string name="publishing_finished">Skaitinis nepublikuojamas</string>
@@ -508,7 +507,6 @@
     <string name="confirm_delete_chapters">Ar tikrai norite ištrinti pasirinktus skyrius?</string>
     <string name="completed">Užbaigta</string>
     <string name="check_for_updates">Ieškoti programos atnaujinimų</string>
-    <string name="privacy_policy">Privatumo politika</string>
     <string name="in_library">Bibliotekoje</string>
     <string name="reading">Skaitoma</string>
     <string name="error_saving_cover">Išsaugant viršelį įvyko klaida</string>

@@ -387,7 +387,6 @@
     <string name="restore_miui_warning">Rezervimi/rivendosja mund të mos funksionojë siç duhet nëse Optimizimi MIUI është i çaktivizuar.</string>
     <string name="pref_reset_user_agent_string">Rivendos vargun e parazgjedhur të agjentit të përdoruesit</string>
     <string name="cache_delete_error">Ndodhi një gabim gjatë pastrimit</string>
-    <string name="privacy_policy">Politika e privatësisë</string>
     <string name="login_success">i regjistruar</string>
     <string name="chapter_not_found">Kapitulli nuk u gjet</string>
     <string name="local_invalid_format">Format i pavlefshëm i kapitullit</string>
@@ -628,7 +627,6 @@
     <string name="update_check_eol">Ky version Android nuk mbështetet më</string>
     <string name="website">Faqja e internetit</string>
     <string name="version">Version</string>
-    <string name="whats_new">Cfare ka te re</string>
     <string name="help_translate">Ndihmoni në përkthimin</string>
     <string name="licenses">Licencat me burim të hapur</string>
     <string name="about_dont_kill_my_app">Disa prodhues kanë kufizime shtesë të aplikacioneve që shkatërrojnë shërbimet e sfondit. Kjo faqe interneti ka më shumë informacion se si ta rregulloni atë.</string>

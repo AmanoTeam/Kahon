@@ -421,7 +421,6 @@
     <string name="pref_verbose_logging_summary">Исписуј детаљне извештаје у системски дневник (смањује перформансе апликације)</string>
     <string name="battery_optimization_setting_activity_not_found">Није могуће отворити подешавања уређаја</string>
     <string name="pref_refresh_library_covers">Освежи омоте у колекцији</string>
-    <string name="whats_new">Шта је ново</string>
     <string name="notification_incognito_text">Деактивирај инкогнито мод</string>
     <string name="manga_from_library">Из колекције</string>
     <string name="downloaded_chapters">Преузета поглавља</string>
@@ -540,7 +539,6 @@
     <string name="pref_auto_clear_chapter_cache">Испразни кеш меморију поглавља током покретања апликације</string>
     <string name="database_clean">Нема ништа за чишћење</string>
     <string name="pref_update_only_completely_read">Прескочи уносе са непрочитаним поглављима</string>
-    <string name="privacy_policy">Политика приватности</string>
     <string name="cancelled">Отказано</string>
     <string name="on_hiatus">На паузи</string>
     <string name="pref_update_only_started">Прескочи уносе који нису започети</string>

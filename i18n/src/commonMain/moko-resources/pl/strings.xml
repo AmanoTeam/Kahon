@@ -391,7 +391,6 @@
     <string name="unknown_status">Nieznany status</string>
     <string name="unknown_author">Nieznany autor</string>
     <string name="action_global_search_query">Szukaj \"%1$s\" globalnie</string>
-    <string name="whats_new">Co nowego</string>
     <string name="pref_category_reading_mode">Tryb czytania</string>
     <string name="pref_category_theme">Motyw</string>
     <string name="action_sort_date_added">Po dacie dodania</string>
@@ -542,7 +541,6 @@
     <string name="on_hiatus">Przerwa wydawnicza</string>
     <string name="library_errors_help">Aby uzyskać pomoc z błędami aktualizacji biblioteki, zobacz %1$s</string>
     <string name="save_chapter_as_cbz">Zapisz jako archiwum CBZ</string>
-    <string name="privacy_policy">Polityka prywatności</string>
     <string name="clear_database_source_item_count">%1$d wpisów spoza biblioteki w bazie danych</string>
     <string name="pref_update_only_completely_read">Pomiń serię z nieprzeczytanymi rozdziałami</string>
     <string name="pref_update_only_started">Pomiń nie zaczętą serię</string>

@@ -87,7 +87,6 @@
     <string name="pref_debug_info">பிழைத்திருத்த செய்தி</string>
     <string name="website">வலைத்தளம்</string>
     <string name="version">பதிப்பு</string>
-    <string name="whats_new">புதியது என்ன</string>
     <string name="help_translate">மொழிபெயர்க்க உதவுங்கள்</string>
     <string name="licenses">திறந்த மூல உரிமங்கள்</string>
     <string name="action_global_search_hint">உலக தேடல்…</string>
@@ -550,7 +549,6 @@
     <string name="pref_tablet_ui_mode">டேப்லெட் இடைமுகம்</string>
     <string name="pref_verbose_logging">சொற்களஞ்சியம் பதிவு</string>
     <string name="pref_verbose_logging_summary">கணினி பதிவுக்கு வாய்மொழி பதிவுகளை அச்சிடுக (பயன்பாட்டு செயல்திறனைக் குறைக்கிறது)</string>
-    <string name="privacy_policy">தனியுரிமைக் கொள்கை</string>
     <string name="check_for_updates">புதுப்பிப்புகளை சரிபார்க்கவும்</string>
     <string name="pref_enable_acra">செயலிழப்பு அறிக்கைகளை அனுப்பவும்</string>
     <string name="pref_acra_summary">எந்த பிழைகளையும் சரிசெய்ய உதவுகிறது. முக்கியமான தரவு எதுவும் அனுப்பப்படாது</string>

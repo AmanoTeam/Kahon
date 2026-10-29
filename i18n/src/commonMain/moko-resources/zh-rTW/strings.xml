@@ -383,7 +383,6 @@
     <string name="notification_chapters_single">第 %1$s 章</string>
     <string name="notification_chapters_multiple">第 %1$s 章</string>
     <string name="notification_chapters_single_and_more">第 %1$s 章以及另外 %2$d 章</string>
-    <string name="whats_new">更新日誌</string>
     <string name="unknown_status">連載狀態不明</string>
     <string name="unknown_author">佚名</string>
     <string name="action_global_search_query">在所有範圍內搜尋「%1$s」</string>
@@ -538,7 +537,6 @@
     <string name="clear_database_source_item_count">資料庫中有 %1$d 部作品未加入書櫃</string>
     <string name="database_clean">無須清理</string>
     <string name="extension_api_error">無法取得可用的擴充套件</string>
-    <string name="privacy_policy">隱私權政策</string>
     <string name="pref_update_only_completely_read">略過有未讀章節的作品</string>
     <string name="library_errors_help">如欲瞭解如何修復書櫃更新失敗，請參閱 %1$s</string>
     <string name="save_chapter_as_cbz">以 CBZ 封存檔格式儲存</string>

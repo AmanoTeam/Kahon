@@ -424,7 +424,6 @@
     <string name="label_downloaded_only">ดาวน์โหลดแล้วเท่านั้น</string>
     <string name="check_for_updates">ตรวจสอบการอัปเดต</string>
     <string name="licenses">ใบอนุญาตโอเพ่นซอร์ส</string>
-    <string name="whats_new">มีอะไรใหม่</string>
     <string name="website">เว็บไซต์</string>
     <string name="battery_optimization_setting_activity_not_found">ไม่สามารถเปิดการตั้งค่าอุปกรณ์</string>
     <string name="battery_optimization_disabled">การเพิ่มประสิทธิภาพแบตเตอรี่ถูกปิดใช้งานอยู่แล้ว</string>
@@ -474,7 +473,6 @@
     <string name="off">ปิด</string>
     <string name="on">เปิด</string>
     <string name="save_chapter_as_cbz">บันทึกเป็นแฟ้ม CBZ</string>
-    <string name="privacy_policy">นโยบายความเป็นส่วนตัว</string>
     <string name="library_errors_help">สำหรับความช่วยเหลือเกี่ยวกับวิธีการแก้ไขข้อผิดพลาดในการอัปเดตคลัง ไปยัง %1$s</string>
     <string name="local_filter_order_by">เรียงตาม</string>
     <string name="date">วันที่</string>

@@ -380,14 +380,12 @@
     <string name="channel_ext_updates">एक्सटेन्शन अपडेट्स</string>
     <string name="pref_dump_crash_logs_summary">विकासकर्ताहरूसँग साझेदारी गर्नको लागि फाइलमा error logs सेभ गर्दछ</string>
     <string name="label_background_activity">ब्याकग्राउण्ड गतिविधि</string>
-    <string name="whats_new">नयाँ के छ</string>
     <string name="clear_database_source_item_count">डेटाबेसमा %1$d गैर-पुस्तकालय इन्ट्रीहरू छन्</string>
     <string name="battery_optimization_disabled">ब्याट्री अप्टिमाइजेसन पहिले नै असक्षम छ</string>
     <string name="about_dont_kill_my_app">केही निर्माताहरूसँग अतिरिक्त एप प्रतिबन्धहरू छन् जसले ब्याकग्राउण्ड सेवाहरूलाई मार्छ। यो वेबसाइटमा यसलाई कसरी ठीक गर्ने बारे थप जानकारी छ।</string>
     <string name="clear_database_completed">इन्ट्रीहरू हटाइयो</string>
     <string name="pref_disable_battery_optimization_summary">ब्याकग्राउण्ड पुस्तकालय अपडेट्स र ब्याकअप संग मद्दत गर्छ</string>
     <string name="pref_verbose_logging_summary">सिस्टम log मा verbose logs प्रिन्ट गर्नुहोस् (एपको कार्यसम्पादन घटाउँछ)</string>
-    <string name="privacy_policy">गोपनीयता नीति</string>
     <string name="email">इमेल ठेगाना</string>
     <string name="no_more_results">थप परिणामहरू छैनन्</string>
     <string name="local_source">लोकल स्रोत</string>

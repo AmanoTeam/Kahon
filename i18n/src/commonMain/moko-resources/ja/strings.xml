@@ -389,7 +389,6 @@
     <string name="requires_app_restart">変更を適用するには再起動してください</string>
     <string name="label_network">ネットワーク</string>
     <string name="pref_read_with_tapping_inverted">タップでのページめくりを反転</string>
-    <string name="whats_new">更新情報</string>
     <string name="pref_category_reading_mode">読み方</string>
     <string name="channel_complete">完了</string>
     <string name="channel_progress">進捗</string>
@@ -538,7 +537,6 @@
     <string name="pref_auto_clear_chapter_cache">アプリ起動時に章のキャッシュを消去</string>
     <string name="database_clean">消去できるものはありませんでした</string>
     <string name="extension_api_error">利用可能な拡張機能を取得できませんでした</string>
-    <string name="privacy_policy">プライバシー ポリシー</string>
     <string name="pref_update_only_completely_read">未読の章がある作品をスキップ</string>
     <string name="library_errors_help">ライブラリ更新エラーの修正については、%1$sをご覧ください</string>
     <string name="save_chapter_as_cbz">CBZ アーカイブとして保存</string>

@@ -387,7 +387,6 @@
     <string name="unknown_author">نویسنده ناشناخته</string>
     <string name="no_pinned_sources">شما هیچ منبع پین‌شده‌ای ندارید</string>
     <string name="action_global_search_query">«%1$s» در همه منابع جستجو شود</string>
-    <string name="whats_new">موارد جدید</string>
     <string name="requires_app_restart">برای اعمال تغییرات، به راه اندازی مجدد برنامه نیاز است</string>
     <string name="label_network">شبکه</string>
     <string name="backup_restore_missing_trackers">ردیابی هایی که به سیستم وارد نشده اند:</string>
@@ -833,7 +832,6 @@
     <string name="file_null_uri_error">هیچ فایلی انتخاب نشده</string>
     <string name="pref_download_new_unread_chapters_only">صرف‌نظر از بارگیری چپترهای خوانده‌شده‌ تکراری</string>
     <string name="description_placeholder">بدون توضیحات</string>
-    <string name="privacy_policy">سیاست حفظ حریم خصوصی</string>
     <string name="onboarding_permission_crashlytics">ارسال گزارش‌های خرابی</string>
     <string name="track_started_reading_date">تاریخ شروع</string>
     <string name="error_user_agent_string_invalid">رشتهٔ عامل کاربر نامعتبر است</string>

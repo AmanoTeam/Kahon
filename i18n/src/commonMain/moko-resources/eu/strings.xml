@@ -130,7 +130,6 @@
     <string name="version">Bertsioa</string>
     <string name="website">Webgunea</string>
     <string name="licenses">Open Source lizentziak</string>
-    <string name="privacy_policy">Pribatutasun politika</string>
     <string name="pref_acra_summary">Edozein akats konpontzen laguntzen du. Ez da datu sentikorrik bidaliko</string>
     <string name="label_downloaded_only">Deskargatuak bakarrik</string>
     <string name="pref_incognito_mode">Ezkutuko modua</string>
@@ -328,7 +327,6 @@
     <string name="pref_high">Altua</string>
     <string name="pref_skip_filtered_chapters">Saltatu iragazitako kapituluak</string>
     <string name="pref_read_with_volume_keys">Bolumen-teklak</string>
-    <string name="whats_new">Zer dago berri</string>
     <string name="pref_create_backup">Sortu babeskopia</string>
     <string name="backup_restore_missing_sources">Falta diren iturriak:</string>
     <string name="backup_restore_content_full">Babeskopia fitxategiko datuak berreskuratu egingo dira. \n \nFalta diren luzapenak instalatu eta jarraipen-zerbitzuetan saioa hasi beharko duzu ondoren horiek erabiltzeko.</string>

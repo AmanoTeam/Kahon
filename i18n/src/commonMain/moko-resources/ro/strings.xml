@@ -389,7 +389,6 @@
     <string name="pref_read_with_tapping_inverted">Inversați zonele de atingere</string>
     <string name="unknown_status">Stare necunoscută</string>
     <string name="unknown_author">Autor necunoscut</string>
-    <string name="whats_new">Ce este nou</string>
     <string name="download_insufficient_space">Nu s-au putut descărca capitole din cauza spațiului de stocare redus</string>
     <string name="action_global_search_query">Căutați „%1$s” la nivel global</string>
     <string name="pref_category_reading_mode">Mod citire</string>
@@ -545,7 +544,6 @@
     <string name="categorized_display_settings">Setări per categorie pentru sortare și afișare</string>
     <string name="rotation_type">Tip de rotație</string>
     <string name="rotation_portrait">Portret</string>
-    <string name="privacy_policy">Politica de confidențialitate</string>
     <string name="auto_download_while_reading">Descărcă automat în timp ce citiți</string>
     <string name="ext_info_version">Versiune</string>
     <string name="ext_info_language">Limbă</string>

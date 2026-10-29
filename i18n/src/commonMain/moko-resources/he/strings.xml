@@ -448,13 +448,11 @@
     <string name="creating_backup_error">הגיבוי נכשל</string>
     <string name="restoring_backup_error">שחזור הגיבוי נכשל</string>
     <string name="requires_app_restart">צריך לאתחל את האפליקציה כדי שהשינויים ייכנסו לתוקף</string>
-    <string name="privacy_policy">מדיניות פרטיות</string>
     <string name="add_to_library">הוסף לספרייה</string>
     <string name="copied_to_clipboard">הועתק ללוח: \n%1$s</string>
     <string name="no_chapters_error">לא נמצאו פרקים</string>
     <string name="track_started_reading_date">תאריך התחלה</string>
     <string name="track_finished_reading_date">תאריך סיום</string>
-    <string name="whats_new">מה חדש</string>
     <string name="help_translate">עזור לתרגם</string>
     <string name="label_downloaded_only">רק מה שירד</string>
     <string name="browse">דפדפן</string>

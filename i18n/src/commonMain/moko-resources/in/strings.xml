@@ -387,7 +387,6 @@
     <string name="pref_read_with_tapping_inverted">Balikkan zona ketuk</string>
     <string name="unknown_status">Status tidak diketahui</string>
     <string name="unknown_author">Penulis tidak diketahui</string>
-    <string name="whats_new">Apa yang baru</string>
     <string name="download_insufficient_space">Tidak dapat mengunduh bab karena ruang penyimpanan rendah</string>
     <string name="action_global_search_query">Pencarian untuk \"%1$s\" secara global</string>
     <string name="pref_category_reading_mode">Mode membaca</string>
@@ -539,7 +538,6 @@
     <string name="clear_database_source_item_count">%1$d entri non-pustaka dalam database</string>
     <string name="extension_api_error">Gagal mendapatkan ekstensi yang tersedia</string>
     <string name="pref_update_only_completely_read">Lewati daftar dengan chapter yang belum dibaca</string>
-    <string name="privacy_policy">Kebijakan privasi</string>
     <string name="publishing_finished">Penerbitan selesai</string>
     <string name="cancelled">Dibatalkan</string>
     <string name="on_hiatus">Sedang Hiatus</string>

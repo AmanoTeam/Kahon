@@ -383,7 +383,6 @@
     <string name="loader_not_implemented_error">Fonte non trovata</string>
     <string name="unknown_status">Stato sconosciuto</string>
     <string name="unknown_author">Autore sconosciuto</string>
-    <string name="whats_new">Le novità</string>
     <string name="requires_app_restart">Richiesto riavvio dell\'app per applicare le modifiche</string>
     <string name="label_network">Rete</string>
     <string name="pref_show_reading_mode_summary">Mostra brevemente la modalità corrente all\'apertura del lettore</string>
@@ -538,7 +537,6 @@
     <string name="clear_database_source_item_count">%1$d voci non presenti in libreria nel database</string>
     <string name="database_clean">Niente da Pulire</string>
     <string name="extension_api_error">Impossibile ottenere l\'elenco estensioni</string>
-    <string name="privacy_policy">Politica sulla privacy</string>
     <string name="pref_update_only_completely_read">Con capitoli non letti</string>
     <string name="library_errors_help">Per un aiuto su come risolvere gli errori di aggiornamento della libreria vedi %1$s</string>
     <string name="save_chapter_as_cbz">Salva come archivio CBZ</string>

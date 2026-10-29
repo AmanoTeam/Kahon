@@ -389,7 +389,6 @@
     <string name="tapping_inverted_none">–</string>
     <string name="unknown_status">Unbekannter Status</string>
     <string name="unknown_author">Unbekannter Autor</string>
-    <string name="whats_new">Was ist neu</string>
     <string name="download_insufficient_space">Herunterladen von Kapiteln aufgrund von zu wenig Speicherplatz nicht möglich</string>
     <string name="action_global_search_query">Überall nach „%1$s“ suchen</string>
     <string name="action_sort_date_added">Hinzufügedatum</string>
@@ -538,7 +537,6 @@
     <string name="clear_database_source_item_count">%1$d Nicht-Bibliothekseinträge in der Datenbank</string>
     <string name="database_clean">Nichts zu bereinigen</string>
     <string name="extension_api_error">Laden der verfügbaren Erweiterungen ist fehlgeschlagen</string>
-    <string name="privacy_policy">Datenschutzbestimmungen</string>
     <string name="pref_update_only_completely_read">Einträge mit ungelesen Kapiteln überspringen</string>
     <string name="library_errors_help">Für Hilfe zum Beheben von Fehlern bei Bibliotheksaktualisierungen, siehe %1$s</string>
     <string name="save_chapter_as_cbz">Als CBZ-Archiv speichern</string>

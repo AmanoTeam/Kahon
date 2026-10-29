@@ -385,7 +385,6 @@
     <string name="unknown_status">Estat desconegut</string>
     <string name="unknown_author">Autor desconegut</string>
     <string name="action_global_search_query">Cerca «%1$s» globalment</string>
-    <string name="whats_new">Novetats</string>
     <string name="requires_app_restart">Cal reiniciar l’aplicació perquè tingui efecte</string>
     <string name="label_network">Xarxa</string>
     <string name="pref_category_reading_mode">Mode de lectura</string>
@@ -523,7 +522,6 @@
     <string name="pref_tablet_ui_mode">Interfície de tauleta</string>
     <string name="help_translate">Ajudeu a traduir</string>
     <string name="getting_started_guide">Guia d’introducció</string>
-    <string name="privacy_policy">Política de privadesa</string>
     <string name="ext_install_service_notif">S’està instal·lant l’extensió…</string>
     <string name="ext_installer_pref">Instal·lador</string>
     <string name="ext_installer_legacy">Antic</string>

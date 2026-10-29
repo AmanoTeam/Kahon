@@ -18,7 +18,6 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
@@ -30,7 +29,6 @@ import eu.kanade.presentation.util.LocalBackPress
 import eu.kanade.presentation.util.Screen
 import eu.kanade.presentation.util.rememberIs24HourSystem
 import eu.kanade.tachiyomi.BuildConfig
-import eu.kanade.tachiyomi.data.updater.RELEASE_URL
 import eu.kanade.tachiyomi.ui.more.NewUpdateScreen
 import eu.kanade.tachiyomi.util.lang.toDateTimestampString
 import eu.kanade.tachiyomi.util.system.copyToClipboard
@@ -72,7 +70,6 @@ object AboutScreen : Screen() {
     override fun Content() {
         val scope = rememberCoroutineScope()
         val context = LocalContext.current
-        val uriHandler = LocalUriHandler.current
         val handleBack = LocalBackPress.current
         val navigator = LocalNavigator.currentOrThrow
         var isCheckingUpdates by remember { mutableStateOf(false) }
@@ -149,26 +146,10 @@ object AboutScreen : Screen() {
                     }
                 }
 
-                if (!BuildConfig.DEBUG) {
-                    item {
-                        TextPreferenceWidget(
-                            title = stringResource(MR.strings.whats_new),
-                            onPreferenceClick = { uriHandler.openUri(RELEASE_URL) },
-                        )
-                    }
-                }
-
                 item {
                     TextPreferenceWidget(
                         title = stringResource(MR.strings.licenses),
                         onPreferenceClick = { navigator.push(OpenSourceLicensesScreen()) },
-                    )
-                }
-
-                item {
-                    TextPreferenceWidget(
-                        title = stringResource(MR.strings.privacy_policy),
-                        onPreferenceClick = { uriHandler.openUri("https://mihon.app/privacy/") },
                     )
                 }
 

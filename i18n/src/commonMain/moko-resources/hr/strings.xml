@@ -389,7 +389,6 @@
     <string name="pref_read_with_tapping_inverted">Preokreni područja za dodirivanje</string>
     <string name="unknown_status">Nepoznato stanje</string>
     <string name="unknown_author">Nepoznat autor</string>
-    <string name="whats_new">Što je novo</string>
     <string name="download_insufficient_space">Neuspjelo preuzimanje poglavlja zbog nedovoljne memorije</string>
     <string name="action_global_search_query">Traži „%1$s” globalno</string>
     <string name="pref_category_reading_mode">Modus čitanja</string>
@@ -532,7 +531,6 @@
     <string name="enhanced_services">Poboljšane usluge praćenja</string>
     <string name="enhanced_tracking_info">Pruža poboljšane značajke za određene izvore. Unosi se automatski prate kada se dodaju u biblioteku.</string>
     <string name="action_track">Prati</string>
-    <string name="privacy_policy">Politika privatnosti</string>
     <string name="extension_api_error">Neuspjelo preuzimanje dostupnih proširenja</string>
     <string name="ext_installer_pref">Instalacijski program</string>
     <string name="ext_installer_legacy">Stari način</string>

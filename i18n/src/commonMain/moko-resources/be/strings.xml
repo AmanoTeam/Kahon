@@ -557,10 +557,8 @@
     <string name="pref_update_library_manga_titles_summary">Увага: калі твор быў перайменаваны, ён будзе выдалены з чаргі спампоўкі (калі там быў).</string>
     <string name="website">Сайт</string>
     <string name="version">Версія</string>
-    <string name="whats_new">Што новага</string>
     <string name="help_translate">Дапамагчы з перакладам</string>
     <string name="licenses">Ліцэнзіі адкрытага кода</string>
-    <string name="privacy_policy">Палітыка прыватнасці</string>
     <string name="check_for_updates">Праверыць абнаўленні</string>
     <string name="pref_enable_acra">Адпраўляць справаздачы пра збоі</string>
     <string name="pref_acra_summary">Дапамагае выпраўляць памылкі. Ніякія асабістыя даныя не будуць адпраўлены</string>

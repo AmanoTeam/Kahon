@@ -389,7 +389,6 @@
     <string name="tapping_inverted_horizontal">Yatay</string>
     <string name="unknown_status">Bilinmeyen durum</string>
     <string name="unknown_author">Bilinmeyen yazar</string>
-    <string name="whats_new">Yenilikler</string>
     <string name="download_insufficient_space">Depolama alanı az olduğu için bölümler indirilemedi</string>
     <string name="action_sort_date_added">Eklendiği tarih</string>
     <string name="action_global_search_query">\"%1$s\" için genel arama</string>
@@ -540,7 +539,6 @@
     <string name="extension_api_error">Kullanılabilir uzantılar alınamadı</string>
     <string name="save_chapter_as_cbz">CBZ arşivi olarak kaydet</string>
     <string name="publishing_finished">Yayımı tamamlandı</string>
-    <string name="privacy_policy">Gizlilik politikası</string>
     <string name="cancelled">İptal edildi</string>
     <string name="on_hiatus">Molada</string>
     <string name="action_show_manga">Girdiyi göster</string>

@@ -407,7 +407,6 @@
     <string name="label_downloaded_only">শুধু ডাউনলোড</string>
     <string name="check_for_updates">সংস্করণ যাচাই</string>
     <string name="licenses">ওপেন সোর্স লাইসেন্স</string>
-    <string name="whats_new">নতুন কি</string>
     <string name="website">ওয়েবসাইট</string>
     <string name="pref_clear_history">ইতিহাস সাফ করুন</string>
     <string name="clear_history_confirmation">আপনি নিশ্চিত? সব ইতিহাস মুছে যাবে।</string>
@@ -537,7 +536,6 @@
     <string name="pref_auto_clear_chapter_cache">অ্যাপ বন্দ্ধ করার সময় অধ্যায়ের ক্যাশে পরিষ্কার করুন</string>
     <string name="database_clean">তথ্যশালা পরিষ্কার</string>
     <string name="clear_database_source_item_count">তথ্যশালায় %1$d টি মাঙ্গা যেগুলি লাইব্রেরীতে নেই</string>
-    <string name="privacy_policy">গোপনীয়তা নীতি</string>
     <string name="extension_api_error">এক্সটেনশন তালিকা পেতে ব্যার্থ হলো</string>
     <string name="skipped_reason_completed">এড়িয়ে যাওয়া হয়েছে কারণ সিরিজটি সম্পূর্ণ</string>
     <string name="cancelled">বাতিল করা হয়েছে</string>

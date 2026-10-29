@@ -391,7 +391,6 @@
     <string name="action_disable">Inaktivera</string>
     <string name="download_insufficient_space">Det gick inte att ladda ner kapitelt på grund av lågt lagringsutrymme</string>
     <string name="action_global_search_query">Sök efter \"%1$s\" globalt</string>
-    <string name="whats_new">Vad är nytt</string>
     <string name="pref_category_reading_mode">Läsläge</string>
     <string name="pref_category_theme">Tema</string>
     <string name="action_sort_date_added">Datum tillagd</string>
@@ -542,7 +541,6 @@
     <string name="on_hiatus">På uppehåll</string>
     <string name="publishing_finished">Publiceringen avslutad</string>
     <string name="save_chapter_as_cbz">Spara som CBZ-arkiv</string>
-    <string name="privacy_policy">Integritetspolicy</string>
     <string name="pref_update_only_completely_read">Hoppa över artiklar med olästa kapitel</string>
     <string name="extension_api_error">Kunde inte hämta tillgängliga tillägg</string>
     <string name="action_show_manga">Visa artiklar</string>

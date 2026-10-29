@@ -394,7 +394,6 @@
     <string name="unknown_author">Неизвестен автор</string>
     <string name="no_pinned_sources">Нямате отметнати източници</string>
     <string name="action_global_search_query">Търси „%1$s“ глобално</string>
-    <string name="whats_new">Какво е новото</string>
     <string name="backup_restore_missing_trackers">Не сте влезли като потребител в:</string>
     <string name="pref_remove_bookmarked_chapters">Позволи изтриване на отметнати глави</string>
     <string name="pref_category_delete_chapters">Изтрий глави</string>
@@ -533,7 +532,6 @@
     <string name="clear_database_source_item_count">%1$d небиблиотечна манга в базата данни</string>
     <string name="database_clean">Нищо за почистване</string>
     <string name="pref_auto_clear_chapter_cache">Изчистване на кеша на главата при затваряне на приложението</string>
-    <string name="privacy_policy">Политика за поверителност</string>
     <string name="pref_update_only_completely_read">С непрочетени глави</string>
     <string name="ext_update_all">Обнови всички</string>
     <string name="extension_api_error">Неуспешно получаване на списък с разширения</string>

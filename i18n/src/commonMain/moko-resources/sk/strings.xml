@@ -399,7 +399,6 @@
     <string name="enhanced_services">Vylepšené sledovače</string>
     <string name="label_network">Sieť</string>
     <string name="pref_auto_clear_chapter_cache">Vymazanie vyrovnávacej pamäte kapitoly pri zatvorení aplikácie</string>
-    <string name="whats_new">Čo je nové</string>
     <string name="help_translate">Pomôžte s prekladom</string>
     <string name="licenses">Licencia Open Source</string>
     <string name="error_sharing_cover">Chyba pri zdieľaní obalu</string>
@@ -593,7 +592,6 @@
     <string name="pref_reader_actions">Akcie</string>
     <string name="custom_cover">Vlastný obal</string>
     <string name="action_move_to_top_all_for_series">Presunúť sériu na začiatok</string>
-    <string name="privacy_policy">Zásady ochrany osobných údajov</string>
     <string name="are_you_sure">Ste si istí?</string>
     <string name="rotation_portrait">Na výšku</string>
     <string name="pref_user_agent_string">Predvolený reťazec pre User-Agent</string>

@@ -294,7 +294,6 @@
     <string name="login_title">Ensaluti al %1$s</string>
     <string name="label_downloaded_only">Nur elŝutitaj</string>
     <string name="licenses">Malfermitkodaj permesiloj</string>
-    <string name="whats_new">Kio novas</string>
     <string name="version">Versio</string>
     <string name="battery_optimization_setting_activity_not_found">Ne eblis malfermi aparatajn agordojn</string>
     <string name="clear_database_completed">Elementoj forigitaj</string>
@@ -684,7 +683,6 @@
     <string name="pref_verbose_logging_summary">Konservi malkoncizajn protokolojn al sistema protokolo (reduktas apan rendimenton)</string>
     <string name="pref_debug_info">Infrormoj por sencimigo</string>
     <string name="pref_verbose_logging">Malkonciza protokolado</string>
-    <string name="privacy_policy">Privateca politiko</string>
     <string name="pref_acra_summary">Helpas ripari cimojn. Neniuj konfidencaj datumoj estos sendotaj</string>
     <string name="fdroid_warning">Eldonoj ĉe F-Droid ne estas oficiale subtenataj.\nTuŝetu por ekscii pli.</string>
     <string name="label_auto">Aŭtomate</string>

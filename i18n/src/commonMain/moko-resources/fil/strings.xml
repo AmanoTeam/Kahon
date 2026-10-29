@@ -365,7 +365,6 @@
     <string name="pref_enable_acra">Ipadala ang mga ulat ng pag-crash</string>
     <string name="check_for_updates">Maghanap ng update</string>
     <string name="licenses">Mga lisensiyang open-source</string>
-    <string name="whats_new">Anong bago</string>
     <string name="version">Bersyon</string>
     <string name="website">Website</string>
     <string name="battery_optimization_setting_activity_not_found">Di mabuksan ang pagsasaayos ng iyong device</string>
@@ -538,7 +537,6 @@
     <string name="pref_auto_clear_chapter_cache">Linisin ang cache ng kabanata sa paglulunsad ng app</string>
     <string name="database_clean">Walang malilinis</string>
     <string name="extension_api_error">Bigong makuha ng mga available na extension</string>
-    <string name="privacy_policy">Patakaran sa Pagkapribado</string>
     <string name="library_errors_help">Para sa tulong sa pag-aayos ng mga error sa pag-update ng aklatan, tingnan ang %1$s</string>
     <string name="pref_update_only_completely_read">Laktawan ang mga entry na hindi pa nababasang kabanata</string>
     <string name="save_chapter_as_cbz">I-save bilang CBZ archive</string>

@@ -381,7 +381,6 @@
     <string name="action_disable">تعطيل</string>
     <string name="action_start">ابدأ</string>
     <string name="action_sort_date_added">تاريخ الإضافة</string>
-    <string name="whats_new">ما الجديد</string>
     <string name="requires_app_restart">يتطلب إعادة تشغيل التطبيق ليتم تفعيله</string>
     <string name="label_network">التشبيك</string>
     <string name="backup_restore_missing_trackers">أجهزة التتبع التي لم يتم تسجيل الدخول إليها:</string>
@@ -536,7 +535,6 @@
     <string name="on_hiatus">منقطعة</string>
     <string name="library_errors_help">للحصول على المساعده في إصلاح أخطاء تحديث المكتبة، أنظر هنا%1$s</string>
     <string name="save_chapter_as_cbz">احفظ كأرشيف CBZ</string>
-    <string name="privacy_policy">سياسة الخصوصية</string>
     <string name="pref_update_only_completely_read">تجاهل المجلات ذات الفصول الغير مقروءة</string>
     <string name="ext_installer_legacy">قياسي</string>
     <string name="pref_auto_clear_chapter_cache">امسح ملفات التخزين المؤقت عند فتح التطبيق</string>
