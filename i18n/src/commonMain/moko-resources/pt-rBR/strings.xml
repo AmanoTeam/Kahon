@@ -387,7 +387,6 @@
     <string name="pref_read_with_tapping_inverted">Inverter as zonas de toque</string>
     <string name="unknown_status">Estado desconhecido</string>
     <string name="unknown_author">Autor desconhecido</string>
-    <string name="whats_new">O que há de novo</string>
     <string name="download_insufficient_space">Não foi possível fazer o download dos capítulos devido ao pouco espaço de armazenamento</string>
     <string name="action_sort_date_added">Data de inclusão</string>
     <string name="action_global_search_query">Pesquisar por \"%1$s\" globalmente</string>
@@ -536,7 +535,6 @@
     <string name="clear_database_source_item_count">%1$d itens que não estão na biblioteca no banco de dados</string>
     <string name="database_clean">Nada a ser limpo</string>
     <string name="extension_api_error">Erro ao obter as extensões disponíveis</string>
-    <string name="privacy_policy">Política de privacidade</string>
     <string name="pref_update_only_completely_read">Pular itens com capítulos não lidos</string>
     <string name="library_errors_help">Para obter ajuda sobre como corrigir erros de atualização da biblioteca, veja %1$s</string>
     <string name="save_chapter_as_cbz">Salvar como arquivo CBZ</string>

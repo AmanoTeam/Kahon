@@ -201,7 +201,6 @@
     <string name="clear_database_source_item_count">%1$d ikkje-bibliotek manga i databasen</string>
     <string name="version">Versjon</string>
     <string name="help_translate">Hjelp med å omsetje</string>
-    <string name="privacy_policy">Personvernerklæring</string>
     <string name="check_for_updates">Sjå etter oppdateringar</string>
     <string name="pref_incognito_mode">Inkognitomodus</string>
     <string name="username">Brukarnamn</string>
@@ -249,7 +248,6 @@
     <string name="display_mode_chapter">Kapittel %1$s</string>
     <string name="chapter_downloading_progress">Lastar ned (%1$d/%2$d)</string>
     <string name="set_chapter_settings_as_default">Sett som standard</string>
-    <string name="whats_new">Kva er nytt</string>
     <string name="remove_from_library">Fjern frå bibliotek</string>
     <string name="manga_info_expand">Meir</string>
     <string name="snack_add_to_library">Legg manga til i bibliotek?</string>
