@@ -395,9 +395,7 @@
     <string name="label_background_activity">Kalihokan sa background</string>
     <string name="pref_disable_battery_optimization_summary">Nagtabang sa mga update sa librarya sa background ug pag-backup</string>
     <string name="pref_verbose_logging">Verbose logging</string>
-    <string name="whats_new">Unsay bag-o</string>
     <string name="help_translate">Tabang sa paghubad</string>
-    <string name="privacy_policy">Polisiya sa pagkapribado</string>
     <string name="downloaded_only_summary">Pagsala sa tanang manga sa imong library</string>
     <string name="pref_acra_summary">Nakatabang sa pag-ayo sa bisan unsang mga bug. Walay sensitibo nga datos nga ipadala</string>
     <string name="licenses">Mga lisensya sa open source</string>

@@ -393,7 +393,6 @@
     <string name="database_clean">दत्तनिधिः मार्जितः</string>
     <string name="label_background_activity">पृष्ठभूमिकार्यक्रमम्</string>
     <string name="pref_disable_battery_optimization">विद्युत्कोषवृद्धिकरणम् अशक्तं करोतु</string>
-    <string name="whats_new">नूतनं किम्</string>
     <string name="pref_tablet_ui_mode">टाबलेट् यू॰ऐ</string>
     <string name="help_translate">अनुवादसाहाय्यं करोतु</string>
     <string name="remove_from_library">ग्रन्थालयात् निष्करोतु</string>
@@ -463,7 +462,6 @@
     <string name="notification_new_chapters">नूतनाध्यायाः लभ्याः</string>
     <string name="action_display_cover_only_grid">केवलं मुखचित्रेण इष्टिकाविन्यासः</string>
     <string name="pref_clear_chapter_cache">अध्यायस्य काष्वस्तु मार्जयतु</string>
-    <string name="privacy_policy">गुप्ततानीतिः</string>
     <string name="licenses">अपावृतप्रभावकानि अनुज्ञापत्राणि</string>
     <string name="pref_enable_acra">ध्वंसावेदनानि प्रेषयतु</string>
     <string name="delete_downloads_for_manga">अवारोपिताध्यायान् नाशयानि किम्</string>
