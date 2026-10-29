@@ -1,0 +1,8 @@
+{
+    "uniqueId": "ffmpeg:ffmpeg",
+    "name": "FFmpeg",
+    "description": "A complete, cross-platform solution to record, convert and stream audio and video.",
+    "website": "https://github.com/FFmpeg/FFmpeg",
+    "developers": [{ "name": "FFmpeg developers" }],
+    "licenses": ["LGPL-2.1-or-later"]
+}

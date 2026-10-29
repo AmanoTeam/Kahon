@@ -1,0 +1,11 @@
+{
+    "uniqueId": "libevent:libevent",
+    "name": "libevent",
+    "description": "An event notification library.",
+    "website": "https://github.com/libevent/libevent",
+    "developers": [
+        { "name": "Niels Provos" },
+        { "name": "Nick Mathewson" }
+    ],
+    "licenses": ["BSD-3-Clause"]
+}

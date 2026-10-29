@@ -1,0 +1,11 @@
+{
+    "uniqueId": "madler:zlib",
+    "name": "zlib",
+    "description": "A massively spiffy yet delicately unobtrusive compression library.",
+    "website": "https://github.com/madler/zlib",
+    "developers": [
+        { "name": "Jean-loup Gailly" },
+        { "name": "Mark Adler" }
+    ],
+    "licenses": ["Zlib"]
+}
