@@ -410,7 +410,6 @@
     <string name="notification_incognito_text">Tắt chế độ ẩn danh</string>
     <string name="check_for_updates">Kiểm tra cập nhật</string>
     <string name="licenses">Mở giấy phép nguồn mở</string>
-    <string name="whats_new">Có gì mới</string>
     <string name="website">Trang chủ</string>
     <string name="battery_optimization_setting_activity_not_found">Không thể mở tùy chỉnh thiết bị</string>
     <string name="label_data">Dữ liệu</string>
@@ -535,7 +534,6 @@
     <string name="clear_database_source_item_count">%1$d truyện ngoài thư viện có trong cơ sở dữ liệu</string>
     <string name="database_clean">Không có gì để dọn</string>
     <string name="extension_api_error">Không tải được danh sách tiện ích mở rộng</string>
-    <string name="privacy_policy">Chính sách quyền riêng tư</string>
     <string name="pref_update_only_completely_read">Bỏ qua truyện có chương chưa đọc</string>
     <string name="publishing_finished">Đã hoàn thành xuất bản</string>
     <string name="cancelled">Đã hủy</string>

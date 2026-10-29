@@ -347,7 +347,6 @@
     <string name="pref_always_show_chapter_transition">회차 변경 항상 표시</string>
     <string name="unknown_author">작가 미상</string>
     <string name="pref_category_reading_mode">읽기 모드</string>
-    <string name="whats_new">업데이트 내역</string>
     <string name="last_used_source">마지막으로 사용</string>
     <string name="pref_dual_page_invert">분할 페이지 순서 뒤집기</string>
     <string name="edge_nav">양쪽 가장자리</string>
@@ -425,7 +424,6 @@
     <string name="ext_update_all">전부 업데이트</string>
     <string name="invalid_backup_file_missing_manga">백업에 항목이 포함되어 있지 않습니다.</string>
     <string name="pref_dump_crash_logs_summary">개발자와 공유할 수 있는 오류 로그 파일을 생성합니다</string>
-    <string name="privacy_policy">개인정보 보호 정책</string>
     <string name="share_page_info">%1$s: %2$s, %3$d페이지</string>
     <string name="clear_history_confirmation">계속하시겠습니까? 모든 기록이 삭제됩니다.</string>
     <string name="disabled_nav">비활성화</string>
