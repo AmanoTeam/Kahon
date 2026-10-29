@@ -1,0 +1,9 @@
+{
+    "uniqueId": "com.amanoteam:kad",
+    "name": "Kad",
+    "description": "A simple HTTP proxy server that forwards all requests through curl-impersonate.",
+    "artifactVersion": "0.2",
+    "website": "https://github.com/AmanoTeam/Kad",
+    "developers": [{ "name": "AmanoTeam" }],
+    "licenses": ["LGPL-3.0-only"]
+}

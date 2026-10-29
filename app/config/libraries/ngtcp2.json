@@ -1,0 +1,8 @@
+{
+    "uniqueId": "ngtcp2:ngtcp2",
+    "name": "ngtcp2",
+    "description": "An implementation of the IETF QUIC protocol in C.",
+    "website": "https://github.com/ngtcp2/ngtcp2",
+    "developers": [{ "name": "Tatsuhiro Tsujikawa" }],
+    "licenses": ["MIT"]
+}

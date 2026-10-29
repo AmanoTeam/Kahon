@@ -1,0 +1,8 @@
+{
+    "uniqueId": "google:brotli",
+    "name": "Brotli",
+    "description": "Brotli compression format library.",
+    "website": "https://github.com/google/brotli",
+    "developers": [{ "name": "Brotli Authors" }],
+    "licenses": ["MIT"]
+}
