@@ -1,0 +1,8 @@
+{
+    "uniqueId": "curl:curl",
+    "name": "curl",
+    "description": "Command line tool and library for transferring data with URLs.",
+    "website": "https://github.com/curl/curl",
+    "developers": [{ "name": "Daniel Stenberg" }],
+    "licenses": ["curl"]
+}

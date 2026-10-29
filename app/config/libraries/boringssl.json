@@ -1,0 +1,8 @@
+{
+    "uniqueId": "google:boringssl",
+    "name": "BoringSSL",
+    "description": "A fork of OpenSSL designed to meet Google's needs.",
+    "website": "https://github.com/google/boringssl",
+    "developers": [{ "name": "Google" }],
+    "licenses": ["Apache-2.0"]
+}

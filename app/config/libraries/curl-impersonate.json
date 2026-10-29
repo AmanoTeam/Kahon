@@ -1,0 +1,8 @@
+{
+    "uniqueId": "lexiforest:curl-impersonate",
+    "name": "curl-impersonate",
+    "description": "A special build of curl that can impersonate the client fingerprints of Chrome, Edge, Safari and Firefox.",
+    "website": "https://github.com/Kartatz/curl-impersonate",
+    "developers": [{ "name": "curl_cffi developers" }],
+    "licenses": ["MIT"]
+}
