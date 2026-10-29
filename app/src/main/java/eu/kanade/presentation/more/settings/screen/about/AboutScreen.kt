@@ -149,26 +149,10 @@ fun AboutScreen() {
                 }
             }
 
-            if (!BuildConfig.DEBUG) {
-                item {
-                    TextPreferenceWidget(
-                        title = stringResource(MR.strings.whats_new),
-                        onPreferenceClick = { uriHandler.openUri(RELEASE_URL) },
-                    )
-                }
-            }
-
             item {
                 TextPreferenceWidget(
                     title = stringResource(MR.strings.licenses),
                     onPreferenceClick = { navigator.push(OpenSourceLicensesRoute) },
-                )
-            }
-
-            item {
-                TextPreferenceWidget(
-                    title = stringResource(MR.strings.privacy_policy),
-                    onPreferenceClick = { uriHandler.openUri("https://mihon.app/privacy/") },
                 )
             }
 

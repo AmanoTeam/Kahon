@@ -387,7 +387,6 @@
     <string name="pref_read_with_tapping_inverted">Fùrria sas zonas de tocu</string>
     <string name="unknown_status">Istadu disconnotu</string>
     <string name="unknown_author">Autore disconnotu</string>
-    <string name="whats_new">Ite b\'at de nou</string>
     <string name="download_insufficient_space">Iscarrigamentu de sos capìtulos fallidu pro neghe de su pagu ispàtziu lìberu in su discu</string>
     <string name="action_global_search_query">Chirca \"%1$s\" globalmente</string>
     <string name="pref_category_reading_mode">Modalidade de leghidura</string>
@@ -536,7 +535,6 @@
     <string name="extension_api_error">Recùperu de sa lista de sas estensiones fallidu</string>
     <string name="pref_auto_clear_chapter_cache">Isbòida sa memòria temporànea de sos capìtulos cando aberis s\'aplicatzione</string>
     <string name="database_clean">Nudda de isboidare</string>
-    <string name="privacy_policy">Polìtica de riservadesa</string>
     <string name="save_chapter_as_cbz">Sarva comente archìviu CBZ</string>
     <string name="library_errors_help">Pro tènnere un\'agiudu pro acontzare sos errores de agiornamentu de sa biblioteca pòmpia·ti %1$s</string>
     <string name="pref_update_only_completely_read">Cun capìtulos non lèghidos</string>
