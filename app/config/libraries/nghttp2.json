@@ -1,0 +1,8 @@
+{
+    "uniqueId": "nghttp2:nghttp2",
+    "name": "nghttp2",
+    "description": "An implementation of the HTTP/2 protocol in C.",
+    "website": "https://github.com/nghttp2/nghttp2",
+    "developers": [{ "name": "Tatsuhiro Tsujikawa" }],
+    "licenses": ["MIT"]
+}
