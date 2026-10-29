@@ -1,0 +1,9 @@
+{
+    "uniqueId": "com.amanoteam:flare",
+    "name": "flare",
+    "description": "A command-line utility to crop white and black gutters off images.",
+    "artifactVersion": "0.1",
+    "website": "https://github.com/AmanoTeam/flare",
+    "developers": [{ "name": "AmanoTeam" }],
+    "licenses": ["LGPL-3.0-only"]
+}

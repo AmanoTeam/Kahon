@@ -1,0 +1,8 @@
+{
+    "uniqueId": "facebook:zstd",
+    "name": "Zstandard",
+    "description": "Zstandard is a real-time compression algorithm, offering high compression ratios.",
+    "website": "https://github.com/facebook/zstd",
+    "developers": [{ "name": "Meta Platforms, Inc." }],
+    "licenses": ["BSD-3-Clause"]
+}

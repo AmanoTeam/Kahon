@@ -1,0 +1,8 @@
+{
+    "uniqueId": "ngtcp2:nghttp3",
+    "name": "nghttp3",
+    "description": "An implementation of HTTP/3 in C.",
+    "website": "https://github.com/ngtcp2/nghttp3",
+    "developers": [{ "name": "Tatsuhiro Tsujikawa" }],
+    "licenses": ["MIT"]
+}

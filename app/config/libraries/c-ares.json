@@ -1,0 +1,8 @@
+{
+    "uniqueId": "c-ares:c-ares",
+    "name": "c-ares",
+    "description": "A C library for asynchronous DNS requests.",
+    "website": "https://github.com/c-ares/c-ares",
+    "developers": [{ "name": "Daniel Stenberg" }],
+    "licenses": ["MIT"]
+}

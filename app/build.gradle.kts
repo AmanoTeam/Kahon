@@ -19,6 +19,12 @@ plugins {
     alias(libs.plugins.apollo)
 }
 
+aboutLibraries {
+    collect {
+        configPath = file("config")
+    }
+}
+
 val supportedAbis = setOf("armeabi-v7a", "arm64-v8a")
 
 android {
@@ -52,7 +58,6 @@ android {
 
             proguardFiles("proguard-android-optimize.txt", "proguard-rules.pro")
         }
-
     }
 
     externalNativeBuild {
