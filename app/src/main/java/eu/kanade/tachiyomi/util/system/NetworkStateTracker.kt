@@ -9,10 +9,9 @@ import kotlinx.coroutines.flow.callbackFlow
 
 data class NetworkState(
     val isConnected: Boolean,
-    val isValidated: Boolean,
     val isWifi: Boolean,
 ) {
-    val isOnline = isConnected && isValidated
+    val isOnline = isConnected
 }
 
 @Suppress("DEPRECATION")
@@ -20,7 +19,6 @@ fun Context.activeNetworkState(): NetworkState {
     val capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
     return NetworkState(
         isConnected = connectivityManager.activeNetworkInfo?.isConnected ?: false,
-        isValidated = capabilities?.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED) ?: false,
         isWifi = wifiManager.isWifiEnabled && capabilities?.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ?: false,
     )
 }
