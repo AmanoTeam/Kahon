@@ -296,7 +296,7 @@ object SettingsReaderScreen : SearchableSettings {
 
         return Preference.PreferenceGroup(
             title = stringResource(MR.strings.webtoon_viewer),
-            preferenceItems = listOf(
+            preferenceItems = listOfNotNull(
                 Preference.PreferenceItem.ListPreference(
                     preference = navModePref,
                     entries = ReaderPreferences.TapZones
