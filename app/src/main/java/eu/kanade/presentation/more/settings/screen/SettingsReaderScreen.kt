@@ -345,7 +345,6 @@ object SettingsReaderScreen : SearchableSettings {
                 ),
                 Preference.PreferenceItem.CustomPreference(
                     title = stringResource(MR.strings.pref_crop_gutters_minimum),
-                    visible = cropGutters,
                     content = {
                         val cropGuttersMinimum by readerPreferences.cropGuttersMinimum.collectAsState()
                         val cropGuttersMinimumIndex = ReaderPreferences.cropGuttersMinimumIndex(cropGuttersMinimum)
@@ -361,7 +360,7 @@ object SettingsReaderScreen : SearchableSettings {
                             },
                         )
                     },
-                ),
+                ).takeIf { cropGutters },
                 Preference.PreferenceItem.SwitchPreference(
                     preference = dualPageSplitPref,
                     title = stringResource(MR.strings.pref_dual_page_split),
