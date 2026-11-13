@@ -13,6 +13,7 @@ import tachiyomi.core.common.preference.PreferenceStore
 import tachiyomi.core.common.preference.getEnum
 import tachiyomi.core.common.preference.getEnumSet
 import tachiyomi.i18n.MR
+import kotlin.math.abs
 
 @Inject
 @SingleIn(AppScope::class)
@@ -329,9 +330,15 @@ class ReaderPreferences(
         const val WEBTOON_PADDING_MIN = 0
         const val WEBTOON_PADDING_MAX = 25
 
-        const val CROP_GUTTERS_MINIMUM_MIN = 0
-        const val CROP_GUTTERS_MINIMUM_MAX = 32
         const val CROP_GUTTERS_MINIMUM_DEFAULT = 2
+
+        val CROP_GUTTERS_MINIMUM_VALUES = listOf(0) + (0..9).map { 1 shl it }
+
+        fun cropGuttersMinimumIndex(value: Int): Int {
+            val values = CROP_GUTTERS_MINIMUM_VALUES
+            return values.indexOf(value).takeIf { it >= 0 }
+                ?: values.withIndex().minBy { abs(it.value - value) }.index
+        }
 
         const val MILLI_CONVERSION = 100
 

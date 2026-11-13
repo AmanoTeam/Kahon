@@ -182,13 +182,14 @@ private fun ColumnScope.WebtoonViewerSettings(viewModel: ReaderSettingsViewModel
     )
     if (cropGutters) {
         val cropGuttersMinimum by viewModel.preferences.cropGuttersMinimum.collectAsState()
+        val cropGuttersMinimumIndex = ReaderPreferences.cropGuttersMinimumIndex(cropGuttersMinimum)
         SliderItem(
-            value = cropGuttersMinimum,
-            valueRange = ReaderPreferences.let { it.CROP_GUTTERS_MINIMUM_MIN..it.CROP_GUTTERS_MINIMUM_MAX },
+            value = cropGuttersMinimumIndex,
+            valueRange = 0..ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES.lastIndex,
             label = stringResource(MR.strings.pref_crop_gutters_minimum),
-            valueString = "$cropGuttersMinimum dp",
+            valueString = "${ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES[cropGuttersMinimumIndex]} dp",
             onChange = {
-                viewModel.preferences.cropGuttersMinimum.set(it)
+                viewModel.preferences.cropGuttersMinimum.set(ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES[it])
             },
             pillColor = MaterialTheme.colorScheme.surfaceContainerHighest,
         )

@@ -13,6 +13,7 @@ import eu.kanade.tachiyomi.ui.reader.setting.ReadingMode
 import eu.kanade.tachiyomi.util.system.hasDisplayCutout
 import mihon.app.di.appGraph
 import tachiyomi.i18n.MR
+import tachiyomi.presentation.core.components.SliderItem
 import tachiyomi.presentation.core.i18n.pluralStringResource
 import tachiyomi.presentation.core.i18n.stringResource
 import tachiyomi.presentation.core.util.collectAsState
@@ -342,14 +343,24 @@ object SettingsReaderScreen : SearchableSettings {
                     title = stringResource(MR.strings.pref_crop_gutters),
                     subtitle = stringResource(MR.strings.pref_crop_gutters_summary),
                 ),
-                Preference.PreferenceItem.SliderPreference(
-                    preference = readerPreferences.cropGuttersMinimum,
-                    valueRange = ReaderPreferences.let {
-                        it.CROP_GUTTERS_MINIMUM_MIN..it.CROP_GUTTERS_MINIMUM_MAX
-                    },
+                Preference.PreferenceItem.CustomPreference(
                     title = stringResource(MR.strings.pref_crop_gutters_minimum),
-                    valueText = { "$it dp" },
                     visible = cropGutters,
+                    content = {
+                        val cropGuttersMinimum by readerPreferences.cropGuttersMinimum.collectAsState()
+                        val cropGuttersMinimumIndex = ReaderPreferences.cropGuttersMinimumIndex(cropGuttersMinimum)
+                        SliderItem(
+                            value = cropGuttersMinimumIndex,
+                            valueRange = 0..ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES.lastIndex,
+                            label = stringResource(MR.strings.pref_crop_gutters_minimum),
+                            valueString = "${ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES[cropGuttersMinimumIndex]} dp",
+                            onChange = {
+                                readerPreferences.cropGuttersMinimum.set(
+                                    ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES[it],
+                                )
+                            },
+                        )
+                    },
                 ),
                 Preference.PreferenceItem.SwitchPreference(
                     preference = dualPageSplitPref,
