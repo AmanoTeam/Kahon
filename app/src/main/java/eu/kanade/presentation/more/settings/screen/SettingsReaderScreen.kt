@@ -296,7 +296,7 @@ object SettingsReaderScreen : SearchableSettings {
 
         return Preference.PreferenceGroup(
             title = stringResource(MR.strings.webtoon_viewer),
-            preferenceItems = listOfNotNull(
+            preferenceItems = listOf(
                 Preference.PreferenceItem.ListPreference(
                     preference = navModePref,
                     entries = ReaderPreferences.TapZones
@@ -345,22 +345,22 @@ object SettingsReaderScreen : SearchableSettings {
                 ),
                 Preference.PreferenceItem.CustomPreference(
                     title = stringResource(MR.strings.pref_crop_gutters_minimum),
-                    content = {
-                        val cropGuttersMinimum by readerPreferences.cropGuttersMinimum.collectAsState()
-                        val cropGuttersMinimumIndex = ReaderPreferences.cropGuttersMinimumIndex(cropGuttersMinimum)
-                        SliderItem(
-                            value = cropGuttersMinimumIndex,
-                            valueRange = 0..ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES.lastIndex,
-                            label = stringResource(MR.strings.pref_crop_gutters_minimum),
-                            valueString = "${ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES[cropGuttersMinimumIndex]} dp",
-                            onChange = {
-                                readerPreferences.cropGuttersMinimum.set(
-                                    ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES[it],
-                                )
-                            },
-                        )
-                    },
-                ).takeIf { cropGutters },
+                    visible = cropGutters,
+                ) {
+                    val cropGuttersMinimum by readerPreferences.cropGuttersMinimum.collectAsState()
+                    val cropGuttersMinimumIndex = ReaderPreferences.cropGuttersMinimumIndex(cropGuttersMinimum)
+                    SliderItem(
+                        value = cropGuttersMinimumIndex,
+                        valueRange = 0..ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES.lastIndex,
+                        label = stringResource(MR.strings.pref_crop_gutters_minimum),
+                        valueString = "${ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES[cropGuttersMinimumIndex]} dp",
+                        onChange = {
+                            readerPreferences.cropGuttersMinimum.set(
+                                ReaderPreferences.CROP_GUTTERS_MINIMUM_VALUES[it],
+                            )
+                        },
+                    )
+                },
                 Preference.PreferenceItem.SwitchPreference(
                     preference = dualPageSplitPref,
                     title = stringResource(MR.strings.pref_dual_page_split),

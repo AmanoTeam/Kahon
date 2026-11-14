@@ -334,11 +334,8 @@ class ReaderPreferences(
 
         val CROP_GUTTERS_MINIMUM_VALUES = listOf(0) + (0..9).map { 1 shl it }
 
-        fun cropGuttersMinimumIndex(value: Int): Int {
-            val values = CROP_GUTTERS_MINIMUM_VALUES
-            return values.indexOf(value).takeIf { it >= 0 }
-                ?: values.withIndex().minBy { abs(it.value - value) }.index
-        }
+        fun cropGuttersMinimumIndex(value: Int): Int =
+            CROP_GUTTERS_MINIMUM_VALUES.withIndex().minBy { abs(it.value - value) }.index
 
         const val MILLI_CONVERSION = 100
 
