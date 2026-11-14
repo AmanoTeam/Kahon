@@ -476,6 +476,7 @@ class ReaderActivity : BaseActivity() {
         )
         val verticalNavigatorOnLeft by readerPreferences.verticalNavigatorOnLeft.collectAsState()
         val verticalNavigatorHeight by readerPreferences.verticalNavigatorHeight.collectAsState()
+        val showAutoscrollToggle by readerPreferences.showAutoscrollToggle.collectAsState()
 
         ReaderAppBars(
             visible = state.menuVisible,
@@ -533,6 +534,7 @@ class ReaderActivity : BaseActivity() {
                 menuToggleToast = toast(if (enabled) MR.strings.on else MR.strings.off)
             },
             onClickSettings = viewModel::openSettingsDialog,
+            showAutoscrollToggle = showAutoscrollToggle,
             isAutoScroll = state.autoScroll,
             isAutoScrollEnabled = state.isAutoScrollEnabled,
             onToggleAutoscroll = viewModel::toggleAutoScroll,

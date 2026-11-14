@@ -131,6 +131,8 @@ class ReaderPreferences(
 
     val smoothAutoScroll: Preference<Boolean> = preferenceStore.getBoolean("smooth_autoscroll", true)
 
+    val showAutoscrollToggle: Preference<Boolean> = preferenceStore.getBoolean("show_autoscroll_toggle", true)
+
     // endregion
 
     // region Split two-page spread

@@ -100,6 +100,7 @@ fun ReaderAppBars(
     cropEnabled: Boolean,
     onClickCropBorder: () -> Unit,
     onClickSettings: () -> Unit,
+    showAutoscrollToggle: Boolean,
     isAutoScroll: Boolean,
     isAutoScrollEnabled: Boolean,
     onToggleAutoscroll: (Boolean) -> Unit,
@@ -131,15 +132,17 @@ fun ReaderAppBars(
                     onOpenInBrowser = onOpenInBrowser,
                     onShare = onShare,
                 )
-                AutoScrollBar(
-                    backgroundColor = backgroundColor,
-                    isAutoScroll = isAutoScroll,
-                    isAutoScrollEnabled = isAutoScrollEnabled,
-                    onToggleAutoscroll = onToggleAutoscroll,
-                    autoScrollFrequency = autoScrollFrequency,
-                    onSetAutoScrollFrequency = onSetAutoScrollFrequency,
-                    onClickAutoScrollHelp = onClickAutoScrollHelp,
-                )
+                if (showAutoscrollToggle) {
+                    AutoScrollBar(
+                        backgroundColor = backgroundColor,
+                        isAutoScroll = isAutoScroll,
+                        isAutoScrollEnabled = isAutoScrollEnabled,
+                        onToggleAutoscroll = onToggleAutoscroll,
+                        autoScrollFrequency = autoScrollFrequency,
+                        onSetAutoScrollFrequency = onSetAutoScrollFrequency,
+                        onClickAutoScrollHelp = onClickAutoScrollHelp,
+                    )
+                }
             }
         }
 

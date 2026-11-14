@@ -408,6 +408,8 @@
 
       <!-- Reader section -->
     <string name="pref_fullscreen">Fullscreen</string>
+    <string name="pref_show_autoscroll_toggle">Show autoscroll toggle</string>
+    <string name="pref_show_autoscroll_toggle_summary">Display an autoscroll toggle on the topbar in the reader screen</string>
     <string name="pref_show_navigation_mode">Show tap zones overlay</string>
     <string name="pref_show_navigation_mode_summary">Briefly show when reader is opened</string>
     <string name="pref_dual_page_split">Split wide pages</string>
