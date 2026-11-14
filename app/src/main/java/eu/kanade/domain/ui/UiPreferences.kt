@@ -1,5 +1,6 @@
 package eu.kanade.domain.ui
 
+import android.content.Context
 import android.text.format.DateFormat
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Inject
@@ -23,6 +24,7 @@ import java.util.Locale
 @Inject
 @SingleIn(AppScope::class)
 class UiPreferences(
+    val context: Context,
     preferenceStore: PreferenceStore,
 ) {
 
@@ -38,6 +40,11 @@ class UiPreferences(
     )
 
     val themeDarkAmoled: Preference<Boolean> = preferenceStore.getBoolean("pref_theme_dark_amoled_key", false)
+
+    val reducedMotion: Preference<Boolean> = preferenceStore.getBoolean(
+        "pref_reduced_motion_key",
+        DeviceUtil.isLowRamDevice(context),
+    )
 
     val relativeTime: Preference<Boolean> = preferenceStore.getBoolean("relative_time_v2", true)
 

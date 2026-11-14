@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import dev.icerock.moko.resources.StringResource
 import tachiyomi.presentation.core.components.material.padding
+import tachiyomi.presentation.core.components.material.reducedMotionCardElevation
 import tachiyomi.presentation.core.i18n.stringResource
 
 @Composable
@@ -35,6 +36,7 @@ fun LazyItemScope.SectionCard(
                 vertical = MaterialTheme.padding.small,
             ),
         shape = MaterialTheme.shapes.extraLarge,
+        elevation = reducedMotionCardElevation(),
     ) {
         Column(modifier = Modifier.padding(MaterialTheme.padding.medium)) {
             content()

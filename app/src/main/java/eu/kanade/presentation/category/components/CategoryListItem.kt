@@ -20,6 +20,7 @@ import sh.calvin.reorderable.ReorderableCollectionItemScope
 import tachiyomi.domain.category.model.Category
 import tachiyomi.i18n.MR
 import tachiyomi.presentation.core.components.material.padding
+import tachiyomi.presentation.core.components.material.reducedMotionCardElevation
 import tachiyomi.presentation.core.i18n.stringResource
 
 @Composable
@@ -29,7 +30,7 @@ fun ReorderableCollectionItemScope.CategoryListItem(
     onDelete: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    ElevatedCard(modifier = modifier) {
+    ElevatedCard(modifier = modifier, elevation = reducedMotionCardElevation()) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
