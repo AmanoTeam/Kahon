@@ -18,6 +18,7 @@ import eu.kanade.presentation.more.settings.Preference
 import eu.kanade.presentation.more.settings.widget.AppThemeModePreferenceWidget
 import eu.kanade.presentation.more.settings.widget.AppThemePreferenceWidget
 import eu.kanade.presentation.util.rememberIs24HourSystem
+import eu.kanade.tachiyomi.util.system.DeviceUtil
 import eu.kanade.tachiyomi.util.system.toast
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toJavaLocalDateTime
@@ -54,6 +55,7 @@ data object SettingsAppearanceScreen : SearchableSettings {
         uiPreferences: UiPreferences,
     ): Preference.PreferenceGroup {
         val context = LocalContext.current
+        val isLowRamDevice = remember { DeviceUtil.isLowRamDevice(context) }
 
         val themeModePref = uiPreferences.themeMode
         val themeMode by themeModePref.collectAsState()
@@ -90,6 +92,16 @@ data object SettingsAppearanceScreen : SearchableSettings {
                     preference = amoledPref,
                     title = stringResource(MR.strings.pref_dark_theme_pure_black),
                     visible = themeMode != ThemeMode.LIGHT,
+                    onValueChanged = {
+                        (context as? Activity)?.let { ActivityCompat.recreate(it) }
+                        true
+                    },
+                ),
+                Preference.PreferenceItem.SwitchPreference(
+                    preference = uiPreferences.reducedMotion,
+                    title = stringResource(MR.strings.pref_reduced_motion),
+                    subtitle = stringResource(MR.strings.pref_reduced_motion_summary),
+                    enabled = !isLowRamDevice,
                     onValueChanged = {
                         (context as? Activity)?.let { ActivityCompat.recreate(it) }
                         true
