@@ -71,6 +71,7 @@ import tachiyomi.presentation.core.components.FastScrollLazyColumn
 import tachiyomi.presentation.core.components.Pill
 import tachiyomi.presentation.core.components.material.Scaffold
 import tachiyomi.presentation.core.components.material.padding
+import tachiyomi.presentation.core.components.material.reducedMotionCardElevation
 import tachiyomi.presentation.core.i18n.stringResource
 import tachiyomi.presentation.core.screens.LoadingScreen
 import tachiyomi.presentation.core.util.shouldExpandFAB
@@ -251,6 +252,7 @@ class MigrationConfigScreen(private val mangaIds: Collection<Long>) : Screen() {
                 modifier = Modifier
                     .padding(horizontal = MaterialTheme.padding.medium)
                     .animateItem(),
+                elevation = reducedMotionCardElevation(),
             ) {
                 SourceItem(
                     source = source,

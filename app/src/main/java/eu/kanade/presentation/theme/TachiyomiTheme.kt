@@ -1,10 +1,14 @@
 package eu.kanade.presentation.theme
 
 import android.content.Context
+import androidx.compose.foundation.LocalOverscrollFactory
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.LocalRippleConfiguration
 import androidx.compose.material3.MaterialExpressiveTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import eu.kanade.domain.ui.model.AppTheme
@@ -25,11 +29,13 @@ import eu.kanade.presentation.theme.colorscheme.TokyoNightColorScheme
 import eu.kanade.presentation.theme.colorscheme.YinYangColorScheme
 import eu.kanade.presentation.theme.colorscheme.YotsubaColorScheme
 import mihon.app.di.appGraph
+import tachiyomi.presentation.core.components.material.LocalReducedMotion
 
 @Composable
 fun TachiyomiTheme(
     appTheme: AppTheme? = null,
     amoled: Boolean? = null,
+    reducedMotion: Boolean? = null,
     content: @Composable () -> Unit,
 ) {
     val context = LocalContext.current
@@ -37,6 +43,7 @@ fun TachiyomiTheme(
     BaseTachiyomiTheme(
         appTheme = appTheme ?: uiPreferences.appTheme.get(),
         isAmoled = amoled ?: uiPreferences.themeDarkAmoled.get(),
+        reducedMotion = reducedMotion ?: uiPreferences.reducedMotion.get(),
         content = content,
     )
 }
@@ -46,27 +53,43 @@ fun TachiyomiPreviewTheme(
     appTheme: AppTheme = AppTheme.DEFAULT,
     isAmoled: Boolean = false,
     content: @Composable () -> Unit,
-) = BaseTachiyomiTheme(appTheme, isAmoled, content)
+) = BaseTachiyomiTheme(appTheme, isAmoled, false, content)
 
 @Composable
 private fun BaseTachiyomiTheme(
     appTheme: AppTheme,
     isAmoled: Boolean,
+    reducedMotion: Boolean,
     content: @Composable () -> Unit,
 ) {
     val context = LocalContext.current
     val isDark = isSystemInDarkTheme()
-    MaterialExpressiveTheme(
-        colorScheme = remember(appTheme, isDark, isAmoled) {
-            getThemeColorScheme(
-                context = context,
-                appTheme = appTheme,
-                isDark = isDark,
-                isAmoled = isAmoled,
+    val colorScheme = remember(appTheme, isDark, isAmoled) {
+        getThemeColorScheme(
+            context = context,
+            appTheme = appTheme,
+            isDark = isDark,
+            isAmoled = isAmoled,
+        )
+    }
+    CompositionLocalProvider(LocalReducedMotion provides reducedMotion) {
+        if (reducedMotion) {
+            CompositionLocalProvider(
+                LocalOverscrollFactory provides null,
+                LocalRippleConfiguration provides null,
+            ) {
+                MaterialTheme(
+                    colorScheme = colorScheme,
+                    content = content,
+                )
+            }
+        } else {
+            MaterialExpressiveTheme(
+                colorScheme = colorScheme,
+                content = content,
             )
-        },
-        content = content,
-    )
+        }
+    }
 }
 
 private fun getThemeColorScheme(

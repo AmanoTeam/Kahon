@@ -25,6 +25,7 @@ import mihon.icons.simpleicons.Discord
 import mihon.icons.simpleicons.SimpleIcons
 import tachiyomi.i18n.MR
 import tachiyomi.presentation.core.components.material.padding
+import tachiyomi.presentation.core.components.material.reducedMotionCardElevation
 import tachiyomi.presentation.core.i18n.stringResource
 
 @Composable
@@ -70,6 +71,7 @@ private fun ExtensionStoresListItem(
 ) {
     ElevatedCard(
         modifier = modifier,
+        elevation = reducedMotionCardElevation(),
     ) {
         Row(
             modifier = Modifier

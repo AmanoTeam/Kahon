@@ -246,6 +246,8 @@
     <string name="theme_yotsuba">Yotsuba</string>
     <string name="theme_tidalwave">Tidal Wave</string>
     <string name="pref_dark_theme_pure_black">Pure black dark mode</string>
+    <string name="pref_reduced_motion">Reduce motion and effects</string>
+    <string name="pref_reduced_motion_summary">Disables expressive motion, overscroll, ripple, blur and shadow effects to improve performance on low-end devices</string>
     <string name="pref_relative_format">Relative timestamps</string>
     <!-- "Today" instead of "2023-12-31" -->
     <string name="pref_relative_format_summary">\"%1$s\" instead of \"%2$s\"</string>

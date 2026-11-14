@@ -94,6 +94,15 @@ object SettingsAppearanceScreen : SearchableSettings {
                         true
                     },
                 ),
+                Preference.PreferenceItem.SwitchPreference(
+                    preference = uiPreferences.reducedMotion,
+                    title = stringResource(MR.strings.pref_reduced_motion),
+                    subtitle = stringResource(MR.strings.pref_reduced_motion_summary),
+                    onValueChanged = {
+                        (context as? Activity)?.let { ActivityCompat.recreate(it) }
+                        true
+                    },
+                ),
             ),
         )
     }

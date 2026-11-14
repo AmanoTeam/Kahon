@@ -16,6 +16,7 @@ import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.platform.LocalContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import tachiyomi.presentation.core.components.material.LocalReducedMotion
 
 /**
  * A [NestedScrollConnection] that hides the navigation suite when the user scrolls down and shows
@@ -29,6 +30,7 @@ class HideOnScrollConnection(
     private val scope: CoroutineScope,
     private val state: NavigationSuiteScaffoldState,
     private val isTouchExplorationEnabled: () -> Boolean = { false },
+    private val reducedMotion: Boolean = false,
 ) : NestedScrollConnection {
 
     override fun onPostScroll(consumed: Offset, available: Offset, source: NestedScrollSource): Offset {
@@ -47,13 +49,17 @@ class HideOnScrollConnection(
      */
     private fun hide() {
         if (state.targetValue != NavigationSuiteScaffoldValue.Hidden && !isTouchExplorationEnabled()) {
-            scope.launch { state.hide() }
+            scope.launch {
+                if (reducedMotion) state.snapTo(NavigationSuiteScaffoldValue.Hidden) else state.hide()
+            }
         }
     }
 
     private fun show() {
         if (state.targetValue != NavigationSuiteScaffoldValue.Visible) {
-            scope.launch { state.show() }
+            scope.launch {
+                if (reducedMotion) state.snapTo(NavigationSuiteScaffoldValue.Visible) else state.show()
+            }
         }
     }
 }
@@ -65,6 +71,7 @@ class HideOnScrollConnection(
 @Composable
 fun rememberHideOnScrollConnection(state: NavigationSuiteScaffoldState): HideOnScrollConnection {
     val scope = rememberCoroutineScope()
+    val reducedMotion = LocalReducedMotion.current
 
     val context = LocalContext.current
     val accessibilityManager = remember(context) {
@@ -81,7 +88,7 @@ fun rememberHideOnScrollConnection(state: NavigationSuiteScaffoldState): HideOnS
         }
     }
 
-    return remember(scope, state, touchExplorationEnabled) {
-        HideOnScrollConnection(scope, state) { touchExplorationEnabled }
+    return remember(scope, state, touchExplorationEnabled, reducedMotion) {
+        HideOnScrollConnection(scope, state, { touchExplorationEnabled }, reducedMotion)
     }
 }
