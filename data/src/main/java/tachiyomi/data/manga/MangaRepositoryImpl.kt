@@ -259,6 +259,7 @@ class MangaRepositoryImpl(
                     database.mangaQueries.update(
                         userFavoriteAtSet = isSet(::favoriteAt),
                         userFavoriteAt = favoriteAt,
+                        remoteCover = thumbnailUrl,
                         stateChapterLastUpdate = lastUpdate,
                         stateChapterNextUpdate = nextUpdate,
                         stateChapterFetchInterval = fetchInterval?.toLong(),

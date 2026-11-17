@@ -31,6 +31,7 @@ import eu.kanade.domain.ui.model.setAppCompatDelegateThemeMode
 import eu.kanade.tachiyomi.crash.CrashActivity
 import eu.kanade.tachiyomi.crash.GlobalExceptionHandler
 import eu.kanade.tachiyomi.data.cache.CoverCache
+import eu.kanade.tachiyomi.data.cache.WaybackCoverArchiver
 import eu.kanade.tachiyomi.data.coil.BufferedSourceFetcher
 import eu.kanade.tachiyomi.data.coil.CoverRequestInterceptor
 import eu.kanade.tachiyomi.data.coil.ExtensionIconFetcher
@@ -97,6 +98,8 @@ class App : Application(), DefaultLifecycleObserver, SingletonImageLoader.Factor
 
     // Lazy: only the image loader uses these, and process starts without UI (workers, receivers) never build it
     @Inject private lateinit var coverCache: Lazy<CoverCache>
+
+    @Inject private lateinit var waybackCoverArchiver: Lazy<WaybackCoverArchiver>
 
     @Inject private lateinit var networkHelper: Lazy<NetworkHelper>
 
@@ -260,6 +263,7 @@ class App : Application(), DefaultLifecycleObserver, SingletonImageLoader.Factor
             val callFactoryLazy = lazy { networkHelper.value.client }
             val coverCache = coverCache.value
             val sourceManager = sourceManager.value
+            val waybackCoverArchiver = waybackCoverArchiver.value
             components {
                 // NetworkFetcher.Factory
                 add(OkHttpNetworkFetcherFactory(callFactoryLazy::value))
@@ -267,8 +271,15 @@ class App : Application(), DefaultLifecycleObserver, SingletonImageLoader.Factor
                 add(ImageDecoder.Factory())
                 // Fetcher.Factory
                 add(BufferedSourceFetcher.Factory())
-                add(MangaCoverFetcher.MangaCoverFactory(callFactoryLazy, coverCache, sourceManager))
-                add(MangaCoverFetcher.MangaFactory(callFactoryLazy, coverCache, sourceManager))
+                add(
+                    MangaCoverFetcher.MangaCoverFactory(
+                        callFactoryLazy,
+                        coverCache,
+                        sourceManager,
+                        waybackCoverArchiver,
+                    ),
+                )
+                add(MangaCoverFetcher.MangaFactory(callFactoryLazy, coverCache, sourceManager, waybackCoverArchiver))
                 add(ExtensionIconFetcher.ExtensionFactory(context))
                 add(ExtensionIconFetcher.SourceFactory(context, extensionManager))
                 // Keyer

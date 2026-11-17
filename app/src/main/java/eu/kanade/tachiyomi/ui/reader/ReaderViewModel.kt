@@ -25,6 +25,7 @@ import eu.kanade.domain.source.interactor.GetIncognitoState
 import eu.kanade.domain.track.interactor.TrackChapter
 import eu.kanade.domain.track.service.TrackPreferences
 import eu.kanade.tachiyomi.data.cache.CoverCache
+import eu.kanade.tachiyomi.data.cache.WaybackCoverArchiver
 import eu.kanade.tachiyomi.data.download.DownloadCache
 import eu.kanade.tachiyomi.data.download.DownloadManager
 import eu.kanade.tachiyomi.data.download.DownloadProvider
@@ -129,6 +130,7 @@ class ReaderViewModel(
     private val coverManager: LocalCoverManager,
     private val updateManga: UpdateManga,
     private val coverCache: CoverCache,
+    private val waybackCoverArchiver: WaybackCoverArchiver,
     private val chapterCache: ChapterCache,
     private val downloadCache: DownloadCache,
 ) : ViewModel() {
@@ -366,6 +368,7 @@ class ReaderViewModel(
         withContext(Dispatchers.IO) {
             try {
                 val manga = getManga.await(mangaId) ?: error("Requested manga of id $mangaId not found")
+                waybackCoverArchiver.archiveIfMissing(manga.thumbnailUrl)
                 val source = sourceManager.getOrStub(manga.source)
                 incognitoMode = getIncognitoState.await(manga.source)
                 val autoscrollInterval = readerPreferences.autoscrollInterval.get()

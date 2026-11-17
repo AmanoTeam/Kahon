@@ -13,9 +13,11 @@ import coil3.getOrDefault
 import coil3.request.Options
 import com.hippo.unifile.UniFile
 import eu.kanade.tachiyomi.data.cache.CoverCache
+import eu.kanade.tachiyomi.data.cache.WaybackCoverArchiver
 import eu.kanade.tachiyomi.data.coil.MangaCoverFetcher.Companion.USE_CUSTOM_COVER_KEY
 import eu.kanade.tachiyomi.network.await
 import eu.kanade.tachiyomi.source.online.HttpSource
+import kotlinx.coroutines.CancellationException
 import logcat.LogPriority
 import okhttp3.CacheControl
 import okhttp3.Call
@@ -47,12 +49,14 @@ import java.io.IOException
 class MangaCoverFetcher(
     private val url: String?,
     private val isLibraryManga: Boolean,
+    private val mangaId: Long,
     private val options: Options,
     private val coverFileLazy: Lazy<File?>,
     private val customCoverFileLazy: Lazy<File>,
     private val diskCacheKeyLazy: Lazy<String>,
     private val getSource: suspend () -> HttpSource?,
     private val callFactoryLazy: Lazy<Call.Factory>,
+    private val waybackCoverArchiver: WaybackCoverArchiver,
     private val imageLoader: ImageLoader,
 ) : Fetcher {
 
@@ -134,7 +138,15 @@ class MangaCoverFetcher(
             }
 
             // Fetch from network
-            val response = executeNetworkRequest()
+            val response = try {
+                executeNetworkRequest()
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                // The cover is gone from the source; point the manga at the archived copy if one exists
+                fetchArchivedCover(e)?.let { return it }
+                throw e
+            }
             val responseBody = checkNotNull(response.body) { "Null response source" }
             try {
                 // Read from cover cache after library manga cover updated
@@ -202,6 +214,30 @@ class MangaCoverFetcher(
         }
 
         return request.build()
+    }
+
+    private suspend fun fetchArchivedCover(cause: Exception): FetchResult? {
+        val archivedUrl = waybackCoverArchiver.findArchivedUrl(url ?: return null) ?: return null
+        waybackCoverArchiver.storeArchivedUrl(mangaId, archivedUrl)
+        logcat { "Cover fetch failed ($cause), serving it from the Wayback Machine instead" }
+        val response = callFactoryLazy.value.newCall(
+            Request.Builder()
+                .url(archivedUrl)
+                .cacheControl(CACHE_CONTROL_NO_STORE)
+                .build(),
+        ).await()
+        if (!response.isSuccessful) {
+            response.close()
+            return null
+        }
+        return SourceFetchResult(
+            source = ImageSource(
+                source = checkNotNull(response.body).source(),
+                fileSystem = FileSystem.SYSTEM,
+            ),
+            mimeType = "image/*",
+            dataSource = DataSource.NETWORK,
+        )
     }
 
     private fun moveSnapshotToCoverCache(snapshot: DiskCache.Snapshot, cacheFile: File?): File? {
@@ -302,18 +338,21 @@ class MangaCoverFetcher(
         private val callFactoryLazy: Lazy<Call.Factory>,
         private val coverCache: CoverCache,
         private val sourceManager: SourceManager,
+        private val waybackCoverArchiver: WaybackCoverArchiver,
     ) : Fetcher.Factory<Manga> {
 
         override fun create(data: Manga, options: Options, imageLoader: ImageLoader): Fetcher {
             return MangaCoverFetcher(
                 url = data.thumbnailUrl,
                 isLibraryManga = data.favorite,
+                mangaId = data.id,
                 options = options,
                 coverFileLazy = lazy { coverCache.getCoverFile(data.thumbnailUrl) },
                 customCoverFileLazy = lazy { coverCache.getCustomCoverFile(data.id) },
                 diskCacheKeyLazy = lazy { imageLoader.components.key(data, options)!! },
                 getSource = { sourceManager.get(data.source) as? HttpSource },
                 callFactoryLazy = callFactoryLazy,
+                waybackCoverArchiver = waybackCoverArchiver,
                 imageLoader = imageLoader,
             )
         }
@@ -323,18 +362,21 @@ class MangaCoverFetcher(
         private val callFactoryLazy: Lazy<Call.Factory>,
         private val coverCache: CoverCache,
         private val sourceManager: SourceManager,
+        private val waybackCoverArchiver: WaybackCoverArchiver,
     ) : Fetcher.Factory<MangaCover> {
 
         override fun create(data: MangaCover, options: Options, imageLoader: ImageLoader): Fetcher {
             return MangaCoverFetcher(
                 url = data.url,
                 isLibraryManga = data.isMangaFavorite,
+                mangaId = data.mangaId,
                 options = options,
                 coverFileLazy = lazy { coverCache.getCoverFile(data.url) },
                 customCoverFileLazy = lazy { coverCache.getCustomCoverFile(data.mangaId) },
                 diskCacheKeyLazy = lazy { imageLoader.components.key(data, options)!! },
                 getSource = { sourceManager.get(data.sourceId) as? HttpSource },
                 callFactoryLazy = callFactoryLazy,
+                waybackCoverArchiver = waybackCoverArchiver,
                 imageLoader = imageLoader,
             )
         }

@@ -223,6 +223,7 @@ UPDATE manga SET
     user_notes = coalesce(:userNotes, user_notes),
     user_reader_flags = coalesce(:userReaderFlags, user_reader_flags),
     user_chapter_flags = coalesce(:userChapterFlags, user_chapter_flags),
+    remote_cover = coalesce(:remoteCover, remote_cover),
     state_chapter_last_update = coalesce(:stateChapterLastUpdate, state_chapter_last_update),
     state_chapter_next_update = coalesce(:stateChapterNextUpdate, state_chapter_next_update),
     state_chapter_fetch_interval = coalesce(:stateChapterFetchInterval, state_chapter_fetch_interval),

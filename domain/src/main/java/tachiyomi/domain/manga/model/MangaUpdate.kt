@@ -4,6 +4,7 @@ import mihon.domain.common.PartialUpdate
 import kotlin.time.Instant
 
 class MangaUpdate(val id: Long, block: MangaUpdate.() -> Unit) : PartialUpdate() {
+    var thumbnailUrl: String? by field(null)
     var favoriteAt: Instant? by field(null)
     var lastUpdate: Instant? by field(null)
     var nextUpdate: Instant? by field(null)
