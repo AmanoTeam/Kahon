@@ -10,7 +10,6 @@ import mihon.gradle.tasks.ReplaceShortcutsPlaceholderTask
 plugins {
     alias(mihonx.plugins.android.application)
     alias(mihonx.plugins.compose)
-    alias(mihonx.plugins.spotless)
 
     alias(libs.plugins.metro)
     alias(libs.plugins.aboutLibraries)

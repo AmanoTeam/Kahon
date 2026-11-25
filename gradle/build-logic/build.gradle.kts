@@ -1,27 +1,7 @@
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlin.samWithReceiver)
-    alias(libs.plugins.spotless)
     `java-gradle-plugin`
-}
-
-// Configuration should be synced with [/gradle/build-logic/src/main/kotlin/PluginSpotless.kt]
-val ktlintVersion = libs.ktlint.bom.get().version
-val editorConfigFile = rootProject.file("../../.editorconfig")
-spotless {
-    kotlin {
-        target("src/**/*.kt")
-        ktlint(ktlintVersion).setEditorConfigPath(editorConfigFile)
-        trimTrailingWhitespace()
-        endWithNewline()
-    }
-
-    kotlinGradle {
-        target("*.kts")
-        ktlint(ktlintVersion).setEditorConfigPath(editorConfigFile)
-        trimTrailingWhitespace()
-        endWithNewline()
-    }
 }
 
 dependencies {
@@ -30,7 +10,6 @@ dependencies {
     compileOnly(libs.android.gradle.runtimeDependency("sdk-common"))
     compileOnly(libs.kotlin.compose.compiler.gradle)
     compileOnly(libs.kotlin.gradle)
-    implementation(libs.spotless.gradle)
     implementation(libs.tapmoc.gradle)
 
     // These allow us to reference the dependency catalog inside our compiled plugins
@@ -67,10 +46,6 @@ gradlePlugin {
         register("kotlin-multiplatform") {
             id = mihonx.plugins.kotlin.multiplatform.get().pluginId
             implementationClass = "PluginKotlinMultiplatform"
-        }
-        register("spotless") {
-            id = mihonx.plugins.spotless.get().pluginId
-            implementationClass = "PluginSpotless"
         }
     }
 }

@@ -16,15 +16,4 @@ plugins {
     alias(libs.plugins.metro) apply false
     alias(libs.plugins.moko.resources) apply false
     alias(libs.plugins.sqldelight) apply false
-
-    alias(mihonx.plugins.spotless)
-}
-
-val buildLogic: IncludedBuild = gradle.includedBuild("build-logic")
-tasks {
-    listOf("clean", "spotlessApply", "spotlessCheck").forEach { task ->
-        named(task) {
-            dependsOn(buildLogic.task(":$task"))
-        }
-    }
 }
