@@ -47,7 +47,6 @@ kotlin-gradle = "2.4.21"
 kotlinx-coroutines = "1.11.0"
 kotlinx-datetime = "0.8.0"
 kotlinx-serialization = "1.13.0"
-ktlint = "1.8.0"
 leakCanary = "2.14"
 logcat = "0.4"
 markdown = "0.46.0"
@@ -63,7 +62,6 @@ quickJs = "547f5b1597"
 reorderable = "3.1.0"
 rxJava = "1.3.8"
 shizuku = "13.1.5"
-spotless = "8.12.0"
 sqldelight = "2.4.1"
 sqldelight-androidx-driver = "0.2.2"
 stringSimilarity = "0.1.0"
@@ -152,7 +150,6 @@ kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 kotlinx-serialization-jsonOkio = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json-okio", version.ref = "kotlinx-serialization" }
 kotlinx-serialization-protobuf = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf", version.ref = "kotlinx-serialization" }
-ktlint-bom = { module = "com.pinterest.ktlint:ktlint-bom", version.ref = "ktlint" }
 leakCanary-core = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakCanary" }
 leakCanary-plumber = { module = "com.squareup.leakcanary:plumber-android", version.ref = "leakCanary" }
 logcat = { module = "com.squareup.logcat:logcat", version.ref = "logcat" }
@@ -178,7 +175,6 @@ reorderable = { module = "sh.calvin.reorderable:reorderable", version.ref = "reo
 rxJava = { module = "io.reactivex:rxjava", version.ref = "rxJava" }
 shizuku-api = { module = "dev.rikka.shizuku:api", version.ref = "shizuku" }
 shizuku-provider = { module = "dev.rikka.shizuku:provider", version.ref = "shizuku" }
-spotless-gradle = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
 sqldelight-androidxDriver = { module = "com.eygraber:sqldelight-androidx-driver", version.ref = "sqldelight-androidx-driver" }
 sqldelight-androidxPaging = { module = "app.cash.sqldelight:androidx-paging3-extensions", version.ref = "sqldelight" }
 sqldelight-async = { module = "app.cash.sqldelight:async-extensions", version.ref = "sqldelight" }
@@ -208,7 +204,6 @@ kotlin-samWithReceiver = { id = "org.jetbrains.kotlin.plugin.sam.with.receiver",
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-gradle" }
 moko-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko-resources" }
 metro = { id = "dev.zacsweers.metro", version.ref = "metro" }
-spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
 valkyrie = { id = "io.github.composegears.valkyrie", version.ref = "valkyrie" }
 
