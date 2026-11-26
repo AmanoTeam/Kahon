@@ -4,6 +4,7 @@
 build
 .cxx
 app/src/main/assets/cert.pem
+app/src/main/assets/filterlists/
 
 # IDE files
 *.iml

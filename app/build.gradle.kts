@@ -388,6 +388,11 @@ val copyCaBundle = tasks.register<Copy>("copyCaBundle") {
     into("$projectDir/src/main/assets")
 }
 
+val updateFilterLists = tasks.register<Exec>("updateFilterLists") {
+    workingDir = rootDir
+    commandLine("python3", "scripts/update_filter_lists.py")
+}
+
 tasks.named("preBuild") {
-    dependsOn(copyCaBundle)
+    dependsOn(copyCaBundle, updateFilterLists)
 }
