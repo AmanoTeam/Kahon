@@ -22,6 +22,7 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.core.net.toUri
 import eu.kanade.domain.base.BasePreferences
 import eu.kanade.presentation.more.settings.Preference
+import eu.kanade.tachiyomi.adblock.AdBlockPreferences
 import eu.kanade.tachiyomi.data.library.MetadataUpdateWorker
 import eu.kanade.tachiyomi.network.NetworkPreferences
 import eu.kanade.tachiyomi.network.PREF_DOH_360
@@ -77,6 +78,7 @@ data object SettingsAdvancedScreen : SearchableSettings {
         val graph = remember { context.appGraph }
         val basePreferences = remember { graph.basePreferences }
         val networkPreferences = remember { graph.networkPreferences }
+        val adBlockPreferences = remember { graph.adBlockPreferences }
         val libraryPreferences = remember { graph.libraryPreferences }
         val crashLogUtil = remember { graph.crashLogUtil }
 
@@ -128,6 +130,7 @@ data object SettingsAdvancedScreen : SearchableSettings {
             getBackgroundActivityGroup(),
             getDataGroup(),
             getNetworkGroup(networkPreferences = networkPreferences),
+            getAdBlockingGroup(adBlockPreferences = adBlockPreferences),
             getLibraryGroup(libraryPreferences = libraryPreferences),
             getReaderGroup(basePreferences = basePreferences),
             getExtensionsGroup(basePreferences = basePreferences),
@@ -311,6 +314,22 @@ data object SettingsAdvancedScreen : SearchableSettings {
                         userAgentPref.delete()
                         context.toast(MR.strings.requires_app_restart)
                     },
+                ),
+            ),
+        )
+    }
+
+    @Composable
+    private fun getAdBlockingGroup(
+        adBlockPreferences: AdBlockPreferences,
+    ): Preference.PreferenceGroup {
+        return Preference.PreferenceGroup(
+            title = stringResource(MR.strings.pref_ad_blocking),
+            preferenceItems = listOf(
+                Preference.PreferenceItem.SwitchPreference(
+                    preference = adBlockPreferences.enabled,
+                    title = stringResource(MR.strings.pref_ad_blocking_enabled),
+                    subtitle = stringResource(MR.strings.pref_ad_blocking_enabled_summary),
                 ),
             ),
         )

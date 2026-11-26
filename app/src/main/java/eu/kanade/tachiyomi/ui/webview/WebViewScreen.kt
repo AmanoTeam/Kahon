@@ -11,6 +11,7 @@ import dev.zacsweers.metrox.viewmodel.assistedMetroViewModel
 import eu.kanade.presentation.webview.WebViewScreenContent
 import eu.kanade.tachiyomi.util.system.WebViewUtil
 import eu.kanade.tachiyomi.util.system.toast
+import mihon.app.di.appGraph
 import mihon.core.navigation.LocalAssistUrl
 import mihon.core.navigation.WebViewRoute
 import tachiyomi.i18n.MR
@@ -35,6 +36,8 @@ fun WebViewScreen(
     val viewModel =
         assistedMetroViewModel<WebViewViewModel, WebViewViewModel.Factory> { create(sourceId = route.sourceId) }
 
+    val adBlockEngine = remember { context.appGraph.adBlockEngine }
+
     val headers by viewModel.headers.collectAsState()
     if (headers == null) {
         LoadingScreen()
@@ -51,5 +54,6 @@ fun WebViewScreen(
         onShare = { viewModel.shareWebpage(context, it) },
         onOpenInBrowser = { viewModel.openInBrowser(context, it) },
         onClearCookies = viewModel::clearCookies,
+        adBlockEngine = adBlockEngine,
     )
 }

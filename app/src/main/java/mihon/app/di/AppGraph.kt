@@ -14,6 +14,8 @@ import eu.kanade.domain.track.service.DelayedTrackingUpdateWorker
 import eu.kanade.domain.track.service.TrackPreferences
 import eu.kanade.domain.ui.UiPreferences
 import eu.kanade.tachiyomi.App
+import eu.kanade.tachiyomi.adblock.AdBlockEngine
+import eu.kanade.tachiyomi.adblock.AdBlockPreferences
 import eu.kanade.tachiyomi.core.security.PrivacyPreferences
 import eu.kanade.tachiyomi.core.security.SecurityPreferences
 import eu.kanade.tachiyomi.data.backup.create.BackupCreateWorker
@@ -83,6 +85,8 @@ interface AppGraph : ViewModelGraph {
     val uiPreferences: UiPreferences
     val readerPreferences: ReaderPreferences
     val networkPreferences: NetworkPreferences
+    val adBlockPreferences: AdBlockPreferences
+    val adBlockEngine: AdBlockEngine
     val libraryPreferences: LibraryPreferences
     val sourcePreferences: SourcePreferences
     val trackPreferences: TrackPreferences

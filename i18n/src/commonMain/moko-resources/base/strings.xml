@@ -665,6 +665,9 @@
     <string name="library_sync_complete">Library sync complete</string>
 
       <!-- Advanced section -->
+    <string name="pref_ad_blocking">Ad blocking</string>
+    <string name="pref_ad_blocking_enabled">Enable ad blocking</string>
+    <string name="pref_ad_blocking_enabled_summary">Block ads and trackers in the in-app browser</string>
     <string name="label_network">Networking</string>
     <string name="pref_clear_cookies">Clear cookies</string>
     <string name="pref_dns_over_https">DNS over HTTPS (DoH)</string>

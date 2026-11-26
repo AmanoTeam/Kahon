@@ -28,6 +28,7 @@ import dev.zacsweers.metro.createGraphFactory
 import eu.kanade.domain.base.BasePreferences
 import eu.kanade.domain.ui.UiPreferences
 import eu.kanade.domain.ui.model.setAppCompatDelegateThemeMode
+import eu.kanade.tachiyomi.adblock.AdBlockEngine
 import eu.kanade.tachiyomi.crash.CrashActivity
 import eu.kanade.tachiyomi.crash.GlobalExceptionHandler
 import eu.kanade.tachiyomi.data.cache.CoverCache
@@ -93,6 +94,8 @@ class App : Application(), DefaultLifecycleObserver, SingletonImageLoader.Factor
 
     @Inject private lateinit var networkPreferences: NetworkPreferences
 
+    @Inject private lateinit var adBlockEngine: AdBlockEngine
+
     @Inject private lateinit var uiPreferences: UiPreferences
 
     // Lazy: only the image loader uses these, and process starts without UI (workers, receivers) never build it
@@ -132,6 +135,8 @@ class App : Application(), DefaultLifecycleObserver, SingletonImageLoader.Factor
 
         Injekt = InjektScope(MetroInjektRegistrar(application = this, graphProvider = this))
         graph.inject(this)
+
+        adBlockEngine.initialize()
 
         GlobalExceptionHandler.initialize(applicationContext, CrashActivity::class.java)
 

@@ -9,6 +9,7 @@ import android.webkit.JsResult
 import android.webkit.RenderProcessGoneDetail
 import android.webkit.SslErrorHandler
 import android.webkit.WebResourceRequest
+import android.webkit.WebResourceResponse
 import android.webkit.WebView
 import android.widget.Toast
 import androidx.activity.compose.BackHandler
@@ -48,6 +49,8 @@ import eu.kanade.presentation.components.AppBar
 import eu.kanade.presentation.components.AppBarActions
 import eu.kanade.presentation.components.WarningBanner
 import eu.kanade.tachiyomi.BuildConfig
+import eu.kanade.tachiyomi.adblock.AdBlockEngine
+import eu.kanade.tachiyomi.adblock.RequestDisposition
 import eu.kanade.tachiyomi.util.system.WebViewUtil
 import eu.kanade.tachiyomi.util.system.getHtml
 import eu.kanade.tachiyomi.util.system.setDefaultSettings
@@ -64,6 +67,8 @@ import tachiyomi.core.common.util.system.logcat
 import tachiyomi.i18n.MR
 import tachiyomi.presentation.core.components.material.Scaffold
 import tachiyomi.presentation.core.i18n.stringResource
+import java.io.ByteArrayInputStream
+import java.util.concurrent.atomic.AtomicReference
 
 class WebViewWindow(webContent: WebContent, val navigator: WebViewNavigator) {
     var state by mutableStateOf(WebViewState(webContent))
@@ -87,6 +92,7 @@ fun WebViewScreenContent(
     onClearCookies: (String) -> Unit,
     headers: Map<String, String> = emptyMap(),
     onUrlChange: (String) -> Unit = {},
+    adBlockEngine: AdBlockEngine,
 ) {
     val coroutineScope = rememberCoroutineScope()
 
@@ -106,6 +112,7 @@ fun WebViewScreenContent(
     val scope = rememberCoroutineScope()
 
     var currentUrl by remember { mutableStateOf(url) }
+    val currentPageUrl = remember { AtomicReference(url) }
     var showCloudflareHelp by remember { mutableStateOf(false) }
     var isActive by remember { mutableStateOf(true) }
 
@@ -137,6 +144,7 @@ fun WebViewScreenContent(
                 super.onPageStarted(view, url, favicon)
                 url?.let {
                     currentUrl = it
+                    currentPageUrl.set(it)
                     onUrlChange(it)
                 }
             }
@@ -157,7 +165,30 @@ fun WebViewScreenContent(
                 super.doUpdateVisitedHistory(view, url, isReload)
                 url?.let {
                     currentUrl = it
+                    currentPageUrl.set(it)
                     onUrlChange(it)
+                }
+            }
+
+            override fun shouldInterceptRequest(
+                view: WebView,
+                request: WebResourceRequest,
+            ): WebResourceResponse? {
+                val pageUrl = currentPageUrl.get()
+                val requestUrl = request.url.toString()
+                if (requestUrl == pageUrl) return null
+
+                val disposition = adBlockEngine.checkRequest(
+                    requestUrlString = requestUrl,
+                    requestHostString = request.url.host,
+                    webPageUrlString = pageUrl,
+                    firstPartyHostString = pageUrl.toUri().host.orEmpty(),
+                )
+
+                return if (disposition == RequestDisposition.Blocked) {
+                    WebResourceResponse("text/plain", "utf8", ByteArrayInputStream(ByteArray(0)))
+                } else {
+                    null
                 }
             }
 
